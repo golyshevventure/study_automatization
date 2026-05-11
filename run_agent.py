@@ -1,0 +1,300 @@
+import asyncio
+import os
+import sys
+import re
+import json
+from datetime import datetime
+
+# Добавляем src в путь
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+
+from parsers.netology_scraper import NetologyScraper
+from dotenv import load_dotenv
+import requests
+
+load_dotenv()
+
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+BASE_URL = "https://openrouter.ai/api/v1"
+
+SECONDBRAIN = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain"
+STUDY_DIR = os.path.join(SECONDBRAIN, "Учеба (Фин. Ун.)")
+PREDMETY = os.path.join(STUDY_DIR, "Предметы")
+KONSPECTY = os.path.join(STUDY_DIR, "Конспекты")
+TERMINY = os.path.join(STUDY_DIR, "Термины")
+
+def ensure_dirs():
+    os.makedirs(PREDMETY, exist_ok=True)
+    os.makedirs(KONSPECTY, exist_ok=True)
+    os.makedirs(TERMINY, exist_ok=True)
+
+def safe_filename(name):
+    return re.sub(r'[\\/:"*?<>|]', '', name).strip()
+
+def load_prompt():
+    with open("prompts/system.txt", "r", encoding="utf-8") as f:
+        return f.read()
+
+def generate_summary(text, subject, topic):
+    system = load_prompt()
+    resp = requests.post(
+        f"{BASE_URL}/chat/completions",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://localhost",
+            "X-Title": "Study Automation Agent"
+        },
+        json={
+            "model": "poolside/laguna-m.1:free",
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": f"Предмет: {subject}\nТема: {topic}\n\n{text[:8000]}"}
+            ],
+            "max_tokens": 2500,
+            "temperature": 0.4
+        }
+    )
+    if resp.status_code == 200:
+        return resp.json()["choices"][0]["message"].get("content", "Пустой ответ")
+    return f"Ошибка {resp.status_code}: {resp.text[:200]}"
+
+def parse_terms(full_text):
+    pattern = re.compile(r'---TERMS---\n(.*?)\n---END_TERMS---', re.DOTALL)
+    match = pattern.search(full_text)
+    if not match:
+        return full_text, []
+    clean_text = full_text[:match.start()] + full_text[match.end():]
+    block = match.group(1).strip()
+    terms = []
+    for line in block.split('\n'):
+        line = line.strip()
+        if '|' in line:
+            parts = line.split('|', 1)
+            name = parts[0].strip().strip('[]')
+            desc = parts[1].strip()
+            if name and desc:
+                terms.append((name, desc))
+    return clean_text, terms
+
+def create_term_files(terms, subject_name):
+    created = []
+    for name, desc in terms:
+        if name.lower() == subject_name.lower():
+            continue
+        filename = f"{safe_filename(name)}.md"
+        filepath = os.path.join(TERMINY, filename)
+        if os.path.exists(filepath):
+            continue
+        
+        content = f"""---
+type: термин
+subject: {subject_name}
+created: {datetime.now().strftime('%Y-%m-%d')}
+---
+
+# {name}
+
+{desc}
+
+## Связи
+- [[{subject_name}]]
+"""
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+        created.append(name)
+        print(f"   📝 Термин: {name}")
+    return created
+
+def ensure_subject_file(subject_name):
+    path = os.path.join(PREDMETY, f"{safe_filename(subject_name)}.md")
+    if not os.path.exists(path):
+        content = f"""---
+type: предмет
+status: active
+created: {datetime.now().strftime('%Y-%m-%d')}
+---
+
+# {subject_name}
+
+## Прогресс
+- [ ] Не начато
+
+## Конспекты
+
+## Связи
+- [[МОС - Учёба]]
+"""
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"📁 Создан предмет: {path}")
+    return path
+
+def add_conspect_link(subject_path, topic_title):
+    with open(subject_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    link_line = f"- [[{topic_title}]]"
+    if link_line in content:
+        return
+    
+    if "## Конспекты" in content:
+        content = content.replace("## Конспекты", f"## Конспекты\n{link_line}", 1)
+    else:
+        content += f"\n\n## Конспекты\n{link_line}"
+    
+    with open(subject_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"   🔗 Ссылка добавлена")
+
+def save_conspect(content, subject_name, topic_title):
+    conspect_dir = os.path.join(KONSPECTY, safe_filename(subject_name))
+    os.makedirs(conspect_dir, exist_ok=True)
+    filename = f"{safe_filename(topic_title)}.md"
+    filepath = os.path.join(conspect_dir, filename)
+    
+    meta = f"---\nsubject: {subject_name}\ntopic: {topic_title}\ndate: {datetime.now().strftime('%Y-%m-%d')}\ntype: конспект\nsource: Нетология\n---\n\n"
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(meta + content)
+    
+    print(f"   💾 Конспект: {filepath}")
+    return filepath
+
+def process_lesson(subject_name, lesson_title, lesson_text):
+    print(f"\n{'='*60}")
+    print(f"🎓 {lesson_title}")
+    print(f"{'='*60}")
+    print(f"   Символов: {len(lesson_text)}")
+    
+    if not lesson_text or len(lesson_text) < 300:
+        print("   ⚠️ Слишком мало текста, пропускаем")
+        return
+    
+    print("   ⏳ Генерация конспекта...")
+    raw_summary = generate_summary(lesson_text, subject_name, lesson_title)
+    
+    if raw_summary.startswith("Ошибка"):
+        print(f"   ❌ {raw_summary}")
+        return
+    
+    clean_summary, terms = parse_terms(raw_summary)
+    
+    if terms:
+        print(f"   🔍 Терминов: {len(terms)}")
+        create_term_files(terms, subject_name)
+    
+    subject_path = ensure_subject_file(subject_name)
+    save_conspect(clean_summary, subject_name, lesson_title)
+    add_conspect_link(subject_path, lesson_title)
+    
+    print("   ✅ Готово")
+
+async def main():
+    if len(sys.argv) < 2:
+        print("Использование:")
+        print("  python run_agent.py <program_id>  — собрать всю программу")
+        print("  python run_agent.py <program_id> --subject 'Название'  — только один предмет")
+        sys.exit(1)
+    
+    program_id = sys.argv[1]
+    target_subject = None
+    if "--subject" in sys.argv:
+        idx = sys.argv.index("--subject")
+        target_subject = sys.argv[idx + 1]
+    
+    ensure_dirs()
+    
+    scraper = NetologyScraper()
+    await scraper.start()
+    
+    try:
+        print("=" * 60)
+        print("🔍 Сбор структуры...")
+        print("=" * 60)
+        
+        program_title, disciplines = await scraper.get_program_disciplines(program_id)
+        subject_name = target_subject if target_subject else program_title
+        
+        print(f"\n📚 Предмет: {subject_name}")
+        print(f"   Разделов: {len(disciplines)}")
+        
+        if target_subject and subject_name.lower() != target_subject.lower():
+            print(f"   ⚠️ Название предмета '{subject_name}' не совпадает с --subject '{target_subject}'")
+            print("   Продолжаем anyway...")
+        
+        seen_hrefs = set()
+        
+        for disc in disciplines:
+            section_name = disc["title"]
+            
+            if disc["locked"]:
+                print(f"\n   🔒 {section_name} — заблокировано, пропускаем")
+                continue
+            
+            print(f"\n📂 {section_name}")
+            
+            # Силлабус (берём из ссылок "Рабочая программа дисциплины")
+            syllabus_link = None
+            for link in disc["links"]:
+                if "рабочая программа" in link["text"].lower():
+                    syllabus_link = link["href"]
+                    break
+            
+            if syllabus_link:
+                print("   📋 Извлекаем силлабус...")
+                syllabus_text = await scraper.get_lesson_text_content(syllabus_link)
+                syl_path = os.path.join(PREDMETY, f"{safe_filename(subject_name)} — Силлабус.md")
+                if not os.path.exists(syl_path):
+                    with open(syl_path, "w", encoding="utf-8") as f:
+                        f.write(f"---\ntype: силлабус\nsubject: {subject_name}\n---\n\n# Силлабус: {subject_name}\n\n{syllabus_text[:5000]}")
+                    print(f"   💾 Силлабус сохранён")
+                    
+                    subj_path = ensure_subject_file(subject_name)
+                    with open(subj_path, "r", encoding="utf-8") as f:
+                        content = f.read()
+                    syl_link = f"- [[{subject_name} — Силлабус|Силлабус]]"
+                    if syl_link not in content:
+                        if "## Силлабус" not in content:
+                            content += f"\n\n## Силлабус\n{syl_link}"
+                        else:
+                            content = content.replace("## Силлабус", f"## Силлабус\n{syl_link}")
+                        with open(subj_path, "w", encoding="utf-8") as f:
+                            f.write(content)
+            
+            # Проходим по занятиям
+            lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+            
+            for lesson in lessons:
+                if lesson["locked"]:
+                    print(f"   🔒 {lesson['title']}")
+                    continue
+                
+                if lesson["href"] in seen_hrefs:
+                    continue
+                seen_hrefs.add(lesson["href"])
+                
+                conspect_dir = os.path.join(KONSPECTY, safe_filename(subject_name))
+                conspect_file = os.path.join(conspect_dir, f"{safe_filename(lesson['title'])}.md")
+                if os.path.exists(conspect_file):
+                    print(f"   ⏭️ Уже есть: {lesson['title']}")
+                    continue
+                
+                text = await scraper.get_lesson_text_content(lesson["href"])
+                process_lesson(subject_name, lesson["title"], text)
+                await asyncio.sleep(2)
+            
+            print(f"   ✅ Раздел завершён")
+        
+        await scraper.save_cookies()
+        print("\n" + "=" * 60)
+        print("🏁 Всё готово!")
+        print("=" * 60)
+        
+    except KeyboardInterrupt:
+        print("\n\n🛑 Остановлено пользователем")
+    finally:
+        await scraper.stop()
+
+if __name__ == "__main__":
+    asyncio.run(main())

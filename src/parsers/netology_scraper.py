@@ -1,0 +1,327 @@
+import asyncio
+import os
+import json
+import re
+from playwright.async_api import async_playwright
+from bs4 import BeautifulSoup
+
+
+class NetologyScraper:
+    def __init__(self, cookies_file="data/netology_cookies.json"):
+        self.cookies_file = cookies_file
+        self.browser = None
+        self.context = None
+        self.page = None
+        self.playwright = None
+
+    async def start(self):
+        self.playwright = await async_playwright().start()
+        self.browser = await self.playwright.chromium.launch(
+            headless=False,
+            args=[
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+            ],
+        )
+        self.context = await self.browser.new_context()
+        if os.path.exists(self.cookies_file):
+            with open(self.cookies_file, "r", encoding="utf-8") as f:
+                cookies = json.load(f)
+            await self.context.add_cookies(cookies)
+            print("🍪 Cookies загружены")
+        self.page = await self.context.new_page()
+
+    async def stop(self):
+        if self.browser:
+            await self.browser.close()
+        if self.playwright:
+            await self.playwright.stop()
+
+    async def save_cookies(self):
+        if self.context:
+            cookies = await self.context.cookies()
+            os.makedirs(os.path.dirname(self.cookies_file) or ".", exist_ok=True)
+            with open(self.cookies_file, "w", encoding="utf-8") as f:
+                json.dump(cookies, f, ensure_ascii=False, indent=2)
+            print("🍪 Cookies сохранены")
+
+    def _ensure_url(self, url):
+        if not url:
+            return ""
+        if not url.startswith("http"):
+            return "https://netology.ru" + (url if url.startswith("/") else "/" + url)
+        return url
+
+    async def _safe_goto(self, url, wait_until="networkidle", timeout=30000):
+        try:
+            await self.page.goto(url, wait_until=wait_until, timeout=timeout)
+            return True
+        except Exception:
+            try:
+                await self.page.goto(url, wait_until="domcontentloaded", timeout=15000)
+                return True
+            except Exception:
+                return False
+
+    async def get_program_disciplines(self, program_id):
+        url = f"https://netology.ru/profile/program/{program_id}/schedule"
+        print(f"   🌐 {url}")
+        await self.page.goto(url, wait_until="networkidle")
+        await asyncio.sleep(3)
+
+        disciplines = await self.page.evaluate("""
+            () => {
+                const results = [];
+                const seenIds = new Set();
+                document.querySelectorAll('[data-lesson-id]').forEach(block => {
+                    const lessonId = block.getAttribute('data-lesson-id');
+                    if (!lessonId || seenIds.has(lessonId)) return;
+                    seenIds.add(lessonId);
+
+                    const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
+                    const title = titleEl ? titleEl.textContent.trim() : '';
+
+                    const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
+                    const statusText = statusEl ? statusEl.textContent.trim() : '';
+                    const locked = statusText.toLowerCase().includes('откроется');
+
+                    const links = [];
+                    block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
+                        links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                    });
+                    if (!links.length) {
+                        block.querySelectorAll('a[href*="/lessons/"], a[href*="/lesson_items/"]').forEach(a => {
+                            links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                        });
+                    }
+
+                    results.push({title, lesson_id: lessonId, locked, links});
+                });
+                return results;
+            }
+        """)
+
+        raw_title = await self.page.evaluate("""
+            () => {
+                const el = document.querySelector('[data-testid="program-header"]');
+                return el ? el.textContent.trim() : document.title;
+            }
+        """)
+
+        program_title = re.sub(r'\d+\s+курс.*?:\s*', '', raw_title, flags=re.IGNORECASE)
+        program_title = re.sub(r'\d+\s+[а-яА-Я]+\s*—\s*\d+\s+[а-яА-Я]+', '', program_title)
+        program_title = re.sub(r'BHEBFAD[-\w]+', '', program_title, flags=re.IGNORECASE)
+        program_title = program_title.strip()
+
+        if not disciplines:
+            html = await self.page.content()
+            debug_path = "data/debug_program.html"
+            os.makedirs("data", exist_ok=True)
+            with open(debug_path, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"   ⚠️ Дисциплины не найдены, HTML сохранён: {debug_path}")
+            return program_title, []
+
+        print(f"   📚 Найдено разделов: {len(disciplines)}")
+        for d in disciplines:
+            status = "🔒" if d["locked"] else "✅"
+            print(f"      {status} {d['title']} (id: {d['lesson_id']})")
+
+        return program_title, disciplines
+
+    async def get_discipline_lessons(self, program_id, lesson_id, fallback_links=None):
+        url = f"https://netology.ru/profile/program/{program_id}/lessons/{lesson_id}"
+        print(f"   🌐 {url}")
+
+        ok = await self._safe_goto(url)
+        if not ok:
+            print("   ⚠️ Страница раздела не открылась, пробуем fallback...")
+        else:
+            await asyncio.sleep(2)
+            try:
+                await self.page.wait_for_selector('a[data-testid^="program-menu-lessonitem"]', timeout=8000)
+            except:
+                pass
+            await asyncio.sleep(1)
+
+        items = await self.page.evaluate(f"""
+            (lessonId) => {{
+                const results = [];
+                const seen = new Set();
+                document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
+                    const href = a.getAttribute('href');
+                    if (!href || seen.has(href)) return;
+                    if (!href.includes('/lessons/' + lessonId + '/')) return;
+                    seen.add(href);
+                    const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
+                    const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
+                    const testid = a.getAttribute('data-testid') || '';
+                    const locked = testid.toLowerCase().includes('locked');
+                    results.push({{title, href, locked}});
+                }});
+                return results;
+            }}
+        """, lesson_id)
+
+        if not items and fallback_links:
+            for link in fallback_links:
+                href = link.get("href", "")
+                if not href:
+                    continue
+                print(f"   🔁 Fallback: {link.get('text', 'item')}")
+                ok = await self._safe_goto(self._ensure_url(href))
+                if not ok:
+                    continue
+                await asyncio.sleep(3)
+                try:
+                    await self.page.wait_for_selector('a[data-testid^="program-menu-lessonitem"]', timeout=8000)
+                except:
+                    pass
+                await asyncio.sleep(1)
+
+                items = await self.page.evaluate(f"""
+                    (lessonId) => {{
+                        const results = [];
+                        const seen = new Set();
+                        document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
+                            const href = a.getAttribute('href');
+                            if (!href || seen.has(href)) return;
+                            if (!href.includes('/lessons/' + lessonId + '/')) return;
+                            seen.add(href);
+                            const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
+                            const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
+                            const testid = a.getAttribute('data-testid') || '';
+                            const locked = testid.toLowerCase().includes('locked');
+                            results.push({{title, href, locked}});
+                        }});
+                        return results;
+                    }}
+                """, lesson_id)
+                if items:
+                    break
+
+        if not items:
+            print("   ⚠️ Занятия не найдены")
+            return []
+
+        print(f"   📄 Найдено материалов: {len(items)}")
+        for item in items:
+            status = "🔒" if item["locked"] else "✅"
+            print(f"      {status} {item['title']}")
+        return items
+
+    async def get_lesson_text_content(self, url):
+        url = self._ensure_url(url)
+        if not url:
+            return ""
+
+        print(f"   🌐 {url}")
+        ok = await self._safe_goto(url)
+        if not ok:
+            print("   ⚠️ Страница не открылась")
+            return ""
+        await asyncio.sleep(2)
+
+        html = await self.page.content()
+        soup = BeautifulSoup(html, "lxml")
+
+        # 1. PDF-презентация
+        pdf_viewer = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"})
+        if pdf_viewer:
+            text = pdf_viewer.get_text(separator="\n", strip=True)
+            if len(text) > 100:
+                return text
+
+        # 2. Заголовок + вебинар + контент
+        parts = []
+
+        heading = soup.find("div", attrs={"data-testid": "program-lessonitem-title"})
+        if heading:
+            parts.append(heading.get_text(strip=True))
+
+        webinar = soup.find("div", attrs={"data-testid": "webinar-info"})
+        if webinar:
+            parts.append(webinar.get_text(separator="\n", strip=True))
+
+        selectors = [
+            'div[data-testid="program-lessonitem-content"]',
+            'div[data-testid="lesson-content"]',
+            "article",
+            "main",
+            ".lesson-content",
+            "#lesson-content",
+            ".content-wrapper",
+        ]
+        for sel in selectors:
+            tag = soup.select_one(sel)
+            if tag:
+                for junk in tag.find_all(["script", "style", "nav"]):
+                    junk.decompose()
+                txt = tag.get_text(separator="\n", strip=True)
+                if len(txt) > 100:
+                    parts.append(txt)
+                    break
+
+        result = "\n\n".join(parts)
+
+        # 3. Fallback — body
+        if len(result) < 200 and soup.body:
+            for junk in soup.body.find_all(["script", "style", "nav", "header", "footer"]):
+                junk.decompose()
+            body_text = soup.body.get_text(separator="\n", strip=True)
+            if len(body_text) > len(result):
+                result = body_text[:15000]
+
+        return result[:15000]
+
+    async def debug_webinar(self, url, output_path="data/debug_webinar.html"):
+        """Открывает страницу вебинара, кликает 'Показать транскрипцию' если есть, сохраняет HTML."""
+        url = self._ensure_url(url)
+        print(f"   🔍 Диагностика вебинара: {url}")
+        ok = await self._safe_goto(url)
+        if not ok:
+            print("   ❌ Не удалось открыть")
+            return
+        await asyncio.sleep(3)
+
+        # Ищем кнопку транскрипции
+        transcript_btn = await self.page.query_selector('button:has-text("транскрипц"), button:has-text("Транскрипц"), [data-testid*="transcript"], [class*="transcript"]')
+        if transcript_btn:
+            print("   🖱️ Найдена кнопка транскрипции, кликаем...")
+            await transcript_btn.click()
+            await asyncio.sleep(3)
+
+        html = await self.page.content()
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"   💾 HTML сохранён: {output_path}")
+
+        # Поиск текста транскрипции через JS
+        transcript_text = await self.page.evaluate("""
+            () => {
+                const selectors = [
+                    '[data-testid*="transcript"]',
+                    '[class*="transcript"]',
+                    '[class*="Transcript"]',
+                    '.transcript',
+                    '.webinar-transcript',
+                    '[data-testid*="webinar"] div[class*="text"]',
+                    'article[class*="transcript"]'
+                ];
+                for (const sel of selectors) {
+                    const el = document.querySelector(sel);
+                    if (el && el.textContent.length > 200) {
+                        return {selector: sel, text: el.textContent.trim().substring(0, 500)};
+                    }
+                }
+                return null;
+            }
+        """)
+        if transcript_text:
+            print(f"   ✅ Транскрипция найдена: {transcript_text['selector']}")
+            print(f"   📝 Первые 300 символов: {transcript_text['text'][:300]}")
+        else:
+            print("   ⚠️ Транскрипция не найдена по известным селекторам")

@@ -1,0 +1,239 @@
+{
+  "title": "Расписание bhebfad-25-vvs-2 1 курс, 2 семестр: Введение в специальность",
+  "text_blocks": [
+    {
+      "tag": "div",
+      "data-testid": "lmsHeader",
+      "text": "support@netology.ru8 (800) 301-39-69+7 (965) 178-80-20Модули курса Бакалавриат «Финансы и анализ данных» c Финансовым университетомМодули курса Бакалавриат «Финансы и анализ данных» c Финансовым униве",
+      "class": [
+        "src-components-lms-LmsHeader--root--jme0L"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "header-favorite-btn",
+      "text": "Избранное",
+      "class": [
+        "------libs-shared-src-reallyShared-components-User-components-FavoriteInHeader--icon--_4IX0",
+        "------libs-shared-src-reallyShared-components-User-components-FavoriteInHeader--alert--u0kZo"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-header",
+      "text": "1 курс, 2 семестр: Введение в специальность1 февраля — 21 апреляBHEBFAD-25-VVS-2",
+      "class": [
+        "src-components-lms-LmsHeader--programHeader--Eqiwy"
+      ]
+    },
+    {
+      "tag": "span",
+      "data-testid": "dates",
+      "text": "1 февраля — 21 апреля",
+      "class": [
+        "src-components-lms-LmsHeader--moduleDates--blrRY"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "planning-widget",
+      "text": "Установите цельЦельпн4вт5ср6Вы занимались в этот деньчт7Вы занимались в этот деньпт8сб9вс10Новый виджет целей!Поставьте цель в два нажатияОтслеживайте прогресс на неделеЗакрепляйте привычку заниматься",
+      "class": [
+        "daily-learning"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "navigation",
+      "text": "Основной курсКалендарьПрактикаУведомленияЗаметки",
+      "class": [
+        "src-components-lms-LmsHeader-components-Nav--root--L_1cf"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Силлабус",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-granule-link",
+      "text": "Силлабус",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson-components-LessonItems--itemTitle--qBEs_"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "csi-lesson-component",
+      "text": "Оцените это занятиеНажмите, чтобы оценить",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson-components-Feedback--root--nR8Wu"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 0. Особенности  образовательной программы",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 1. Карьерные перспективы",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 2. Аудиторы и бизнес-консультанты финансового сектора: кто это такие?",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 3. Организация управления финансовыми рисками в организациях банковского сектора",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 4. Обзор текущего состояния финансовых рынков и актуальные вызовы для компаний банковского сектора",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 5. Современные  финансовые технологии",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Тема 6. Карьерный симулятор  Финансового университета",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Опрос по итогам дисциплины",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "program-lesson-title",
+      "text": "Опрос по итогам дисциплины",
+      "class": [
+        "src-features-lms-lessons-components-Lessons-components-Lesson--title--s698E"
+      ]
+    },
+    {
+      "tag": "div",
+      "data-testid": "tutor-icon",
+      "text": "Нето-компаньонОтвечаю на вопросыПомогаю с обучениемРасскажу о НетологииОтвечаю на вопросыПомогаю с обучениемРасскажу о Нетологии",
+      "class": [
+        "------libs-shared-src-reallyShared-containers-NetoCompanionIcon--root--TxYjk",
+        "------libs-shared-src-reallyShared-containers-NetoCompanionIcon--widgetCollapsed--hyONH"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "href": "/profile/program/bhebfad-25/schedule/all",
+      "text": "Модули курса Бакалавриат «Финансы и анализ данных» c Финансовым университетом"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/schedule",
+      "text": "1 курс, 2 семестр: Введение в специальность"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/schedule",
+      "text": "Основной курс"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/calendar",
+      "text": "Календарь"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/execution",
+      "text": "Практика"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/notifications",
+      "text": "Уведомления"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/notes",
+      "text": "Заметки"
+    },
+    {
+      "href": "/profile/program/bhebfad-25-vvs-2/lessons/584246/lesson_items/3149151",
+      "text": "Силлабус8 мин"
+    },
+    {
+      "href": "https://netology.ru/programs/discipliny-i-moduli",
+      "text": "Вузам и колледжам: онлайн-курсы"
+    }
+  ],
+  "data_attributes": [
+    {
+      "data-lesson-id": "584246",
+      "text_preview": "СиллабусВремя прохождения ~ 8 минСиллабус8 минОцените это занятиеНажмите, чтобы оценить"
+    },
+    {
+      "data-lesson-id": "584247",
+      "text_preview": "Тема 0. Особенности  образовательной программы"
+    },
+    {
+      "data-lesson-id": "584248",
+      "text_preview": "Тема 1. Карьерные перспективы"
+    },
+    {
+      "data-lesson-id": "584249",
+      "text_preview": "Тема 2. Аудиторы и бизнес-консультанты финансового сектора: кто это такие?"
+    },
+    {
+      "data-lesson-id": "584250",
+      "text_preview": "Тема 3. Организация управления финансовыми рисками в организациях банковского сектора"
+    },
+    {
+      "data-lesson-id": "584251",
+      "text_preview": "Тема 4. Обзор текущего состояния финансовых рынков и актуальные вызовы для компаний банковского сектора"
+    },
+    {
+      "data-lesson-id": "584252",
+      "text_preview": "Тема 5. Современные  финансовые технологии"
+    },
+    {
+      "data-lesson-id": "584253",
+      "text_preview": "Тема 6. Карьерный симулятор  Финансового университета"
+    },
+    {
+      "data-lesson-id": "617686",
+      "text_preview": "Опрос по итогам дисциплины"
+    },
+    {
+      "data-lesson-id": "617864",
+      "text_preview": "Опрос по итогам дисциплины"
+    }
+  ]
+}

@@ -31,7 +31,7 @@ def safe_filename(name, max_len=80):
     return name
 
 def parse_terms(full_text):
-    pattern = re.compile(r'---TERMS---\n(.*?)\n---END_TERMS---', re.DOTALL)
+    pattern = re.compile(r'##?\s*Термины\n(.*?)(?:\n---END_TERMS---|\Z)', re.DOTALL)
     match = pattern.search(full_text)
     if not match:
         return full_text, []

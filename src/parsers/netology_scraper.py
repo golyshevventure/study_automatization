@@ -88,6 +88,96 @@ class NetologyScraper:
             result.append(line)
         return " ".join(result)
 
+    async def _extract_vtt_text(self, url: str) -> str:
+        """Ловит VTT через page.on('response')."""
+        vtt_url = None
+
+        def handle_response(response):
+            nonlocal vtt_url
+            req_url = response.url
+            if ".vtt" in req_url and not vtt_url:
+                vtt_url = req_url
+                print(f"🎯 VTT: {req_url[:80]}...")
+
+        self.page.on("response", handle_response)
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            self.page.remove_listener("response", handle_response)
+            return ""
+
+        for i in range(15):
+            if vtt_url:
+                break
+            await asyncio.sleep(1)
+        self.page.remove_listener("response", handle_response)
+
+        if not vtt_url:
+            return ""
+        try:
+            r = requests.get(vtt_url, timeout=30)
+            if r.status_code == 200:
+                text = self._parse_vtt(r.text)
+                print(f"✅ VTT: {len(text)} символов")
+                return text
+        except Exception as e:
+            print(f"⚠️ VTT ошибка: {e}")
+        return ""
+
+    async def _extract_file_text(self, url: str) -> str:
+        """Перехватывает PDF/DOCX/PPTX."""
+        file_url = None
+        file_ext = None
+
+        def handle_response(response):
+            nonlocal file_url, file_ext
+            ct = response.headers.get("content-type", "")
+            ul = response.url.lower()
+            if not file_url:
+                if "pdf" in ct or ul.endswith(".pdf"):
+                    file_url, file_ext = response.url, "pdf"
+                elif "word" in ct or ul.endswith(".docx"):
+                    file_url, file_ext = response.url, "docx"
+                elif "powerpoint" in ct or ul.endswith(".pptx"):
+                    file_url, file_ext = response.url, "pptx"
+
+        self.page.on("response", handle_response)
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            self.page.remove_listener("response", handle_response)
+            return ""
+
+        for i in range(10):
+            if file_url:
+                break
+            await asyncio.sleep(1)
+        self.page.remove_listener("response", handle_response)
+
+        if not file_url:
+            return ""
+        try:
+            r = requests.get(file_url, timeout=30)
+            if r.status_code != 200:
+                return ""
+            if file_ext == "pdf":
+                with pdfplumber.open(io.BytesIO(r.content)) as pdf:
+                    return "\n".join(page.extract_text() or "" for page in pdf.pages)
+            elif file_ext == "docx":
+                import docx
+                doc = docx.Document(io.BytesIO(r.content))
+                return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
+            elif file_ext == "pptx":
+                from pptx import Presentation
+                prs = Presentation(io.BytesIO(r.content))
+                texts = []
+                for slide in prs.slides:
+                    for shape in slide.shapes:
+                        if hasattr(shape, "text") and shape.text:
+                            texts.append(shape.text)
+                return "\n".join(texts)
+        except Exception as e:
+            print(f"⚠️ Файл ошибка: {e}")
+        return ""
+
     async def get_program_disciplines(self, program_id):
         url = f"https://netology.ru/profile/program/{program_id}/schedule"
         print(f"🌐 {url}")

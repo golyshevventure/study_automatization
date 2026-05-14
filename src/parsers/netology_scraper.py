@@ -2,6 +2,7 @@ import asyncio
 import os
 import json
 import re
+import requests
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
@@ -65,49 +66,112 @@ class NetologyScraper:
             except Exception:
                 return False
 
+    @staticmethod
+    def _parse_vtt(vtt_text: str) -> str:
+        """Парсит WebVTT → чистый текст."""
+        lines = vtt_text.splitlines()
+        result = []
+        for line in lines:
+            line = line.strip()
+            if line.upper() == "WEBVTT":
+                continue
+            if not line:
+                continue
+            if re.match(r'^\d{2}:\d{2}:\d{2}\.\d{3}\s*-->', line):
+                continue
+            if re.match(r'^\d+$', line):
+                continue
+            if line.upper().startswith(("NOTE", "REGION", "STYLE")):
+                continue
+            result.append(line)
+        return " ".join(result)
+
+    async def _extract_vtt_text(self, url: str) -> str:
+        """Ловит VTT через page.on('response') — видит fetch из iframe."""
+        vtt_url = None
+
+        def handle_response(response):
+            nonlocal vtt_url
+            req_url = response.url
+            if ".vtt" in req_url and not vtt_url:
+                vtt_url = req_url
+                print(f"🎯 VTT в response: {req_url}")
+
+        self.page.on("response", handle_response)
+
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            self.page.remove_listener("response", handle_response)
+            return ""
+
+        print("⏳ Ждём загрузку VTT...")
+        for i in range(15):
+            if vtt_url:
+                break
+            await asyncio.sleep(1)
+
+        self.page.remove_listener("response", handle_response)
+
+        if not vtt_url:
+            print("⚠️ VTT не найден за 15 сек")
+            return ""
+
+        try:
+            response = requests.get(vtt_url, timeout=30)
+            if response.status_code == 200:
+                text = self._parse_vtt(response.text)
+                print(f"✅ VTT скачан: {len(text)} символов")
+                return text
+            else:
+                print(f"⚠️ VTT вернул HTTP {response.status_code}")
+        except Exception as e:
+            print(f"⚠️ Ошибка скачивания VTT: {e}")
+
+        return ""
+    
     async def get_program_disciplines(self, program_id):
         url = f"https://netology.ru/profile/program/{program_id}/schedule"
-        print(f"   🌐 {url}")
-        await self.page.goto(url, wait_until="networkidle")
+        print(f"🌐 {url}")
+        await self._safe_goto(url)
         await asyncio.sleep(3)
 
         disciplines = await self.page.evaluate("""
-            () => {
-                const results = [];
-                const seenIds = new Set();
-                document.querySelectorAll('[data-lesson-id]').forEach(block => {
-                    const lessonId = block.getAttribute('data-lesson-id');
-                    if (!lessonId || seenIds.has(lessonId)) return;
-                    seenIds.add(lessonId);
+        () => {
+            const results = [];
+            const seenIds = new Set();
+            document.querySelectorAll('[data-lesson-id]').forEach(block => {
+                const lessonId = block.getAttribute('data-lesson-id');
+                if (!lessonId || seenIds.has(lessonId)) return;
+                seenIds.add(lessonId);
 
-                    const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
-                    const title = titleEl ? titleEl.textContent.trim() : '';
+                const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
+                const title = titleEl ? titleEl.textContent.trim() : '';
 
-                    const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
-                    const statusText = statusEl ? statusEl.textContent.trim() : '';
-                    const locked = statusText.toLowerCase().includes('откроется');
+                const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
+                const statusText = statusEl ? statusEl.textContent.trim() : '';
+                const locked = statusText.toLowerCase().includes('откроется');
 
-                    const links = [];
-                    block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
+                const links = [];
+                block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
+                    links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                });
+                if (!links.length) {
+                    block.querySelectorAll('a[href*="/lessons/"], a[href*="/lesson_items/"]').forEach(a => {
                         links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
                     });
-                    if (!links.length) {
-                        block.querySelectorAll('a[href*="/lessons/"], a[href*="/lesson_items/"]').forEach(a => {
-                            links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
-                        });
-                    }
+                }
 
-                    results.push({title, lesson_id: lessonId, locked, links});
-                });
-                return results;
-            }
+                results.push({title, lesson_id: lessonId, locked, links});
+            });
+            return results;
+        }
         """)
 
         raw_title = await self.page.evaluate("""
-            () => {
-                const el = document.querySelector('[data-testid="program-header"]');
-                return el ? el.textContent.trim() : document.title;
-            }
+        () => {
+            const el = document.querySelector('[data-testid="program-header"]');
+            return el ? el.textContent.trim() : document.title;
+        }
         """)
 
         program_title = re.sub(r'\d+\s+курс.*?:\s*', '', raw_title, flags=re.IGNORECASE)
@@ -121,23 +185,23 @@ class NetologyScraper:
             os.makedirs("data", exist_ok=True)
             with open(debug_path, "w", encoding="utf-8") as f:
                 f.write(html)
-            print(f"   ⚠️ Дисциплины не найдены, HTML сохранён: {debug_path}")
+            print(f"⚠️ Дисциплины не найдены, HTML сохранён: {debug_path}")
             return program_title, []
 
-        print(f"   📚 Найдено разделов: {len(disciplines)}")
+        print(f"📚 Найдено разделов: {len(disciplines)}")
         for d in disciplines:
             status = "🔒" if d["locked"] else "✅"
-            print(f"      {status} {d['title']} (id: {d['lesson_id']})")
+            print(f"  {status} {d['title']} (id: {d['lesson_id']})")
 
         return program_title, disciplines
 
     async def get_discipline_lessons(self, program_id, lesson_id, fallback_links=None):
         url = f"https://netology.ru/profile/program/{program_id}/lessons/{lesson_id}"
-        print(f"   🌐 {url}")
+        print(f"🌐 {url}")
 
         ok = await self._safe_goto(url)
         if not ok:
-            print("   ⚠️ Страница раздела не открылась, пробуем fallback...")
+            print("⚠️ Страница раздела не открылась, пробуем fallback...")
         else:
             await asyncio.sleep(2)
             try:
@@ -147,22 +211,22 @@ class NetologyScraper:
             await asyncio.sleep(1)
 
         items = await self.page.evaluate(f"""
-            (lessonId) => {{
-                const results = [];
-                const seen = new Set();
-                document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
-                    const href = a.getAttribute('href');
-                    if (!href || seen.has(href)) return;
-                    if (!href.includes('/lessons/' + lessonId + '/')) return;
-                    seen.add(href);
-                    const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
-                    const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
-                    const testid = a.getAttribute('data-testid') || '';
-                    const locked = testid.toLowerCase().includes('locked');
-                    results.push({{title, href, locked}});
-                }});
-                return results;
-            }}
+        (lessonId) => {{
+            const results = [];
+            const seen = new Set();
+            document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
+                const href = a.getAttribute('href');
+                if (!href || seen.has(href)) return;
+                if (!href.includes('/lessons/' + lessonId + '/')) return;
+                seen.add(href);
+                const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
+                const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
+                const testid = a.getAttribute('data-testid') || '';
+                const locked = testid.toLowerCase().includes('locked');
+                results.push({{title, href, locked}});
+            }});
+            return results;
+        }}
         """, lesson_id)
 
         if not items and fallback_links:
@@ -170,7 +234,7 @@ class NetologyScraper:
                 href = link.get("href", "")
                 if not href:
                     continue
-                print(f"   🔁 Fallback: {link.get('text', 'item')}")
+                print(f"🔁 Fallback: {link.get('text', 'item')}")
                 ok = await self._safe_goto(self._ensure_url(href))
                 if not ok:
                     continue
@@ -182,34 +246,34 @@ class NetologyScraper:
                 await asyncio.sleep(1)
 
                 items = await self.page.evaluate(f"""
-                    (lessonId) => {{
-                        const results = [];
-                        const seen = new Set();
-                        document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
-                            const href = a.getAttribute('href');
-                            if (!href || seen.has(href)) return;
-                            if (!href.includes('/lessons/' + lessonId + '/')) return;
-                            seen.add(href);
-                            const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
-                            const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
-                            const testid = a.getAttribute('data-testid') || '';
-                            const locked = testid.toLowerCase().includes('locked');
-                            results.push({{title, href, locked}});
-                        }});
-                        return results;
-                    }}
+                (lessonId) => {{
+                    const results = [];
+                    const seen = new Set();
+                    document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
+                        const href = a.getAttribute('href');
+                        if (!href || seen.has(href)) return;
+                        if (!href.includes('/lessons/' + lessonId + '/')) return;
+                        seen.add(href);
+                        const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
+                        const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
+                        const testid = a.getAttribute('data-testid') || '';
+                        const locked = testid.toLowerCase().includes('locked');
+                        results.push({{title, href, locked}});
+                    }});
+                    return results;
+                }}
                 """, lesson_id)
                 if items:
                     break
 
         if not items:
-            print("   ⚠️ Занятия не найдены")
+            print("⚠️ Занятия не найдены")
             return []
 
-        print(f"   📄 Найдено материалов: {len(items)}")
+        print(f"📄 Найдено материалов: {len(items)}")
         for item in items:
             status = "🔒" if item["locked"] else "✅"
-            print(f"      {status} {item['title']}")
+            print(f"  {status} {item['title']}")
         return items
 
     async def get_lesson_text_content(self, url):
@@ -217,17 +281,23 @@ class NetologyScraper:
         if not url:
             return ""
 
-        print(f"   🌐 {url}")
+        print(f"🌐 {url}")
+
+        # 0. Пробуем VTT (Kinescope субтитры) — приоритет для вебинаров
+        vtt_text = await self._extract_vtt_text(url)
+        if vtt_text and len(vtt_text) > 300:
+            return vtt_text
+
+        # 1. PDF-презентация
         ok = await self._safe_goto(url)
         if not ok:
-            print("   ⚠️ Страница не открылась")
+            print("⚠️ Страница не открылась")
             return ""
         await asyncio.sleep(2)
 
         html = await self.page.content()
         soup = BeautifulSoup(html, "lxml")
 
-        # 1. PDF-презентация
         pdf_viewer = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"})
         if pdf_viewer:
             text = pdf_viewer.get_text(separator="\n", strip=True)
@@ -277,51 +347,17 @@ class NetologyScraper:
         return result[:15000]
 
     async def debug_webinar(self, url, output_path="data/debug_webinar.html"):
-        """Открывает страницу вебинара, кликает 'Показать транскрипцию' если есть, сохраняет HTML."""
+        """DEPRECATED: используйте _extract_vtt_text() для получения транскрипций."""
         url = self._ensure_url(url)
-        print(f"   🔍 Диагностика вебинара: {url}")
+        print(f"🔍 Диагностика вебинара: {url}")
         ok = await self._safe_goto(url)
         if not ok:
-            print("   ❌ Не удалось открыть")
+            print("❌ Не удалось открыть")
             return
         await asyncio.sleep(3)
-
-        # Ищем кнопку транскрипции
-        transcript_btn = await self.page.query_selector('button:has-text("транскрипц"), button:has-text("Транскрипц"), [data-testid*="transcript"], [class*="transcript"]')
-        if transcript_btn:
-            print("   🖱️ Найдена кнопка транскрипции, кликаем...")
-            await transcript_btn.click()
-            await asyncio.sleep(3)
 
         html = await self.page.content()
         os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"   💾 HTML сохранён: {output_path}")
-
-        # Поиск текста транскрипции через JS
-        transcript_text = await self.page.evaluate("""
-            () => {
-                const selectors = [
-                    '[data-testid*="transcript"]',
-                    '[class*="transcript"]',
-                    '[class*="Transcript"]',
-                    '.transcript',
-                    '.webinar-transcript',
-                    '[data-testid*="webinar"] div[class*="text"]',
-                    'article[class*="transcript"]'
-                ];
-                for (const sel of selectors) {
-                    const el = document.querySelector(sel);
-                    if (el && el.textContent.length > 200) {
-                        return {selector: sel, text: el.textContent.trim().substring(0, 500)};
-                    }
-                }
-                return null;
-            }
-        """)
-        if transcript_text:
-            print(f"   ✅ Транскрипция найдена: {transcript_text['selector']}")
-            print(f"   📝 Первые 300 символов: {transcript_text['text'][:300]}")
-        else:
-            print("   ⚠️ Транскрипция не найдена по известным селекторам")
+        print(f"💾 HTML сохранён: {output_path}")

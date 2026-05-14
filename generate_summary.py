@@ -1,4 +1,6 @@
+# generate_summary.py — генерация с chunking
 import os
+import re
 import requests
 from dotenv import load_dotenv
 
@@ -7,14 +9,30 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 BASE_URL = "https://openrouter.ai/api/v1"
 
-def load_prompt(path: str) -> str:
-    with open(path, "r", encoding="utf-8") as f:
+def load_prompt():
+    with open("prompts/system.txt", "r", encoding="utf-8") as f:
         return f.read()
 
-def generate_summary(lecture_text: str, subject: str) -> str:
-    system_prompt = load_prompt("prompts/system.txt")
+def generate_chunk(text, subject, topic):
+    """Генерирует конспект для одного chunk. БЕЗ указания номера части."""
+    system = load_prompt()
     
-    response = requests.post(
+    instructions = f"""Сделай РАЗВЁРНУТЫЙ конспект по тексту вебинара. Требования:
+- Минимум 800 слов.
+- НЕ сокращай до тезисов — пиши полноценные абзацы.
+- НЕ цитируй дословно речь лектора, перерабатывай в свой текст.
+- Выделяй жирным ключевые термины.
+- Давай примеры и контекст.
+- Если упоминается исторический период — опиши его подробно.
+- В конце блок ---TERMS--- с терминами и определениями через |.
+- Каждый термин: Название | РАЗВЁРНУТОЕ определение (минимум 3 предложения, примеры, контекст использования). НЕ одна строка.
+- Если термин упоминается в тексте через [[...]] — он ОБЯЗАН быть в ---TERMS--- с полным определением.
+
+Предмет: {subject}
+Тема: {topic}
+"""
+
+    resp = requests.post(
         f"{BASE_URL}/chat/completions",
         headers={
             "Authorization": f"Bearer {API_KEY}",
@@ -25,42 +43,63 @@ def generate_summary(lecture_text: str, subject: str) -> str:
         json={
             "model": "poolside/laguna-m.1:free",
             "messages": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Предмет: {subject}\n\nТекст лекции:\n{lecture_text}"}
+                {"role": "system", "content": system},
+                {"role": "user", "content": instructions + "\n\nТекст вебинара:\n" + text[:8000]}
             ],
-            "max_tokens": 2000,
-            "temperature": 0.4
+            "max_tokens": 4000,
+            "temperature": 0.3
         }
     )
+    if resp.status_code == 200:
+        return resp.json()["choices"][0]["message"].get("content", "")
+    return f"Ошибка {resp.status_code}"
+
+def generate_summary(text, subject, topic):
+    """Разбивает текст на части, генерирует конспект, склеивает."""
     
-    if response.status_code == 200:
-        data = response.json()
-        content = data["choices"][0]["message"].get("content")
-        if content:
-            return content
+    if len(text) <= 8000:
+        return generate_chunk(text, subject, topic)
+    
+    chunks = []
+    current = ""
+    for sentence in re.split(r'(?<=[.!?])\s+', text):
+        if len(current) + len(sentence) > 7500:
+            chunks.append(current.strip())
+            current = sentence
         else:
-            return "⚠️ Модель вернула пустой ответ (перегружена)"
-    else:
-        return f"❌ Ошибка {response.status_code}: {response.text[:300]}"
+            current += " " + sentence
+    if current:
+        chunks.append(current.strip())
+    
+    print(f"   📦 Текст разбит на {len(chunks)} частей")
+    
+    partial_summaries = []
+    for i, chunk in enumerate(chunks, 1):
+        print(f"   ⏳ Часть {i}/{len(chunks)}...")
+        summary = generate_chunk(chunk, subject, topic)  # <-- тут убраны i и len(chunks)
+        if not summary.startswith("Ошибка"):
+            # Удаляем заголовки вида "# ..." из частей
+            summary = re.sub(r'^# .+?\n+', '', summary, flags=re.MULTILINE)
+            partial_summaries.append(summary.strip())
+    
+    if not partial_summaries:
+        return "Ошибка генерации"
+    
+    # Склеиваем без маркеров "Часть X"
+    header = f"# {topic}\n\n**Предмет:** {subject}\n\n"
+    combined = header + "\n\n".join(partial_summaries)
+    
+    return combined
 
 if __name__ == "__main__":
-    # Тестовый текст — замени на реальный текст лекции или субтитры
-    test_lecture = """
-    Введение в корпоративные финансы. Корпоративные финансы — это область финансов, которая занимается решениями о том, как компании привлекают капитал, инвестируют его и распределяют прибыль. Основная цель — максимизация стоимости фирмы для акционеров. Ключевые понятия: временная стоимость денег (time value of money), дисконтирование, NPV (чистая приведённая стоимость), IRR (внутренняя норма доходности). NPV рассчитывается как сумма дисконтированных денежных потоков минус первоначальные инвестиции. Формула: NPV = Σ(CF_t / (1+r)^t) - I_0. Если NPV > 0 — проект принимаем. IRR — это ставка дисконтирования, при которой NPV = 0. Пример: компания рассматривает покупку оборудования за 1 млн рублей. Ожидаемые денежные потоки: год 1 — 400 тыс, год 2 — 500 тыс, год 3 — 300 тыс. Ставка дисконтирования 10%. NPV = 400/1.1 + 500/1.1^2 + 300/1.1^3 - 1000 = ... 
-    """
+    import sys
+    sys.path.insert(0, 'src')
+    from parsers.netology_scraper import NetologyScraper
     
-    print("=" * 60)
-    print("Генерация конспекта...")
-    print("=" * 60)
+    with open("data/test_subtitles.vtt", "r", encoding="utf-8") as f:
+        text = NetologyScraper._parse_vtt(f.read())
     
-    result = generate_summary(test_lecture, "Корпоративные финансы")
-    
-    print("\nРЕЗУЛЬТАТ:\n")
-    print(result)
-    
-    # Сохраняем в файл
-    os.makedirs("output", exist_ok=True)
-    with open("output/test_summary.md", "w", encoding="utf-8") as f:
-        f.write(result)
-    
-    print(f"\n💾 Сохранено в output/test_summary.md")
+    result = generate_summary(text, "История экономических учений", "Вебинар 14.02")
+    print(f"\n{'='*60}")
+    print(f"Результат: {len(result)} символов, {len(result.split())} слов")
+    print(result[:1000])

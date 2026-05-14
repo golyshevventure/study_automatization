@@ -44,7 +44,7 @@ def generate_chunk(text, subject, topic):
             "model": "deepseek/deepseek-v4-flash:free",
             "messages": [
                 {"role": "system", "content": system},
-                {"role": "user", "content": instructions + "\n\nТекст вебинара:\n" + text[:8000]}
+                {"role": "user", "content": instructions + "\n\nТекст вебинара:\n" + text[:15000]}
             ],
             "max_tokens": 4000,
             "temperature": 0.3
@@ -57,13 +57,13 @@ def generate_chunk(text, subject, topic):
 def generate_summary(text, subject, topic):
     """Разбивает текст на части, генерирует конспект, склеивает."""
     
-    if len(text) <= 8000:
+    if len(text) <= 15000:
         return generate_chunk(text, subject, topic)
     
     chunks = []
     current = ""
     for sentence in re.split(r'(?<=[.!?])\s+', text):
-        if len(current) + len(sentence) > 7500:
+        if len(current) + len(sentence) > 14000:
             chunks.append(current.strip())
             current = sentence
         else:

@@ -24,8 +24,11 @@ def ensure_dirs():
     os.makedirs(KONSPECTY, exist_ok=True)
     os.makedirs(TERMINY, exist_ok=True)
 
-def safe_filename(name):
-    return re.sub(r'[\\/:"*?<>|]', '', name).strip()
+def safe_filename(name, max_len=80):
+    name = re.sub(r'[\\/:"*?<>|]', '', name).strip()
+    if len(name) > max_len:
+        name = name[:max_len].rsplit(' ', 1)[0]
+    return name
 
 def parse_terms(full_text):
     pattern = re.compile(r'---TERMS---\n(.*?)\n---END_TERMS---', re.DOTALL)
@@ -277,7 +280,12 @@ async def main():
                     continue
 
                 text = await scraper.get_lesson_text_content(lesson["href"])
-                process_lesson(subject_name, f"{section_name} — {lesson['title']}", text)
+                lesson_title = lesson['title']
+                if lesson_title.lower() not in section_name.lower():
+                    display_title = f"{section_name} — {lesson_title}"
+                else:
+                    display_title = section_name
+                process_lesson(subject_name, display_title, text)
                 await asyncio.sleep(2)
 
             print(f"   ✅ Раздел завершён")

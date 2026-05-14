@@ -41,7 +41,7 @@ def generate_chunk(text, subject, topic):
             "X-Title": "Study Automation Agent"
         },
         json={
-            "model": "poolside/laguna-m.1:free",
+            "model": "deepseek/deepseek-v4-flash:free",
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": instructions + "\n\nТекст вебинара:\n" + text[:8000]}

@@ -1,23 +1,5 @@
-# Секреты
 .env
-*.env
-
-# Cookies и сессии
 data/netology_cookies.json
-data/agent.db
-*.db
-
-# Дампы и временные файлы
-data/html_debug/
-*.html
-debug_*.txt
-
-# Python
 __pycache__/
 *.pyc
 .venv/
-venv/
-
-# Obsidian / локальные артефакты
-Second brain/
-*.canvas

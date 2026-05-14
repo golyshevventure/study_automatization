@@ -1,0 +1,1742 @@
+[
+  {
+    "url": "https://netology.ru/profile/program/bhebfad-25-ieu-2/lessons/595671/lesson_items/3209201",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-PWG78J",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/app.cd4c02b5.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/manifest.909f60de.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/vendor.a17dddd5.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/app.cd4c02b5.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.mindbox.ru/scripts/v1/tracker.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/traqtor",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://vk.com/rtrg?r=i1B88t1y*9Bkg/Hoz9LhtRb43KloSwRg/HlU4XqGQr91l/3AcOYLls3B7mGRcEhcyinkev7ObJk4psfZjpvGEnrW/MDvEKgLFjtBROZBV/3Rw/kw7l*7MmBh0RUOylawvgO2bO*PkvAorIWcxifRe7XpG0sVybPIyXc6dpn1k5M-",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/code.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://config1.veinteractive.com/tags/CD21100E/AAC3/40FE/B9D5/10C310A6BD5A/tag.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://web-static.mindbox.ru/js/byendpoint/netology.ru.js?_=5928315",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.mindbox.ru/v1.1/customer/track-visit?version=1.0.791&transport=XmlHttpRequest",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/fonts/sans_display_regular.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://privacy-cs.mail.ru/static/sync-loader.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=2716982",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.6340998870921234;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647//2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=10//4g/150/0/;lvid=1778149060523%3A1778494512586%3A1%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://abtest-api.ntlg.tech/api/features/sdk-DN96HqzsMHhOuwQ",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://netology.ru/baikal/data?cid=5&orig=https://netology.ru&sidl=1778149059742.275171&sidu=1778494513225.697102&guid=1778494513225.517118&ns=257436215&tid=af126511",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/baikal/evn",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://netology.ru/baikal/data?cid=5&orig=https://netology.ru&sidl=1778149059742.275171&sidu=1778494513225.697102&guid=1778494513225.517118&ns=607899545&tid=af126511",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7728.34467e47.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7477.5bc7d2a2.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6750.9f2243f3.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6750.9f2243f3.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/1210.39b5e536.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/9778.8ea7bcbf.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/9778.8ea7bcbf.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6612.71d47b3a.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6612.71d47b3a.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7115.1764ddac.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7778.8f00ef8e.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7778.8f00ef8e.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/3261.75487ca7.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/8026.e9051f06.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/8026.e9051f06.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/api/maintenance_info",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/ai_assistant/availability",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/help_desk/check_unread_tickets",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/neto-companion/api/v1/init",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?168",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=3178577",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://mc.webvisor.org/metrika/tag_ww.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://static.popmechanic.ru/service/loader.js?c=3105",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://tags.soloway.ru/DSPCounter.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.flocktory.com/v2/loader.js?site_id=2593",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://abt.s3.yandex.net/expjs/latest/exp.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=3352219",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?169",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?173",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=3746422",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://www.google.com/ccm/collect?rcb=14&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&scrsrc=www.googletagmanager.com&rnd=60912377.1778494513&dt=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&auid=71966143.1778149061&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He6562h1v6924082za200zd6924082xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~118463261&apve=1&apvf=f&apvc=1&tft=1778494513392&tfd=3455",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.6601964645737572;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=10//4g/150/0/;lvid=1778149060523%3A1778494513371%3A2%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.8360903466712485;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=10//4g/150/0/;lvid=1778149060523%3A1778494513390%3A3%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.35425426731476006;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=10//4g/150/0/;lvid=1778149060523%3A1778494513391%3A4%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://api.mindbox.ru/v3/js/operations/async?version=1.0.791&transport=beacon&operation=GtmCustomEventCourseWatchLesson&endpointId=netology.ru&originDomain=netology.ru&trackerName=mindbox",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/4604cc00fe725e5ca11e.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/694979d369e3edf0a16b.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/b15f6b12973f6bf2c399.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/favorite_programs",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/profile",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/bhebfad-25-ieu-2",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-589288-1uMR4&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-490442-heJXs&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://uaas.yandex.ru/v1/exps/?client_id=metrika.5240992&url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&i=Z_np9UtXxQk8nP4UAZBzUuhECrXcSPv5Piw7_RyTQ-UNJ5FiX3Wyf7TLEDI9_so6hmRDDPzcptm8xja_g9eqIXHfj50&duid=1778149062788335897&client_features=%7B%7D",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-1768680-6P1kO&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ad.adriver.ru/cgi-bin/erle.cgi?sid=223458&bt=62&custom=128%3D4064.5999999996275%3B129%3D1.11.1%3B206%3DDSPCounter&ph=0&rnd=216049&tail256=unknown&loc=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&cid=A0WMI2XASsXBfUQZCLyYFfA&yid1=1778149062788335897",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=780801&bt=21&pid=3915086&bid=10043329&bn=10043329&rnd=527366301&tuid=1&cfa=1",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://ad.adriver.ru/cgi-bin/json.cgi?sid=1&ad=719473&bt=55&pid=4425169&bid=12604289&bn=12604289&tuid=1&cfa=1&rnd=736488&loc=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&custom=127%3D1%3B129%3D2.11.5%3B308%3D1778149062788335897%3B309%3D0%3B310%3DWECoFIPgt_eVu2zp58_1V%3A1778149062162&cid=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=774375&bt=21&cid=A0WMI2XASsXBfUQZCLyYFfA&custom=180=1&pass=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=790715&bt=21&cid=A0WMI2XASsXBfUQZCLyYFfA&custom=180=1&pass=ieyfotkjgjmecu3tlbbgmvkrljbuy6kziztec---",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-1846005-h2XLz&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://api.flocktory.com/v2/provider/provider.html",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://api.flocktory.com/u_shaman/setup-api?body=%7B%22siteId%22%3A%222593%22%2C%22utm%22%3A%7B%22source%22%3A%22%22%2C%22medium%22%3A%22%22%2C%22campaign%22%3A%22%22%2C%22term%22%3A%22%22%2C%22content%22%3A%22%22%7D%2C%22profile%22%3A%7B%22email%22%3A%22golyshevventure%40gmail.com%22%2C%22name%22%3A%22%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0%20%D0%93%D0%BE%D0%BB%D1%8B%D1%88%D0%B5%D0%B2%22%7D%2C%22site-session-id%22%3A%22d9ccdee6-d449-4f75-9627-5414686315e5-0%22%7D",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://privacy-cs.mail.ru/fp/?id=WECoFIPgt_eVu2zp58_1V",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8942506/thumb_437cc7111b7e17b2.jpg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/notifications/unread_messages",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/3?wmode=7&page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&page-ref=&charset=utf-8&browser-info=pv%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A2%3Adp%3A0%3Als%3A1200065606866%3Ahid%3A897564248%3Az%3A720%3Ai%3A20260511221514%3Aet%3A1778494514%3Ac%3A1%3Arn%3A1067856902%3Arqn%3A1%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Afp%3A3364%3Awv%3A2%3Ads%3A41%2C269%2C359%2C133%2C2%2C0%2C%2C1272%2C0%2C%2C%2C%2C3351%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494509937%3Ast%3A1778494514&t=clc(0-0-0)rqnt(1)aw(1)cdl(na)eco(65536)ti(1)",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://mc.yandex.ru/metrika/advert.gif?t=gdpr(14)ti(4)",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?wmode=7&page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&browser-info=pv%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A0%3Als%3A1742579227028%3Ahid%3A897564248%3Az%3A720%3Ai%3A20260511221514%3Aet%3A1778494514%3Ac%3A1%3Arn%3A110094239%3Arqn%3A1%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Afp%3A3364%3Awv%3A2%3Ads%3A41%2C269%2C359%2C133%2C2%2C0%2C%2C1272%2C0%2C%2C%2C%2C3351%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494509937%3Arqnl%3A1%3Ast%3A1778494514%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=clt(888)gdpr(14)clc(0-0-0)rqnt(1)aw(1)cdl(na)eco(42271236)ti(1)",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://api.flocktory.com/underworld/tracks/ultimate.js?body=%7B%22data%22%3A%7B%22action%22%3A%22session.page_visit%22%2C%22payload%22%3A%7B%22resolution%22%3A%221280x720%22%2C%22ga%22%3A%7B%22utmcsr%22%3A%22%22%2C%22utmccn%22%3A%22%22%2C%22utmcmd%22%3A%22%22%2C%22h_utmcsr%22%3A%22%22%2C%22h_utmccn%22%3A%22%22%2C%22h_utmcmd%22%3A%22%22%7D%2C%22url%22%3A%22https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201%22%7D%2C%22links%22%3A%7B%22site%22%3A2593%7D%7D%2C%22site-session-id%22%3A%22d9ccdee6-d449-4f75-9627-5414686315e5-0%22%7D&callback=flock_jsonp_9999",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://content.adriver.ru/banners/0002186/0002186173/0/s.html?0&0&0&0&216049&0&2487848694675&24&77.82.211.131&javascript&0",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/glossary_onboarding",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/onboarding-glossary-bottom_85942f.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/fonts/sans_display_semibold.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/77227/menu",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lessons/595671/lesson_items?timestamp=1778494514638",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/77227/schedule",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/glossary_onboarding",
+    "method": "PATCH",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://mc.webvisor.org/sync_cookie_image_check?scid=527fb478-a4c4-bdf4-6cb1-906d34e2958a&cid=5240992",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://mc.yandex.ru/metrika/match.html",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://mc.yandex.ru/metrika/tag_phono.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&exp=P54lnS9LcLo%2C&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&hidv2=2523742956705546469&hittoken=1778494515_801d469032545248898432e49e452135c15a63390e42b18f1853af3fe836e0b3&browser-info=ex%3A1%3Aar%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A1%3Als%3A1742579227028%3Ahid%3A897564248%3Az%3A720%3Ai%3A20260511221514%3Aet%3A1778494515%3Ac%3A1%3Arn%3A66594984%3Arqn%3A2%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494509937%3Arqnl%3A1%3Ast%3A1778494515%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=gdpr(14)mc(ex-2)clc(0-0-0)rqnt(2)aw(1)ecs(0)cdl(na)eco(42271236)ti(0)&force-urlencoded=1",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&exp=P54lnS9LcLo%2C&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&hidv2=2523742956705546469&hittoken=1778494515_801d469032545248898432e49e452135c15a63390e42b18f1853af3fe836e0b3&browser-info=ex%3A1%3Aar%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A1%3Als%3A1742579227028%3Ahid%3A897564248%3Az%3A720%3Ai%3A20260511221514%3Aet%3A1778494515%3Ac%3A1%3Arn%3A594994910%3Arqn%3A3%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494509937%3Arqnl%3A1%3Ast%3A1778494515%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=gdpr(14)mc(ex-2)clc(0-0-0)rqnt(3)aw(1)ecs(0)cdl(na)eco(42271236)ti(0)&force-urlencoded=1",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://content.adriver.ru/banners/0002186/0002186173/0/s.js?rnd=783692",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://adriver-sync.rutarget.ru/sync",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=608223&bt=21&pid=3136519&bid=7007242&bn=7007242&rnd=216049",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://yandex.ru/an/mapuid/adriveris/A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ads.betweendigital.com/match?bidder_id=3&external_user_id=A0WMI2XASsXBfUQZCLyYFfA&callback_url=%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fssp_id%3D3%26external_id%3D%24%7BUSER_ID%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://dm.hybrid.ai/match?id=20",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://x01.aidata.io/0.gif?pid=ADRIVER&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://dmg.digitaltarget.ru/1/123/i/i?a=123&e=A0WMI2XASsXBfUQZCLyYFfA&i=216049",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://cr-frontend.weborama-tech.ru/cr?key=soloway&url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fssp_id%3D20323%26external_id%3D{WEBO_CID}",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.rambler.ru/set?partner_id=63c0a15b-0348-466e-88ac-df354aa4226b&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://px.adhigh.net/p/cm/adriver?u=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=608223&bt=21&pid=2527627&bid=4950956&bn=4950956&rnd=216049",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://redirect.frontend.weborama.fr/rd?url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fssp_id%3D20323%26external_id%3D%7BWEBO_CID%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://redirect-frontend.weborama-tech.ru/rd?url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fssp_id%3D20323%26external_id%3D{WEBO_CID}",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://exchange.buzzoola.com/cookiesync/dsp/soloway-video?uid=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sm.rtb.mts.ru/p?ssp=adriver&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ads.betweendigital.com/match?bidder_id=43205&callback_url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D148%26external_id%3D${USER_ID}",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://match.new-programmatic.com/userbind?src=adr&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://www.acint.net/rmatch?dp=85&euid=A0WMI2XASsXBfUQZCLyYFfA&r=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D153%26external_id%3D%24%7BUSER_ID%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://a0wmi2xassxbfuqzclyyffa-adr.ops.beeline.ru/p?ssp=adr&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.dmp.otm-r.com/match/adriver?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.bumlam.com/?src=adr2&uid=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.bumlam.com/?src=adr3",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://exchange.buzzoola.com/cookiesync/redirect/adriver?redirect_url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D157%26external_id%3D%24%7BUUID%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ad.mail.ru/cm.gif?p=186&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.upravel.com/adriver/sync",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.dsp.solta.io/match/adriver_direct_banner?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://1cd5c3c7d5a445d59c7f73b38cf6da12.ops.beeline.ru/?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.rambler.ru/set?partner_id=3a96b9eb-643c-48a3-84bf-3d04b9401d4b&id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ssp.afp.ai/api/sync/adriver",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.adspend.space/adriver?uid=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://a.lotus-dsp.ru/sync?id=A0WMI2XASsXBfUQZCLyYFfA&ssp=AdRiver",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.opendsp.ru/match/adriver?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://bls-report.getshop.tv/api/cookie-sync/rc?adriver_cookie=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://kimberlite.io/rtb/sync/adriver?u=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.dmp.melvad.com/match/1?ssp_id=6&user_id=A0WMI2XASsXBfUQZCLyYFfA&rt=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D161%26external_id%3D%7B%7Boui%7D%7D&gdpr=0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://a.adspector.io/sync?ssp=37",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://a.utraff.com/sync?ssp=3562",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://rtb.dynotech.io/arv/sync/",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ssp.bidvol.com/usersync?pubid=1644",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.programmatica.com/match/adriver?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://m.kombinat.digital/cm?ssp=adriver&redirect_url=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D180%26external_id%3D%7Buid%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://bid.sspnet.tech/sync/adriver?redirect=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D181%26external_id%3D%7BUID%7D&user_id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ssp.bidster.net/sync/2c82430f-bc74-4a58-a50d-d8b333e3fb71?id=A0WMI2XASsXBfUQZCLyYFfA&redirect=https%3A%2F%2Fssp.adriver.ru%2Fcgi-bin%2Fsync.cgi%3Fdsp_id%3D182%26external_id%3D%7Bid%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://ads.giftclick.ru/sync/1?uid=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/2d7c2285d96c25231f7c.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/977cae5b1829fada38f3.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lessons/595671/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://video-progress.netology.ru/video_viewing_histories/8942506?link=https%3A%2F%2Fkinescope.io%2Fdyr5LLMquSzqHY4L34hcGd",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/iframe.player.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/simulator_onboarding",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/timecodes",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/transcriptions",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/angryFace_404e35.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/frownFace_861ee9.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/neutralFace_6d273d.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/smileFace_783448.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/happyFace_8cdc95.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/notes",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/feedback_criteria_tags",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://privacy-cs.mail.ru/fp/?id=WECoFIPgt_eVu2zp58_1V",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://3538187324.mc.yandex.ru/watch/99742118/1?browser-info=rt%3A1%3Au%3A1778149062788335897&page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&page-ref=&site-info=%7B%22counterId%22%3A5240992%2C%22cnt-class%22%3A%220%22%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://kinescope.io/dyr5LLMquSzqHY4L34hcGd?v=2.158.2&_=cGxheWVySWQ9a2luZXNjb3BlX3ZpZGVvX3BsYXllcl9keXI1TExNcXVTenFIWTRMMzRoY0dkJnNpemUlNUJ3aWR0aCU1RD0xMDAlMjUmc2l6ZSU1QmhlaWdodCU1RD0xMDAlMjUmYmVoYXZpb3VyJTVCYXV0b1BsYXklNUQ9ZmFsc2UmYmVoYXZpb3VyJTVCcHJlbG9hZCU1RD10cnVl",
+    "method": "HEAD",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.09020725616553793;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=5.5//4g/150/0/;detect=0;lvid=1778149060523%3A1778494516046%3A5%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494516045",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.4621685913171124;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=5.5//4g/150/0/;detect=0;lvid=1778149060523%3A1778494516047%3A6%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494516045",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.3264913592787636;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=5.5//4g/150/0/;detect=0;lvid=1778149060523%3A1778494516047%3A7%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494516045",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.04886101965173317;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=5.5//4g/150/0/;detect=0;lvid=1778149060523%3A1778494516047%3A8%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494516045",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/favicon-32x32.png",
+    "method": "GET",
+    "resource_type": "other"
+  },
+  {
+    "url": "https://kinescope.io/dyr5LLMquSzqHY4L34hcGd?v=2.158.2&_=cGxheWVySWQ9a2luZXNjb3BlX3ZpZGVvX3BsYXllcl9keXI1TExNcXVTenFIWTRMMzRoY0dkJnNpemUlNUJ3aWR0aCU1RD0xMDAlMjUmc2l6ZSU1QmhlaWdodCU1RD0xMDAlMjUmYmVoYXZpb3VyJTVCYXV0b1BsYXklNUQ9ZmFsc2UmYmVoYXZpb3VyJTVCcHJlbG9hZCU1RD10cnVl",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-regular.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-medium.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-bold.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/kinescope-page-play.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/kinescope-page-play.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/auth-CFgsnIrv.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/vendor-BqyLvH6B.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/play-page-DyA7Tbqq.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/chapters-BcZ4gIhJ.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/chat-BkNmKAFv.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/description-C0nb_svT.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/player-DGCNIzWR.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/playlist-6CyHl3IS.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.iframe.qmerger.b846e7e6.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.6107ac1a.14618fdb.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.bb3d84b5.b2fc3e39.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.27545368.b4c1d0f7.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.core.255799c2.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/driver_dashls.85894c86.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/posters/05f3bc5a-ec59-468f-9b62-453f0761d384/poster_md/e0114575-553b-4f1d-82de-413e8c56c606.webp",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://kinescope.io/65b4ec0c-2e60-4a0a-b374-a68530a8ab18/master.m3u8?expires=1778580918&sign=ee096aaf76011609",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://kinescope.io/65b4ec0c-2e60-4a0a-b374-a68530a8ab18/media.m3u8?quality=720&type=video&sign=ee096aaf76011609&expires=1778580918",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://kinescope.io/65b4ec0c-2e60-4a0a-b374-a68530a8ab18/media.m3u8?quality=360&type=audio&lang=en&sign=ee096aaf76011609&expires=1778580918",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/88bfc667-6648-4126-b041-e8784ba2d553/0/79271279/720p.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/88bfc667-6648-4126-b041-e8784ba2d553/0/79271279/720p.mp4?kcd=AAAAAABAr0A",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://www.gstatic.com/cast/sdk/libs/sender/1.0/cast_framework.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://www.gstatic.com/eureka/clank/147/cast_sender.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6ff828bb509af3c22de2.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/620a9bfd-12f7-4a97-bbcb-814da50ab8f8/audio_0.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/88bfc667-6648-4126-b041-e8784ba2d553/0/79271279/720p.mp4?kcd=AAAAAABAr0A",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/620a9bfd-12f7-4a97-bbcb-814da50ab8f8/audio_0.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://kinescope.io/65b4ec0c-2e60-4a0a-b374-a68530a8ab18/media.m3u8?quality=360&type=video&sign=ee096aaf76011609&expires=1778580918",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/27048be6-67d4-4c51-a1a1-18b40db28cfa/0/78948690/360p.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/620a9bfd-12f7-4a97-bbcb-814da50ab8f8/audio_0.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/620a9bfd-12f7-4a97-bbcb-814da50ab8f8/audio_0.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/27048be6-67d4-4c51-a1a1-18b40db28cfa/0/78948690/360p.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/620a9bfd-12f7-4a97-bbcb-814da50ab8f8/audio_0.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&charset=utf-8&hidv2=2523742956705546469&hittoken=1778494515_801d469032545248898432e49e452135c15a63390e42b18f1853af3fe836e0b3&browser-info=nb%3A1%3Acl%3A467%3Aar%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A1%3Als%3A1742579227028%3Ahid%3A897564248%3Az%3A720%3Ai%3A20260511221530%3Aet%3A1778494529%3Ac%3A1%3Arn%3A108800717%3Arqn%3A4%3Au%3A1778149062788335897%3Aw%3A1265x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Ads%3A%2C%2C%2C%2C%2C%2C%2C%2C%2C6107%2C6107%2C2%2C%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Aeu%3A0%3Ans%3A1778494509937%3Aadb%3A2%3App%3A3629563401%3Arqnl%3A1%3Ast%3A1778494529&t=gdpr(14)mc(ex-2)clc(0-0-0)rqnt(4)aw(1)ecs(0)cdl(na)eco(42271236)oms(7)prs(2)wss(2)w2s(6)evt(467)ti(0)&force-urlencoded=1",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.8430833956702372;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494532134%3A9%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=PVT%2F15",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.19006241550319214;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494532135%3A10%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=PVT%2F15",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.20151882094255535;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494532136%3A11%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=PVT%2F15",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.9252828853505529;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494532137%3A12%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=PVT%2F15",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/27048be6-67d4-4c51-a1a1-18b40db28cfa/0/78948690/360p.mp4",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/videos/05f3bc5a-ec59-468f-9b62-453f0761d384/assets/27048be6-67d4-4c51-a1a1-18b40db28cfa/0/78948690/360p.mp4?kcd=AAAAAABAr0A",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://kinescope.io/65b4ec0c-2e60-4a0a-b374-a68530a8ab18/media.m3u8?quality=480&type=video&sign=ee096aaf76011609&expires=1778580918",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://video-progress.netology.ru/video_viewing_histories/8942506?link=https%3A%2F%2Fkinescope.io%2Fdyr5LLMquSzqHY4L34hcGd",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://video-progress.netology.ru/video_viewing_histories/8942506",
+    "method": "PUT",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/profile/program/bhebfad-25-ieu-2/lessons/595671/lesson_items/3209201",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.5877935518011596;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494572395%3A13%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Funload;et=1778494572395;pvt=60373;vtauto=59815",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.4359827862997214;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494572396%3A14%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Funload;et=1778494572395;pvt=60373;vtauto=59815",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.6909695003407275;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494572396%3A15%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Funload;et=1778494572395;pvt=60373;vtauto=59815",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.6847155624907866;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1265*720;touch=0;hds=1;sid=eaea246f3ddfef7d;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494512022;nt=0/0/1778494509937/////1/11/52/52/321/186/321/680/813/691/2085/3351/3351/6106/6106/6108;ct=2634/2647/2647/2650/2084;rt=2085/547/0/0/0/2085/2097/2111/2111/2372/2241/2372/2632/2632;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494572396%3A16%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Funload;et=1778494572395;pvt=60373;vtauto=59815",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-PWG78J",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/app.cd4c02b5.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/manifest.909f60de.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/vendor.a17dddd5.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/app.cd4c02b5.min.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.mindbox.ru/scripts/v1/tracker.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/traqtor",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://vk.com/rtrg?r=i1B88t1y*9Bkg/Hoz9LhtRb43KloSwRg/HlU4XqGQr91l/3AcOYLls3B7mGRcEhcyinkev7ObJk4psfZjpvGEnrW/MDvEKgLFjtBROZBV/3Rw/kw7l*7MmBh0RUOylawvgO2bO*PkvAorIWcxifRe7XpG0sVybPIyXc6dpn1k5M-",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/code.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://config1.veinteractive.com/tags/CD21100E/AAC3/40FE/B9D5/10C310A6BD5A/tag.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://web-static.mindbox.ru/js/byendpoint/netology.ru.js?_=5928315",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.mindbox.ru/v1.1/customer/track-visit?version=1.0.791&transport=beacon",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/fonts/sans_display_regular.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?168",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://mc.webvisor.org/metrika/tag_ww.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://static.popmechanic.ru/service/loader.js?c=3105",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://tags.soloway.ru/DSPCounter.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://api.flocktory.com/v2/loader.js?site_id=2593",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://abt.s3.yandex.net/expjs/latest/exp.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?169",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://vk.com/js/api/openapi.js?173",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://www.google.com/ccm/collect?rcb=14&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&scrsrc=www.googletagmanager.com&rnd=2053393303.1778494573&dt=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&auid=71966143.1778149061&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He6562v6924082za200zd6924082xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938469~118463261&apve=1&apvf=f&apvc=1&tft=1778494573317&tfd=1210",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://api.mindbox.ru/v3/js/operations/async?version=1.0.791&transport=beacon&operation=GtmCustomEventCourseWatchLesson&endpointId=netology.ru&originDomain=netology.ru&trackerName=mindbox",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=2716982,3178577,3352219,3746422",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.8873480036727345;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;ct=1292/1294/1294//1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494573401%3A17%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.4360172764549355;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;ct=1292/1294/1294//1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494573401%3A18%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.458967339692429;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;ct=1292/1294/1294//1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494573402%3A19%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/counter?_=0.791138561602538;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;ct=1292/1294/1294//1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=4.25//4g/150/0/;detect=0;lvid=1778149060523%3A1778494573402%3A20%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://uaas.yandex.ru/v1/exps/?client_id=metrika.5240992&url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&i=Z_np9UtXxQk8nP4UAZBzUuhECrXcSPv5Piw7_RyTQ-UNJ5FiX3Wyf7TLEDI9_so6hmRDDPzcptm8xja_g9eqIXHfj50&duid=1778149062788335897&client_features=%7B%7D",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?wmode=7&page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&browser-info=pv%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A0%3Als%3A1742579227028%3Ahid%3A18506480%3Az%3A720%3Ai%3A20260511221613%3Aet%3A1778494574%3Ac%3A1%3Arn%3A745166341%3Arqn%3A5%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Ads%3A0%2C0%2C275%2C136%2C2%2C0%2C%2C584%2C%2C%2C%2C%2C%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494572107%3Aadb%3A2%3Arqnl%3A1%3Ast%3A1778494574%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=clt(261)gdpr(14)clc(0-0-0)rqnt(1)aw(1)cdl(na)eco(42271236)ti(1)",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://ad.adriver.ru/cgi-bin/erle.cgi?sid=223458&bt=62&custom=128%3D1490.8000000002794%3B129%3D1.11.1%3B206%3DDSPCounter&ph=0&rnd=996296&tail256=unknown&loc=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&cid=A0WMI2XASsXBfUQZCLyYFfA&yid1=1778149062788335897",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=780801&bt=21&pid=3915086&bid=10043329&bn=10043329&rnd=527366301&tuid=1&cfa=1",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://mc.yandex.ru/metrika/match.html",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&exp=P54lnS9LcLo%2C&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&hidv2=2523758361269764418&hittoken=1778494574_8d7513a1e54ae129c0a8e3f69dbb067e467345f359424b436381cfbbb230fae9&browser-info=ex%3A1%3Aar%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A1%3Als%3A1742579227028%3Ahid%3A18506480%3Az%3A720%3Ai%3A20260511221613%3Aet%3A1778494574%3Ac%3A1%3Arn%3A277510748%3Arqn%3A6%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494572107%3Aadb%3A2%3Arqnl%3A1%3Ast%3A1778494574%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=gdpr(14)mc(ex-2)clc(0-0-0)rqnt(2)aw(1)ecs(0)cdl(na)eco(42271236)ti(0)&force-urlencoded=1",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://mc.yandex.ru/watch/5240992?page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&exp=P54lnS9LcLo%2C&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22147%22%2C%22Not.A%2FBrand%22%3Bv%3D%228%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A147.0.7727.15%0Achl%0A%22Chromium%22%3Bv%3D%22147.0.7727.15%22%2C%22Not.A%2FBrand%22%3Bv%3D%228.0.0.0%22%0Achm%0A%3F0%0Achp%0ALinux&hidv2=2523758361269764418&hittoken=1778494574_8d7513a1e54ae129c0a8e3f69dbb067e467345f359424b436381cfbbb230fae9&browser-info=ex%3A1%3Aar%3A1%3Avf%3Apudvqnsfv6ib5kxc1pnb69wofe8db%3Afu%3A0%3Aen%3Autf-8%3Ala%3Aen-US%3Av%3A2500%3Acn%3A1%3Adp%3A1%3Als%3A1742579227028%3Ahid%3A18506480%3Az%3A720%3Ai%3A20260511221613%3Aet%3A1778494574%3Ac%3A1%3Arn%3A893821772%3Arqn%3A7%3Au%3A1778149062788335897%3Aw%3A1280x720%3As%3A1280x720x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Ahdl%3A1%3Acpf%3A1%3Ans%3A1778494572107%3Aadb%3A2%3Arqnl%3A1%3Ast%3A1778494574%3At%3A%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0&t=gdpr(14)mc(ex-2)clc(0-0-0)rqnt(3)aw(1)ecs(0)cdl(na)eco(42271236)ti(0)&force-urlencoded=1",
+    "method": "POST",
+    "resource_type": "ping"
+  },
+  {
+    "url": "https://api.flocktory.com/u_shaman/setup-api?body=%7B%22siteId%22%3A%222593%22%2C%22utm%22%3A%7B%22source%22%3A%22%22%2C%22medium%22%3A%22%22%2C%22campaign%22%3A%22%22%2C%22term%22%3A%22%22%2C%22content%22%3A%22%22%7D%2C%22profile%22%3A%7B%22email%22%3A%22golyshevventure%40gmail.com%22%2C%22name%22%3A%22%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0%20%D0%93%D0%BE%D0%BB%D1%8B%D1%88%D0%B5%D0%B2%22%7D%2C%22site-session-id%22%3A%22d9ccdee6-d449-4f75-9627-5414686315e5-0%22%7D",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://api.flocktory.com/v2/provider/provider.html",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://mc.yandex.ru/metrika/tag_phono.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-490442-heJXs&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-589288-1uMR4&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-1768680-6P1kO&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://3538187324.mc.yandex.ru/watch/99742118/1?browser-info=rt%3A1%3Au%3A1778149062788335897&page-url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&page-ref=&site-info=%7B%22counterId%22%3A5240992%2C%22cnt-class%22%3A%220%22%7D",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://api.flocktory.com/underworld/tracks/ultimate.js?body=%7B%22data%22%3A%7B%22action%22%3A%22session.page_visit%22%2C%22payload%22%3A%7B%22resolution%22%3A%221280x720%22%2C%22ga%22%3A%7B%22utmcsr%22%3A%22%22%2C%22utmccn%22%3A%22%22%2C%22utmcmd%22%3A%22%22%2C%22h_utmcsr%22%3A%22%22%2C%22h_utmccn%22%3A%22%22%2C%22h_utmcmd%22%3A%22%22%7D%2C%22url%22%3A%22https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201%22%7D%2C%22links%22%3A%7B%22site%22%3A2593%7D%7D%2C%22site-session-id%22%3A%22d9ccdee6-d449-4f75-9627-5414686315e5-0%22%7D&callback=flock_jsonp_9999",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://vk.com/rtrg?p=VK-RTRG-1846005-h2XLz&metatag_url=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201&metatag_title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://abtest-api.ntlg.tech/api/features/sdk-DN96HqzsMHhOuwQ",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://netology.ru/baikal/data?cid=5&orig=https://netology.ru&sidl=1778149059742.275171&sidu=1778494574078.188985&guid=1778494574078.478015&ns=354345936&tid=af126511",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/baikal/evn",
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7728.34467e47.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7477.5bc7d2a2.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6750.9f2243f3.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6750.9f2243f3.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/1210.39b5e536.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/9778.8ea7bcbf.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/9778.8ea7bcbf.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6612.71d47b3a.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/6612.71d47b3a.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7115.1764ddac.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7778.8f00ef8e.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/7778.8f00ef8e.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/3261.75487ca7.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/8026.e9051f06.min.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/8026.e9051f06.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/api/maintenance_info",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/ai_assistant/availability",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/help_desk/check_unread_tickets",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/neto-companion/api/v1/init",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://content.adriver.ru/banners/0002186/0002186173/0/s.html?0&0&0&0&996296&0&2487848694675&24&77.82.211.131&javascript&0",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://content.adriver.ru/banners/0002186/0002186173/0/s.js?rnd=473966",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/4604cc00fe725e5ca11e.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/694979d369e3edf0a16b.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/b15f6b12973f6bf2c399.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/favorite_programs",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/profile",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/bhebfad-25-ieu-2",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://adriver-sync.rutarget.ru/sync",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sync.opendsp.ru/match/adriver?id=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://kimberlite.io/rtb/sync/adriver?u=A0WMI2XASsXBfUQZCLyYFfA",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.8437242919888335;id=2716982;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;nt=0/0/1778494572107/290/290///2/2/2/2/2//9/285/420/294/1004/1997/1997/2727/2727/2728;ct=1292/1294/1294/1295/1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=10//4g/150/0/;detect=0;lvid=1778149060523%3A1778494574836%3A21%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=dl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494574835",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.98919584012225;id=3178577;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;nt=0/0/1778494572107/290/290///2/2/2/2/2//9/285/420/294/1004/1997/1997/2727/2727/2728;ct=1292/1294/1294/1295/1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=10//4g/150/0/;detect=0;lvid=1778149060523%3A1778494574836%3A22%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494574835",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.7799196697976519;id=3352219;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;nt=0/0/1778494572107/290/290///2/2/2/2/2//9/285/420/294/1004/1997/1997/2727/2727/2728;ct=1292/1294/1294/1295/1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=10//4g/150/0/;detect=0;lvid=1778149060523%3A1778494574836%3A23%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494574835",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://top-fwz1.mail.ru/tracker?_=0.6551559126304668;id=3746422;u=https%3A%2F%2Fnetology.ru%2Fprofile%2Fprogram%2Fbhebfad-25-ieu-2%2Flessons%2F595671%2Flesson_items%2F3209201;title=%D0%9D%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0;s=1280*720;vp=1280*720;touch=0;hds=1;sid=3ef81e988031133b;ver=60.6.0;tz=-720%2FAsia%2FKamchatka;st=1778494573111;nt=0/0/1778494572107/290/290///2/2/2/2/2//9/285/420/294/1004/1997/1997/2727/2727/2728;ct=1292/1294/1294/1295/1004;rt=1003/286/0/0/0/1003/1003/1003/1003/1003/1003/1021/1289/1290;gl=u;ni=10//4g/150/0/;detect=0;lvid=1778149060523%3A1778494574836%3A24%3Aff08df8e0852bac38bb86aa3a41b7f7c;opts=sec%2Cdl%2Cjst-gtag-ym-vk%2Cwda%2Ccnhp%3Dh2%2Ccs%3D19684-48997-19984;fpid=WECoFIPgt_eVu2zp58_1V;visible=true;js=13;e=RT%2Fload;et=1778494574835",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/favicon-32x32.png",
+    "method": "GET",
+    "resource_type": "other"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/notifications/unread_messages",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8942506/thumb_437cc7111b7e17b2.jpg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/glossary_onboarding",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/onboarding-glossary-bottom_85942f.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/fonts/sans_display_semibold.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/77227/menu",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lessons/595671/lesson_items?timestamp=1778494575171",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/programs/77227/schedule",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/glossary_onboarding",
+    "method": "PATCH",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lessons/595671/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/2d7c2285d96c25231f7c.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/angryFace_404e35.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/frownFace_861ee9.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/neutralFace_6d273d.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/smileFace_783448.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/images/happyFace_8cdc95.png",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://video-progress.netology.ru/video_viewing_histories/8942506?link=https%3A%2F%2Fkinescope.io%2Fdyr5LLMquSzqHY4L34hcGd",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/iframe.player.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/json_storages/simulator_onboarding",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/timecodes",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/transcriptions",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/analytics_datum",
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/dist-lms/public/977cae5b1829fada38f3.svg",
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://netology.ru/backend/api/user/lesson_items/3209201/notes",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://netology.ru/backend/api/feedback_criteria_tags",
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://kinescope.io/dyr5LLMquSzqHY4L34hcGd?v=2.158.2&_=cGxheWVySWQ9a2luZXNjb3BlX3ZpZGVvX3BsYXllcl9keXI1TExNcXVTenFIWTRMMzRoY0dkJnNpemUlNUJ3aWR0aCU1RD0xMDAlMjUmc2l6ZSU1QmhlaWdodCU1RD0xMDAlMjUmYmVoYXZpb3VyJTVCYXV0b1BsYXklNUQ9ZmFsc2UmYmVoYXZpb3VyJTVCcHJlbG9hZCU1RD10cnVl",
+    "method": "HEAD",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://kinescope.io/dyr5LLMquSzqHY4L34hcGd?v=2.158.2&_=cGxheWVySWQ9a2luZXNjb3BlX3ZpZGVvX3BsYXllcl9keXI1TExNcXVTenFIWTRMMzRoY0dkJnNpemUlNUJ3aWR0aCU1RD0xMDAlMjUmc2l6ZSU1QmhlaWdodCU1RD0xMDAlMjUmYmVoYXZpb3VyJTVCYXV0b1BsYXklNUQ9ZmFsc2UmYmVoYXZpb3VyJTVCcHJlbG9hZCU1RD10cnVl",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-regular.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-medium.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://static.kinescopecdn.net/assets/fonts/roboto-bold.woff2",
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/kinescope-page-play.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/kinescope-page-play.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/auth-CFgsnIrv.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/vendor-BqyLvH6B.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/play-page-DyA7Tbqq.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/chapters-BcZ4gIhJ.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/chat-BkNmKAFv.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/description-C0nb_svT.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/player-DGCNIzWR.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://preview.kinescope.io/v0.1.51/chunks/playlist-6CyHl3IS.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.iframe.qmerger.b846e7e6.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.6107ac1a.14618fdb.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.bb3d84b5.b2fc3e39.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.module.27545368.b4c1d0f7.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://player.kinescope.io/v2.158.2/player.core.255799c2.js",
+    "method": "GET",
+    "resource_type": "script"
+  }
+]

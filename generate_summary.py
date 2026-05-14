@@ -75,6 +75,9 @@ def generate_summary(text, subject, topic):
     if current:
         chunks.append(current.strip())
     
+    if len(chunks) > 10:
+        print(f"   ⚠️ Слишком много частей ({len(chunks)}), ограничиваем 10")
+        chunks = chunks[:10]
     print(f"   📦 Текст разбит на {len(chunks)} частей")
     
     partial_summaries = []

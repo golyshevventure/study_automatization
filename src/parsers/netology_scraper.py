@@ -178,47 +178,61 @@ class NetologyScraper:
     async def get_program_disciplines(self, program_id):
         url = f"https://netology.ru/profile/program/{program_id}/schedule"
         print(f"🌐 {url}")
-        await self._safe_goto(url)
-        await asyncio.sleep(3)
+        await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        await asyncio.sleep(5)
 
-        disciplines = await self.page.evaluate("""
-        () => {
-            const results = [];
-            const seenIds = new Set();
-            document.querySelectorAll('[data-lesson-id]').forEach(block => {
-                const lessonId = block.getAttribute('data-lesson-id');
-                if (!lessonId || seenIds.has(lessonId)) return;
-                seenIds.add(lessonId);
+        disciplines = []
+        for attempt in range(3):
+            try:
+                disciplines = await self.page.evaluate("""
+                () => {
+                    const results = [];
+                    const seenIds = new Set();
+                    document.querySelectorAll('[data-lesson-id]').forEach(block => {
+                        const lessonId = block.getAttribute('data-lesson-id');
+                        if (!lessonId || seenIds.has(lessonId)) return;
+                        seenIds.add(lessonId);
 
-                const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
-                const title = titleEl ? titleEl.textContent.trim() : '';
+                        const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
+                        const title = titleEl ? titleEl.textContent.trim() : '';
 
-                const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
-                const statusText = statusEl ? statusEl.textContent.trim() : '';
-                const locked = statusText.toLowerCase().includes('откроется');
+                        const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
+                        const statusText = statusEl ? statusEl.textContent.trim() : '';
+                        const locked = statusText.toLowerCase().includes('откроется');
 
-                const links = [];
-                block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
-                    links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
-                });
-                if (!links.length) {
-                    block.querySelectorAll('a[href*="/lessons/"], a[href*="/lesson_items/"]').forEach(a => {
-                        links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                        const links = [];
+                        block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
+                            links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                        });
+                        if (!links.length) {
+                            block.querySelectorAll('a[href*="/lessons/"], a[href*="/lesson_items/"]').forEach(a => {
+                                links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
+                            });
+                        }
+
+                        results.push({title, lesson_id: lessonId, locked, links});
                     });
+                    return results;
                 }
+                """)
+                break
+            except Exception as e:
+                print(f"   ⚠️ Evaluate attempt {attempt+1}/3 failed: {e}")
+                await asyncio.sleep(2)
 
-                results.push({title, lesson_id: lessonId, locked, links});
-            });
-            return results;
-        }
-        """)
-
-        raw_title = await self.page.evaluate("""
-        () => {
-            const el = document.querySelector('[data-testid="program-header"]');
-            return el ? el.textContent.trim() : document.title;
-        }
-        """)
+        raw_title = ""
+        for attempt in range(3):
+            try:
+                raw_title = await self.page.evaluate("""
+                () => {
+                    const el = document.querySelector('[data-testid="program-header"]');
+                    return el ? el.textContent.trim() : document.title;
+                }
+                """)
+                break
+            except Exception as e:
+                print(f"   ⚠️ Title evaluate attempt {attempt+1}/3 failed: {e}")
+                await asyncio.sleep(2)
 
         program_title = re.sub(r'\d+\s+курс.*?:\s*', '', raw_title, flags=re.IGNORECASE)
         program_title = re.sub(r'\d+\s+[а-яА-Я]+\s*—\s*\d+\s+[а-яА-Я]+', '', program_title)

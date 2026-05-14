@@ -49,30 +49,6 @@ def parse_terms(full_text):
     return clean_text, terms
 
 def create_term_files(terms, subject_name):
-    # Извлекаем [[...]] из текста конспекта и создаём заметки даже если модель не кинула их в TERMS
-                for sent in sentences:
-                    if link_clean.lower() in sent.lower():
-                        desc = sent.strip()[:300]
-                        break
-                if not desc:
-                    desc = f"Понятие из дисциплины «{subject_name}». Требуется дополнение."
-            content = f"""---
-type: термин
-subject: {subject_name}
-created: {datetime.now().strftime('%Y-%m-%d')}
----
-
-# {link_clean}
-
-{desc}
-
-## Связи
-- [[{subject_name}]]
-"""
-            with open(filepath, "w", encoding="utf-8") as f:
-                f.write(content)
-            print(f"   📝 Wiki-термин: {link_clean}")
-
     created = []
     for name, desc in terms:
         name = re.sub(r"[\-–—\s]+", " ", name).strip().title()

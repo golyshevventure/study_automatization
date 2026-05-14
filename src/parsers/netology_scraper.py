@@ -1,12 +1,12 @@
-import pdfplumber
-import io
 import asyncio
 import os
 import json
 import re
 import requests
+import io
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
+import pdfplumber
 
 
 class NetologyScraper:
@@ -70,7 +70,6 @@ class NetologyScraper:
 
     @staticmethod
     def _parse_vtt(vtt_text: str) -> str:
-        """Парсит WebVTT → чистый текст."""
         lines = vtt_text.splitlines()
         result = []
         for line in lines:
@@ -89,7 +88,6 @@ class NetologyScraper:
         return " ".join(result)
 
     async def _extract_vtt_text(self, url: str) -> str:
-        """Ловит VTT через page.on('response')."""
         vtt_url = None
 
         def handle_response(response):
@@ -124,7 +122,6 @@ class NetologyScraper:
         return ""
 
     async def _extract_file_text(self, url: str) -> str:
-        """Перехватывает PDF/DOCX/PPTX."""
         file_url = None
         file_ext = None
 
@@ -332,38 +329,85 @@ class NetologyScraper:
 
         print(f"🌐 {url}")
 
-        # 0. Пробуем VTT (Kinescope субтитры) — приоритет для вебинаров
-        vtt_text = await self._extract_vtt_text(url)
-        if vtt_text and len(vtt_text) > 300:
-            return vtt_text
+        vtt_url = None
+        file_url = None
+        file_ext = None
 
-        # 1. PDF-презентация — приоритет для файлов
-        ok = await self._safe_goto(url)
-        if ok:
-            await asyncio.sleep(2)
-            html = await self.page.content()
-            soup = BeautifulSoup(html, "lxml")
-            # Ищем любые вложения: PDF, DOCX, PPTX
-            has_file = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"}) or                        soup.find("a", href=re.compile(r'\.(pdf|docx|pptx)$', re.I))
-            if has_file:
-                print("   📎 Найдено вложение, перехватываем...")
-                file_text = await self._extract_file_text(url)
-                if file_text and len(file_text) > 300:
-                    return file_text
+        def handle_response(response):
+            nonlocal vtt_url, file_url, file_ext
+            req_url = response.url
+            ct = response.headers.get("content-type", "")
+            ul = req_url.lower()
+            if not vtt_url and ".vtt" in req_url:
+                vtt_url = req_url
+            if not file_url:
+                if "pdf" in ct or ul.endswith(".pdf"):
+                    file_url, file_ext = req_url, "pdf"
+                elif "word" in ct or ul.endswith(".docx"):
+                    file_url, file_ext = req_url, "docx"
+                elif "powerpoint" in ct or ul.endswith(".pptx"):
+                    file_url, file_ext = req_url, "pptx"
 
-        # 2. HTML-парсинг
-        ok = await self._safe_goto(url)
+        self.page.on("response", handle_response)
+
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
         if not ok:
+            self.page.remove_listener("response", handle_response)
             print("⚠️ Страница не открылась")
             return ""
-        await asyncio.sleep(2)
 
+        print("⏳ Ждём загрузку ресурсов...")
+        await asyncio.sleep(3)
+        self.page.remove_listener("response", handle_response)
+
+        # 0. VTT
+        if vtt_url:
+            try:
+                r = requests.get(vtt_url, timeout=30)
+                if r.status_code == 200:
+                    text = self._parse_vtt(r.text)
+                    if len(text) > 300:
+                        print(f"✅ VTT: {len(text)} символов")
+                        return text
+            except Exception as e:
+                print(f"⚠️ VTT ошибка: {e}")
+
+        # 1. Файлы (PDF/DOCX/PPTX)
+        if file_url:
+            try:
+                r = requests.get(file_url, timeout=30)
+                if r.status_code != 200:
+                    return ""
+                if file_ext == "pdf":
+                    with pdfplumber.open(io.BytesIO(r.content)) as pdf:
+                        text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+                elif file_ext == "docx":
+                    import docx
+                    doc = docx.Document(io.BytesIO(r.content))
+                    text = "\n".join(p.text for p in doc.paragraphs if p.text.strip())
+                elif file_ext == "pptx":
+                    from pptx import Presentation
+                    prs = Presentation(io.BytesIO(r.content))
+                    texts = []
+                    for slide in prs.slides:
+                        for shape in slide.shapes:
+                            if hasattr(shape, "text") and shape.text:
+                                texts.append(shape.text)
+                    text = "\n".join(texts)
+                print(f"✅ {file_ext.upper()}: {len(text)} символов")
+                if len(text) > 100000:
+                    print(f"   ⚠️ Файл слишком большой ({len(text)} символов). Создаём заглушку.")
+                    return f"[ФАЙЛ-УЧЕБНИК]\n\nЭтот файл содержит {len(text)} символов и, вероятно, является учебником или дополнительными материалами.\n\nРекомендуется изучить самостоятельно.\n\n---TERMS---\nУчебник|Дополнительный материал для самостоятельного изучения.\n---END_TERMS---"
+                if len(text) > 300:
+                    return text
+            except Exception as e:
+                print(f"⚠️ Файл ошибка: {e}")
+
+        # 2. HTML fallback
         html = await self.page.content()
         soup = BeautifulSoup(html, "lxml")
 
-        # 2. Заголовок + вебинар + контент
         parts = []
-
         heading = soup.find("div", attrs={"data-testid": "program-lessonitem-title"})
         if heading:
             parts.append(heading.get_text(strip=True))
@@ -392,7 +436,6 @@ class NetologyScraper:
                     break
 
         result = "\n\n".join(parts)
-        # 3. Fallback — body
         if len(result) < 200 and soup.body:
             for junk in soup.body.find_all(["script", "style", "nav", "header", "footer"]):
                 junk.decompose()
@@ -403,7 +446,6 @@ class NetologyScraper:
         return result[:15000]
 
     async def debug_webinar(self, url, output_path="data/debug_webinar.html"):
-        """DEPRECATED: используйте _extract_vtt_text() для получения транскрипций."""
         url = self._ensure_url(url)
         print(f"🔍 Диагностика вебинара: {url}")
         ok = await self._safe_goto(url)

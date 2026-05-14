@@ -131,16 +131,28 @@ class NetologyScraper:
 
         return ""
     
-    async def _extract_pdf_text(self, url: str) -> str:
-        """Перехватывает PDF, скачивает и парсит текст."""
-        pdf_url = None
+    async def _extract_file_text(self, url: str) -> str:
+        """Перехватывает файлы (PDF/DOCX/PPTX), скачивает и парсит текст."""
+        file_url = None
+        file_ext = None
         
         def handle_response(response):
-            nonlocal pdf_url
+            nonlocal file_url, file_ext
             content_type = response.headers.get("content-type", "")
-            if "pdf" in content_type and not pdf_url:
-                pdf_url = response.url
-                print(f"🎾 PDF в response: {pdf_url[:80]}...")
+            url_lower = response.url.lower()
+            if not file_url:
+                if "pdf" in content_type or url_lower.endswith(".pdf"):
+                    file_url = response.url
+                    file_ext = "pdf"
+                    print(f"🎾 PDF в response: {file_url[:80]}...")
+                elif "word" in content_type or url_lower.endswith(".docx"):
+                    file_url = response.url
+                    file_ext = "docx"
+                    print(f"🎾 DOCX в response: {file_url[:80]}...")
+                elif "powerpoint" in content_type or url_lower.endswith(".pptx"):
+                    file_url = response.url
+                    file_ext = "pptx"
+                    print(f"🎾 PPTX в response: {file_url[:80]}...")
         
         self.page.on("response", handle_response)
         
@@ -149,29 +161,51 @@ class NetologyScraper:
             self.page.remove_listener("response", handle_response)
             return ""
         
-        print("⏳ Ждём загрузку PDF...")
+        print("⏳ Ждём загрузку файла...")
         for i in range(10):
-            if pdf_url:
+            if file_url:
                 break
             await asyncio.sleep(1)
         
         self.page.remove_listener("response", handle_response)
         
-        if not pdf_url:
-            print("⚠️ PDF не найден")
+        if not file_url:
+            print("⚠️ Файл не найден")
             return ""
         
         try:
-            response = requests.get(pdf_url, timeout=30)
-            if response.status_code == 200:
+            response = requests.get(file_url, timeout=30)
+            if response.status_code != 200:
+                print(f"⚠️ Файл вернул HTTP {response.status_code}")
+                return ""
+            
+            if file_ext == "pdf":
                 with pdfplumber.open(io.BytesIO(response.content)) as pdf:
                     text = "\n".join(page.extract_text() or "" for page in pdf.pages)
                 print(f"✅ PDF распарсен: {len(text)} символов")
                 return text
-            else:
-                print(f"⚠️ PDF вернул HTTP {response.status_code}")
+            
+            elif file_ext == "docx":
+                import docx
+                doc = docx.Document(io.BytesIO(response.content))
+                text = "\n".join(p.text for p in doc.paragraphs if p.text.strip())
+                print(f"✅ DOCX распарсен: {len(text)} символов")
+                return text
+            
+            elif file_ext == "pptx":
+                from pptx import Presentation
+                prs = Presentation(io.BytesIO(response.content))
+                text = []
+                for slide in prs.slides:
+                    for shape in slide.shapes:
+                        if hasattr(shape, "text") and shape.text:
+                            text.append(shape.text)
+                text = "\n".join(text)
+                print(f"✅ PPTX распарсен: {len(text)} символов")
+                return text
+                
         except Exception as e:
-            print(f"⚠️ Ошибка парсинга PDF: {e}")
+            print(f"⚠️ Ошибка парсинга файла: {e}")
         
         return ""
     
@@ -340,12 +374,13 @@ class NetologyScraper:
             await asyncio.sleep(2)
             html = await self.page.content()
             soup = BeautifulSoup(html, "lxml")
-            pdf_viewer = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"})
-            if pdf_viewer:
-                print("   📄 Найден PDF-viewer, перехватываем...")
-                pdf_text = await self._extract_pdf_text(url)
-                if pdf_text and len(pdf_text) > 300:
-                    return pdf_text
+            # Ищем любые вложения: PDF, DOCX, PPTX
+            has_file = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"}) or                        soup.find("a", href=re.compile(r'\.(pdf|docx|pptx)$', re.I))
+            if has_file:
+                print("   📎 Найдено вложение, перехватываем...")
+                file_text = await self._extract_file_text(url)
+                if file_text and len(file_text) > 300:
+                    return file_text
 
         # 2. HTML-парсинг
         ok = await self._safe_goto(url)

@@ -61,7 +61,7 @@ def generate_summary(text, subject, topic):
 
     chunks = []
     current = ""
-    for sentence in re.split(r'(?<<=[.!?])\s+', text):
+    for sentence in re.split(r'(?<=[.!?])\s+', text):
         if len(current) + len(sentence) > 19000:
             chunks.append(current.strip())
             current = sentence

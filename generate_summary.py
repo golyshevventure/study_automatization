@@ -51,7 +51,11 @@ def generate_chunk(text, subject, topic):
         }
     )
     if resp.status_code == 200:
-        return resp.json()["choices"][0]["message"].get("content", "")
+        result = resp.json()["choices"][0]["message"].get("content", "")
+        # Убираем китайские/CJK артефакты и лишние переносы
+        result = re.sub(r'[\u4e00-\u9fff\u3400-\u4dbf\u3000-\u303f\uff00-\uffef]+', '', result)
+        result = re.sub(r'\n{3,}', '\n\n', result)
+        return result
     return f"Ошибка {resp.status_code}"
 
 def generate_summary(text, subject, topic):

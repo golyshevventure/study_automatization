@@ -1,3 +1,5 @@
+import pdfplumber
+import io
 import asyncio
 import os
 import json
@@ -127,6 +129,50 @@ class NetologyScraper:
         except Exception as e:
             print(f"⚠️ Ошибка скачивания VTT: {e}")
 
+        return ""
+    
+    async def _extract_pdf_text(self, url: str) -> str:
+        """Перехватывает PDF, скачивает и парсит текст."""
+        pdf_url = None
+        
+        def handle_response(response):
+            nonlocal pdf_url
+            content_type = response.headers.get("content-type", "")
+            if "pdf" in content_type and not pdf_url:
+                pdf_url = response.url
+                print(f"🎾 PDF в response: {pdf_url[:80]}...")
+        
+        self.page.on("response", handle_response)
+        
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            self.page.remove_listener("response", handle_response)
+            return ""
+        
+        print("⏳ Ждём загрузку PDF...")
+        for i in range(10):
+            if pdf_url:
+                break
+            await asyncio.sleep(1)
+        
+        self.page.remove_listener("response", handle_response)
+        
+        if not pdf_url:
+            print("⚠️ PDF не найден")
+            return ""
+        
+        try:
+            response = requests.get(pdf_url, timeout=30)
+            if response.status_code == 200:
+                with pdfplumber.open(io.BytesIO(response.content)) as pdf:
+                    text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+                print(f"✅ PDF распарсен: {len(text)} символов")
+                return text
+            else:
+                print(f"⚠️ PDF вернул HTTP {response.status_code}")
+        except Exception as e:
+            print(f"⚠️ Ошибка парсинга PDF: {e}")
+        
         return ""
     
     async def get_program_disciplines(self, program_id):
@@ -288,7 +334,20 @@ class NetologyScraper:
         if vtt_text and len(vtt_text) > 300:
             return vtt_text
 
-        # 1. PDF-презентация
+        # 1. PDF-презентация — приоритет для файлов
+        ok = await self._safe_goto(url)
+        if ok:
+            await asyncio.sleep(2)
+            html = await self.page.content()
+            soup = BeautifulSoup(html, "lxml")
+            pdf_viewer = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"})
+            if pdf_viewer:
+                print("   📄 Найден PDF-viewer, перехватываем...")
+                pdf_text = await self._extract_pdf_text(url)
+                if pdf_text and len(pdf_text) > 300:
+                    return pdf_text
+
+        # 2. HTML-парсинг
         ok = await self._safe_goto(url)
         if not ok:
             print("⚠️ Страница не открылась")
@@ -297,12 +356,6 @@ class NetologyScraper:
 
         html = await self.page.content()
         soup = BeautifulSoup(html, "lxml")
-
-        pdf_viewer = soup.find("div", attrs={"data-testid": "attach-file-pdf-viewer"})
-        if pdf_viewer:
-            text = pdf_viewer.get_text(separator="\n", strip=True)
-            if len(text) > 100:
-                return text
 
         # 2. Заголовок + вебинар + контент
         parts = []
@@ -335,7 +388,6 @@ class NetologyScraper:
                     break
 
         result = "\n\n".join(parts)
-
         # 3. Fallback — body
         if len(result) < 200 and soup.body:
             for junk in soup.body.find_all(["script", "style", "nav", "header", "footer"]):

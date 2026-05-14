@@ -50,23 +50,6 @@ def parse_terms(full_text):
 
 def create_term_files(terms, subject_name):
     # Извлекаем [[...]] из текста конспекта и создаём заметки даже если модель не кинула их в TERMS
-    wiki_links = re.findall(r'\[\[(.*?)\]\]', clean_summary)
-    for link in wiki_links:
-        link_clean = re.sub(r"[\-–—\s]+", " ", link).strip().title()
-        if link_clean.lower() == subject_name.lower():
-            continue
-        if not link_clean or link_clean.endswith('.canvas'):
-            continue
-        filename = f"{safe_filename(link_clean)}.md"
-        filepath = os.path.join(TERMINY, filename)
-        if not os.path.exists(filepath):
-            desc = ""
-            for tname, tdesc in terms:
-                if re.sub(r"[\-–—\s]+", " ", tname).strip().title() == link_clean:
-                    desc = tdesc
-                    break
-            if not desc:
-                sentences = re.split(r'(?<<=[.!?])\s+', clean_summary)
                 for sent in sentences:
                     if link_clean.lower() in sent.lower():
                         desc = sent.strip()[:300]

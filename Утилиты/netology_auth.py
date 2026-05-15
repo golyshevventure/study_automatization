@@ -17,14 +17,13 @@ async def _needs_auth(page):
 
 
 async def ensure_netology_login(page):
-    """Авторизация в Нетологии: проверка → Авторизоваться → Войти по почте → Email/Пароль → Войти."""
-    email = os.getenv("NETOLOGY_EMAIL")
-    password = os.getenv("NETOLOGY_PASSWORD")
-    if not email or not password:
-        print("⚠️ NETOLOGY_EMAIL/NETOLOGY_PASSWORD не найдены в .env")
-        return False
-
-    # Проверяем, авторизованы ли уже (надежная проверка через DOM + URL)
+    """
+    Авторизация в Нетологии.
+    Если cookies живы — возвращает True.
+    Если нет — открывает страницу входа и просит пользователя зайти вручную
+    (капча блокирует автоматический ввод).
+    """
+    # Проверяем текущее состояние
     await page.goto("https://netology.ru/profile", wait_until="domcontentloaded", timeout=15000)
     await asyncio.sleep(2)
 
@@ -32,36 +31,31 @@ async def ensure_netology_login(page):
         print("✅ Уже авторизованы")
         return True
 
-    print("🔒 Требуется авторизация")
+    print("=" * 60)
+    print("🔒 Требуется авторизация в Нетологии")
+    print("=" * 60)
+    print("Открыл страницу входа в браузере.")
+    print("Действия:")
+    print("  1. Нажми 'Авторизоваться'")
+    print("  2. Выбери удобный способ (включая 'Другие способы входа' → 'Войти по почте')")
+    print("  3. Пройди капчу и войди")
+    print("  4. Когда увидишь свой профиль — нажми Enter здесь")
+    print("=" * 60)
 
-    # Шаг 1: Клик «Авторизоваться"
-    try:
-        await page.click('button:has-text("Авторизоваться")', timeout=5000)
-        await asyncio.sleep(1)
-    except:
-        pass
+    # Открываем страницу входа в видимом браузере
+    await page.goto("https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=15000)
 
-    # Шаг 2: Клик «Войти по почте"
-    try:
-        await page.click('button:has-text("Войти по почте")', timeout=5000)
-        await asyncio.sleep(1)
-    except Exception as e:
-        print(f"⚠️ Не удалось найти 'Войти по почте': {e}")
+    # Ждём ручного входа
+    input("⏎ Нажми Enter после успешного входа...")
+    await asyncio.sleep(2)
+
+    # Проверяем, авторизовались ли
+    await page.goto("https://netology.ru/profile", wait_until="domcontentloaded", timeout=15000)
+    await asyncio.sleep(2)
+
+    if await _needs_auth(page):
+        print("❌ Авторизация не подтверждена. Попробуй снова.")
         return False
 
-    # Шаг 3: Заполнить форму
-    try:
-        await page.fill('input[placeholder="Email"], input[type="email"]', email, timeout=5000)
-        await page.fill('input[placeholder="Пароль"], input[type="password"]', password, timeout=5000)
-        await page.click('button:has-text("Войти")', timeout=5000)
-        print("⏳ Авторизация...")
-        await asyncio.sleep(5)
-
-        if await _needs_auth(page):
-            print("❌ Авторизация не удалась")
-            return False
-        print("✅ Авторизация успешна")
-        return True
-    except Exception as e:
-        print(f"❌ Ошибка при вводе данных: {e}")
-        return False
+    print("✅ Авторизация подтверждена")
+    return True

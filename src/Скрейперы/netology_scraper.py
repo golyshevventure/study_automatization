@@ -179,8 +179,21 @@ class NetologyScraper:
     async def get_program_disciplines(self, program_id):
         url = f"https://netology.ru/profile/program/{program_id}/schedule"
         print(f"🌐 {url}")
-        await self._safe_goto(url)
-        await asyncio.sleep(3)
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            print("⚠️ Страница schedule не загрузилась")
+            return "", []
+        
+        # Ждём рендеринга React — до 10 секунд
+        for _ in range(10):
+            await asyncio.sleep(1)
+            has_lessons = await self.page.evaluate("""() => document.querySelectorAll('[data-lesson-id]').length > 0""")
+            if has_lessons:
+                break
+        
+        if not has_lessons:
+            print("⚠️ Дисциплины не появились после ожидания")
+            return "", []
 
         disciplines = await self.page.evaluate("""
         () => {

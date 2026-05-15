@@ -116,6 +116,11 @@ async def main():
         if target_subject:
             print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
 
+        seen_hrefs = set()
+
+        if target_subject:
+            print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
+
         # Создаём папки дисциплины
         ensure_subject_dirs(subject_name)
         reset_subject_index(subject_name)

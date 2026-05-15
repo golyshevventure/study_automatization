@@ -31,17 +31,17 @@ def classify_material(title: str, section_name: str) -> str:
     title_lower = title.lower()
     section_lower = section_name.lower()
 
-    # Вебинары и лекции → конспекты
+    # Вебинары и лекции → конспекты (приоритет по разделу)
     if any(kw in section_lower for kw in CONSPECT_KEYWORDS):
         return "конспект"
 
-    # Информация по дисциплине → инфо
-    if any(kw in section_lower for kw in INFO_KEYWORDS):
-        return "инфо"
-
-    # Рабочая программа, учебники, презентации → учебные материалы
+    # Учебники, презентации, рабочие программы → учебные материалы (приоритет по названию)
     if any(kw in title_lower for kw in MATERIALS_KEYWORDS):
         return "учебные_материалы"
+
+    # Информация по дисциплине → инфо (проверяем раздел)
+    if any(kw in section_lower for kw in INFO_KEYWORDS):
+        return "инфо"
 
     # Всё остальное → учебные материалы
     return "учебные_материалы"

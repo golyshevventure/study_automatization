@@ -85,7 +85,10 @@
 | **15.05** | **Прогон #2 (sleep=10s): упал на сети** | ❌ `ChunkedEncodingError` на "Пособие по оказанию первой помощи" | — |
 | **15.05** | **Second Brain очищен перед прогоном #3** | ✅ Удалены конспекты/термины/ссылки БЖД | — |
 | **15.05** | **Прогон #3: упал на навигации** | ❌ `Execution context was destroyed` в `get_discipline_lessons` при переходе к "Учебные материалы" | — |
-| **15.05** | **Фикс: retry на navigation error в `get_discipline_lessons`** | ✅ Добавлен `try/except` + retry до 3 раз, увеличены задержки | — |
+| **15.05** | **Прогон #3: упал на навигации** | ❌ `Execution context was destroyed` в `get_discipline_lessons` при переходе к "Учебные материалы" | — |
+| **15.05** | **Прогон #4: не найдены дисциплины** | ❌ React не отрендерил контент после navigation error, `data-lesson-id` отсутствовали | — |
+| **15.05** | **Фикс: retry на navigation error в `get_discipline_lessons`** | ✅ Добавлен `try/except` + retry до 3 раз | — |
+| **15.05** | **Фикс: ожидание React-рендеринга в `get_program_disciplines`** | ✅ Цикл ожидания до 10с с проверкой `data-lesson-id` | — |
 | **15.05** | **Динамический headless** | ✅ `NetologyScraper(headless=True/False)`, переключение при протухших cookies | — |
 | **15.05** | **TODO.md обновлён + output/ в .gitignore** | ✅ Структура TODO переработана, логи не в репо | 0b40b1b |
 
@@ -136,7 +139,7 @@
 - [x] **OpenRouter stability: timeout увеличен до 300с, fallback оставлен**
 - [x] **Очистить Second Brain перед тестом** ✅
 - [x] **Коммит + push** ✅ `3044dd0`
-- [ ] **Прогон: полный цикл БЖД — ПЕРЕЗАПУСК ПОСЛЕ ФИКСА React-рендеринга**
+- [ ] **Прогон: полный цикл БЖД — запущен, ожидание результатов**
 - [ ] Проверить Second Brain на мусор (силлабус в предметах)
 - [ ] Сделать `git tag v0.6`
 

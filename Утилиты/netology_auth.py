@@ -16,15 +16,23 @@ async def _needs_auth(page):
     """)
 
 
-async def ensure_netology_login(page):
+async def ensure_netology_login(page, program_id=None):
     """
     Авторизация в Нетологии.
     Если cookies живы — возвращает True.
     Если нет — открывает страницу входа и ждёт ручной авторизации
     (капча блокирует автоматический ввод).
     """
-    # Проверяем текущее состояние
-    await page.goto("https://netology.ru/profile", wait_until="domcontentloaded", timeout=15000)
+    # Проверяем авторизацию на рабочей странице программы (быстрее и надёжнее)
+    check_url = f"https://netology.ru/profile/program/{program_id}/schedule" if program_id else "https://netology.ru/profile"
+    try:
+        await page.goto(check_url, wait_until="domcontentloaded", timeout=60000)
+    except Exception:
+        # Если даже domcontentloaded не сработал, пробуем commit
+        try:
+            await page.goto(check_url, wait_until="commit", timeout=30000)
+        except Exception:
+            pass
     await asyncio.sleep(2)
 
     if not await _needs_auth(page):
@@ -43,7 +51,7 @@ async def ensure_netology_login(page):
     print("=" * 60)
 
     # Открываем страницу входа в видимом браузере
-    await page.goto("https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=15000)
+    await page.goto("https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=60000)
 
     # Ждём ручного входа: проверяем каждые 3 секунды, не более 5 минут
     max_wait = 300  # 5 минут

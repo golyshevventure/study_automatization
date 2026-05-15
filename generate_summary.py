@@ -24,27 +24,36 @@ def generate_chunk(text, subject, topic, retries=3):
 
     for attempt in range(retries + 1):
         time.sleep(15)
-        resp = requests.post(
-            f"{BASE_URL}/chat/completions",
-            headers={
-                "Authorization": f"Bearer {API_KEY}",
-                "Content-Type": "application/json",
-                "HTTP-Referer": "https://localhost",
-                "X-Title": "Study Automation Agent"
-            },
-            json={
-                "model": "deepseek/deepseek-v3.2",
-                "provider": {
-                    "allow_fallbacks": True
+        try:
+            resp = requests.post(
+                f"{BASE_URL}/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {API_KEY}",
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "https://localhost",
+                    "X-Title": "Study Automation Agent"
                 },
-                "messages": [
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user_msg}
-                ],
-                "max_tokens": 4000,
-                "temperature": 0.3
-            }
-        )
+                json={
+                    "model": "deepseek/deepseek-v3.2",
+                    "provider": {
+                        "allow_fallbacks": True
+                    },
+                    "messages": [
+                        {"role": "system", "content": system},
+                        {"role": "user", "content": user_msg}
+                    ],
+                    "max_tokens": 4000,
+                    "temperature": 0.3
+                },
+                timeout=120
+            )
+        except requests.exceptions.RequestException as e:
+            if attempt < retries:
+                wait = 15 + attempt * 15
+                print(f"   ⏳ Сетевая ошибка ({e}), ждём {wait} сек... (попытка {attempt + 1}/{retries})")
+                time.sleep(wait)
+                continue
+            return f"Ошибка сети: {e}"
         if resp.status_code == 200:
             result = resp.json()["choices"][0]["message"].get("content") or ""
             if not result:

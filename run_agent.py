@@ -203,7 +203,7 @@ async def main():
 
     scraper = NetologyScraper()
     await scraper.start()
-    login_ok = await ensure_netology_login(scraper.page)
+    login_ok = await ensure_netology_login(scraper.page, program_id)
     if not login_ok:
         print("❌ Не удалось авторизоваться в Нетологии")
         await scraper.stop()
@@ -274,7 +274,7 @@ async def main():
                 else:
                     display_title = section_name
                 process_lesson(subject_name, display_title, text)
-                await asyncio.sleep(60)
+                await asyncio.sleep(10)
 
             print(f"   ✅ Раздел завершён")
 

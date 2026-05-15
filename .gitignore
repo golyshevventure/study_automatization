@@ -1,5 +1,5 @@
 .env
-data/netology_cookies.json
+data/
 __pycache__/
 *.pyc
 .venv/

@@ -20,7 +20,7 @@ async def ensure_netology_login(page):
     """
     Авторизация в Нетологии.
     Если cookies живы — возвращает True.
-    Если нет — открывает страницу входа и просит пользователя зайти вручную
+    Если нет — открывает страницу входа и ждёт ручной авторизации
     (капча блокирует автоматический ввод).
     """
     # Проверяем текущее состояние
@@ -39,23 +39,30 @@ async def ensure_netology_login(page):
     print("  1. Нажми 'Авторизоваться'")
     print("  2. Выбери удобный способ (включая 'Другие способы входа' → 'Войти по почте')")
     print("  3. Пройди капчу и войди")
-    print("  4. Когда увидишь свой профиль — нажми Enter здесь")
+    print("  4. Я сам подхвачу, когда профиль загрузится")
     print("=" * 60)
 
     # Открываем страницу входа в видимом браузере
     await page.goto("https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=15000)
 
-    # Ждём ручного входа
-    input("⏎ Нажми Enter после успешного входа...")
-    await asyncio.sleep(2)
-
-    # Проверяем, авторизовались ли
-    await page.goto("https://netology.ru/profile", wait_until="domcontentloaded", timeout=15000)
-    await asyncio.sleep(2)
-
-    if await _needs_auth(page):
-        print("❌ Авторизация не подтверждена. Попробуй снова.")
-        return False
+    # Ждём ручного входа: проверяем каждые 3 секунды, не более 5 минут
+    max_wait = 300  # 5 минут
+    elapsed = 0
+    while True:
+        try:
+            needs = await _needs_auth(page)
+        except Exception:
+            # Страница перезагружается (навигация) — пропускаем проверку
+            needs = True
+        if not needs:
+            break
+        await asyncio.sleep(3)
+        elapsed += 3
+        if elapsed % 15 == 0:
+            print(f"   ⏳ Жду авторизации... ({elapsed} сек)")
+        if elapsed >= max_wait:
+            print("❌ Таймаут ожидания авторизации (5 минут)")
+            return False
 
     print("✅ Авторизация подтверждена")
     return True

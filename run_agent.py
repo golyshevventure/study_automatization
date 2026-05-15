@@ -102,6 +102,15 @@ created: {datetime.now().strftime('%Y-%m-%d')}
     return created
 
 
+def reset_subject_conspects(subject_path):
+    """Очищает раздел ## Конспекты от старых ссылок."""
+    with open(subject_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    content = re.sub(r'## Конспекты\n.*?(?=\n## |\Z)', '## Конспекты\n', content, flags=re.DOTALL)
+    with open(subject_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
 def ensure_subject_file(subject_name):
     path = os.path.join(PREDMETY, f"{safe_filename(subject_name)}.md")
     if not os.path.exists(path):
@@ -124,6 +133,8 @@ created: {datetime.now().strftime('%Y-%m-%d')}
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"📁 Создан предмет: {path}")
+    else:
+        reset_subject_conspects(path)
     return path
 
 

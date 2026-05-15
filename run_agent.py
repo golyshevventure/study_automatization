@@ -2,8 +2,6 @@ import asyncio
 import os
 import sys
 import re
-import json
-from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src", "Скрейперы"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Утилиты"))
@@ -12,20 +10,15 @@ from netology_scraper import NetologyScraper
 from netology_auth import ensure_netology_login
 from dotenv import load_dotenv
 from generate_summary import generate_summary
+from second_brain_cleanup import remove_old_structure, ensure_new_structure, ensure_subject_dirs
+from material_classifier import classify_material, category_folder
+from subject_index import update_subject_index, reset_subject_index
+from conspect_writer import write_material, write_large_file_stub, wiki_link
 
 load_dotenv()
 
 SECONDBRAIN = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain"
 STUDY_DIR = os.path.join(SECONDBRAIN, "Учеба (Фин. Ун.)")
-PREDMETY = os.path.join(STUDY_DIR, "Предметы")
-KONSPECTY = os.path.join(STUDY_DIR, "Конспекты")
-TERMINY = os.path.join(STUDY_DIR, "Термины")
-
-
-def ensure_dirs():
-    os.makedirs(PREDMETY, exist_ok=True)
-    os.makedirs(KONSPECTY, exist_ok=True)
-    os.makedirs(TERMINY, exist_ok=True)
 
 
 def safe_filename(name, max_len=80):
@@ -35,155 +28,44 @@ def safe_filename(name, max_len=80):
     return name
 
 
-def _normalize_term(name):
-    """Нормализация имени термина для дедупликации."""
-    name = re.sub(r'\s*\([^)]*\)', '', name)
-    name = re.sub(r"[\-–—\s]+", " ", name).strip().title()
-    return name
+def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson_href=""):
+    """Обрабатывает один материал: классифицирует, генерирует конспект или заглушку, сохраняет."""
+    display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
 
-
-def parse_terms(full_text):
-    pattern = re.compile(r'##?\s*Термины\n(.*?)(?:\n---END_TERMS---|\Z)', re.DOTALL)
-    match = pattern.search(full_text)
-    if not match:
-        return full_text, []
-    clean_text = full_text[:match.start()] + full_text[match.end():]
-    block = match.group(1).strip()
-    terms = []
-    for line in block.split('\n'):
-        line = line.strip()
-        if '|' in line:
-            parts = line.split('|', 1)
-            name = parts[0].strip().strip('[]')
-            desc = parts[1].strip()
-            if name and desc:
-                terms.append((name, desc))
-    return clean_text, terms
-
-
-def create_term_files(terms, subject_name):
-    subject_terms_dir = os.path.join(TERMINY, safe_filename(subject_name))
-    os.makedirs(subject_terms_dir, exist_ok=True)
-    created = []
-
-    # Собираем существующие нормализованные имена
-    existing = set()
-    if os.path.exists(subject_terms_dir):
-        for f in os.listdir(subject_terms_dir):
-            if f.endswith('.md'):
-                existing.add(_normalize_term(f[:-3]))
-
-    for name, desc in terms:
-        norm_name = _normalize_term(name)
-        if norm_name.lower() == subject_name.lower():
-            continue
-        if norm_name in existing:
-            continue
-        filename = f"{safe_filename(norm_name)}.md"
-        filepath = os.path.join(subject_terms_dir, filename)
-        content = f"""---
-type: термин
-subject: {subject_name}
-created: {datetime.now().strftime('%Y-%m-%d')}
----
-
-# {norm_name}
-
-{desc}
-
-## Связи
-- [[{subject_name}]]
-"""
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write(content)
-        created.append(norm_name)
-        existing.add(norm_name)
-        print(f"   📝 Термин: {norm_name}")
-    return created
-
-
-def reset_subject_conspects(subject_path):
-    """Очищает раздел ## Конспекты от старых ссылок."""
-    with open(subject_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    content = re.sub(r'## Конспекты\n.*?(?=\n## |\Z)', '## Конспекты\n', content, flags=re.DOTALL)
-    with open(subject_path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-
-def ensure_subject_file(subject_name):
-    path = os.path.join(PREDMETY, f"{safe_filename(subject_name)}.md")
-    if not os.path.exists(path):
-        content = f"""---
-type: предмет
-status: active
-created: {datetime.now().strftime('%Y-%m-%d')}
----
-
-# {subject_name}
-
-## Прогресс
-- [ ] Не начато
-
-## Конспекты
-
-## Связи
-- [[МОС - Учёба]]
-"""
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(content)
-        print(f"📁 Создан предмет: {path}")
-    return path
-
-
-def add_conspect_link(subject_path, topic_title):
-    with open(subject_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    link_line = f"- [[{topic_title}]]"
-    if link_line in content:
-        return
-    if "## Конспекты" in content:
-        content = content.replace("## Конспекты", f"## Конспекты\n{link_line}", 1)
-    else:
-        content += f"\n\n## Конспекты\n{link_line}"
-    with open(subject_path, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"   🔗 Ссылка добавлена")
-
-
-def save_conspect(content, subject_name, topic_title):
-    conspect_dir = os.path.join(KONSPECTY, safe_filename(subject_name))
-    os.makedirs(conspect_dir, exist_ok=True)
-    filename = f"{safe_filename(topic_title)}.md"
-    filepath = os.path.join(conspect_dir, filename)
-    meta = f"---\nsubject: {subject_name}\ntopic: {topic_title}\ndate: {datetime.now().strftime('%Y-%m-%d')}\ntype: конспект\nsource: Нетология\n---\n\n"
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(meta + content)
-    print(f"   💾 Конспект: {filepath}")
-    return filepath
-
-
-def process_lesson(subject_name, lesson_title, lesson_text):
     print(f"\n{'='*60}")
-    print(f"🎓 {lesson_title}")
+    print(f"🎓 {display_title}")
     print(f"{'='*60}")
+
+    # Классифицируем материал
+    category = classify_material(lesson_title, section_name)
+    folder_name = category_folder(category)
+    print(f"   📁 Категория: {folder_name}")
+
+    # Большой файл (>150K) — scraper вернул None
+    if lesson_text is None:
+        print(f"   ⚠️ Файл слишком большой, создаём заглушку")
+        write_large_file_stub(subject_name, folder_name, display_title, lesson_href)
+        return folder_name, wiki_link(subject_name, folder_name, display_title)
+
     print(f"   Символов: {len(lesson_text)}")
+
+    # Слишком мало текста
     if not lesson_text or len(lesson_text) < 300:
         print(f"   ⚠️ Слишком мало текста ({len(lesson_text)} симв.), пропускаем")
-        return
+        return None, None
+
+    # Генерация конспекта
     print("   ⏳ Генерация конспекта...")
-    raw_summary = generate_summary(lesson_text, subject_name, lesson_title)
+    raw_summary = generate_summary(lesson_text, subject_name, display_title)
     if raw_summary.startswith("Ошибка"):
         print(f"   ❌ {raw_summary}")
-        return
-    clean_summary, terms = parse_terms(raw_summary)
-    if terms:
-        print(f"   🔍 Терминов: {len(terms)}")
-        create_term_files(terms, subject_name)
-    subject_path = ensure_subject_file(subject_name)
-    save_conspect(clean_summary, subject_name, lesson_title)
-    add_conspect_link(subject_path, lesson_title)
+        return None, None
+
+    # Сохраняем
+    write_material(subject_name, folder_name, display_title, raw_summary, lesson_href)
+    link = wiki_link(subject_name, folder_name, display_title)
     print("   ✅ Готово")
+    return folder_name, link
 
 
 async def main():
@@ -199,9 +81,12 @@ async def main():
         idx = sys.argv.index("--subject")
         target_subject = sys.argv[idx + 1]
 
-    ensure_dirs()
+    # Очистка старой структуры
+    print("🧹 Очистка старой структуры Second Brain...")
+    remove_old_structure()
+    ensure_new_structure()
 
-    # Пробуем сначала в headless (фоновый режим)
+    # Авторизация
     scraper = NetologyScraper(headless=True)
     await scraper.start()
     login_ok = await ensure_netology_login(scraper.page, program_id)
@@ -231,9 +116,14 @@ async def main():
         if target_subject:
             print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
 
-        # Очищаем старые ссылки в предмете один раз перед прогоном
-        subject_path = ensure_subject_file(subject_name)
-        reset_subject_conspects(subject_path)
+        # Создаём папки дисциплины
+        ensure_subject_dirs(subject_name)
+        reset_subject_index(subject_name)
+
+        # Собираем ссылки по категориям
+        conspect_links = set()
+        material_links = set()
+        info_links = set()
 
         seen_hrefs = set()
 
@@ -249,10 +139,8 @@ async def main():
 
             print(f"\n📂 {section_name}")
 
-            # Проходим по занятиям
             lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
 
-            # Если get_discipline_lessons не нашла под-занятий, но у раздела есть ссылки — обрабатываем их напрямую
             if not lessons and disc.get("links"):
                 print(f"   🔄 Под-занятия не найдены, берём ссылки раздела напрямую")
                 lessons = [
@@ -269,22 +157,29 @@ async def main():
                     continue
                 seen_hrefs.add(lesson["href"])
 
-                conspect_dir = os.path.join(KONSPECTY, safe_filename(subject_name))
-                conspect_file = os.path.join(conspect_dir, f"{safe_filename(lesson['title'])}.md")
-                if os.path.exists(conspect_file):
-                    print(f"   ⏭️ Уже есть: {lesson['title']}")
-                    continue
-
                 text = await scraper.get_lesson_text_content(lesson["href"])
-                lesson_title = lesson['title']
-                if lesson_title.lower() not in section_name.lower():
-                    display_title = f"{section_name} — {lesson_title}"
-                else:
-                    display_title = section_name
-                process_lesson(subject_name, display_title, text)
+                folder, link = process_lesson(
+                    subject_name,
+                    section_name,
+                    lesson["title"],
+                    text,
+                    lesson["href"]
+                )
+
+                if link:
+                    if folder == "Конспекты":
+                        conspect_links.add(link)
+                    elif folder == "Учебные материалы":
+                        material_links.add(link)
+                    elif folder == "Информация по дисциплине":
+                        info_links.add(link)
+
                 await asyncio.sleep(10)
 
             print(f"   ✅ Раздел завершён")
+
+        # Обновляем файл предмета
+        update_subject_index(subject_name, conspect_links, material_links, info_links)
 
         await scraper.save_cookies()
         print("\n" + "=" * 60)
@@ -295,6 +190,7 @@ async def main():
         print("\n\n🛑 Остановлено пользователем")
     finally:
         await scraper.stop()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

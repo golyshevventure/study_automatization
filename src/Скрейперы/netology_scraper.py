@@ -419,9 +419,9 @@ class NetologyScraper:
                                 texts.append(shape.text)
                     text = "\n".join(texts)
                 print(f"✅ {file_ext.upper()}: {len(text)} символов")
-                if len(text) > 100000:
-                    print(f"   ⚠️ Файл слишком большой ({len(text)} символов). Создаём заглушку.")
-                    return f"[ФАЙЛ-УЧЕБНИК]\n\nЭтот файл содержит {len(text)} символов и, вероятно, является учебником или дополнительными материалами.\n\nРекомендуется изучить самостоятельно.\n\n---TERMS---\nУчебник|Дополнительный материал для самостоятельного изучения.\n---END_TERMS---"
+                if len(text) > 150000:
+                    print(f"   ⚠️ Файл слишком большой ({len(text)} символов). Требует самостоятельного изучения.")
+                    return None
                 if len(text) > 300:
                     return text
             except Exception as e:

@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 BASE_URL = "https://openrouter.ai/api/v1"
 
-CHUNK_SIZE = 35000
+CHUNK_SIZE = 70000
 MAX_CHUNKS = 3
 
 

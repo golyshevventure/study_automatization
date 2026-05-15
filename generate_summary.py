@@ -35,7 +35,7 @@ def generate_chunk(text, subject, topic, retries=3):
             json={
                 "model": "deepseek/deepseek-v3.2",
                 "provider": {
-                    "allow_fallbacks": False
+                    "allow_fallbacks": True
                 },
                 "messages": [
                     {"role": "system", "content": system},
@@ -53,7 +53,7 @@ def generate_chunk(text, subject, topic, retries=3):
             result = re.sub(r'\n{3,}', '\n\n', result)
             return result
         if resp.status_code == 429 and attempt < retries:
-            wait = 120 + attempt * 120
+            wait = 30 + attempt * 30
             print(f"   ⏳ 429 Rate limit, ждём {wait} сек... (попытка {attempt + 1}/{retries})")
             time.sleep(wait)
             continue

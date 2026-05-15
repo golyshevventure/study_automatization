@@ -5,9 +5,11 @@ import re
 import json
 from datetime import datetime
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src", "Скрейперы"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Утилиты"))
 
-from parsers.netology_scraper import NetologyScraper
+from netology_scraper import NetologyScraper
+from netology_auth import ensure_netology_login
 from dotenv import load_dotenv
 from generate_summary import generate_summary
 
@@ -165,6 +167,11 @@ async def main():
 
     scraper = NetologyScraper()
     await scraper.start()
+    login_ok = await ensure_netology_login(scraper.page)
+    if not login_ok:
+        print("❌ Не удалось авторизоваться в Нетологии")
+        await scraper.stop()
+        sys.exit(1)
 
     try:
         print("=" * 60)

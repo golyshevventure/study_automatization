@@ -250,31 +250,41 @@ class NetologyScraper:
         if not ok:
             print("⚠️ Страница раздела не открылась, пробуем fallback...")
         else:
-            await asyncio.sleep(2)
+            await asyncio.sleep(3)
             try:
                 await self.page.wait_for_selector('a[data-testid^="program-menu-lessonitem"]', timeout=8000)
             except:
                 pass
-            await asyncio.sleep(1)
+            await asyncio.sleep(2)
 
-        items = await self.page.evaluate(f"""
-        (lessonId) => {{
-            const results = [];
-            const seen = new Set();
-            document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
-                const href = a.getAttribute('href');
-                if (!href || seen.has(href)) return;
-                if (!href.includes('/lessons/' + lessonId + '/')) return;
-                seen.add(href);
-                const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
-                const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
-                const testid = a.getAttribute('data-testid') || '';
-                const locked = testid.toLowerCase().includes('locked');
-                results.push({{title, href, locked}});
-            }});
-            return results;
-        }}
-        """, lesson_id)
+        # Иногда страница перезагружается во время evaluate — делаем retry
+        items = []
+        for _ in range(3):
+            try:
+                items = await self.page.evaluate(f"""
+                (lessonId) => {{
+                    const results = [];
+                    const seen = new Set();
+                    document.querySelectorAll('a[data-testid^="program-menu-lessonitem"]').forEach(a => {{
+                        const href = a.getAttribute('href');
+                        if (!href || seen.has(href)) return;
+                        if (!href.includes('/lessons/' + lessonId + '/')) return;
+                        seen.add(href);
+                        const titleEl = a.querySelector('[data-testid="program-menu-lessonitem-title"]');
+                        const title = titleEl ? titleEl.textContent.trim() : a.textContent.trim().split('\\n')[0].trim();
+                        const testid = a.getAttribute('data-testid') || '';
+                        const locked = testid.toLowerCase().includes('locked');
+                        results.push({{title, href, locked}});
+                    }});
+                    return results;
+                }}
+                """, lesson_id)
+                break
+            except Exception as e:
+                if "Execution context was destroyed" in str(e):
+                    await asyncio.sleep(3)
+                    continue
+                raise
 
         if not items and fallback_links:
             for link in fallback_links:

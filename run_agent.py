@@ -133,8 +133,6 @@ created: {datetime.now().strftime('%Y-%m-%d')}
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"📁 Создан предмет: {path}")
-    else:
-        reset_subject_conspects(path)
     return path
 
 
@@ -224,6 +222,10 @@ async def main():
 
         if target_subject:
             print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
+
+        # Очищаем старые ссылки в предмете один раз перед прогоном
+        subject_path = ensure_subject_file(subject_name)
+        reset_subject_conspects(subject_path)
 
         seen_hrefs = set()
 

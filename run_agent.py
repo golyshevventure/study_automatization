@@ -189,6 +189,10 @@ async def main():
     except KeyboardInterrupt:
         print("\n\n🛑 Остановлено пользователем")
     finally:
+        try:
+            await scraper.save_cookies()
+        except Exception:
+            pass
         await scraper.stop()
 
 

@@ -201,13 +201,21 @@ async def main():
 
     ensure_dirs()
 
-    scraper = NetologyScraper()
+    # Пробуем сначала в headless (фоновый режим)
+    scraper = NetologyScraper(headless=True)
     await scraper.start()
     login_ok = await ensure_netology_login(scraper.page, program_id)
+
     if not login_ok:
-        print("❌ Не удалось авторизоваться в Нетологии")
+        print("🔓 Cookies протухли, переключаюсь на видимый браузер для ручного входа...")
         await scraper.stop()
-        sys.exit(1)
+        scraper = NetologyScraper(headless=False)
+        await scraper.start()
+        login_ok = await ensure_netology_login(scraper.page, program_id)
+        if not login_ok:
+            print("❌ Не удалось авторизоваться в Нетологии")
+            await scraper.stop()
+            sys.exit(1)
 
     try:
         print("=" * 60)

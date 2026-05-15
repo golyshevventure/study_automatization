@@ -45,7 +45,7 @@ def generate_chunk(text, subject, topic, retries=3):
                     "max_tokens": 4000,
                     "temperature": 0.3
                 },
-                timeout=120
+                timeout=300
             )
         except requests.exceptions.RequestException as e:
             if attempt < retries:
@@ -54,6 +54,13 @@ def generate_chunk(text, subject, topic, retries=3):
                 time.sleep(wait)
                 continue
             return f"Ошибка сети: {e}"
+        except Exception as e:
+            if attempt < retries:
+                wait = 15 + attempt * 15
+                print(f"   ⏳ Неизвестная ошибка ({e}), ждём {wait} сек... (попытка {attempt + 1}/{retries})")
+                time.sleep(wait)
+                continue
+            return f"Ошибка: {e}"
         if resp.status_code == 200:
             result = resp.json()["choices"][0]["message"].get("content") or ""
             if not result:

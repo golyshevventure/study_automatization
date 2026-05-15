@@ -10,8 +10,9 @@ import pdfplumber
 
 
 class NetologyScraper:
-    def __init__(self, cookies_file="data/netology_cookies.json"):
+    def __init__(self, cookies_file="data/netology_cookies.json", headless=True):
         self.cookies_file = cookies_file
+        self.headless = headless
         self.browser = None
         self.context = None
         self.page = None
@@ -20,7 +21,7 @@ class NetologyScraper:
     async def start(self):
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch(
-            headless=True,
+            headless=self.headless,
             args=[
                 "--no-sandbox",
                 "--disable-setuid-sandbox",

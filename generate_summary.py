@@ -111,6 +111,5 @@ def generate_summary(text, subject, topic):
     if not partial_summaries:
         return "Ошибка генерации"
 
-    header = f"# {topic}\n\n**Предмет:** {subject}\n\n"
-    combined = header + "\n\n".join(partial_summaries)
+    combined = "\n\n".join(partial_summaries)
     return combined

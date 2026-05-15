@@ -272,7 +272,7 @@ async def main():
                 else:
                     display_title = section_name
                 process_lesson(subject_name, display_title, text)
-                await asyncio.sleep(15)
+                await asyncio.sleep(60)
 
             print(f"   ✅ Раздел завершён")
 

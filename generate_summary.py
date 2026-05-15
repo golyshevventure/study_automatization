@@ -23,6 +23,7 @@ def generate_chunk(text, subject, topic, retries=2):
     user_msg = f"Предмет: {subject}\nТема: {topic}\n\nТекст вебинара:\n{text[:CHUNK_SIZE]}"
 
     for attempt in range(retries + 1):
+        time.sleep(10)
         resp = requests.post(
             f"{BASE_URL}/chat/completions",
             headers={
@@ -52,7 +53,7 @@ def generate_chunk(text, subject, topic, retries=2):
             result = re.sub(r'\n{3,}', '\n\n', result)
             return result
         if resp.status_code == 429 and attempt < retries:
-            wait = 20 + attempt * 10
+            wait = 60 + attempt * 60
             print(f"   ⏳ 429 Rate limit, ждём {wait} сек... (попытка {attempt + 1}/{retries})")
             time.sleep(wait)
             continue
@@ -89,7 +90,7 @@ def generate_summary(text, subject, topic):
             summary = re.sub(r'^# .+?\n+', '', summary, flags=re.MULTILINE)
             partial_summaries.append(summary.strip())
         if i < len(chunks):
-            time.sleep(5)
+            time.sleep(15)
 
     if not partial_summaries:
         return "Ошибка генерации"

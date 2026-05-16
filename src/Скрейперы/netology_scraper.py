@@ -469,6 +469,35 @@ class NetologyScraper:
 
         return result[:15000]
 
+    async def extract_video_url(self, url: str) -> str:
+        """Перехватывает URL видео (.mp4 или .m3u8) с Kinescope."""
+        url = self._ensure_url(url)
+        video_url = None
+
+        def handle_response(response):
+            nonlocal video_url
+            req_url = response.url.lower()
+            if not video_url:
+                if ".mp4" in req_url and "video" in req_url:
+                    video_url = response.url
+                    print(f"🎬 MP4: {response.url[:80]}...")
+                elif ".m3u8" in req_url:
+                    video_url = response.url
+                    print(f"🎬 M3U8: {response.url[:80]}...")
+
+        self.page.on("response", handle_response)
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            self.page.remove_listener("response", handle_response)
+            return ""
+
+        for i in range(15):
+            if video_url:
+                break
+            await asyncio.sleep(1)
+        self.page.remove_listener("response", handle_response)
+        return video_url or ""
+
     async def debug_webinar(self, url, output_path="data/debug_webinar.html"):
         url = self._ensure_url(url)
         print(f"🔍 Диагностика вебинара: {url}")

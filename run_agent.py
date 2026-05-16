@@ -11,9 +11,11 @@ from netology_auth import ensure_netology_login
 from dotenv import load_dotenv
 from generate_summary import generate_summary
 from second_brain_cleanup import remove_old_structure, ensure_new_structure, ensure_subject_dirs
-from material_classifier import classify_material, category_folder
+from material_classifier import classify_material, category_folder, should_skip
 from subject_index import update_subject_index, reset_subject_index
 from conspect_writer import write_material, write_large_file_stub, wiki_link
+from audio_extractor import extract_audio_from_mp4
+from local_whisper import transcribe_to_text
 
 load_dotenv()
 
@@ -28,7 +30,22 @@ def safe_filename(name, max_len=80):
     return name
 
 
-def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson_href=""):
+def _file_exists(subject_name, section_name, lesson_title):
+    """Проверяет, существует ли уже файл для этого материала."""
+    display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
+    category = classify_material(lesson_title, section_name)
+    folder_name = category_folder(category)
+    safe_title = re.sub(r'[\\/:"*?<>|]', '', display_title).strip()
+    if len(safe_title) > 80:
+        safe_title = safe_title[:80].rsplit(' ', 1)[0]
+    safe_subject = re.sub(r'[\\/:"*?<>|]', '', subject_name).strip()
+    if len(safe_subject) > 80:
+        safe_subject = safe_subject[:80].rsplit(' ', 1)[0]
+    filepath = os.path.join(STUDY_DIR, "Дисциплины", safe_subject, folder_name, f"{safe_title}.md")
+    return os.path.exists(filepath)
+
+
+def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson_href="", force=False):
     """Обрабатывает один материал: классифицирует, генерирует конспект или заглушку, сохраняет."""
     display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
 
@@ -36,10 +53,27 @@ def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson
     print(f"🎓 {display_title}")
     print(f"{'='*60}")
 
+    # Пропускаем домашки, контрольные, эссе
+    if should_skip(lesson_title, section_name):
+        print(f"   ⏭️  Пропускаем (домашнее задание / контрольная / эссе)")
+        return None, None
+
     # Классифицируем материал
     category = classify_material(lesson_title, section_name)
     folder_name = category_folder(category)
     print(f"   📁 Категория: {folder_name}")
+
+    # Deduplication: пропускаем, если файл уже существует (и не force)
+    safe_title = re.sub(r'[\\/:"*?<>|]', '', display_title).strip()
+    if len(safe_title) > 80:
+        safe_title = safe_title[:80].rsplit(' ', 1)[0]
+    safe_subject = re.sub(r'[\\/:"*?<>|]', '', subject_name).strip()
+    if len(safe_subject) > 80:
+        safe_subject = safe_subject[:80].rsplit(' ', 1)[0]
+    filepath = os.path.join(STUDY_DIR, "Дисциплины", safe_subject, folder_name, f"{safe_title}.md")
+    if os.path.exists(filepath) and not force:
+        print(f"   ⏭️  Уже существует, пропускаем (используй --force для перезаписи)")
+        return folder_name, wiki_link(subject_name, folder_name, display_title)
 
     # Большой файл (>150K) — scraper вернул None
     if lesson_text is None:
@@ -77,6 +111,7 @@ async def main():
 
     program_id = sys.argv[1]
     target_subject = None
+    force = "--force" in sys.argv
     if "--subject" in sys.argv:
         idx = sys.argv.index("--subject")
         target_subject = sys.argv[idx + 1]
@@ -163,12 +198,34 @@ async def main():
                 seen_hrefs.add(lesson["href"])
 
                 text = await scraper.get_lesson_text_content(lesson["href"])
+
+                # Аудио fallback: если текст короткий и это вебинар — извлекаем аудио
+                category = classify_material(lesson["title"], section_name)
+                if (not text or len(text) < 1000) and category == "конспект":
+                    print("   🎬 Текст короткий, пробуем извлечь аудио из видео...")
+                    video_url = await scraper.extract_video_url(lesson["href"])
+                    if video_url:
+                        try:
+                            audio_path = extract_audio_from_mp4(video_url, output_dir=f"data/audio/{safe_filename(subject_name)}")
+                            print(f"   🎙️  Транскрибируем аудио...")
+                            transcript = transcribe_to_text(audio_path)
+                            if transcript and len(transcript) > 500:
+                                text = f"[Транскрипция вебинара]\n\n{transcript}"
+                                print(f"   ✅ Транскрипция: {len(transcript)} символов")
+                            else:
+                                print(f"   ⚠️ Транскрипция слишком короткая, используем HTML fallback")
+                        except Exception as e:
+                            print(f"   ⚠️ Ошибка аудио: {e}")
+                    else:
+                        print("   ⚠️ Видео не найдено")
+
                 folder, link = process_lesson(
                     subject_name,
                     section_name,
                     lesson["title"],
                     text,
-                    lesson["href"]
+                    lesson["href"],
+                    force=force
                 )
 
                 if link:

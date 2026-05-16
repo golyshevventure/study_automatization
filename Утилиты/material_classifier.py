@@ -21,6 +21,24 @@ MATERIALS_KEYWORDS = [
     "снип",
     "методические указания",
 ]
+SKIP_KEYWORDS = [
+    "домашнее задание",
+    "дз",
+    "творческое задание",
+    "контрольная работа",
+    "эссе",
+    "тестирование",
+    "промежуточная аттестация",
+    "итоговая аттестация",
+]
+
+
+def should_skip(title: str, section_name: str) -> bool:
+    """
+    Проверяет, нужно ли пропустить материал (домашки, контрольные и т.д.).
+    """
+    text = f"{title} {section_name}".lower()
+    return any(kw in text for kw in SKIP_KEYWORDS)
 
 
 def classify_material(title: str, section_name: str) -> str:

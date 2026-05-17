@@ -118,13 +118,14 @@ async def _get_item_content(scraper, item, subject_name):
     """
     Получает контент одного item.
     Возвращает dict с text, video_url, title, href.
-    Если есть видео — извлекает и транскрибирует аудио.
+    Audio fallback: если видео есть, но текст короткий (<1000 симв.) — транскрибируем.
+    Если текст уже достаточно длинный (VTT, PDF, хороший HTML) — используем его.
     """
     text, video_url = await scraper.get_lesson_text_content(item["href"])
 
-    # Audio fallback: если есть видео — ВСЕГДА транскрибируем
-    if video_url:
-        print(f"   🎬 Найдено видео ({item['title']}), извлекаем аудио...")
+    # Audio fallback: если есть видео И текст короткий/пустой
+    if video_url and (not text or len(text) < 1000):
+        print(f"   🎬 Найдено видео ({item['title']}), текст короткий ({len(text) if text else 0} симв.), извлекаем аудио...")
         try:
             audio_path = extract_audio_from_mp4(
                 video_url, output_dir=f"data/audio/{safe_filename(subject_name)}"
@@ -138,6 +139,8 @@ async def _get_item_content(scraper, item, subject_name):
                 print(f"   ⚠️ Транскрипция слишком короткая, используем HTML fallback")
         except Exception as e:
             print(f"   ⚠️ Ошибка аудио: {e}")
+    elif video_url:
+        print(f"   🎬 Найдено видео, но текст уже достаточно длинный ({len(text)} симв.), аудио не требуется")
 
     return {
         "title": item["title"],
@@ -165,14 +168,19 @@ async def main():
         print("Использование:")
         print("  python run_agent.py <program_id>  — собрать всю программу")
         print("  python run_agent.py <program_id> --subject 'Название'  — только разделы с этим словом")
+        print("  python run_agent.py <program_id> --name 'Имя предмета'  — задать имя папки вручную")
+        print("  python run_agent.py <program_id> --force  — перезаписать существующие файлы")
         sys.exit(1)
 
     program_id = sys.argv[1]
-    target_subject = None
+    target_subjects = []
+    subject_name_override = None
     force = "--force" in sys.argv
-    if "--subject" in sys.argv:
-        idx = sys.argv.index("--subject")
-        target_subject = sys.argv[idx + 1]
+    for i, arg in enumerate(sys.argv):
+        if arg == "--subject" and i + 1 < len(sys.argv):
+            target_subjects.append(sys.argv[i + 1])
+        if arg == "--name" and i + 1 < len(sys.argv):
+            subject_name_override = sys.argv[i + 1]
 
     # Очистка старой структуры
     print("🧹 Очистка старой структуры Second Brain...")
@@ -203,20 +211,29 @@ async def main():
         program_title, disciplines = await scraper.get_program_disciplines(program_id)
 
         # Определяем subject_name
-        if target_subject and disciplines:
-            filtered = [d for d in disciplines if target_subject.lower() in d.get("title", "").lower()]
-            if filtered:
-                subject_name = filtered[0]["title"]
-            else:
-                subject_name = program_title or target_subject
+        if subject_name_override:
+            subject_name = subject_name_override
+        elif program_title:
+            subject_name = program_title
+        elif disciplines:
+            # Ищем первую "содержательную" дисциплину (не служебную)
+            meaningful = [d for d in disciplines if not any(
+                kw in d.get("title", "").lower() for kw in [
+                    "рабочая программа", "домашнее задание", "контрольная",
+                    "экзамен", "опрос", "консультация", "вебинар", "творческое"
+                ]
+            )]
+            subject_name = meaningful[0]["title"] if meaningful else disciplines[0]["title"]
         else:
-            subject_name = program_title or (disciplines[0]["title"] if disciplines else "Предмет")
+            subject_name = "Предмет"
 
         print(f"\n📚 Предмет: {subject_name}")
         print(f"   Разделов: {len(disciplines)}")
 
-        if target_subject:
-            print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
+        if target_subjects:
+            print(f"   🔍 Фильтр: только разделы содержащие {target_subjects}")
+        if subject_name_override:
+            print(f"   📝 Имя предмета задано вручную: {subject_name_override}")
 
         # Создаём папки дисциплины
         ensure_subject_dirs(subject_name)
@@ -232,7 +249,20 @@ async def main():
         for disc in disciplines:
             disc_title = disc["title"]
 
-            if target_subject and target_subject.lower() not in disc_title.lower():
+            def _matches_filter(title, filters):
+                t_lower = title.lower()
+                for f in filters:
+                    f_lower = f.lower()
+                    if f_lower not in t_lower:
+                        continue
+                    # Строгая проверка: после подстроки должна быть граница слова
+                    idx = t_lower.index(f_lower)
+                    end = idx + len(f_lower)
+                    if end == len(t_lower) or t_lower[end] in ' \n«»().,;:!?-–—':
+                        return True
+                return False
+
+            if target_subjects and not _matches_filter(disc_title, target_subjects):
                 continue
 
             if disc.get("locked"):

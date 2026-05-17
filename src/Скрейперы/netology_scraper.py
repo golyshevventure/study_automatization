@@ -440,18 +440,24 @@ class NetologyScraper:
         return items
 
     async def get_lesson_text_content(self, url):
+        """
+        Извлекает текст из lesson_item.
+        Возвращает tuple: (text, video_url)
+        text может быть None для слишком больших файлов.
+        """
         url = self._ensure_url(url)
         if not url:
-            return ""
+            return "", ""
 
         print(f"🌐 {url}")
 
         vtt_url = None
         file_url = None
         file_ext = None
+        video_url = None
 
         def handle_response(response):
-            nonlocal vtt_url, file_url, file_ext
+            nonlocal vtt_url, file_url, file_ext, video_url
             req_url = response.url
             ct = response.headers.get("content-type", "")
             ul = req_url.lower()
@@ -464,6 +470,11 @@ class NetologyScraper:
                     file_url, file_ext = req_url, "docx"
                 elif "powerpoint" in ct or ul.endswith(".pptx"):
                     file_url, file_ext = req_url, "pptx"
+            if not video_url:
+                if ".mp4" in ul and "video" in ul:
+                    video_url = response.url
+                elif ".m3u8" in ul:
+                    video_url = response.url
 
         self.page.on("response", handle_response)
 
@@ -471,7 +482,7 @@ class NetologyScraper:
         if not ok:
             self.page.remove_listener("response", handle_response)
             print("⚠️ Страница не открылась")
-            return ""
+            return "", ""
 
         print("⏳ Ждём загрузку ресурсов...")
         await asyncio.sleep(3)
@@ -485,7 +496,7 @@ class NetologyScraper:
                     text = self._parse_vtt(r.text)
                     if len(text) > 300:
                         print(f"✅ VTT: {len(text)} символов")
-                        return text
+                        return text, video_url or ""
             except Exception as e:
                 print(f"⚠️ VTT ошибка: {e}")
 
@@ -494,7 +505,7 @@ class NetologyScraper:
             try:
                 r = requests.get(file_url, timeout=30)
                 if r.status_code != 200:
-                    return ""
+                    return "", video_url or ""
                 if file_ext == "pdf":
                     with pdfplumber.open(io.BytesIO(r.content)) as pdf:
                         text = "\n".join(page.extract_text() or "" for page in pdf.pages)
@@ -514,9 +525,9 @@ class NetologyScraper:
                 print(f"✅ {file_ext.upper()}: {len(text)} символов")
                 if len(text) > 150000:
                     print(f"   ⚠️ Файл слишком большой ({len(text)} символов). Требует самостоятельного изучения.")
-                    return None
+                    return None, video_url or ""
                 if len(text) > 300:
-                    return text
+                    return text, video_url or ""
             except Exception as e:
                 print(f"⚠️ Файл ошибка: {e}")
 
@@ -560,7 +571,7 @@ class NetologyScraper:
             if len(body_text) > len(result):
                 result = body_text[:15000]
 
-        return result[:15000]
+        return result[:15000], video_url or ""
 
     async def extract_video_url(self, url: str) -> str:
         """Перехватывает URL видео (.mp4 или .m3u8) с Kinescope."""

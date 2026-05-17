@@ -11,7 +11,13 @@ from netology_auth import ensure_netology_login
 from dotenv import load_dotenv
 from generate_summary import generate_summary
 from second_brain_cleanup import remove_old_structure, ensure_new_structure, ensure_subject_dirs
-from material_classifier import classify_material, category_folder, should_skip
+from material_classifier import (
+    classify_material,
+    category_folder,
+    should_skip,
+    classify_lesson_strategy,
+    classify_item,
+)
 from subject_index import update_subject_index, reset_subject_index
 from conspect_writer import write_material, write_large_file_stub, wiki_link
 from audio_extractor import extract_audio_from_mp4
@@ -45,8 +51,11 @@ def _file_exists(subject_name, section_name, lesson_title):
     return os.path.exists(filepath)
 
 
-def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson_href="", force=False):
-    """Обрабатывает один материал: классифицирует, генерирует конспект или заглушку, сохраняет."""
+def process_material(subject_name, section_name, lesson_title, lesson_text, lesson_href="", force=False, category_override=None):
+    """
+    Обрабатывает один материал: классифицирует, генерирует конспект или заглушку, сохраняет.
+    category_override: если задан, использует эту категорию вместо авто-классификации.
+    """
     display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
 
     print(f"\n{'='*60}")
@@ -59,11 +68,14 @@ def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson
         return None, None
 
     # Классифицируем материал
-    category = classify_material(lesson_title, section_name)
+    if category_override:
+        category = category_override
+    else:
+        category = classify_material(lesson_title, section_name)
     folder_name = category_folder(category)
     print(f"   📁 Категория: {folder_name}")
 
-    # Deduplication: пропускаем, если файл уже существует (и не force)
+    # Deduplication
     safe_title = re.sub(r'[\\/:"*?<>|]', '', display_title).strip()
     if len(safe_title) > 80:
         safe_title = safe_title[:80].rsplit(' ', 1)[0]
@@ -75,7 +87,7 @@ def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson
         print(f"   ⏭️  Уже существует, пропускаем (используй --force для перезаписи)")
         return folder_name, wiki_link(subject_name, folder_name, display_title)
 
-    # Большой файл (>150K) — scraper вернул None
+    # Большой файл (>150K)
     if lesson_text is None:
         print(f"   ⚠️ Файл слишком большой, создаём заглушку")
         write_large_file_stub(subject_name, folder_name, display_title, lesson_href)
@@ -100,6 +112,52 @@ def process_lesson(subject_name, section_name, lesson_title, lesson_text, lesson
     link = wiki_link(subject_name, folder_name, display_title)
     print("   ✅ Готово")
     return folder_name, link
+
+
+async def _get_item_content(scraper, item, subject_name):
+    """
+    Получает контент одного item.
+    Возвращает dict с text, video_url, title, href.
+    Если есть видео — извлекает и транскрибирует аудио.
+    """
+    text, video_url = await scraper.get_lesson_text_content(item["href"])
+
+    # Audio fallback: если есть видео — ВСЕГДА транскрибируем
+    if video_url:
+        print(f"   🎬 Найдено видео ({item['title']}), извлекаем аудио...")
+        try:
+            audio_path = extract_audio_from_mp4(
+                video_url, output_dir=f"data/audio/{safe_filename(subject_name)}"
+            )
+            print(f"   🎙️  Транскрибируем аудио...")
+            transcript = transcribe_to_text(audio_path)
+            if transcript and len(transcript) > 500:
+                text = f"[Транскрипция вебинара]\n\n{transcript}"
+                print(f"   ✅ Транскрипция: {len(transcript)} символов")
+            else:
+                print(f"   ⚠️ Транскрипция слишком короткая, используем HTML fallback")
+        except Exception as e:
+            print(f"   ⚠️ Ошибка аудио: {e}")
+
+    return {
+        "title": item["title"],
+        "href": item["href"],
+        "text": text,
+        "video_url": video_url,
+    }
+
+
+async def _collect_lesson_items(scraper, program_id, lesson_id, fallback_links, section_name):
+    """Собирает items для одного lesson."""
+    items = await scraper.get_discipline_lessons(program_id, lesson_id, fallback_links)
+    if not items and fallback_links:
+        print(f"   🔄 Под-занятия не найдены, берём ссылки раздела напрямую")
+        items = [
+            {"title": link.get("text", section_name), "href": link["href"], "locked": False}
+            for link in fallback_links
+            if link.get("href")
+        ]
+    return items
 
 
 async def main():
@@ -144,7 +202,7 @@ async def main():
 
         program_title, disciplines = await scraper.get_program_disciplines(program_id)
 
-        # Определяем subject_name: для карточек берём из отфильтрованной дисциплины
+        # Определяем subject_name
         if target_subject and disciplines:
             filtered = [d for d in disciplines if target_subject.lower() in d.get("title", "").lower()]
             if filtered:
@@ -183,87 +241,37 @@ async def main():
 
             print(f"\n📂 {disc_title}")
 
-            # Определяем структура: новая (module program_id) или legacy (lesson_id)
+            # === Legacy vs New structure ===
             if "program_id" in disc and disc["program_id"]:
-                # Новая структура: сначала получаем список lesson_id модуля
+                # Новая структура: модуль → занятия → items
                 module_lessons = await scraper.get_module_lessons(disc["program_id"])
-                all_items = []
                 for ml in module_lessons:
                     if ml.get("locked"):
+                        print(f"   🔒 {ml.get('title', 'Без названия')}")
                         continue
-                    print(f"   📖 {ml.get('title', 'Без названия')}")
-                    items = await scraper.get_discipline_lessons(disc["program_id"], ml["lesson_id"], [])
-                    # section_name = название конкретного занятия (а не модуля)
-                    for item in items:
-                        item["_section_name"] = ml.get("title", disc_title)
-                    all_items.extend(items)
-                lessons = all_items
+                    section_name = ml.get("title", disc_title)
+                    items = await _collect_lesson_items(
+                        scraper, disc["program_id"], ml["lesson_id"], [], section_name
+                    )
+                    await _process_items(
+                        scraper, subject_name, section_name, items,
+                        conspect_links, material_links, info_links,
+                        seen_hrefs, force
+                    )
             else:
-                # Legacy структура
-                lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
-                for item in lessons:
-                    item["_section_name"] = disc_title
-
-            if not lessons and disc.get("links"):
-                print(f"   🔄 Под-занятия не найдены, берём ссылки раздела напрямую")
-                lessons = [
-                    {"title": link.get("text", disc_title), "href": link["href"], "locked": False, "_section_name": disc_title}
-                    for link in disc["links"]
-                    if link.get("href")
-                ]
-
-            for lesson in lessons:
-                if lesson["locked"]:
-                    print(f"   🔒 {lesson['title']}")
-                    continue
-                if lesson["href"] in seen_hrefs:
-                    continue
-                seen_hrefs.add(lesson["href"])
-
-                text = await scraper.get_lesson_text_content(lesson["href"])
-
-                section_name = lesson.get("_section_name", disc_title)
-
-                # Аудио fallback: если текст короткий и это вебинар — извлекаем аудио
-                category = classify_material(lesson["title"], section_name)
-                if (not text or len(text) < 1000) and category == "конспект":
-                    print("   🎬 Текст короткий, пробуем извлечь аудио из видео...")
-                    video_url = await scraper.extract_video_url(lesson["href"])
-                    if video_url:
-                        try:
-                            audio_path = extract_audio_from_mp4(video_url, output_dir=f"data/audio/{safe_filename(subject_name)}")
-                            print(f"   🎙️  Транскрибируем аудио...")
-                            transcript = transcribe_to_text(audio_path)
-                            if transcript and len(transcript) > 500:
-                                text = f"[Транскрипция вебинара]\n\n{transcript}"
-                                print(f"   ✅ Транскрипция: {len(transcript)} символов")
-                            else:
-                                print(f"   ⚠️ Транскрипция слишком короткая, используем HTML fallback")
-                        except Exception as e:
-                            print(f"   ⚠️ Ошибка аудио: {e}")
-                    else:
-                        print("   ⚠️ Видео не найдено")
-
-                folder, link = process_lesson(
-                    subject_name,
-                    section_name,
-                    lesson["title"],
-                    text,
-                    lesson["href"],
-                    force=force
+                # Legacy структура: disc = lesson, items внутри
+                section_name = disc_title
+                items = await _collect_lesson_items(
+                    scraper, program_id, disc["lesson_id"], disc.get("links", []), section_name
+                )
+                await _process_items(
+                    scraper, subject_name, section_name, items,
+                    conspect_links, material_links, info_links,
+                    seen_hrefs, force
                 )
 
-                if link:
-                    if folder == "Конспекты":
-                        conspect_links.add(link)
-                    elif folder == "Учебные материалы":
-                        material_links.add(link)
-                    elif folder == "Информация по дисциплине":
-                        info_links.add(link)
-
-                await asyncio.sleep(10)
-
             print(f"   ✅ Раздел завершён")
+            await asyncio.sleep(1)
 
         # Обновляем файл предмета
         update_subject_index(subject_name, conspect_links, material_links, info_links)
@@ -281,6 +289,98 @@ async def main():
         except Exception:
             pass
         await scraper.stop()
+
+
+async def _process_items(
+    scraper, subject_name, section_name, items,
+    conspect_links, material_links, info_links,
+    seen_hrefs, force
+):
+    """
+    Обрабатывает items одного lesson.
+    Определяет стратегию (merge/split), выполняет audio fallback, сохраняет.
+    """
+    # Deduplication href'ов
+    unique_items = []
+    for item in items:
+        if item["href"] in seen_hrefs:
+            continue
+        seen_hrefs.add(item["href"])
+        if not item.get("locked"):
+            unique_items.append(item)
+
+    if not unique_items:
+        return
+
+    # Собираем контент всех items (последовательно — Playwright page не потокобезопасна)
+    print(f"   📄 {len(unique_items)} материалов, собираем контент...")
+    item_contents = []
+    for item in unique_items:
+        ic = await _get_item_content(scraper, item, subject_name)
+        item_contents.append(ic)
+
+    # Определяем стратегию
+    strategy = classify_lesson_strategy(section_name, item_contents)
+    print(f"   🧠 Стратегия: {strategy}")
+
+    if strategy == "skip":
+        print(f"   ⏭️  Пропускаем (домашнее задание / контрольная / эссе)")
+        return
+
+    if strategy == "merge_conspect":
+        # Объединяем ВСЕ тексты в один
+        parts = []
+        for ic in item_contents:
+            if ic["text"] and len(ic["text"]) > 50:
+                parts.append(f"## {ic['title']}\n\n{ic['text']}")
+        combined_text = "\n\n---\n\n".join(parts)
+
+        folder, link = process_material(
+            subject_name, section_name, section_name,
+            combined_text,
+            lesson_href=unique_items[0]["href"] if unique_items else "",
+            force=force,
+            category_override="конспект"
+        )
+        if link:
+            conspect_links.add(link)
+        return
+
+    if strategy == "split_program":
+        # "Рабочая программа": каждый item по своей категории
+        for ic in item_contents:
+            cat = classify_item(ic["title"], section_name)
+            folder, link = process_material(
+                subject_name, section_name, ic["title"],
+                ic["text"],
+                lesson_href=ic["href"],
+                force=force,
+                category_override=cat
+            )
+            if link:
+                if folder == "Конспекты":
+                    conspect_links.add(link)
+                elif folder == "Учебные материалы":
+                    material_links.add(link)
+                elif folder == "Информация по дисциплине":
+                    info_links.add(link)
+        return
+
+    # strategy == "split" — каждый item отдельно по обычной классификации
+    for ic in item_contents:
+        folder, link = process_material(
+            subject_name, section_name, ic["title"],
+            ic["text"],
+            lesson_href=ic["href"],
+            force=force
+        )
+        if link:
+            if folder == "Конспекты":
+                conspect_links.add(link)
+            elif folder == "Учебные материалы":
+                material_links.add(link)
+            elif folder == "Информация по дисциплине":
+                info_links.add(link)
 
 
 if __name__ == "__main__":

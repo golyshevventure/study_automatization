@@ -13,39 +13,34 @@ import subprocess
 import requests
 
 
-def extract_audio_from_mp4(mp4_url: str, output_dir: str = "data/audio") -> str:
+def extract_audio_from_mp4(video_url: str, output_dir: str = "data/audio") -> str:
     """
-    Скачивает mp4 и конвертирует в wav (mono, 16kHz) для Whisper.
+    Извлекает аудио из видео (MP4 или M3U8/HLS) в wav (mono, 16kHz) для Whisper.
+    FFmpeg сам скачивает поток — поддерживает и прямые MP4, и HLS (m3u8).
     Возвращает путь к wav-файлу.
     """
     os.makedirs(output_dir, exist_ok=True)
 
     # Имя файла из URL
-    base_name = re.sub(r'[^\w]', '_', mp4_url.split('/')[-1].split('?')[0])[:40]
+    base_name = re.sub(r'[^\w]', '_', video_url.split('/')[-1].split('?')[0])[:40]
+    if base_name.endswith('_m3u8') or base_name.endswith('_master'):
+        base_name = base_name[:35]
     wav_path = os.path.join(output_dir, f"{base_name}.wav")
 
     if os.path.exists(wav_path):
         return wav_path
 
-    # Скачиваем mp4 во временный файл
-    tmp_mp4 = os.path.join(output_dir, f"{base_name}.tmp.mp4")
-    r = requests.get(mp4_url, timeout=120, stream=True)
-    r.raise_for_status()
-    with open(tmp_mp4, "wb") as f:
-        for chunk in r.iter_content(chunk_size=8192):
-            f.write(chunk)
-
-    # Конвертируем в wav: mono, 16kHz (оптимально для Whisper)
+    # FFmpeg сам скачивает и MP4, и M3U8 (HLS)
     cmd = [
-        "ffmpeg", "-y", "-i", tmp_mp4,
+        "ffmpeg", "-y",
+        "-fflags", "+discardcorrupt",
+        "-i", video_url,
         "-vn", "-acodec", "pcm_s16le",
         "-ac", "1", "-ar", "16000",
+        "-t", "7200",  # ограничение 2 часа на всякий случай
         wav_path
     ]
     subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-    # Удаляем временный mp4
-    os.remove(tmp_mp4)
 
     return wav_path
 

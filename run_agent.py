@@ -143,15 +143,19 @@ async def main():
         print("=" * 60)
 
         program_title, disciplines = await scraper.get_program_disciplines(program_id)
-        subject_name = program_title
+
+        # Определяем subject_name: для карточек берём из отфильтрованной дисциплины
+        if target_subject and disciplines:
+            filtered = [d for d in disciplines if target_subject.lower() in d.get("title", "").lower()]
+            if filtered:
+                subject_name = filtered[0]["title"]
+            else:
+                subject_name = program_title or target_subject
+        else:
+            subject_name = program_title or (disciplines[0]["title"] if disciplines else "Предмет")
 
         print(f"\n📚 Предмет: {subject_name}")
         print(f"   Разделов: {len(disciplines)}")
-
-        if target_subject:
-            print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
-
-        seen_hrefs = set()
 
         if target_subject:
             print(f"   🔍 Фильтр: только разделы содержащие '{target_subject}'")
@@ -168,23 +172,42 @@ async def main():
         seen_hrefs = set()
 
         for disc in disciplines:
-            section_name = disc["title"]
+            disc_title = disc["title"]
 
-            if target_subject and target_subject.lower() not in section_name.lower():
+            if target_subject and target_subject.lower() not in disc_title.lower():
                 continue
 
-            if disc["locked"]:
-                print(f"\n   🔒 {section_name} — заблокировано, пропускаем")
+            if disc.get("locked"):
+                print(f"\n   🔒 {disc_title} — заблокировано, пропускаем")
                 continue
 
-            print(f"\n📂 {section_name}")
+            print(f"\n📂 {disc_title}")
 
-            lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+            # Определяем структура: новая (module program_id) или legacy (lesson_id)
+            if "program_id" in disc and disc["program_id"]:
+                # Новая структура: сначала получаем список lesson_id модуля
+                module_lessons = await scraper.get_module_lessons(disc["program_id"])
+                all_items = []
+                for ml in module_lessons:
+                    if ml.get("locked"):
+                        continue
+                    print(f"   📖 {ml.get('title', 'Без названия')}")
+                    items = await scraper.get_discipline_lessons(disc["program_id"], ml["lesson_id"], [])
+                    # section_name = название конкретного занятия (а не модуля)
+                    for item in items:
+                        item["_section_name"] = ml.get("title", disc_title)
+                    all_items.extend(items)
+                lessons = all_items
+            else:
+                # Legacy структура
+                lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+                for item in lessons:
+                    item["_section_name"] = disc_title
 
             if not lessons and disc.get("links"):
                 print(f"   🔄 Под-занятия не найдены, берём ссылки раздела напрямую")
                 lessons = [
-                    {"title": link.get("text", section_name), "href": link["href"], "locked": False}
+                    {"title": link.get("text", disc_title), "href": link["href"], "locked": False, "_section_name": disc_title}
                     for link in disc["links"]
                     if link.get("href")
                 ]
@@ -198,6 +221,8 @@ async def main():
                 seen_hrefs.add(lesson["href"])
 
                 text = await scraper.get_lesson_text_content(lesson["href"])
+
+                section_name = lesson.get("_section_name", disc_title)
 
                 # Аудио fallback: если текст короткий и это вебинар — извлекаем аудио
                 category = classify_material(lesson["title"], section_name)

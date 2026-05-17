@@ -191,10 +191,15 @@ class NetologyScraper:
             if has_lessons:
                 break
         
-        if not has_lessons:
-            print("⚠️ Дисциплины не появились после ожидания")
-            return "", []
+        if has_lessons:
+            # Legacy структура: data-lesson-id прямо на странице программы
+            return await self._get_program_disciplines_legacy()
+        
+        # Новая структура: карточки модулей
+        return await self._get_program_disciplines_cards()
 
+    async def _get_program_disciplines_legacy(self):
+        """Старая структура: data-lesson-id на странице программы."""
         disciplines = await self.page.evaluate("""
         () => {
             const results = [];
@@ -203,14 +208,11 @@ class NetologyScraper:
                 const lessonId = block.getAttribute('data-lesson-id');
                 if (!lessonId || seenIds.has(lessonId)) return;
                 seenIds.add(lessonId);
-
                 const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
                 const title = titleEl ? titleEl.textContent.trim() : '';
-
                 const statusEl = block.querySelector('[data-testid="resourcepack-lesson-status"]');
                 const statusText = statusEl ? statusEl.textContent.trim() : '';
                 const locked = statusText.toLowerCase().includes('откроется');
-
                 const links = [];
                 block.querySelectorAll('a[data-testid="program-granule-link"]').forEach(a => {
                     links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
@@ -220,24 +222,74 @@ class NetologyScraper:
                         links.push({text: a.textContent.trim(), href: a.getAttribute('href')});
                     });
                 }
-
                 results.push({title, lesson_id: lessonId, locked, links});
             });
             return results;
         }
         """)
-
-        raw_title = await self.page.evaluate("""
-        () => {
-            const el = document.querySelector('[data-testid="program-header"]');
-            return el ? el.textContent.trim() : document.title;
-        }
-        """)
-
+        raw_title = await self.page.evaluate("""() => { const el = document.querySelector('[data-testid="program-header"]'); return el ? el.textContent.trim() : document.title; } """)
         program_title = re.sub(r'\d+\s+курс.*?:\s*', '', raw_title, flags=re.IGNORECASE)
         program_title = re.sub(r'\d+\s+[а-яА-Я]+\s*—\s*\d+\s+[а-яА-Я]+', '', program_title)
         program_title = re.sub(r'BHEBFAD[-\w]+', '', program_title, flags=re.IGNORECASE)
         program_title = program_title.strip()
+        if not disciplines:
+            return program_title, []
+        print(f"📚 Найдено разделов (legacy): {len(disciplines)}")
+        for d in disciplines:
+            status = "🔒" if d["locked"] else "✅"
+            print(f"  {status} {d['title']} (id: {d['lesson_id']})")
+        return program_title, disciplines
+
+    async def _get_program_disciplines_cards(self):
+        """Новая структура: карточки модулей на /schedule."""
+        # Ждём карточки
+        has_cards = False
+        for _ in range(15):
+            await asyncio.sleep(1)
+            has_cards = await self.page.evaluate('''() => document.querySelectorAll(\'[data-testid="profession-program-card"]\').length > 0''')
+            if has_cards:
+                break
+        
+        if not has_cards:
+            print("⚠️ Карточки модулей не появились")
+            return "", []
+
+        disciplines = await self.page.evaluate("""
+        () => {
+            const results = [];
+            const seen = new Set();
+            document.querySelectorAll('[data-testid="profession-program-card"]').forEach(card => {
+                let titleEl = card.querySelector('[class*="itemName"]');
+                if (!titleEl) titleEl = card.querySelector('[class*="ProgramCard--name"]');
+                if (!titleEl) titleEl = card.querySelector('h3, h2');
+                let title = titleEl ? titleEl.textContent.trim() : '';
+                if (!title) {
+                    const allText = Array.from(card.querySelectorAll('*'))
+                        .map(el => el.childNodes.length === 1 && el.childNodes[0].nodeType === 3 ? el.textContent.trim() : '')
+                        .filter(t => t.length > 10);
+                    title = allText[0] || '';
+                }
+                let href = '';
+                const linkEl = card.closest('a') || card.querySelector('a');
+                if (linkEl) href = linkEl.getAttribute('href') || '';
+                if (!href) {
+                    const anyLink = card.querySelector('a[href*="program"]');
+                    if (anyLink) href = anyLink.getAttribute('href') || '';
+                }
+                let module_id = '';
+                if (href) {
+                    const m = href.match(/program\/([^\\/\\?#]+)/);
+                    if (m) module_id = m[1];
+                }
+                if (!title || !module_id || seen.has(module_id)) return;
+                seen.add(module_id);
+                const locked = card.textContent.toLowerCase().includes('откроется') || 
+                               card.textContent.toLowerCase().includes('скоро');
+                results.push({title, program_id: module_id, href, locked, links: []});
+            });
+            return results;
+        }
+        """)
 
         if not disciplines:
             html = await self.page.content()
@@ -246,14 +298,55 @@ class NetologyScraper:
             with open(debug_path, "w", encoding="utf-8") as f:
                 f.write(html)
             print(f"⚠️ Дисциплины не найдены, HTML сохранён: {debug_path}")
-            return program_title, []
+            return "", []
 
         print(f"📚 Найдено разделов: {len(disciplines)}")
         for d in disciplines:
             status = "🔒" if d["locked"] else "✅"
-            print(f"  {status} {d['title']} (id: {d['lesson_id']})")
+            print(f"  {status} {d['title']} (program: {d['program_id']})")
 
-        return program_title, disciplines
+        # program_title берём из первой дисциплины (или можно позже в run_agent.py)
+        return "", disciplines
+
+    async def get_module_lessons(self, module_program_id):
+        """Собирает список lesson_id со страницы /schedule модуля."""
+        url = f"https://netology.ru/profile/program/{module_program_id}/schedule"
+        print(f"🌐 {url}")
+        ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
+        if not ok:
+            print("⚠️ Страница модуля не загрузилась")
+            return []
+        
+        has_lessons = False
+        for _ in range(15):
+            await asyncio.sleep(1)
+            has_lessons = await self.page.evaluate("""() => document.querySelectorAll('[data-lesson-id]').length > 0""")
+            if has_lessons:
+                break
+        
+        if not has_lessons:
+            print("⚠️ Занятия модуля не появились")
+            return []
+
+        lessons = await self.page.evaluate("""
+        () => {
+            const results = [];
+            const seenIds = new Set();
+            document.querySelectorAll('[data-lesson-id]').forEach(block => {
+                const lessonId = block.getAttribute('data-lesson-id');
+                if (!lessonId || seenIds.has(lessonId)) return;
+                seenIds.add(lessonId);
+                const titleEl = block.querySelector('[data-testid="program-lesson-title"]');
+                const title = titleEl ? titleEl.textContent.trim() : '';
+                const locked = block.textContent.toLowerCase().includes('откроется');
+                results.push({lesson_id: lessonId, title, locked});
+            });
+            return results;
+        }
+        """)
+        
+        print(f"   Найдено занятий: {len(lessons)}")
+        return lessons
 
     async def get_discipline_lessons(self, program_id, lesson_id, fallback_links=None):
         url = f"https://netology.ru/profile/program/{program_id}/lessons/{lesson_id}"

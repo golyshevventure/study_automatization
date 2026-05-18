@@ -33,6 +33,9 @@ def ensure_new_structure():
 def ensure_subject_dirs(subject_name):
     """Создаёт папки дисциплины и 3 подпапки."""
     safe = _safe_filename(subject_name)
+    if not safe:
+        safe = "Предмет"
+        print(f"⚠️ Имя предмета пустое после очистки, используем '{safe}'")
     base = os.path.join(STUDY_DIR, "Дисциплины", safe)
     for sub in ["Конспекты", "Учебные материалы", "Информация по дисциплине"]:
         os.makedirs(os.path.join(base, sub), exist_ok=True)

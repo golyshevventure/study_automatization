@@ -29,6 +29,9 @@ def update_subject_index(subject_name, conspects, materials, info_items):
     Создаёт или перезаписывает файл {subject}/{subject}.md
     """
     safe = _safe_filename(subject_name)
+    if not safe:
+        print("⚠️ Пустое имя предмета, индексный файл не создан")
+        return
     subject_dir = os.path.join(STUDY_DIR, "Дисциплины", safe)
     os.makedirs(subject_dir, exist_ok=True)
 
@@ -80,6 +83,8 @@ def update_subject_index(subject_name, conspects, materials, info_items):
 def reset_subject_index(subject_name):
     """Очищает файл предмета (перед новым прогоном)."""
     safe = _safe_filename(subject_name)
+    if not safe:
+        return
     filepath = os.path.join(STUDY_DIR, "Дисциплины", safe, f"{safe}.md")
     if os.path.exists(filepath):
         with open(filepath, "r", encoding="utf-8") as f:

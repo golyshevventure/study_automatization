@@ -6,6 +6,17 @@
 
 ## 🏷️ Стабильная версия
 
+**v0.8.2** (в работе)
+- ✅ **Исправлена опечатка**: `"силабус"` → `"силлабус"` в INFO_KEYWORDS
+- ✅ **Расширены SKIP_KEYWORDS**: `"тест"`, `"задание к вебинару"`, `"задание к лекции"`, `"итоговый тест"`
+- ✅ **Negative keywords**: конспектные keywords больше не перекрывают skip (например, "задание к вебинару" не станет конспектом из-за слова "вебинар")
+- ✅ **Structure page detection**: `is_structure_page()` определяет HTML-страницы с описанием программы курса вместо реального контента
+- ✅ **Smart audio fallback для structure pages**: если HTML = описание курса, но есть видео — извлекаем аудио несмотря на порог 1000 символов
+- ✅ **Hybrid classification**: keyword-based классификация + LLM fallback ( confidence < 70 → запрос к DeepSeek)
+- ✅ **Guard на пустой subject_name**: защита от создания `.md` в корне `Дисциплины/`
+- ✅ **Промпт**: добавлен запрет на раздел "ключевые выводы" в конце конспекта
+- ✅ **Добавлена `classify_lesson_via_llm()`** в `generate_summary.py`: few-shot классификация через OpenRouter
+
 **v0.8.1** (коммит: `d93115f`)
 - ✅ Аудио-пайплайн: PyTorch cu128, Whisper GPU (RTX 5070), audio_extractor (M3U8/MP4)
 - ✅ SKIP_KEYWORDS + dedup + `--force`

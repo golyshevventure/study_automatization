@@ -9,14 +9,16 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Утилиты"))
 from netology_scraper import NetologyScraper
 from netology_auth import ensure_netology_login
 from dotenv import load_dotenv
-from generate_summary import generate_summary
+from generate_summary import generate_summary, classify_lesson_via_llm
 from second_brain_cleanup import remove_old_structure, ensure_new_structure, ensure_subject_dirs
 from material_classifier import (
     classify_material,
     category_folder,
     should_skip,
     classify_lesson_strategy,
+    classify_lesson_strategy_with_confidence,
     classify_item,
+    is_structure_page,
 )
 from subject_index import update_subject_index, reset_subject_index
 from conspect_writer import write_material, write_large_file_stub, wiki_link
@@ -120,12 +122,26 @@ async def _get_item_content(scraper, item, subject_name):
     Возвращает dict с text, video_url, title, href.
     Audio fallback: если видео есть, но текст короткий (<1000 симв.) — транскрибируем.
     Если текст уже достаточно длинный (VTT, PDF, хороший HTML) — используем его.
+    Structure page detection: если HTML — это описание программы курса, помечаем.
     """
     text, video_url = await scraper.get_lesson_text_content(item["href"])
 
+    # Detect structure page (course syllabus instead of real content)
+    is_structure = False
+    if text and is_structure_page(text):
+        print(f"   ⚠️ Обнаружена страница с описанием программы курса (structure page)")
+        is_structure = True
+        # If video exists, try audio fallback even if text > 1000
+        if video_url:
+            print(f"   🎬 Попробуем аудио fallback несмотря на длинный текст...")
+            text = None  # Force audio fallback
+
     # Audio fallback: если есть видео И текст короткий/пустой
     if video_url and (not text or len(text) < 1000):
-        print(f"   🎬 Найдено видео ({item['title']}), текст короткий ({len(text) if text else 0} симв.), извлекаем аудио...")
+        if is_structure:
+            print(f"   🎬 Извлекаем аудио из-за structure page...")
+        else:
+            print(f"   🎬 Найдено видео ({item['title']}), текст короткий ({len(text) if text else 0} симв.), извлекаем аудио...")
         try:
             audio_path = extract_audio_from_mp4(
                 video_url, output_dir=f"data/audio/{safe_filename(subject_name)}"
@@ -135,11 +151,12 @@ async def _get_item_content(scraper, item, subject_name):
             if transcript and len(transcript) > 500:
                 text = f"[Транскрипция вебинара]\n\n{transcript}"
                 print(f"   ✅ Транскрипция: {len(transcript)} символов")
+                is_structure = False  # Audio replaced structure text
             else:
                 print(f"   ⚠️ Транскрипция слишком короткая, используем HTML fallback")
         except Exception as e:
             print(f"   ⚠️ Ошибка аудио: {e}")
-    elif video_url:
+    elif video_url and not is_structure:
         print(f"   🎬 Найдено видео, но текст уже достаточно длинный ({len(text)} симв.), аудио не требуется")
 
     return {
@@ -147,6 +164,7 @@ async def _get_item_content(scraper, item, subject_name):
         "href": item["href"],
         "text": text,
         "video_url": video_url,
+        "is_structure": is_structure,
     }
 
 
@@ -213,7 +231,7 @@ async def main():
         # Определяем subject_name
         if subject_name_override:
             subject_name = subject_name_override
-        elif program_title:
+        elif program_title and program_title.strip():
             subject_name = program_title
         elif disciplines:
             # Ищем первую "содержательную" дисциплину (не служебную)
@@ -329,6 +347,7 @@ async def _process_items(
     """
     Обрабатывает items одного lesson.
     Определяет стратегию (merge/split), выполняет audio fallback, сохраняет.
+    Hybrid classification: keyword first, LLM fallback if uncertain.
     """
     # Deduplication href'ов
     unique_items = []
@@ -349,21 +368,43 @@ async def _process_items(
         ic = await _get_item_content(scraper, item, subject_name)
         item_contents.append(ic)
 
-    # Определяем стратегию
-    strategy = classify_lesson_strategy(section_name, item_contents)
-    print(f"   🧠 Стратегия: {strategy}")
+    # Check if ALL items are structure pages → skip entirely
+    all_structure = all(ic.get("is_structure") for ic in item_contents)
+    if all_structure and len(item_contents) > 0:
+        print(f"   ⏭️  Пропускаем (все материалы — описание программы курса, нет контента)")
+        return
+
+    # Determine strategy with hybrid classification
+    strategy, confidence = classify_lesson_strategy_with_confidence(section_name, item_contents)
+    print(f"   🧠 Keyword стратегия: {strategy} (уверенность: {confidence}%)")
+
+    # LLM fallback for uncertain cases
+    if confidence < 70:
+        item_titles = [ic["title"] for ic in item_contents]
+        llm_strategy = classify_lesson_via_llm(section_name, item_titles, subject_name)
+        if llm_strategy != strategy:
+            print(f"   🧠 LLM переопределил стратегию: {strategy} → {llm_strategy}")
+            strategy = llm_strategy
+        else:
+            print(f"   🧠 LLM подтвердил стратегию: {strategy}")
 
     if strategy == "skip":
-        print(f"   ⏭️  Пропускаем (домашнее задание / контрольная / эссе)")
+        print(f"   ⏭️  Пропускаем (домашнее задание / контрольная / эссе / тест)")
         return
 
     if strategy == "merge_conspect":
-        # Объединяем ВСЕ тексты в один
+        # Объединяем ВСЕ тексты в один, skipping structure pages
         parts = []
         for ic in item_contents:
+            if ic.get("is_structure"):
+                continue
             if ic["text"] and len(ic["text"]) > 50:
                 parts.append(f"## {ic['title']}\n\n{ic['text']}")
         combined_text = "\n\n---\n\n".join(parts)
+
+        if not combined_text or len(combined_text) < 300:
+            print(f"   ⏭️  Пропускаем (нет полезного контента после фильтрации structure pages)")
+            return
 
         folder, link = process_material(
             subject_name, section_name, section_name,
@@ -379,6 +420,8 @@ async def _process_items(
     if strategy == "split_program":
         # "Рабочая программа": каждый item по своей категории
         for ic in item_contents:
+            if ic.get("is_structure"):
+                continue
             cat = classify_item(ic["title"], section_name)
             folder, link = process_material(
                 subject_name, section_name, ic["title"],
@@ -398,6 +441,9 @@ async def _process_items(
 
     # strategy == "split" — каждый item отдельно по обычной классификации
     for ic in item_contents:
+        if ic.get("is_structure"):
+            print(f"   ⏭️  Пропускаем structure page: {ic['title']}")
+            continue
         folder, link = process_material(
             subject_name, section_name, ic["title"],
             ic["text"],

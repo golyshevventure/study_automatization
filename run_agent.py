@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import os
 import sys
 import re
@@ -24,8 +25,12 @@ from subject_index import update_subject_index, reset_subject_index
 from conspect_writer import write_material, write_large_file_stub, wiki_link
 from audio_extractor import extract_audio_from_mp4
 from local_whisper import transcribe_to_text
+from logger_config import setup_logging, get_logger
 
 load_dotenv()
+
+logger = get_logger("run_agent")
+setup_logging()
 
 SECONDBRAIN = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain"
 STUDY_DIR = os.path.join(SECONDBRAIN, "Учеба (Фин. Ун.)")

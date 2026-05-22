@@ -28,6 +28,7 @@
 
 **v0.9.0** (в работе)
 - ✅ **Pytest + Black**: 18 тестов проходят, код отформатирован
+- ✅ **Logging**: logger_config.py, заменён print в generate_summary.py и netology_scraper.py
 - 🎨 **Frontend / Telegram Mini App**: веб-интерфейс на JS/HTML/CSS
 - 🔗 **Telegram WebApp SDK**: интеграция с ботом
 - ⚡ **Оптимизация скорости**: цель — с 17 часов до 2-3 часов на весь бакалавриат

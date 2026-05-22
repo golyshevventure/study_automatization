@@ -34,7 +34,7 @@ class NetologyScraper:
             with open(self.cookies_file, "r", encoding="utf-8") as f:
                 cookies = json.load(f)
             await self.context.add_cookies(cookies)
-            print("🍪 Cookies загружены")
+            logger.info("Cookies загружены")
         self.page = await self.context.new_page()
 
     async def stop(self):
@@ -49,7 +49,7 @@ class NetologyScraper:
             os.makedirs(os.path.dirname(self.cookies_file) or ".", exist_ok=True)
             with open(self.cookies_file, "w", encoding="utf-8") as f:
                 json.dump(cookies, f, ensure_ascii=False, indent=2)
-            print("🍪 Cookies сохранены")
+            logger.info("Cookies сохранены")
 
     def _ensure_url(self, url):
         if not url:
@@ -119,7 +119,7 @@ class NetologyScraper:
                 print(f"✅ VTT: {len(text)} символов")
                 return text
         except Exception as e:
-            print(f"⚠️ VTT ошибка: {e}")
+            logger.error("VTT ошибка: %s", e)
         return ""
 
     async def _extract_file_text(self, url: str) -> str:
@@ -175,15 +175,15 @@ class NetologyScraper:
                             texts.append(shape.text)
                 return "\n".join(texts)
         except Exception as e:
-            print(f"⚠️ Файл ошибка: {e}")
+            logger.error("Файл ошибка: %s", e)
         return ""
 
     async def get_program_disciplines(self, program_id):
         url = f"https://netology.ru/profile/program/{program_id}/schedule"
-        print(f"🌐 {url}")
+        logger.info("%s", url)
         ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
         if not ok:
-            print("⚠️ Страница schedule не загрузилась")
+            logger.error("Страница schedule не загрузилась")
             return "", []
 
         # Ждём рендеринга React — до 10 секунд
@@ -240,7 +240,7 @@ class NetologyScraper:
         program_title = program_title.strip()
         if not disciplines:
             return program_title, []
-        print(f"📚 Найдено разделов (legacy): {len(disciplines)}")
+        logger.info("Найдено разделов (legacy): %s", len(disciplines))
         for d in disciplines:
             status = "🔒" if d["locked"] else "✅"
             print(f"  {status} {d['title']} (id: {d['lesson_id']})")
@@ -259,7 +259,7 @@ class NetologyScraper:
                 break
 
         if not has_cards:
-            print("⚠️ Карточки модулей не появились")
+            logger.warning("Карточки модулей не появились")
             return "", []
 
         disciplines = await self.page.evaluate("""
@@ -308,7 +308,7 @@ class NetologyScraper:
             print(f"⚠️ Дисциплины не найдены, HTML сохранён: {debug_path}")
             return "", []
 
-        print(f"📚 Найдено разделов: {len(disciplines)}")
+        logger.info("Найдено разделов: %s", len(disciplines))
         for d in disciplines:
             status = "🔒" if d["locked"] else "✅"
             print(f"  {status} {d['title']} (program: {d['program_id']})")
@@ -319,7 +319,7 @@ class NetologyScraper:
     async def get_module_lessons(self, module_program_id):
         """Собирает список lesson_id со страницы /schedule модуля."""
         url = f"https://netology.ru/profile/program/{module_program_id}/schedule"
-        print(f"🌐 {url}")
+        logger.info("%s", url)
         ok = await self._safe_goto(url, wait_until="domcontentloaded", timeout=60000)
         if not ok:
             print("⚠️ Страница модуля не загрузилась")
@@ -335,7 +335,7 @@ class NetologyScraper:
                 break
 
         if not has_lessons:
-            print("⚠️ Занятия модуля не появились")
+            logger.warning("Занятия модуля не появились")
             return []
 
         lessons = await self.page.evaluate("""
@@ -355,16 +355,16 @@ class NetologyScraper:
         }
         """)
 
-        print(f"   Найдено занятий: {len(lessons)}")
+        logger.info("Найдено занятий: %s", len(lessons))
         return lessons
 
     async def get_discipline_lessons(self, program_id, lesson_id, fallback_links=None):
         url = f"https://netology.ru/profile/program/{program_id}/lessons/{lesson_id}"
-        print(f"🌐 {url}")
+        logger.info("%s", url)
 
         ok = await self._safe_goto(url)
         if not ok:
-            print("⚠️ Страница раздела не открылась, пробуем fallback...")
+            logger.warning("Страница раздела не открылась, пробуем fallback")
         else:
             await asyncio.sleep(3)
             try:
@@ -450,10 +450,10 @@ class NetologyScraper:
                     break
 
         if not items:
-            print("⚠️ Занятия не найдены")
+            logger.warning("Занятия не найдены")
             return []
 
-        print(f"📄 Найдено материалов: {len(items)}")
+        logger.info("Найдено материалов: %s", len(items))
         for item in items:
             status = "🔒" if item["locked"] else "✅"
             print(f"  {status} {item['title']}")
@@ -469,7 +469,7 @@ class NetologyScraper:
         if not url:
             return "", ""
 
-        print(f"🌐 {url}")
+        logger.info("%s", url)
 
         vtt_url = None
         file_url = None
@@ -504,7 +504,7 @@ class NetologyScraper:
             print("⚠️ Страница не открылась")
             return "", ""
 
-        print("⏳ Ждём загрузку ресурсов...")
+        logger.info("Ждём загрузку ресурсов...")
         await asyncio.sleep(3)
         self.page.remove_listener("response", handle_response)
 
@@ -518,7 +518,7 @@ class NetologyScraper:
                         print(f"✅ VTT: {len(text)} символов")
                         return text, video_url or ""
             except Exception as e:
-                print(f"⚠️ VTT ошибка: {e}")
+                logger.error("VTT ошибка: %s", e)
 
         # 1. Файлы (PDF/DOCX/PPTX)
         if file_url:
@@ -553,7 +553,7 @@ class NetologyScraper:
                 if len(text) > 300:
                     return text, video_url or ""
             except Exception as e:
-                print(f"⚠️ Файл ошибка: {e}")
+                logger.error("Файл ошибка: %s", e)
 
         # 2. HTML fallback
         html = await self.page.content()
@@ -628,10 +628,10 @@ class NetologyScraper:
 
     async def debug_webinar(self, url, output_path="data/debug_webinar.html"):
         url = self._ensure_url(url)
-        print(f"🔍 Диагностика вебинара: {url}")
+        logger.info("Диагностика вебинара: %s", url)
         ok = await self._safe_goto(url)
         if not ok:
-            print("❌ Не удалось открыть")
+            logger.error("Не удалось открыть")
             return
         await asyncio.sleep(3)
 
@@ -639,4 +639,4 @@ class NetologyScraper:
         os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"💾 HTML сохранён: {output_path}")
+        logger.info("HTML сохранён: %s", output_path)

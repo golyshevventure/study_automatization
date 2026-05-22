@@ -1,9 +1,15 @@
+import logging
 import os
 import re
+import sys
 import time
 import requests
 from dotenv import load_dotenv
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Утилиты"))
+from logger_config import get_logger
+
+logger = get_logger("generate_summary")
 load_dotenv()
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
@@ -72,7 +78,12 @@ def generate_chunk(text, subject, topic, retries=3):
             return result
         if resp.status_code == 429 and attempt < retries:
             wait = 30 + attempt * 30
-            print(f"   ⏳ 429 Rate limit, ждём {wait} сек... (попытка {attempt + 1}/{retries})")
+            logger.info(
+                "429 Rate limit, ждём %s сек... (попытка %s/%s)",
+                wait,
+                attempt + 1,
+                retries,
+            )
             time.sleep(wait)
             continue
         return f"Ошибка {resp.status_code}: {resp.text[:200]}"
@@ -127,20 +138,20 @@ def classify_lesson_via_llm(lesson_title: str, item_titles: list, subject: str, 
             if attempt < retries:
                 time.sleep(10)
                 continue
-            print(f"   ⚠️ LLM classification error: {e}")
+            logger.error("LLM classification error: %s", e)
             return "split"
         if resp.status_code == 200:
             result = resp.json()["choices"][0]["message"].get("content", "").strip().lower()
             for valid in ["skip", "split", "merge_conspect", "split_program"]:
                 if valid in result:
-                    print(f"   🧠 LLM стратегия: {valid}")
+                    logger.info("LLM стратегия: %s", valid)
                     return valid
-            print(f"   ⚠️ LLM вернул неожиданный ответ: {result}")
+            logger.warning("LLM вернул неожиданный ответ: %s", result)
             return "split"
         if resp.status_code == 429 and attempt < retries:
             time.sleep(30)
             continue
-        print(f"   ⚠️ LLM classification HTTP {resp.status_code}")
+        logger.error("LLM classification HTTP %s", resp.status_code)
         return "split"
     return "split"
 
@@ -161,14 +172,16 @@ def generate_summary(text, subject, topic):
         chunks.append(current.strip())
 
     if len(chunks) > MAX_CHUNKS:
-        print(f"   ⚠️ Слишком много частей ({len(chunks)}), ограничиваем {MAX_CHUNKS}")
+        logger.warning(
+        "Слишком много частей (%s), ограничиваем %s", len(chunks), MAX_CHUNKS
+    )
         chunks = chunks[:MAX_CHUNKS]
 
-    print(f"   📦 Текст разбит на {len(chunks)} частей")
+    logger.info("Текст разбит на %s частей", len(chunks))
 
     partial_summaries = []
     for i, chunk in enumerate(chunks, 1):
-        print(f"   ⏳ Часть {i}/{len(chunks)}...")
+        logger.info("Часть %s/%s...", i, len(chunks))
         summary = generate_chunk(chunk, subject, topic)
         if not summary.startswith("Ошибка"):
             summary = re.sub(r"^# .+?\n+", "", summary, flags=re.MULTILINE)

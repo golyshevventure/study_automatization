@@ -1,0 +1,1084 @@
+{
+  "programs": [
+    {
+      "id": 5382,
+      "title": "Big Data: основы работы с большими массивами данных",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 5382,
+          "program_schedule_path": "/profile/program/bd-10/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Big Data: основы работы с большими массивами данных"
+        }
+      ]
+    },
+    {
+      "id": 27457,
+      "title": "Основы Python: создаём телеграм-бота",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 27457,
+          "program_schedule_path": "/profile/program/pyfree-async/schedule",
+          "lesson_items_passed": 23,
+          "lesson_items_count": 76,
+          "lessons_passed": 1,
+          "lessons_count": 13,
+          "is_passed": true,
+          "is_available": true,
+          "title": "Основы Python: создаём телеграм-бота"
+        }
+      ]
+    },
+    {
+      "id": 27904,
+      "title": "Введение в SQL и работу с базой данных",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 27904,
+          "program_schedule_path": "/profile/program/sqlbasic/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 72,
+          "lessons_passed": 0,
+          "lessons_count": 9,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Введение в SQL и работу с базой данных"
+        }
+      ]
+    },
+    {
+      "id": 28974,
+      "title": "Data Scientist: с нуля до middle",
+      "is_profession": true,
+      "modules": [
+        {
+          "id": 69835,
+          "program_schedule_path": "/profile/program/info-dsu-67/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Вводная информация для студентов курса"
+        },
+        {
+          "id": 69836,
+          "program_schedule_path": "/profile/program/eng-ds-1/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Бонусный курс. Английский язык для аналитиков"
+        },
+        {
+          "id": 69837,
+          "program_schedule_path": "/profile/program/dfd-59/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы аналитики и аналитическое мышление"
+        },
+        {
+          "id": 96877,
+          "program_schedule_path": "/profile/program/dva-33/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы визуализации данных"
+        },
+        {
+          "id": 69839,
+          "program_schedule_path": "/profile/program/fps-34/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы статистики"
+        },
+        {
+          "id": 69841,
+          "program_schedule_path": "/profile/program/pyda-52/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы Python"
+        },
+        {
+          "id": 32170,
+          "program_schedule_path": "/profile/program/numpy-52/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Библиотеки Python для анализа данных"
+        },
+        {
+          "id": 32171,
+          "program_schedule_path": "/profile/program/stpy-52/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Статистика в Python"
+        },
+        {
+          "id": 69842,
+          "program_schedule_path": "/profile/program/pyda-diplom-52/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Итоговый модуль по курсу «Python для анализа данных»"
+        },
+        {
+          "id": 32159,
+          "program_schedule_path": "/profile/program/sql-63/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "SQL и получение данных"
+        },
+        {
+          "id": 94839,
+          "program_schedule_path": "/profile/program/skds-1/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Soft Skills"
+        },
+        {
+          "id": 32160,
+          "program_schedule_path": "/profile/program/mds-41/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Математика для Data Science"
+        },
+        {
+          "id": 69840,
+          "program_schedule_path": "/profile/program/abd-46/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Аналитика больших данных"
+        },
+        {
+          "id": 32162,
+          "program_schedule_path": "/profile/program/feml-40/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Работа с признаками и построение моделей"
+        },
+        {
+          "id": 32163,
+          "program_schedule_path": "/profile/program/dsnn-35/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы нейронных сетей"
+        },
+        {
+          "id": 32164,
+          "program_schedule_path": "/profile/program/rsml-20/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Рекомендательные системы"
+        },
+        {
+          "id": 32165,
+          "program_schedule_path": "/profile/program/tsml-22/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Временные ряды"
+        },
+        {
+          "id": 32166,
+          "program_schedule_path": "/profile/program/cvml-21/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Компьютерное зрение"
+        },
+        {
+          "id": 32167,
+          "program_schedule_path": "/profile/program/nlp-21/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Обработка естественного языка"
+        },
+        {
+          "id": 32168,
+          "program_schedule_path": "/profile/program/zak-23/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Менеджмент дата-проектов"
+        },
+        {
+          "id": 32172,
+          "program_schedule_path": "/profile/program/dll-47/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Deep Learning"
+        },
+        {
+          "id": 69843,
+          "program_schedule_path": "/profile/program/diplom-dsu-65/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Итоговый модуль профессии «Data Scientist: с нуля до middle»"
+        },
+        {
+          "id": 132798,
+          "program_schedule_path": "/profile/program/sh-pr-ds-dsu/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Школа практики"
+        }
+      ]
+    },
+    {
+      "id": 38064,
+      "title": "Системный аналитик: первые шаги к профессии",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 38064,
+          "program_schedule_path": "/profile/program/salfree-26/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 37,
+          "lessons_passed": 0,
+          "lessons_count": 6,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Системный аналитик: первые шаги к профессии"
+        }
+      ]
+    },
+    {
+      "id": 38184,
+      "title": "IT-профессии: как выбрать направление и реализовать себя",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 38184,
+          "program_schedule_path": "/profile/program/dp-104/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 103,
+          "lessons_passed": 0,
+          "lessons_count": 14,
+          "is_passed": false,
+          "is_available": true,
+          "title": "IT-профессии: как выбрать направление и реализовать себя"
+        }
+      ]
+    },
+    {
+      "id": 38396,
+      "title": "Демокурс бакалавриата «Финансы и анализ данных»",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 38396,
+          "program_schedule_path": "/profile/program/bhebfad-pk-23/schedule",
+          "lesson_items_passed": 3,
+          "lesson_items_count": 15,
+          "lessons_passed": 0,
+          "lessons_count": 4,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Демокурс бакалавриата «Финансы и анализ данных»"
+        }
+      ]
+    },
+    {
+      "id": 38397,
+      "title": "Вводный курс бакалавриата ТюмГУ «Разработка IT-продуктов и информационных систем»",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 38397,
+          "program_schedule_path": "/profile/program/bhebdps-pk-23/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 38,
+          "lessons_passed": 0,
+          "lessons_count": 11,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Вводный курс бакалавриата ТюмГУ «Разработка IT-продуктов и информационных систем»"
+        }
+      ]
+    },
+    {
+      "id": 39808,
+      "title": "DevOps-инженер с нуля",
+      "is_profession": true,
+      "modules": [
+        {
+          "id": 74689,
+          "program_schedule_path": "/profile/program/info-fops-22/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Вводная информация для студентов «DevOps-инженер с нуля»"
+        },
+        {
+          "id": 74677,
+          "program_schedule_path": "/profile/program/slina-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "IT-системы и операционная система Linux"
+        },
+        {
+          "id": 74678,
+          "program_schedule_path": "/profile/program/slinb-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Операционная система Linux\t"
+        },
+        {
+          "id": 74679,
+          "program_schedule_path": "/profile/program/slinc-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Администрирование операционной системы Linux"
+        },
+        {
+          "id": 74680,
+          "program_schedule_path": "/profile/program/bash-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Программирование на Bash"
+        },
+        {
+          "id": 74681,
+          "program_schedule_path": "/profile/program/net-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Сеть, сетевые протоколы"
+        },
+        {
+          "id": 74682,
+          "program_schedule_path": "/profile/program/svirt-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Виртуализация"
+        },
+        {
+          "id": 74683,
+          "program_schedule_path": "/profile/program/cicd-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Автоматизация и CI/СD"
+        },
+        {
+          "id": 74684,
+          "program_schedule_path": "/profile/program/smon-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Мониторинг"
+        },
+        {
+          "id": 74685,
+          "program_schedule_path": "/profile/program/sflt-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Отказоустойчивость"
+        },
+        {
+          "id": 74686,
+          "program_schedule_path": "/profile/program/sysdb-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Системы хранения и передачи данных"
+        },
+        {
+          "id": 74687,
+          "program_schedule_path": "/profile/program/sdbsql-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Реляционные базы данных и администрирование баз данных"
+        },
+        {
+          "id": 74688,
+          "program_schedule_path": "/profile/program/syssec-31/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Информационная безопасность"
+        },
+        {
+          "id": 82092,
+          "program_schedule_path": "/profile/program/course-fops-22/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Курсовой проект по блоку \"Системное администрирование\""
+        },
+        {
+          "id": 74676,
+          "program_schedule_path": "/profile/program/git-fops-22/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Системы управления версиями"
+        },
+        {
+          "id": 131691,
+          "program_schedule_path": "/profile/program/shvirtd-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Виртуализация и контейнеризация"
+        },
+        {
+          "id": 131692,
+          "program_schedule_path": "/profile/program/shter-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Облачная инфраструктура. Terraform"
+        },
+        {
+          "id": 131693,
+          "program_schedule_path": "/profile/program/shkonf-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Система управления конфигурациями"
+        },
+        {
+          "id": 131694,
+          "program_schedule_path": "/profile/program/shcicd-dev-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Непрерывная разработка и интеграция"
+        },
+        {
+          "id": 131695,
+          "program_schedule_path": "/profile/program/shmon-dev-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Мониторинг и логи"
+        },
+        {
+          "id": 131696,
+          "program_schedule_path": "/profile/program/shmicros-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Микросервисы"
+        },
+        {
+          "id": 131697,
+          "program_schedule_path": "/profile/program/shkuber-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Kubernetes: основы, применение и администрирование"
+        },
+        {
+          "id": 131698,
+          "program_schedule_path": "/profile/program/shclopro-12/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Организация проекта при помощи облачных провайдеров"
+        },
+        {
+          "id": 74675,
+          "program_schedule_path": "/profile/program/ffops-22/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Итоговый модуль профессии DevOps-инженер с нуля"
+        },
+        {
+          "id": 173877,
+          "program_schedule_path": "/profile/program/mitap-fops-1/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 0,
+          "lessons_passed": 0,
+          "lessons_count": 0,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Митапы для DevOps-разработчиков и системных администраторов"
+        }
+      ]
+    },
+    {
+      "id": 41550,
+      "title": "Симулятор «Рабочая неделя веб-разработчика на Python»",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 41550,
+          "program_schedule_path": "/profile/program/pdsim-async-1/schedule",
+          "lesson_items_passed": 1,
+          "lesson_items_count": 17,
+          "lessons_passed": 1,
+          "lessons_count": 8,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Симулятор «Рабочая неделя веб-разработчика на Python»"
+        }
+      ]
+    },
+    {
+      "id": 42827,
+      "title": "Как начать работать на фрилансе",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 42827,
+          "program_schedule_path": "/profile/program/fl-bp-5/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 33,
+          "lessons_passed": 0,
+          "lessons_count": 6,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Как начать работать на фрилансе"
+        }
+      ]
+    },
+    {
+      "id": 44412,
+      "title": "Специалист по информационной безопасности: старт карьеры",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 44412,
+          "program_schedule_path": "/profile/program/sibfree-9/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 24,
+          "lessons_passed": 0,
+          "lessons_count": 7,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Специалист по информационной безопасности: старт карьеры"
+        }
+      ]
+    },
+    {
+      "id": 48767,
+      "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+      "is_profession": true,
+      "modules": [
+        {
+          "id": 109919,
+          "program_schedule_path": "/profile/program/info-spdata-1/schedule",
+          "lesson_items_passed": 1,
+          "lesson_items_count": 10,
+          "lessons_passed": 0,
+          "lessons_count": 3,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Вводная информация для студентов"
+        },
+        {
+          "id": 109683,
+          "program_schedule_path": "/profile/program/sql-free/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 64,
+          "lessons_passed": 0,
+          "lessons_count": 8,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Введение в SQL и работу с базой данных"
+        },
+        {
+          "id": 109684,
+          "program_schedule_path": "/profile/program/python-free/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 23,
+          "lessons_passed": 0,
+          "lessons_count": 7,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы работы с Python для аналитиков"
+        },
+        {
+          "id": 109740,
+          "program_schedule_path": "/profile/program/bi-free/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 53,
+          "lessons_passed": 0,
+          "lessons_count": 8,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Основы визуализации данных"
+        },
+        {
+          "id": 109741,
+          "program_schedule_path": "/profile/program/fin-ds/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 6,
+          "lessons_passed": 0,
+          "lessons_count": 2,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Подводим итоги обучения и определяем дальнейшие шаги"
+        }
+      ]
+    },
+    {
+      "id": 50002,
+      "title": "В поиске своего призвания",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 50002,
+          "program_schedule_path": "/profile/program/prizvanie_a/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 20,
+          "lessons_passed": 0,
+          "lessons_count": 5,
+          "is_passed": false,
+          "is_available": true,
+          "title": "В поиске своего призвания"
+        }
+      ]
+    },
+    {
+      "id": 51838,
+      "title": "Вводный курс  бакалавриата «Финансы и анализ данных»",
+      "is_profession": false,
+      "modules": [
+        {
+          "id": 51838,
+          "program_schedule_path": "/profile/program/bhebfad-pk-24/schedule",
+          "lesson_items_passed": 17,
+          "lesson_items_count": 29,
+          "lessons_passed": 4,
+          "lessons_count": 8,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Вводный курс  бакалавриата «Финансы и анализ данных»"
+        }
+      ]
+    },
+    {
+      "id": 59690,
+      "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+      "is_profession": true,
+      "modules": [
+        {
+          "id": 157464,
+          "program_schedule_path": "/profile/program/bhebfad-25-am-1/schedule",
+          "lesson_items_passed": 25,
+          "lesson_items_count": 26,
+          "lessons_passed": 8,
+          "lessons_count": 8,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Адаптационный модуль для бакалавриата «Финансы и анализ данных»"
+        },
+        {
+          "id": 157747,
+          "program_schedule_path": "/profile/program/bhebfad-25-opros-1/schedule",
+          "lesson_items_passed": 0,
+          "lesson_items_count": 1,
+          "lessons_passed": 0,
+          "lessons_count": 1,
+          "is_passed": false,
+          "is_available": true,
+          "title": "Опрос про обучение в бакалавриате"
+        },
+        {
+          "id": 175856,
+          "program_schedule_path": "/profile/program/bhebfad-25-vvs-2/schedule",
+          "lesson_items_passed": 14,
+          "lesson_items_count": 17,
+          "lessons_passed": 7,
+          "lessons_count": 9,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Введение в специальность"
+        },
+        {
+          "id": 175866,
+          "program_schedule_path": "/profile/program/bhebfad-25-tv-2/schedule",
+          "lesson_items_passed": 85,
+          "lesson_items_count": 114,
+          "lessons_passed": 21,
+          "lessons_count": 33,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Теория вероятностей и математическая статистика в профессиональной деятельности"
+        },
+        {
+          "id": 175857,
+          "program_schedule_path": "/profile/program/bhebfad-25-bzhd-2/schedule",
+          "lesson_items_passed": 24,
+          "lesson_items_count": 26,
+          "lessons_passed": 7,
+          "lessons_count": 9,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Безопасность жизнедеятельности"
+        },
+        {
+          "id": 175858,
+          "program_schedule_path": "/profile/program/bhebfad-25-iya-2/schedule",
+          "lesson_items_passed": 82,
+          "lesson_items_count": 115,
+          "lessons_passed": 29,
+          "lessons_count": 45,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Иностранный язык"
+        },
+        {
+          "id": 175859,
+          "program_schedule_path": "/profile/program/bhebfad-25-fil-2/schedule",
+          "lesson_items_passed": 26,
+          "lesson_items_count": 85,
+          "lessons_passed": 3,
+          "lessons_count": 33,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Философия"
+        },
+        {
+          "id": 175860,
+          "program_schedule_path": "/profile/program/bhebfad-25-lta-2/schedule",
+          "lesson_items_passed": 22,
+          "lesson_items_count": 52,
+          "lessons_passed": 3,
+          "lessons_count": 22,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Логика. Теория аргументации"
+        },
+        {
+          "id": 175861,
+          "program_schedule_path": "/profile/program/bhebfad-25-org-2/schedule",
+          "lesson_items_passed": 24,
+          "lesson_items_count": 37,
+          "lessons_passed": 12,
+          "lessons_count": 22,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Основы российской государственности"
+        },
+        {
+          "id": 175862,
+          "program_schedule_path": "/profile/program/bhebfad-25-et-2/schedule",
+          "lesson_items_passed": 30,
+          "lesson_items_count": 66,
+          "lessons_passed": 15,
+          "lessons_count": 32,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Экономическая теория"
+        },
+        {
+          "id": 175863,
+          "program_schedule_path": "/profile/program/bhebfad-25-ieu-2/schedule",
+          "lesson_items_passed": 6,
+          "lesson_items_count": 35,
+          "lessons_passed": 5,
+          "lessons_count": 24,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: История экономических учений"
+        },
+        {
+          "id": 175864,
+          "program_schedule_path": "/profile/program/bhebfad-25-memeo-2/schedule",
+          "lesson_items_passed": 37,
+          "lesson_items_count": 64,
+          "lessons_passed": 25,
+          "lessons_count": 42,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Мировая экономика и международные экономические отношения"
+        },
+        {
+          "id": 175865,
+          "program_schedule_path": "/profile/program/bhebfad-25-uns-2/schedule",
+          "lesson_items_passed": 3,
+          "lesson_items_count": 10,
+          "lessons_passed": 1,
+          "lessons_count": 7,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Учебно-научный семинар"
+        },
+        {
+          "id": 176662,
+          "program_schedule_path": "/profile/program/bhebfad-25-pol-2/schedule",
+          "lesson_items_passed": 38,
+          "lesson_items_count": 61,
+          "lessons_passed": 12,
+          "lessons_count": 30,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 2 семестр: Политология"
+        },
+        {
+          "id": 157570,
+          "program_schedule_path": "/profile/program/bhebfad-25-evm-1/schedule",
+          "lesson_items_passed": 119,
+          "lesson_items_count": 174,
+          "lessons_passed": 26,
+          "lessons_count": 52,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Элементы высшей математики"
+        },
+        {
+          "id": 154369,
+          "program_schedule_path": "/profile/program/bhebfad-25-sda-1/schedule",
+          "lesson_items_passed": 57,
+          "lesson_items_count": 84,
+          "lessons_passed": 26,
+          "lessons_count": 50,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Структуры данных и алгоритмы"
+        },
+        {
+          "id": 157571,
+          "program_schedule_path": "/profile/program/bhebfad-25-isve-1/schedule",
+          "lesson_items_passed": 99,
+          "lesson_items_count": 118,
+          "lessons_passed": 15,
+          "lessons_count": 21,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: IT-системы в экономике"
+        },
+        {
+          "id": 157748,
+          "program_schedule_path": "/profile/program/bhebfad-25-et-1/schedule",
+          "lesson_items_passed": 58,
+          "lesson_items_count": 68,
+          "lessons_passed": 30,
+          "lessons_count": 33,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Экономическая теория"
+        },
+        {
+          "id": 157749,
+          "program_schedule_path": "/profile/program/bhebfad-25-fuis-1/schedule",
+          "lesson_items_passed": 12,
+          "lesson_items_count": 13,
+          "lessons_passed": 5,
+          "lessons_count": 6,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Финансовый университет: история и современность"
+        },
+        {
+          "id": 157750,
+          "program_schedule_path": "/profile/program/bhebfad-25-iya-1/schedule",
+          "lesson_items_passed": 115,
+          "lesson_items_count": 127,
+          "lessons_passed": 36,
+          "lessons_count": 40,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Иностранный язык"
+        },
+        {
+          "id": 157751,
+          "program_schedule_path": "/profile/program/bhebfad-25-fks-1/schedule",
+          "lesson_items_passed": 7,
+          "lesson_items_count": 8,
+          "lessons_passed": 5,
+          "lessons_count": 6,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Физическая культура и спорт"
+        },
+        {
+          "id": 157752,
+          "program_schedule_path": "/profile/program/bhebfad-25-op-1/schedule",
+          "lesson_items_passed": 27,
+          "lesson_items_count": 82,
+          "lessons_passed": 4,
+          "lessons_count": 27,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: Основы права"
+        },
+        {
+          "id": 157753,
+          "program_schedule_path": "/profile/program/bhebfad-25-ir-1/schedule",
+          "lesson_items_passed": 29,
+          "lesson_items_count": 133,
+          "lessons_passed": 1,
+          "lessons_count": 38,
+          "is_passed": false,
+          "is_available": true,
+          "title": "1 курс, 1 семестр: История России"
+        }
+      ]
+    }
+  ]
+}

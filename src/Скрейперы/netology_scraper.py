@@ -1,12 +1,19 @@
 import asyncio
-import os
 import json
+import os
 import re
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "Утилиты"))
+from logger_config import get_logger
+
 import requests
 import io
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 import pdfplumber
+
+logger = get_logger("netology_scraper")
 
 
 class NetologyScraper:

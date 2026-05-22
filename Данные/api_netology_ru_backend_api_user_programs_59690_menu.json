@@ -1,0 +1,53 @@
+{
+  "menu_items": [
+    {
+      "name": "Основной курс",
+      "path": "/profile/program/bhebfad-25/schedule",
+      "menu_type": "main",
+      "position": 1,
+      "alert": null
+    },
+    {
+      "name": "Календарь",
+      "path": "/profile/program/bhebfad-25/calendar",
+      "menu_type": "main",
+      "position": 2,
+      "alert": null
+    },
+    {
+      "name": "Практика",
+      "path": "/profile/program/bhebfad-25/execution",
+      "menu_type": "main",
+      "position": 3,
+      "alert": null
+    },
+    {
+      "name": "Уведомления",
+      "path": "/profile/program/bhebfad-25/notifications",
+      "menu_type": "main",
+      "position": 4,
+      "alert": 3
+    },
+    {
+      "name": "Поиск работы",
+      "path": "/profile/program/bhebfad-25/vacancies",
+      "menu_type": "main",
+      "position": 5,
+      "alert": null
+    },
+    {
+      "name": "Заметки",
+      "path": "/profile/program/bhebfad-25/notes",
+      "menu_type": "main",
+      "position": 6,
+      "alert": null
+    },
+    {
+      "name": "Facebook",
+      "path": "https://t.me/+9DvixCP9lPsxNzFi",
+      "menu_type": "side",
+      "position": 1,
+      "alert": null
+    }
+  ]
+}

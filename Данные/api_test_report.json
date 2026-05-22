@@ -1,0 +1,159 @@
+{
+  "tested_at": "2026-05-22T14:31:07.295346",
+  "total_endpoints": 15,
+  "successful_json": 15,
+  "successful_other": 0,
+  "failed": 0,
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/bhebfad-25",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 1081,
+      "error": null,
+      "preview": "dict: 20 keys — ['paid', 'common', 'is_profession', 'is_profession_module', 'start_date', 'finish_date', 'projects_amount', 'price', 'price_without_discount', 'terms']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/bhebfad-25-memeo-2",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 1659,
+      "error": null,
+      "preview": "dict: 21 keys — ['paid', 'common', 'is_profession', 'is_profession_module', 'parent_profession', 'start_date', 'finish_date', 'projects_amount', 'price', 'price_without_discount']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/59690/menu",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 858,
+      "error": null,
+      "preview": "dict: 1 keys — ['menu_items']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/59690/schedule",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 1141,
+      "error": null,
+      "preview": "dict: 16 keys — ['coordinator', 'current_program_coordinator', 'manager', 'lessons', 'blocks', 'resource_packages', 'has_only_demo_access', 'has_demo_access', 'user_accesses', 'access_levels']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/59690/diploma",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 268,
+      "error": null,
+      "preview": "dict: 2 keys — ['official_document', 'unofficial_document']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/professions/59690/schedule",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 34779,
+      "error": null,
+      "preview": "dict: 9 keys — ['name', 'starts_on', 'finishes_on', 'coordinator', 'current_program_coordinator', 'manager', 'landing_url', 'lessons_available', 'profession_modules']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/student_learning/actual",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 4000,
+      "error": null,
+      "preview": "dict: 3 keys — ['expert_feedback', 'achievement', 'program_chats']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/student_learning/calendar",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 242059,
+      "error": null,
+      "preview": "dict: 1 keys — ['programs']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/last_opened_lesson_items_info",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 603,
+      "error": null,
+      "preview": "dict: 12 keys — ['approximate_progress_time', 'lesson_item_path', 'lesson_item_title', 'lesson_item_id', 'path', 'title', 'id', 'type', 'program_title', 'program_id']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/programs/progress",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 26766,
+      "error": null,
+      "preview": "dict: 1 keys — ['programs']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/profile",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 1714,
+      "error": null,
+      "preview": "dict: 1 keys — ['profile']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/favorite_programs",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 11420,
+      "error": null,
+      "preview": "list: 6 items, first has keys: ['title', 'program_family_id', 'official_document', 'program_image', 'is_async', 'linked_program_id', 'id', 'urlcode', 'initial_price', 'payment_methods']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/user/notifications/unread_messages",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 6748,
+      "error": null,
+      "preview": "dict: 2 keys — ['messages', 'unread_messages_count']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/app_options",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 87415,
+      "error": null,
+      "preview": "dict: 6 keys — ['user', 'marketing_campaign_id', 'routes', 'university2035_digital_professions', 'csrf_token', 'server_time']"
+    },
+    {
+      "method": "GET",
+      "url": "https://netology.ru/backend/api/directions",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "is_json": true,
+      "size": 2712,
+      "error": null,
+      "preview": "list: 19 items, first has keys: ['id', 'slug', 'position', 'name', 'professions_count', 'courses_count', 'masters_count']"
+    }
+  ]
+}

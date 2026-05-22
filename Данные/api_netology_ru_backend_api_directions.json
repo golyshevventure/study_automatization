@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "slug": "marketing",
+    "position": 1,
+    "name": "Маркетинг",
+    "professions_count": 5,
+    "courses_count": 31,
+    "masters_count": 1
+  },
+  {
+    "id": 2,
+    "slug": "management",
+    "position": 3,
+    "name": "Бизнес и управление",
+    "professions_count": 11,
+    "courses_count": 34,
+    "masters_count": 2
+  },
+  {
+    "id": 3,
+    "slug": "design",
+    "position": 4,
+    "name": "Дизайн и UX",
+    "professions_count": 19,
+    "courses_count": 18,
+    "masters_count": 1
+  },
+  {
+    "id": 4,
+    "slug": "development",
+    "position": 5,
+    "name": "Программирование",
+    "professions_count": 23,
+    "courses_count": 22,
+    "masters_count": 6
+  },
+  {
+    "id": 5,
+    "slug": "data-science",
+    "position": 6,
+    "name": "Аналитика",
+    "professions_count": 16,
+    "courses_count": 23,
+    "masters_count": 3
+  },
+  {
+    "id": 7,
+    "slug": "edmarket",
+    "position": 14,
+    "name": "Профессии в образовании",
+    "professions_count": 3,
+    "courses_count": 2,
+    "masters_count": 0
+  },
+  {
+    "id": 9,
+    "slug": "b2b",
+    "position": 15,
+    "name": "Корпоративное обучение",
+    "professions_count": 0,
+    "courses_count": 1,
+    "masters_count": 0
+  },
+  {
+    "id": 13,
+    "slug": "soft-skills",
+    "position": 8,
+    "name": "Управление командой",
+    "professions_count": 0,
+    "courses_count": 3,
+    "masters_count": 0
+  },
+  {
+    "id": 15,
+    "slug": "degree",
+    "position": 9,
+    "name": "Высшее образование",
+    "professions_count": 0,
+    "courses_count": 7,
+    "masters_count": 6
+  },
+  {
+    "id": 17,
+    "slug": "creative",
+    "position": 10,
+    "name": "Творческие профессии",
+    "professions_count": 3,
+    "courses_count": 3,
+    "masters_count": 0
+  },
+  {
+    "id": 21,
+    "slug": "new-courses",
+    "position": 22,
+    "name": "Новые профессии",
+    "professions_count": 3,
+    "courses_count": 1,
+    "masters_count": 0
+  },
+  {
+    "id": 23,
+    "slug": "finance",
+    "position": 25,
+    "name": "Финансы и инвестиции",
+    "professions_count": 5,
+    "courses_count": 10,
+    "masters_count": 0
+  },
+  {
+    "id": 24,
+    "slug": "gamedesign-academy",
+    "position": 26,
+    "name": "Компьютерные игры",
+    "professions_count": 0,
+    "courses_count": 0,
+    "masters_count": 0
+  },
+  {
+    "id": 25,
+    "slug": "lifestyle-hobby",
+    "position": 27,
+    "name": "Саморазвитие и хобби",
+    "professions_count": 0,
+    "courses_count": 16,
+    "masters_count": 0
+  },
+  {
+    "id": 29,
+    "slug": "medicine",
+    "position": 31,
+    "name": "Медицина и здоровье",
+    "professions_count": 1,
+    "courses_count": 23,
+    "masters_count": 0
+  },
+  {
+    "id": 30,
+    "slug": "marketplaces",
+    "position": 24,
+    "name": "Маркетплейсы",
+    "professions_count": 0,
+    "courses_count": 8,
+    "masters_count": 0
+  },
+  {
+    "id": 32,
+    "slug": "ai-courses",
+    "position": 32,
+    "name": "Нейросети",
+    "professions_count": 0,
+    "courses_count": 8,
+    "masters_count": 0
+  },
+  {
+    "id": 33,
+    "slug": "psychology",
+    "position": 33,
+    "name": "Психология",
+    "professions_count": 1,
+    "courses_count": 5,
+    "masters_count": 0
+  },
+  {
+    "id": 34,
+    "slug": "dpo-degree",
+    "position": 34,
+    "name": "Программы с вузами",
+    "professions_count": 0,
+    "courses_count": 0,
+    "masters_count": 0
+  }
+]

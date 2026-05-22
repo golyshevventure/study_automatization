@@ -1,0 +1,72 @@
+{
+  "paid": true,
+  "common": {
+    "id": 77228,
+    "cart_id": null,
+    "name": "1 курс, 2 семестр: Мировая экономика и международные экономические отношения",
+    "image": "",
+    "format_type": "new_format",
+    "type": "distance_course",
+    "progress": 0,
+    "education_format_type": "online",
+    "program_family_url": "mirovaya-ekonomika",
+    "program_family_price_type": "free",
+    "main_direction": {
+      "slug": "degree",
+      "name": "Высшее образование"
+    },
+    "program_type": "bachelor",
+    "completed": false,
+    "trajectory": "lessons",
+    "set_type": "bachelor"
+  },
+  "is_profession": false,
+  "is_profession_module": true,
+  "parent_profession": {
+    "id": 59690,
+    "urlcode": "bhebfad-25",
+    "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+    "landing_url": "/programs/finansy-i-analiz-dannyh",
+    "start_date": "2026-09-01",
+    "finish_date": "2030-07-30",
+    "price": 1,
+    "is_paid": true,
+    "price_without_discount": 1,
+    "terms": null,
+    "education_format_type": "online",
+    "user_start_date": "2025-09-01",
+    "user_finish_date": "2029-07-30",
+    "program_family_price_type": "paid",
+    "main_direction": {
+      "slug": "degree",
+      "name": "Высшее образование"
+    }
+  },
+  "start_date": "2026-02-02",
+  "finish_date": "2026-06-30",
+  "projects_amount": 42,
+  "price": 0,
+  "price_without_discount": 0,
+  "terms": null,
+  "user_accesses": [
+    {
+      "level_type": "common",
+      "access_expired_at": "2075-10-06T15:18:31.000Z"
+    }
+  ],
+  "program_with_demo_access": false,
+  "lessons_available": {
+    "total": 42,
+    "demo": 0,
+    "common": 46
+  },
+  "landing_url": "/programs/bhebfad-memeo-24-2",
+  "actual_program": {
+    "start_date": "2025-02-03"
+  },
+  "consultation": false,
+  "warning": [],
+  "nps_feedback": null,
+  "nps_mid_feedback": null,
+  "recommendations": []
+}

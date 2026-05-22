@@ -1,0 +1,18 @@
+{
+  "official_document": {
+    "text": null,
+    "type": "nothing",
+    "comments": [],
+    "program_finish_date": "2029-07-30",
+    "use": true,
+    "can_be_requested": false,
+    "is_requested": false,
+    "delivery_date_forecast": null
+  },
+  "unofficial_document": {
+    "diplom": "",
+    "type": "certificate",
+    "title": "",
+    "use": false
+  }
+}

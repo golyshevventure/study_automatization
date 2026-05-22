@@ -1,0 +1,52 @@
+{
+  "paid": true,
+  "common": {
+    "id": 59690,
+    "cart_id": null,
+    "name": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+    "image": "",
+    "format_type": "new_format",
+    "type": "distance_course",
+    "progress": 0,
+    "education_format_type": "online",
+    "program_family_url": "finansy-i-analiz-dannyh",
+    "program_family_price_type": "paid",
+    "main_direction": {
+      "slug": "degree",
+      "name": "Высшее образование"
+    },
+    "program_type": "bachelor",
+    "completed": false,
+    "trajectory": "modules",
+    "set_type": "bachelor"
+  },
+  "is_profession": true,
+  "is_profession_module": false,
+  "start_date": "2025-09-01",
+  "finish_date": "2029-07-30",
+  "projects_amount": 0,
+  "price": 1,
+  "price_without_discount": 1,
+  "terms": null,
+  "user_accesses": [
+    {
+      "level_type": "common",
+      "access_expired_at": "2075-10-06T15:18:31.000Z"
+    }
+  ],
+  "program_with_demo_access": false,
+  "lessons_available": {
+    "total": 0,
+    "demo": 0,
+    "common": 0
+  },
+  "landing_url": "/programs/finansy-i-analiz-dannyh",
+  "actual_program": {
+    "start_date": "2026-09-01"
+  },
+  "consultation": false,
+  "warning": [],
+  "nps_feedback": null,
+  "nps_mid_feedback": null,
+  "recommendations": []
+}

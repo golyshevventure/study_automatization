@@ -1,0 +1,630 @@
+[
+  {
+    "title": "Как стать аналитиком данных и стартовать в Data Science",
+    "program_family_id": 979,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 9471,
+    "id": 9471,
+    "urlcode": "dsg",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "ds_guide",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/979/Group_216616204.png",
+    "educational_level": {
+      "name": "Нео",
+      "slug": "neo"
+    },
+    "main_direction": {
+      "name": "Аналитика",
+      "slug": "data-science"
+    },
+    "duration": "1 день",
+    "program_type": "other",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": null
+  },
+  {
+    "title": "Как начать работать с Ozon",
+    "program_family_id": 5783,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 45248,
+    "id": 45248,
+    "urlcode": "mrplozfree",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "kak-nachat-rabotat-s-ozon",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/5783/vitrina_kak-nachat-rabotat-s-ozon.png",
+    "educational_level": {
+      "name": "Нео",
+      "slug": "neo"
+    },
+    "main_direction": {
+      "name": "Маркетинг",
+      "slug": "marketing"
+    },
+    "duration": "1 день",
+    "program_type": "course",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": null
+  },
+  {
+    "title": "Excel: простые шаги для оптимизации работы с данными",
+    "program_family_id": 3308,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 47472,
+    "id": 47472,
+    "urlcode": "xlsfree-asyn",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "excel-prostye-shagi-dlya-optimizacii-raboty-s-dannymi",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/3308/vitrina__programm-excel-prostye-shagi-dlya-optimizacii-raboty-s-dannymi_.png",
+    "educational_level": {
+      "name": "Нео",
+      "slug": "neo"
+    },
+    "main_direction": {
+      "name": "Аналитика",
+      "slug": "data-science"
+    },
+    "duration": "10 дней",
+    "program_type": "course",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": null
+  },
+  {
+    "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+    "program_family_id": 6385,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 48767,
+    "id": 48767,
+    "urlcode": "spdata-1",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/6385/vitrina__programm-osnovy-raboty-s-instrumentami-dlya-analiza-dannyh_.png",
+    "educational_level": {
+      "name": "Нео",
+      "slug": "neo"
+    },
+    "main_direction": {
+      "name": "Аналитика",
+      "slug": "data-science"
+    },
+    "duration": "3 недели",
+    "program_type": "course",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": null
+  },
+  {
+    "title": "За кем будут охотиться работодатели: профессии, актуальные в 2030 году",
+    "program_family_id": 6247,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 49387,
+    "id": 49387,
+    "urlcode": "pbud-1",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "professii-budushchego",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/6247/professii-budushchego.png",
+    "educational_level": {
+      "name": null,
+      "slug": null
+    },
+    "main_direction": {
+      "name": "Прочее",
+      "slug": "other"
+    },
+    "duration": "2 дня",
+    "program_type": "course",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": null
+  },
+  {
+    "title": "Открытые занятия по аналитике",
+    "program_family_id": 1698,
+    "official_document": "nothing",
+    "program_image": null,
+    "is_async": true,
+    "linked_program_id": 49491,
+    "id": 49491,
+    "urlcode": "puds-4",
+    "initial_price": 0,
+    "payment_methods": [
+      {
+        "title": "Банковская карта",
+        "slug": "creditCard",
+        "note": ""
+      },
+      {
+        "title": "По счету от юрлица",
+        "slug": "company",
+        "note": ""
+      },
+      {
+        "title": "Кредит от Яндекс.Кассы",
+        "slug": "yandexKassaCredit",
+        "note": "4 месяца без %",
+        "terms": null
+      },
+      {
+        "title": "Кредит от Сбербанка",
+        "slug": "sberbankCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Webmoney",
+        "slug": "webmoney",
+        "note": ""
+      },
+      {
+        "title": "Яндекс.Деньги",
+        "slug": "yandexMoney",
+        "note": ""
+      },
+      {
+        "title": "Альфа-Клик",
+        "slug": "alfaClick",
+        "note": ""
+      },
+      {
+        "title": "Система быстрых платежей",
+        "slug": "sbp",
+        "note": ""
+      },
+      {
+        "title": "Рассрочка от Сбербанка",
+        "slug": "sberCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Тинькофф",
+        "slug": "tinkoffCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Пос-кредит",
+        "slug": "posCredit",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "МТС кредитный брокер",
+        "slug": "mtsCreditBroker",
+        "note": "",
+        "terms": null
+      },
+      {
+        "title": "Рассрочка от Ресурс Развитие",
+        "slug": "evolution",
+        "note": "",
+        "terms": null
+      }
+    ],
+    "one_time_payment_price": 0,
+    "in_compare": false,
+    "program_family_url": "probnye-uroki-analitika",
+    "program_family_image": "https://u.netology.ru/backend/uploads/legacy/program_families/image/1698/Group_696-min.jpg",
+    "educational_level": {
+      "name": "Нео",
+      "slug": "neo"
+    },
+    "main_direction": {
+      "name": "Аналитика",
+      "slug": "data-science"
+    },
+    "duration": "",
+    "program_type": "course",
+    "price_type": "free",
+    "starts_at": "",
+    "dynamic_starts_at": null,
+    "current_price": 0,
+    "training_program": {
+      "theory_hours": 20,
+      "practice_hours": 20,
+      "program_text": null
+    }
+  }
+]

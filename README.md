@@ -1,6 +1,6 @@
 # 🎓 StudyCore
 
-> Автоматический генератор конспектов и ассистент для студентов Нетологии.
+> Ассистент для студентов Нетологии.
 
 ---
 
@@ -82,8 +82,11 @@ Study_automatization/
 ├── requirements.txt           # Зависимости
 ├── .env                       # Секреты (не коммитить!)
 ├── README.md                  # Этот файл
-├── TODO.md                    # План разработки
-├── UNIT_ECONOMICS.md          # Финансовая модель
+├── docs/
+│   ├── TODO.md                # План разработки
+│   ├── UNIT_ECONOMICS.md      # Финансовая модель
+│   ├── KIMI.md                # Контекст для Kimi Code CLI
+│   └── StudyCore.drawio       # Диаграмма архитектуры
 ├── src/
 │   └── Скрейперы/
 │       └── netology_scraper.py

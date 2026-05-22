@@ -31,6 +31,7 @@
 - ✅ **Pytest + Black**: 18 тестов проходят, код отформатирован
 - ✅ **Logging**: logger_config.py, заменён print в generate_summary.py и netology_scraper.py
 - ✅ **README.md**: описание, установка, архитектура, команды, roadmap
+- ✅ **docs/**: папка документации (TODO.md, UNIT_ECONOMICS.md, KIMI.md, StudyCore.drawio)
 - 🎨 **Frontend / Telegram Mini App**: веб-интерфейс на JS/HTML/CSS
 - 🔗 **Telegram WebApp SDK**: интеграция с ботом
 - ⚡ **Оптимизация скорости**: цель — с 17 часов до 2-3 часов на весь бакалавриат
@@ -65,10 +66,12 @@ Study_automatization/
 ├── requirements.txt              # Python-зависимости
 ├── .env                          # API ключи + логин Нетологии
 ├── SYSTEM_PROMPT.md              # Промпт для модели
-├── TODO.md                       # Этот файл
-├── UNIT_ECONOMICS.md             # 💰 Финансовая модель (unit-экономика)
-├── KIMI.md                       # Контекст для Kimi Code CLI
-├── StudyCore.drawio              # Диаграмма архитектуры
+├── README.md                     # Главная документация
+├── docs/
+│   ├── TODO.md                   # Этот файл
+│   ├── UNIT_ECONOMICS.md         # 💰 Финансовая модель (unit-экономика)
+│   ├── KIMI.md                   # Контекст для Kimi Code CLI
+│   └── StudyCore.drawio          # Диаграмма архитектуры
 ├── 📁 src/
 │   ├── 📁 Скрейперы/
 │   │   └── netology_scraper.py   # Playwright: auth, scraping, VTT/video

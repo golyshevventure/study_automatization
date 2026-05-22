@@ -23,10 +23,12 @@ Study_automatization/
 ├── requirements.txt              # Python-зависимости
 ├── .env                          # API ключи + логин Нетологии
 ├── SYSTEM_PROMPT.md              # Промпт для модели
-├── TODO.md                       # Этот файл
-├── UNIT_ECONOMICS.md             # 💰 Финансовая модель (unit-экономика)
-├── KIMI.md                       # Контекст для Kimi Code CLI
-├── StudyCore.drawio              # Диаграмма архитектуры
+├── README.md                     # Главная документация
+├── docs/
+│   ├── TODO.md                   # План разработки
+│   ├── UNIT_ECONOMICS.md         # 💰 Финансовая модель (unit-экономика)
+│   ├── KIMI.md                   # Контекст для Kimi Code CLI
+│   └── StudyCore.drawio          # Диаграмма архитектуры
 ├── 📁 src/
 │   ├── 📁 Скрейперы/
 │   │   └── netology_scraper.py   # Playwright: auth, scraping, VTT/video
@@ -76,7 +78,7 @@ Study_automatization/
 
 ## 🚨 ЖЕЛЕЗНЫЕ ПРАВИЛА
 
-1. TODO.md — ЕДИНСТВЕННЫЙ источник правды о версиях, проблемах, логах.
+1. `docs/TODO.md` — ЕДИНСТВЕННЫЙ источник правды о версиях, проблемах, логах.
    - После любого изменения: добавь строку в таблицу «Выполнено», обнови статусы проблем, отметь галочки в «Следующие шаги».
    - Делай это САМОСТОЯТЕЛЬНО. Не жди команды.
 

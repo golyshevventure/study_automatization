@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src", "Скр�
 
 from netology_scraper import NetologyScraper
 
+
 async def main():
     scraper = NetologyScraper()
     await scraper.start()
@@ -34,13 +35,14 @@ async def main():
         print(f"   URL: {url}")
 
         user_input = input("⏎ Нажми Enter для сохранения следующего шага (или 'q' для выхода): ")
-        if user_input.strip().lower() == 'q':
+        if user_input.strip().lower() == "q":
             break
         step += 1
         await asyncio.sleep(1)
 
     await scraper.stop()
     print("\n🏁 Готово. Все HTML-дампы в data/")
+
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,7 +1,6 @@
 import os
 import shutil
 
-
 SECONDBRAIN = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain"
 STUDY_DIR = os.path.join(SECONDBRAIN, "Учеба (Фин. Ун.)")
 
@@ -43,7 +42,7 @@ def ensure_subject_dirs(subject_name):
 
 
 def _safe_filename(name, max_len=80):
-    name = __import__('re').sub(r'[\\/:"*?<>|]', '', name).strip()
+    name = __import__("re").sub(r'[\\/:"*?<>|]', "", name).strip()
     if len(name) > max_len:
-        name = name[:max_len].rsplit(' ', 1)[0]
+        name = name[:max_len].rsplit(" ", 1)[0]
     return name

@@ -13,6 +13,7 @@ load_dotenv()
 
 PROGRAM_ID = "bhebfad-25-ieu-2"
 
+
 async def main():
     scraper = NetologyScraper()
     await scraper.start()
@@ -45,6 +46,7 @@ async def main():
 
     await scraper.save_cookies()
     await scraper.stop()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

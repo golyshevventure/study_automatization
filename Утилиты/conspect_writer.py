@@ -2,14 +2,13 @@ import os
 import re
 from datetime import datetime
 
-
 STUDY_DIR = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)"
 
 
 def _safe_filename(name, max_len=80):
-    name = re.sub(r'[\\/:"*?<>|]', '', name).strip()
+    name = re.sub(r'[\\/:"*?<>|]', "", name).strip()
     if len(name) > max_len:
-        name = name[:max_len].rsplit(' ', 1)[0]
+        name = name[:max_len].rsplit(" ", 1)[0]
     return name
 
 

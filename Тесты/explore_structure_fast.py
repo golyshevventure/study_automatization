@@ -2,6 +2,7 @@
 """
 Быстрый исследовательский скрипт: собирает структуру без slow video extraction.
 """
+
 import asyncio
 import json
 import os
@@ -44,30 +45,38 @@ async def main():
             results.append({"title": disc_title, "locked": True})
             continue
 
-        lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+        lessons = await scraper.get_discipline_lessons(
+            program_id, disc["lesson_id"], disc.get("links", [])
+        )
         items_info = []
         for item in lessons[:5]:  # max 5 items per lesson
             # Только get_lesson_text_content — без extract_video_url
             text, _ = await scraper.get_lesson_text_content(item["href"])
-            items_info.append({
-                "title": item["title"],
-                "href": item["href"],
-                "text_length": len(text) if text else 0,
-                "text_preview": (text[:200] + "...") if text and len(text) > 200 else text,
-            })
+            items_info.append(
+                {
+                    "title": item["title"],
+                    "href": item["href"],
+                    "text_length": len(text) if text else 0,
+                    "text_preview": (text[:200] + "...") if text and len(text) > 200 else text,
+                }
+            )
 
-        results.append({
-            "title": disc_title,
-            "lesson_id": disc.get("lesson_id"),
-            "item_count": len(lessons),
-            "items": items_info
-        })
+        results.append(
+            {
+                "title": disc_title,
+                "lesson_id": disc.get("lesson_id"),
+                "item_count": len(lessons),
+                "items": items_info,
+            }
+        )
 
     # Сохраняем
     output_path = f"Данные/program_structure_fast_{program_id}.json"
     os.makedirs("Данные", exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
-        json.dump({"program_id": program_id, "disciplines": results}, f, ensure_ascii=False, indent=2)
+        json.dump(
+            {"program_id": program_id, "disciplines": results}, f, ensure_ascii=False, indent=2
+        )
     print(f"\n💾 Сохранено: {output_path}")
 
     # Вывод анализа

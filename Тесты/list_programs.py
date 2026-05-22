@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "Утилиты
 from netology_scraper import NetologyScraper
 from netology_auth import ensure_netology_login
 
+
 async def main():
     scraper = NetologyScraper(headless=True)
     await scraper.start()
@@ -42,5 +43,6 @@ async def main():
         print(f"{p['title']} -> {p['program_id']}")
     await scraper.save_cookies()
     await scraper.stop()
+
 
 asyncio.run(main())

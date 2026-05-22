@@ -1,6 +1,5 @@
 import re
 
-
 # =============================================================================
 # KEYWORD LISTS
 # =============================================================================
@@ -72,6 +71,7 @@ STRUCTURE_PAGE_PATTERNS = [
 # SKIP CHECK
 # =============================================================================
 
+
 def should_skip(title: str, section_name: str) -> bool:
     """
     Проверяет, нужно ли пропустить материал (домашки, контрольные, тесты и т.д.).
@@ -83,6 +83,7 @@ def should_skip(title: str, section_name: str) -> bool:
 # =============================================================================
 # PER-ITEM CLASSIFICATION (split mode)
 # =============================================================================
+
 
 def classify_material(title: str, section_name: str) -> str:
     """
@@ -148,6 +149,7 @@ def category_folder(category: str) -> str:
 # =============================================================================
 # LESSON-LEVEL STRATEGY
 # =============================================================================
+
 
 def classify_lesson_strategy(lesson_title: str, items: list) -> str:
     """
@@ -238,6 +240,7 @@ def classify_lesson_strategy_with_confidence(lesson_title: str, items: list) -> 
 # STRUCTURE PAGE DETECTION
 # =============================================================================
 
+
 def is_structure_page(text: str) -> bool:
     """
     Определяет, является ли текст HTML fallback'ом описанием программы курса
@@ -254,7 +257,7 @@ def is_structure_page(text: str) -> bool:
     # If 1 strong pattern + mentions multiple "Тема N:" → likely structure
     if matches >= 1:
         # Count "тема" mentions with numbers
-        topic_refs = len(re.findall(r'тема\s*\d+[\.:\)]', text_lower))
+        topic_refs = len(re.findall(r"тема\s*\d+[\.:\)]", text_lower))
         if topic_refs >= 3:
             return True
     return False

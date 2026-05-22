@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src", "Скр�
 
 from netology_scraper import NetologyScraper
 
+
 async def main():
     scraper = NetologyScraper()
     await scraper.start()
@@ -33,14 +34,15 @@ async def main():
         print(f"💾 HTML: {debug_path}")
 
         # Check for discipline titles
-        has_bjd = 'Безопасность' in html
-        has_eco = 'Экономика' in html or 'эконом' in html.lower()
-        has_intro = 'Введение в специальность' in html
+        has_bjd = "Безопасность" in html
+        has_eco = "Экономика" in html or "эконом" in html.lower()
+        has_intro = "Введение в специальность" in html
         print(f"   Безопасность: {has_bjd}")
         print(f"   Экономика: {has_eco}")
         print(f"   Введение: {has_intro}")
 
     await scraper.stop()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

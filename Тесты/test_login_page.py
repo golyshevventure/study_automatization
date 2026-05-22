@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src", "Скр�
 
 from netology_scraper import NetologyScraper
 
+
 async def main():
     scraper = NetologyScraper()
     await scraper.start()
@@ -33,14 +34,15 @@ async def main():
             f.write(html)
         print(f"💾 HTML: {debug_path}")
 
-        has_email = 'type="email"' in html or 'type=\'email\'' in html
-        has_password = 'type="password"' in html or 'type=\'password\'' in html
-        has_voyti = 'Войти по почте' in html
+        has_email = 'type="email"' in html or "type='email'" in html
+        has_password = 'type="password"' in html or "type='password'" in html
+        has_voyti = "Войти по почте" in html
         print(f"   email input: {has_email}")
         print(f"   password input: {has_password}")
         print(f"   'Войти по почте': {has_voyti}")
 
     await scraper.stop()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

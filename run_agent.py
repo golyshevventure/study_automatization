@@ -32,33 +32,49 @@ STUDY_DIR = os.path.join(SECONDBRAIN, "Учеба (Фин. Ун.)")
 
 
 def safe_filename(name, max_len=80):
-    name = re.sub(r'[\\/:"*?<>|]', '', name).strip()
+    name = re.sub(r'[\\/:"*?<>|]', "", name).strip()
     if len(name) > max_len:
-        name = name[:max_len].rsplit(' ', 1)[0]
+        name = name[:max_len].rsplit(" ", 1)[0]
     return name
 
 
 def _file_exists(subject_name, section_name, lesson_title):
     """Проверяет, существует ли уже файл для этого материала."""
-    display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
+    display_title = (
+        f"{section_name} — {lesson_title}"
+        if lesson_title.lower() not in section_name.lower()
+        else section_name
+    )
     category = classify_material(lesson_title, section_name)
     folder_name = category_folder(category)
-    safe_title = re.sub(r'[\\/:"*?<>|]', '', display_title).strip()
+    safe_title = re.sub(r'[\\/:"*?<>|]', "", display_title).strip()
     if len(safe_title) > 80:
-        safe_title = safe_title[:80].rsplit(' ', 1)[0]
-    safe_subject = re.sub(r'[\\/:"*?<>|]', '', subject_name).strip()
+        safe_title = safe_title[:80].rsplit(" ", 1)[0]
+    safe_subject = re.sub(r'[\\/:"*?<>|]', "", subject_name).strip()
     if len(safe_subject) > 80:
-        safe_subject = safe_subject[:80].rsplit(' ', 1)[0]
+        safe_subject = safe_subject[:80].rsplit(" ", 1)[0]
     filepath = os.path.join(STUDY_DIR, "Дисциплины", safe_subject, folder_name, f"{safe_title}.md")
     return os.path.exists(filepath)
 
 
-def process_material(subject_name, section_name, lesson_title, lesson_text, lesson_href="", force=False, category_override=None):
+def process_material(
+    subject_name,
+    section_name,
+    lesson_title,
+    lesson_text,
+    lesson_href="",
+    force=False,
+    category_override=None,
+):
     """
     Обрабатывает один материал: классифицирует, генерирует конспект или заглушку, сохраняет.
     category_override: если задан, использует эту категорию вместо авто-классификации.
     """
-    display_title = f"{section_name} — {lesson_title}" if lesson_title.lower() not in section_name.lower() else section_name
+    display_title = (
+        f"{section_name} — {lesson_title}"
+        if lesson_title.lower() not in section_name.lower()
+        else section_name
+    )
 
     print(f"\n{'='*60}")
     print(f"🎓 {display_title}")
@@ -78,12 +94,12 @@ def process_material(subject_name, section_name, lesson_title, lesson_text, less
     print(f"   📁 Категория: {folder_name}")
 
     # Deduplication
-    safe_title = re.sub(r'[\\/:"*?<>|]', '', display_title).strip()
+    safe_title = re.sub(r'[\\/:"*?<>|]', "", display_title).strip()
     if len(safe_title) > 80:
-        safe_title = safe_title[:80].rsplit(' ', 1)[0]
-    safe_subject = re.sub(r'[\\/:"*?<>|]', '', subject_name).strip()
+        safe_title = safe_title[:80].rsplit(" ", 1)[0]
+    safe_subject = re.sub(r'[\\/:"*?<>|]', "", subject_name).strip()
     if len(safe_subject) > 80:
-        safe_subject = safe_subject[:80].rsplit(' ', 1)[0]
+        safe_subject = safe_subject[:80].rsplit(" ", 1)[0]
     filepath = os.path.join(STUDY_DIR, "Дисциплины", safe_subject, folder_name, f"{safe_title}.md")
     if os.path.exists(filepath) and not force:
         print(f"   ⏭️  Уже существует, пропускаем (используй --force для перезаписи)")
@@ -141,7 +157,9 @@ async def _get_item_content(scraper, item, subject_name):
         if is_structure:
             print(f"   🎬 Извлекаем аудио из-за structure page...")
         else:
-            print(f"   🎬 Найдено видео ({item['title']}), текст короткий ({len(text) if text else 0} симв.), извлекаем аудио...")
+            print(
+                f"   🎬 Найдено видео ({item['title']}), текст короткий ({len(text) if text else 0} симв.), извлекаем аудио..."
+            )
         try:
             audio_path = extract_audio_from_mp4(
                 video_url, output_dir=f"data/audio/{safe_filename(subject_name)}"
@@ -157,7 +175,9 @@ async def _get_item_content(scraper, item, subject_name):
         except Exception as e:
             print(f"   ⚠️ Ошибка аудио: {e}")
     elif video_url and not is_structure:
-        print(f"   🎬 Найдено видео, но текст уже достаточно длинный ({len(text)} симв.), аудио не требуется")
+        print(
+            f"   🎬 Найдено видео, но текст уже достаточно длинный ({len(text)} симв.), аудио не требуется"
+        )
 
     return {
         "title": item["title"],
@@ -185,8 +205,12 @@ async def main():
     if len(sys.argv) < 2:
         print("Использование:")
         print("  python run_agent.py <program_id>  — собрать всю программу")
-        print("  python run_agent.py <program_id> --subject 'Название'  — только разделы с этим словом")
-        print("  python run_agent.py <program_id> --name 'Имя предмета'  — задать имя папки вручную")
+        print(
+            "  python run_agent.py <program_id> --subject 'Название'  — только разделы с этим словом"
+        )
+        print(
+            "  python run_agent.py <program_id> --name 'Имя предмета'  — задать имя папки вручную"
+        )
         print("  python run_agent.py <program_id> --force  — перезаписать существующие файлы")
         sys.exit(1)
 
@@ -235,12 +259,23 @@ async def main():
             subject_name = program_title
         elif disciplines:
             # Ищем первую "содержательную" дисциплину (не служебную)
-            meaningful = [d for d in disciplines if not any(
-                kw in d.get("title", "").lower() for kw in [
-                    "рабочая программа", "домашнее задание", "контрольная",
-                    "экзамен", "опрос", "консультация", "вебинар", "творческое"
-                ]
-            )]
+            meaningful = [
+                d
+                for d in disciplines
+                if not any(
+                    kw in d.get("title", "").lower()
+                    for kw in [
+                        "рабочая программа",
+                        "домашнее задание",
+                        "контрольная",
+                        "экзамен",
+                        "опрос",
+                        "консультация",
+                        "вебинар",
+                        "творческое",
+                    ]
+                )
+            ]
             subject_name = meaningful[0]["title"] if meaningful else disciplines[0]["title"]
         else:
             subject_name = "Предмет"
@@ -276,7 +311,7 @@ async def main():
                     # Строгая проверка: после подстроки должна быть граница слова
                     idx = t_lower.index(f_lower)
                     end = idx + len(f_lower)
-                    if end == len(t_lower) or t_lower[end] in ' \n«»().,;:!?-–—':
+                    if end == len(t_lower) or t_lower[end] in " \n«»().,;:!?-–—":
                         return True
                 return False
 
@@ -302,9 +337,15 @@ async def main():
                         scraper, disc["program_id"], ml["lesson_id"], [], section_name
                     )
                     await _process_items(
-                        scraper, subject_name, section_name, items,
-                        conspect_links, material_links, info_links,
-                        seen_hrefs, force
+                        scraper,
+                        subject_name,
+                        section_name,
+                        items,
+                        conspect_links,
+                        material_links,
+                        info_links,
+                        seen_hrefs,
+                        force,
                     )
             else:
                 # Legacy структура: disc = lesson, items внутри
@@ -313,9 +354,15 @@ async def main():
                     scraper, program_id, disc["lesson_id"], disc.get("links", []), section_name
                 )
                 await _process_items(
-                    scraper, subject_name, section_name, items,
-                    conspect_links, material_links, info_links,
-                    seen_hrefs, force
+                    scraper,
+                    subject_name,
+                    section_name,
+                    items,
+                    conspect_links,
+                    material_links,
+                    info_links,
+                    seen_hrefs,
+                    force,
                 )
 
             print(f"   ✅ Раздел завершён")
@@ -340,9 +387,15 @@ async def main():
 
 
 async def _process_items(
-    scraper, subject_name, section_name, items,
-    conspect_links, material_links, info_links,
-    seen_hrefs, force
+    scraper,
+    subject_name,
+    section_name,
+    items,
+    conspect_links,
+    material_links,
+    info_links,
+    seen_hrefs,
+    force,
 ):
     """
     Обрабатывает items одного lesson.
@@ -407,11 +460,13 @@ async def _process_items(
             return
 
         folder, link = process_material(
-            subject_name, section_name, section_name,
+            subject_name,
+            section_name,
+            section_name,
             combined_text,
             lesson_href=unique_items[0]["href"] if unique_items else "",
             force=force,
-            category_override="конспект"
+            category_override="конспект",
         )
         if link:
             conspect_links.add(link)
@@ -424,11 +479,13 @@ async def _process_items(
                 continue
             cat = classify_item(ic["title"], section_name)
             folder, link = process_material(
-                subject_name, section_name, ic["title"],
+                subject_name,
+                section_name,
+                ic["title"],
                 ic["text"],
                 lesson_href=ic["href"],
                 force=force,
-                category_override=cat
+                category_override=cat,
             )
             if link:
                 if folder == "Конспекты":
@@ -445,10 +502,7 @@ async def _process_items(
             print(f"   ⏭️  Пропускаем structure page: {ic['title']}")
             continue
         folder, link = process_material(
-            subject_name, section_name, ic["title"],
-            ic["text"],
-            lesson_href=ic["href"],
-            force=force
+            subject_name, section_name, ic["title"], ic["text"], lesson_href=ic["href"], force=force
         )
         if link:
             if folder == "Конспекты":

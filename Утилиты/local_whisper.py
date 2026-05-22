@@ -10,7 +10,6 @@ import re
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 
-
 # Глобальные переменные для кэширования модели
 _model = None
 _processor = None
@@ -55,7 +54,9 @@ def _load_model():
         ignore_warning=True,
     )
 
-    print(f"✅ Модель загружена. GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}")
+    print(
+        f"✅ Модель загружена. GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}"
+    )
     return _pipe
 
 
@@ -119,9 +120,9 @@ def parse_vtt_to_text(vtt_text: str) -> str:
         line = line.strip()
         if not line or line.upper() == "WEBVTT":
             continue
-        if re.match(r'^\d{2}:\d{2}:\d{2}\.\d{3}\s*-->', line):
+        if re.match(r"^\d{2}:\d{2}:\d{2}\.\d{3}\s*-->", line):
             continue
-        if re.match(r'^\d+$', line):
+        if re.match(r"^\d+$", line):
             continue
         lines.append(line)
     return " ".join(lines)

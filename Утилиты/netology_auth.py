@@ -24,7 +24,11 @@ async def ensure_netology_login(page, program_id=None):
     (капча блокирует автоматический ввод).
     """
     # Проверяем авторизацию на рабочей странице программы (быстрее и надёжнее)
-    check_url = f"https://netology.ru/profile/program/{program_id}/schedule" if program_id else "https://netology.ru/profile"
+    check_url = (
+        f"https://netology.ru/profile/program/{program_id}/schedule"
+        if program_id
+        else "https://netology.ru/profile"
+    )
     try:
         await page.goto(check_url, wait_until="domcontentloaded", timeout=60000)
     except Exception:
@@ -51,7 +55,9 @@ async def ensure_netology_login(page, program_id=None):
     print("=" * 60)
 
     # Открываем страницу входа в видимом браузере
-    await page.goto("https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=60000)
+    await page.goto(
+        "https://netology.ru/profile?modal=sign_in", wait_until="domcontentloaded", timeout=60000
+    )
 
     # Ждём ручного входа: проверяем каждые 3 секунды, не более 5 минут
     max_wait = 300  # 5 минут

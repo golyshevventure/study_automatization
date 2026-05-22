@@ -2,6 +2,7 @@
 """
 Исследовательский скрипт: собирает полную структуру программы Нетологии.
 """
+
 import asyncio
 import json
 import os
@@ -17,7 +18,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-async def explore_program(scraper, program_id, depth=0, max_lessons_per_module=5, max_items_per_lesson=20):
+async def explore_program(
+    scraper, program_id, depth=0, max_lessons_per_module=5, max_items_per_lesson=20
+):
     """
     Рекурсивно обходит программу/модуль.
     Возвращает структуру: {title, program_id, lessons: [...]}
@@ -37,11 +40,7 @@ async def explore_program(scraper, program_id, depth=0, max_lessons_per_module=5
         print(f"{indent}  📂 {disc_title}")
 
         if disc.get("locked"):
-            modules.append({
-                "title": disc_title,
-                "locked": True,
-                "lessons": []
-            })
+            modules.append({"title": disc_title, "locked": True, "lessons": []})
             continue
 
         # Новая структура: module program_id
@@ -52,7 +51,9 @@ async def explore_program(scraper, program_id, depth=0, max_lessons_per_module=5
                 if ml.get("locked"):
                     lessons.append({"title": ml.get("title"), "locked": True, "items": []})
                     continue
-                items = await scraper.get_discipline_lessons(disc["program_id"], ml["lesson_id"], [])
+                items = await scraper.get_discipline_lessons(
+                    disc["program_id"], ml["lesson_id"], []
+                )
                 # Для каждого item определяем тип
                 items_enriched = []
                 for item in items[:max_items_per_lesson]:
@@ -71,22 +72,28 @@ async def explore_program(scraper, program_id, depth=0, max_lessons_per_module=5
 
                     items_enriched.append(item_info)
 
-                lessons.append({
-                    "title": ml.get("title"),
-                    "lesson_id": ml["lesson_id"],
-                    "locked": False,
-                    "items": items_enriched
-                })
+                lessons.append(
+                    {
+                        "title": ml.get("title"),
+                        "lesson_id": ml["lesson_id"],
+                        "locked": False,
+                        "items": items_enriched,
+                    }
+                )
 
-            modules.append({
-                "title": disc_title,
-                "program_id": disc.get("program_id"),
-                "locked": False,
-                "lessons": lessons
-            })
+            modules.append(
+                {
+                    "title": disc_title,
+                    "program_id": disc.get("program_id"),
+                    "locked": False,
+                    "lessons": lessons,
+                }
+            )
         else:
             # Legacy структура
-            items = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+            items = await scraper.get_discipline_lessons(
+                program_id, disc["lesson_id"], disc.get("links", [])
+            )
             items_enriched = []
             for item in items[:max_items_per_lesson]:
                 item_info = {
@@ -101,18 +108,16 @@ async def explore_program(scraper, program_id, depth=0, max_lessons_per_module=5
                 item_info["video_url_preview"] = video_url[:60] + "..." if video_url else None
                 items_enriched.append(item_info)
 
-            modules.append({
-                "title": disc_title,
-                "lesson_id": disc.get("lesson_id"),
-                "locked": False,
-                "lessons": [{"title": disc_title, "items": items_enriched}]
-            })
+            modules.append(
+                {
+                    "title": disc_title,
+                    "lesson_id": disc.get("lesson_id"),
+                    "locked": False,
+                    "lessons": [{"title": disc_title, "items": items_enriched}],
+                }
+            )
 
-    return {
-        "program_id": program_id,
-        "title": program_title,
-        "modules": modules
-    }
+    return {"program_id": program_id, "title": program_title, "modules": modules}
 
 
 async def explore_profile(scraper):
@@ -176,7 +181,9 @@ async def main():
     print("\n" + "=" * 60)
     print(f"🔍 Глубокое исследование: {program_id}")
     print("=" * 60)
-    structure = await explore_program(scraper, program_id, depth=0, max_lessons_per_module=10, max_items_per_lesson=20)
+    structure = await explore_program(
+        scraper, program_id, depth=0, max_lessons_per_module=10, max_items_per_lesson=20
+    )
 
     # 3. Сохраняем
     output_path = f"Данные/program_structure_{program_id}.json"
@@ -193,10 +200,7 @@ async def main():
     total_modules = len(structure["modules"])
     total_lessons = sum(len(m["lessons"]) for m in structure["modules"])
     total_items = sum(
-        len(item)
-        for m in structure["modules"]
-        for l in m["lessons"]
-        for item in [l["items"]]
+        len(item) for m in structure["modules"] for l in m["lessons"] for item in [l["items"]]
     )
     video_items = sum(
         1

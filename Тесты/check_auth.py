@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "Утилиты
 from netology_scraper import NetologyScraper
 from netology_auth import ensure_netology_login
 
+
 async def main():
     scraper = NetologyScraper(headless=True)
     await scraper.start()
@@ -19,5 +20,6 @@ async def main():
     else:
         print("❌ Нужна ручная авторизация")
     await scraper.stop()
+
 
 asyncio.run(main())

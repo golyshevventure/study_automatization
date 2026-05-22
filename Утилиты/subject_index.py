@@ -1,14 +1,13 @@
 import os
 import re
 
-
 STUDY_DIR = "/mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)"
 
 
 def _safe_filename(name, max_len=80):
-    name = re.sub(r'[\\/:"*?<>|]', '', name).strip()
+    name = re.sub(r'[\\/:"*?<>|]', "", name).strip()
     if len(name) > max_len:
-        name = name[:max_len].rsplit(' ', 1)[0]
+        name = name[:max_len].rsplit(" ", 1)[0]
     return name
 
 
@@ -19,7 +18,7 @@ def _extract_existing_links(content, section):
     if not match:
         return set()
     block = match.group(1)
-    links = re.findall(r'- \[\[(.+?)\]\]', block)
+    links = re.findall(r"- \[\[(.+?)\]\]", block)
     return set(links)
 
 
@@ -90,9 +89,21 @@ def reset_subject_index(subject_name):
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
         # Очищаем только разделы со ссылками, оставляя заголовок
-        content = re.sub(r'\n## Конспекты\n.*?(?=\n## |\Z)', '\n## Конспекты\n', content, flags=re.DOTALL)
-        content = re.sub(r'\n## Учебные материалы\n.*?(?=\n## |\Z)', '\n## Учебные материалы\n', content, flags=re.DOTALL)
-        content = re.sub(r'\n## Информация по дисциплине\n.*?(?=\n## |\Z)', '\n## Информация по дисциплине\n', content, flags=re.DOTALL)
+        content = re.sub(
+            r"\n## Конспекты\n.*?(?=\n## |\Z)", "\n## Конспекты\n", content, flags=re.DOTALL
+        )
+        content = re.sub(
+            r"\n## Учебные материалы\n.*?(?=\n## |\Z)",
+            "\n## Учебные материалы\n",
+            content,
+            flags=re.DOTALL,
+        )
+        content = re.sub(
+            r"\n## Информация по дисциплине\n.*?(?=\n## |\Z)",
+            "\n## Информация по дисциплине\n",
+            content,
+            flags=re.DOTALL,
+        )
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"🔄 Файл предмета очищен: {filepath}")

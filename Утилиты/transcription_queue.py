@@ -45,15 +45,16 @@ def init_db():
         """)
 
 
-def enqueue(lesson_id: str, program_id: str, audio_path: str, vtt_output_path: str,
-            priority: str = "NORMAL") -> int:
+def enqueue(
+    lesson_id: str, program_id: str, audio_path: str, vtt_output_path: str, priority: str = "NORMAL"
+) -> int:
     """Добавляет задачу в очередь. Возвращает id задачи."""
     init_db()
     with _get_conn() as conn:
         # Проверяем, нет ли уже такой задачи
         row = conn.execute(
             "SELECT id, status FROM queue WHERE lesson_id = ? AND program_id = ?",
-            (lesson_id, program_id)
+            (lesson_id, program_id),
         ).fetchone()
         if row:
             if row["status"] == "done":
@@ -65,7 +66,7 @@ def enqueue(lesson_id: str, program_id: str, audio_path: str, vtt_output_path: s
             INSERT INTO queue (lesson_id, program_id, audio_path, vtt_output_path, priority)
             VALUES (?, ?, ?, ?, ?)
             """,
-            (lesson_id, program_id, audio_path, vtt_output_path, priority)
+            (lesson_id, program_id, audio_path, vtt_output_path, priority),
         )
         return cur.lastrowid
 
@@ -74,8 +75,7 @@ def get_next_task() -> Optional[dict]:
     """Забирает следующую задачу из очереди (по приоритету и времени)."""
     init_db()
     with _get_conn() as conn:
-        row = conn.execute(
-            """
+        row = conn.execute("""
             SELECT * FROM queue
             WHERE status = 'pending'
             ORDER BY
@@ -86,16 +86,12 @@ def get_next_task() -> Optional[dict]:
                 END,
                 created_at ASC
             LIMIT 1
-            """
-        ).fetchone()
+            """).fetchone()
         if not row:
             return None
 
         # Помечаем как processing
-        conn.execute(
-            "UPDATE queue SET status = 'processing' WHERE id = ?",
-            (row["id"],)
-        )
+        conn.execute("UPDATE queue SET status = 'processing' WHERE id = ?", (row["id"],))
         return dict(row)
 
 
@@ -104,7 +100,7 @@ def mark_done(task_id: int):
     with _get_conn() as conn:
         conn.execute(
             "UPDATE queue SET status = 'done', processed_at = ? WHERE id = ?",
-            (datetime.now().isoformat(), task_id)
+            (datetime.now().isoformat(), task_id),
         )
 
 
@@ -113,7 +109,7 @@ def mark_error(task_id: int, error_msg: str):
     with _get_conn() as conn:
         conn.execute(
             "UPDATE queue SET status = 'error', error_msg = ?, processed_at = ? WHERE id = ?",
-            (error_msg, datetime.now().isoformat(), task_id)
+            (error_msg, datetime.now().isoformat(), task_id),
         )
 
 
@@ -121,9 +117,7 @@ def get_stats() -> dict:
     """Возвращает статистику очереди."""
     init_db()
     with _get_conn() as conn:
-        stats = conn.execute(
-            "SELECT status, COUNT(*) as cnt FROM queue GROUP BY status"
-        ).fetchall()
+        stats = conn.execute("SELECT status, COUNT(*) as cnt FROM queue GROUP BY status").fetchall()
         return {row["status"]: row["cnt"] for row in stats}
 
 
@@ -131,9 +125,7 @@ def get_pending_count() -> int:
     """Количество задач в статусе pending."""
     init_db()
     with _get_conn() as conn:
-        row = conn.execute(
-            "SELECT COUNT(*) as cnt FROM queue WHERE status = 'pending'"
-        ).fetchone()
+        row = conn.execute("SELECT COUNT(*) as cnt FROM queue WHERE status = 'pending'").fetchone()
         return row["cnt"]
 
 
@@ -143,7 +135,7 @@ def get_vtt_path(lesson_id: str, program_id: str) -> Optional[str]:
     with _get_conn() as conn:
         row = conn.execute(
             "SELECT vtt_output_path FROM queue WHERE lesson_id = ? AND program_id = ? AND status = 'done'",
-            (lesson_id, program_id)
+            (lesson_id, program_id),
         ).fetchone()
         if row and os.path.exists(row["vtt_output_path"]):
             return row["vtt_output_path"]

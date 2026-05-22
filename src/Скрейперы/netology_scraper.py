@@ -79,9 +79,9 @@ class NetologyScraper:
                 continue
             if not line:
                 continue
-            if re.match(r'^\d{2}:\d{2}:\d{2}\.\d{3}\s*-->', line):
+            if re.match(r"^\d{2}:\d{2}:\d{2}\.\d{3}\s*-->", line):
                 continue
-            if re.match(r'^\d+$', line):
+            if re.match(r"^\d+$", line):
                 continue
             if line.upper().startswith(("NOTE", "REGION", "STYLE")):
                 continue
@@ -161,10 +161,12 @@ class NetologyScraper:
                     return "\n".join(page.extract_text() or "" for page in pdf.pages)
             elif file_ext == "docx":
                 import docx
+
                 doc = docx.Document(io.BytesIO(r.content))
                 return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
             elif file_ext == "pptx":
                 from pptx import Presentation
+
                 prs = Presentation(io.BytesIO(r.content))
                 texts = []
                 for slide in prs.slides:
@@ -183,18 +185,20 @@ class NetologyScraper:
         if not ok:
             print("⚠️ Страница schedule не загрузилась")
             return "", []
-        
+
         # Ждём рендеринга React — до 10 секунд
         for _ in range(10):
             await asyncio.sleep(1)
-            has_lessons = await self.page.evaluate("""() => document.querySelectorAll('[data-lesson-id]').length > 0""")
+            has_lessons = await self.page.evaluate(
+                """() => document.querySelectorAll('[data-lesson-id]').length > 0"""
+            )
             if has_lessons:
                 break
-        
+
         if has_lessons:
             # Legacy структура: data-lesson-id прямо на странице программы
             return await self._get_program_disciplines_legacy()
-        
+
         # Новая структура: карточки модулей
         return await self._get_program_disciplines_cards()
 
@@ -227,10 +231,12 @@ class NetologyScraper:
             return results;
         }
         """)
-        raw_title = await self.page.evaluate("""() => { const el = document.querySelector('[data-testid="program-header"]'); return el ? el.textContent.trim() : document.title; } """)
-        program_title = re.sub(r'\d+\s+курс.*?:\s*', '', raw_title, flags=re.IGNORECASE)
-        program_title = re.sub(r'\d+\s+[а-яА-Я]+\s*—\s*\d+\s+[а-яА-Я]+', '', program_title)
-        program_title = re.sub(r'BHEBFAD[-\w]+', '', program_title, flags=re.IGNORECASE)
+        raw_title = await self.page.evaluate(
+            """() => { const el = document.querySelector('[data-testid="program-header"]'); return el ? el.textContent.trim() : document.title; } """
+        )
+        program_title = re.sub(r"\d+\s+курс.*?:\s*", "", raw_title, flags=re.IGNORECASE)
+        program_title = re.sub(r"\d+\s+[а-яА-Я]+\s*—\s*\d+\s+[а-яА-Я]+", "", program_title)
+        program_title = re.sub(r"BHEBFAD[-\w]+", "", program_title, flags=re.IGNORECASE)
         program_title = program_title.strip()
         if not disciplines:
             return program_title, []
@@ -246,10 +252,12 @@ class NetologyScraper:
         has_cards = False
         for _ in range(15):
             await asyncio.sleep(1)
-            has_cards = await self.page.evaluate('''() => document.querySelectorAll(\'[data-testid="profession-program-card"]\').length > 0''')
+            has_cards = await self.page.evaluate(
+                """() => document.querySelectorAll(\'[data-testid="profession-program-card"]\').length > 0"""
+            )
             if has_cards:
                 break
-        
+
         if not has_cards:
             print("⚠️ Карточки модулей не появились")
             return "", []
@@ -316,14 +324,16 @@ class NetologyScraper:
         if not ok:
             print("⚠️ Страница модуля не загрузилась")
             return []
-        
+
         has_lessons = False
         for _ in range(15):
             await asyncio.sleep(1)
-            has_lessons = await self.page.evaluate("""() => document.querySelectorAll('[data-lesson-id]').length > 0""")
+            has_lessons = await self.page.evaluate(
+                """() => document.querySelectorAll('[data-lesson-id]').length > 0"""
+            )
             if has_lessons:
                 break
-        
+
         if not has_lessons:
             print("⚠️ Занятия модуля не появились")
             return []
@@ -344,7 +354,7 @@ class NetologyScraper:
             return results;
         }
         """)
-        
+
         print(f"   Найдено занятий: {len(lessons)}")
         return lessons
 
@@ -358,7 +368,9 @@ class NetologyScraper:
         else:
             await asyncio.sleep(3)
             try:
-                await self.page.wait_for_selector('a[data-testid^="program-menu-lessonitem"]', timeout=8000)
+                await self.page.wait_for_selector(
+                    'a[data-testid^="program-menu-lessonitem"]', timeout=8000
+                )
             except:
                 pass
             await asyncio.sleep(2)
@@ -367,7 +379,8 @@ class NetologyScraper:
         items = []
         for _ in range(3):
             try:
-                items = await self.page.evaluate(f"""
+                items = await self.page.evaluate(
+                    f"""
                 (lessonId) => {{
                     const results = [];
                     const seen = new Set();
@@ -384,7 +397,9 @@ class NetologyScraper:
                     }});
                     return results;
                 }}
-                """, lesson_id)
+                """,
+                    lesson_id,
+                )
                 break
             except Exception as e:
                 if "Execution context was destroyed" in str(e):
@@ -403,12 +418,15 @@ class NetologyScraper:
                     continue
                 await asyncio.sleep(3)
                 try:
-                    await self.page.wait_for_selector('a[data-testid^="program-menu-lessonitem"]', timeout=8000)
+                    await self.page.wait_for_selector(
+                        'a[data-testid^="program-menu-lessonitem"]', timeout=8000
+                    )
                 except:
                     pass
                 await asyncio.sleep(1)
 
-                items = await self.page.evaluate(f"""
+                items = await self.page.evaluate(
+                    f"""
                 (lessonId) => {{
                     const results = [];
                     const seen = new Set();
@@ -425,7 +443,9 @@ class NetologyScraper:
                     }});
                     return results;
                 }}
-                """, lesson_id)
+                """,
+                    lesson_id,
+                )
                 if items:
                     break
 
@@ -511,10 +531,12 @@ class NetologyScraper:
                         text = "\n".join(page.extract_text() or "" for page in pdf.pages)
                 elif file_ext == "docx":
                     import docx
+
                     doc = docx.Document(io.BytesIO(r.content))
                     text = "\n".join(p.text for p in doc.paragraphs if p.text.strip())
                 elif file_ext == "pptx":
                     from pptx import Presentation
+
                     prs = Presentation(io.BytesIO(r.content))
                     texts = []
                     for slide in prs.slides:
@@ -524,7 +546,9 @@ class NetologyScraper:
                     text = "\n".join(texts)
                 print(f"✅ {file_ext.upper()}: {len(text)} символов")
                 if len(text) > 150000:
-                    print(f"   ⚠️ Файл слишком большой ({len(text)} символов). Требует самостоятельного изучения.")
+                    print(
+                        f"   ⚠️ Файл слишком большой ({len(text)} символов). Требует самостоятельного изучения."
+                    )
                     return None, video_url or ""
                 if len(text) > 300:
                     return text, video_url or ""

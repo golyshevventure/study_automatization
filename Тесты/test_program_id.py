@@ -1,7 +1,9 @@
 import asyncio
 import sys
-sys.path.insert(0, 'src')
+
+sys.path.insert(0, "src")
 from parsers.netology_scraper import NetologyScraper
+
 
 async def main():
     scraper = NetologyScraper()
@@ -22,6 +24,7 @@ async def main():
             print(f"❌ Ошибка: {e}")
 
     await scraper.stop()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -22,8 +22,8 @@ def extract_audio_from_mp4(video_url: str, output_dir: str = "data/audio") -> st
     os.makedirs(output_dir, exist_ok=True)
 
     # Имя файла из URL
-    base_name = re.sub(r'[^\w]', '_', video_url.split('/')[-1].split('?')[0])[:40]
-    if base_name.endswith('_m3u8') or base_name.endswith('_master'):
+    base_name = re.sub(r"[^\w]", "_", video_url.split("/")[-1].split("?")[0])[:40]
+    if base_name.endswith("_m3u8") or base_name.endswith("_master"):
         base_name = base_name[:35]
     wav_path = os.path.join(output_dir, f"{base_name}.wav")
 
@@ -32,13 +32,22 @@ def extract_audio_from_mp4(video_url: str, output_dir: str = "data/audio") -> st
 
     # FFmpeg сам скачивает и MP4, и M3U8 (HLS)
     cmd = [
-        "ffmpeg", "-y",
-        "-fflags", "+discardcorrupt",
-        "-i", video_url,
-        "-vn", "-acodec", "pcm_s16le",
-        "-ac", "1", "-ar", "16000",
-        "-t", "7200",  # ограничение 2 часа на всякий случай
-        wav_path
+        "ffmpeg",
+        "-y",
+        "-fflags",
+        "+discardcorrupt",
+        "-i",
+        video_url,
+        "-vn",
+        "-acodec",
+        "pcm_s16le",
+        "-ac",
+        "1",
+        "-ar",
+        "16000",
+        "-t",
+        "7200",  # ограничение 2 часа на всякий случай
+        wav_path,
     ]
     subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 

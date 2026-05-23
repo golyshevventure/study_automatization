@@ -31,12 +31,17 @@
 - ✅ **Logging**: logger_config.py, заменён print в generate_summary.py и netology_scraper.py
 - ✅ **README.md**: описание, установка, архитектура, команды, roadmap
 - ✅ **docs/**: папка документации (TODO.md, UNIT_ECONOMICS.md, KIMI.md, StudyCore.drawio)
-- 🔥 **ИССЛЕДОВАНИЕ API Нетологии**: найдены REST endpoint'ы!
+- ✅ **ИССЛЕДОВАНИЕ API Нетологии**: найдены REST endpoint'ы!
   - `GET /backend/api/user/professions/{id}/schedule` — 23 модуля
   - `GET /backend/api/user/programs/{id}/schedule` — список занятий с lesson_items
   - `GET /backend/api/user/lesson_items/{id}` — контент в Markdown!
   - **Ускорение: 30x** (с 17ч до ~30 мин на бакалавриат)
   - Playwright нужен только для авторизации
+- ✅ **API-first режим**: `run_agent.py --api`
+  - `NetologyAPIClient` на httpx — структура + контент через HTTP
+  - Playwright остаётся только для авторизации
+  - Обратная совместимость: без `--api` работает старый Playwright-режим
+  - `audio_extractor.py`: `resolve_kinescope_video_url()` для short URL → master.m3u8
 - 🎨 **Frontend / Telegram Mini App**: веб-интерфейс на JS/HTML/CSS
 - 🔗 **Telegram WebApp SDK**: интеграция с ботом
 - ⚡ **Оптимизация скорости**: API-first подход — с 17ч до 30 мин
@@ -164,6 +169,7 @@ Study_automatization/
 | **19.05** | **v0.8.2: Итого тестирование v0.8.2** | ✅ 56 конспектов, ~100 мин |
 | **19.05** | **v0.8.3: Финансовая модель v2** | ✅ Viral burst, LTV/CAC, scaling |
 | **19.05** | **v0.8.3: Массовый прогон бакалавриата** | ✅ 18 дисциплин, ~17 часов, 544 файла |
+| **23.05** | **v0.9.0: API-first режим** | ✅ `NetologyAPIClient`, `run_agent.py --api`. Тест: Тема 1 Мировая экономика — конспект 11 451 симв. |
 
 ---
 

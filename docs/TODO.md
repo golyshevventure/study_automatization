@@ -129,6 +129,8 @@ Study_automatization/
 │   ├── index.html
 │   ├── css/
 │   └── js/
+├── 📁 report/                    # Отчёты по итерациям
+│   └── api_first_implementation_report.md
 └── 📁 output/                    # Логи прогонов
 ```
 
@@ -170,6 +172,7 @@ Study_automatization/
 | **19.05** | **v0.8.3: Финансовая модель v2** | ✅ Viral burst, LTV/CAC, scaling |
 | **19.05** | **v0.8.3: Массовый прогон бакалавриата** | ✅ 18 дисциплин, ~17 часов, 544 файла |
 | **23.05** | **v0.9.0: API-first режим** | ✅ `NetologyAPIClient`, `run_agent.py --api`. Тест: Тема 1 Мировая экономика — конспект 11 451 симв. |
+| **23.05** | **v0.9.0: Отчёт по итерации** | ✅ `report/api_first_implementation_report.md` |
 
 ---
 

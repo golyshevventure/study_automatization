@@ -6,6 +6,7 @@
 2. FFmpeg скачивает поток (MP4/M3U8) → wav
 """
 
+import json
 import os
 import re
 import subprocess
@@ -16,6 +17,10 @@ def resolve_kinescope_video_url(video_url: str) -> str:
     """
     Преобразует short URL Kinescope (https://kinescope.io/XXXX)
     в прямую ссылку на master.m3u8.
+
+    Критически важно: Referer должен быть https://netology.ru,
+    иначе Kinescope отдаёт 403 Forbidden.
+
     Если URL уже содержит .m3u8 или .mp4 — возвращает как есть.
     """
     if ".m3u8" in video_url or ".mp4" in video_url:
@@ -29,24 +34,44 @@ def resolve_kinescope_video_url(video_url: str) -> str:
         ),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Referer": "https://netology.ru",
     }
     r = requests.get(video_url, headers=headers, timeout=15)
     r.raise_for_status()
     html = r.text
 
-    # Паттерн 1: playerOptions.playlist[...].sources.hls.src
-    m = re.search(r'"src"\s*:\s*"(https://kinescope\.io/[^"]+master\.m3u8)"', html)
+    # Паттерн 1: парсим playerOptions JSON
+    m = re.search(r"var playerOptions\s*=\s*({.+?});", html, re.DOTALL)
+    if m:
+        raw = m.group(1)
+        # Очищаем control characters (0x00-0x1F, кроме \n\r\t)
+        raw_clean = "".join(
+            ch if (ord(ch) >= 32 or ch in "\n\r\t") else " " for ch in raw
+        )
+        try:
+            data = json.loads(raw_clean)
+            playlist = data.get("playlist", [{}])[0]
+            sources = playlist.get("sources", {})
+            hls = sources.get("hls", {})
+            m3u8 = hls.get("src")
+            if m3u8:
+                return m3u8
+        except json.JSONDecodeError:
+            pass
+
+    # Паттерн 2: прямой поиск src с master.m3u8
+    m = re.search(r'"src"\s*:\s*"(https://kinescope\.io/[^"]+master\.m3u8[^"]*)"', html)
     if m:
         return m.group(1)
 
-    # Паттерн 2: playerOptions с UUID
+    # Паттерн 3: UUID из playerOptions
     m = re.search(r'"id"\s*:\s*"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"', html)
     if m:
         uuid = m.group(1)
         return f"https://kinescope.io/{uuid}/master.m3u8"
 
-    # Fallback: ищем любой master.m3u8
-    m = re.search(r'(https://kinescope\.io/[^"\s]+master\.m3u8)', html)
+    # Fallback: любой master.m3u8 в HTML
+    m = re.search(r'(https://kinescope\.io/[^"\s]+master\.m3u8[^"\s]*)', html)
     if m:
         return m.group(1)
 

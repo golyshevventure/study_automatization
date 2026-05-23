@@ -1,0 +1,33 @@
+{
+  "id": 3206959,
+  "position": 1,
+  "lesson_id": 595092,
+  "locked": false,
+  "type": "webinar",
+  "status": "passed",
+  "approximate_progress_time": 95,
+  "title": "Мировая экономика и международные экономические отношения",
+  "path": "/profile/program/bhebfad-25-memeo-2/lessons/595092/lesson_items/3206959",
+  "feedback": {
+    "passed": false
+  },
+  "passed_rule": "webinar_button_end",
+  "passed_value": null,
+  "passed": true,
+  "starts_at": "2026-02-17T15:55:00.000Z",
+  "ends_at": "2026-02-17T17:25:00.000Z",
+  "experts": [
+    {
+      "id": 9697718,
+      "full_name": "Алексей Солуянов",
+      "avatar_path": "/images2/nouser.jpg",
+      "has_photo": false
+    }
+  ],
+  "video_url": "https://kinescope.io/tMovmrw31bN9CrcsEcsyuf",
+  "webinar_url": "",
+  "youtube_video_id": null,
+  "translation_adapter": "webinar_ru_native",
+  "ulms_duration": null,
+  "ulms_video_available": false
+}

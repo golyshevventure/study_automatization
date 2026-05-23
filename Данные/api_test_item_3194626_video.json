@@ -1,0 +1,17 @@
+{
+  "id": 3194626,
+  "position": 1,
+  "lesson_id": 592810,
+  "locked": false,
+  "type": "video",
+  "approximate_progress_time": 0,
+  "title": "Тема 1 «Мировая экономика и ее основные субъекты. Международное разделение труда как материальная основа мировой экономики» (часть 1)",
+  "path": "/profile/program/bhebfad-25-memeo-2/lessons/592810/lesson_items/3194626",
+  "feedback": {
+    "passed": false
+  },
+  "passed_rule": "video_view_X",
+  "passed_value": 80,
+  "passed": true,
+  "video_url": "https://kinescope.io/dbSLrR1LWpNtrnwK2aXCGw"
+}

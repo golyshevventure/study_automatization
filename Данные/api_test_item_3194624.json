@@ -1,0 +1,26 @@
+{
+  "id": 3194624,
+  "position": 1,
+  "lesson_id": 592809,
+  "locked": false,
+  "type": "attachment",
+  "approximate_progress_time": 13,
+  "title": "Рабочая программа дисциплины",
+  "path": "/profile/program/bhebfad-25-memeo-2/lessons/592809/lesson_items/3194624",
+  "feedback": {
+    "passed": false
+  },
+  "passed_rule": "attachment_open",
+  "passed_value": null,
+  "passed": true,
+  "content": "",
+  "files": [
+    {
+      "id": 77664,
+      "name": "Рабочая программа дисциплины",
+      "link": "https://u.netology.ru/backend/uploads/lms/attachments/files/data/77664/%D0%9C%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B0_%D0%A0%D0%9F%D0%94_2022.pdf",
+      "extension": "pdf",
+      "size": "958,7 КБ"
+    }
+  ]
+}

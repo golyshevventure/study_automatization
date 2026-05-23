@@ -173,6 +173,7 @@ Study_automatization/
 | **19.05** | **v0.8.3: Массовый прогон бакалавриата** | ✅ 18 дисциплин, ~17 часов, 544 файла |
 | **23.05** | **v0.9.0: API-first режим** | ✅ `NetologyAPIClient`, `run_agent.py --api`. Тест: Тема 1 Мировая экономика — конспект 11 451 симв. |
 | **23.05** | **v0.9.0: Отчёт по итерации** | ✅ `report/api_first_implementation_report.md` |
+| **23.05** | **🔥 Прорыв: Kinescope Referer** | ✅ `Referer: https://netology.ru` даёт доступ к `master.m3u8`. API-first аудио fallback работает. Тест: Тема 1 — 51K симв. транскрипции, конспект 12K симв. |
 
 ---
 

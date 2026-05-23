@@ -156,6 +156,22 @@ async def _get_item_content_api(api_client, item, subject_name):
             print(f"   🎬 Попробуем аудио fallback несмотря на длинный текст...")
             text = None
 
+    # Пробуем извлечь VTT-субтитры (быстрее и точнее Whisper)
+    vtt_text = ""
+    if video_url and (not text or len(text) < 1000):
+        print(f"   📝 Проверяем субтитры (VTT)...")
+        try:
+            vtt_text = extract_vtt_text(video_url)
+            if vtt_text and len(vtt_text) > 500:
+                print(f"   ✅ VTT: {len(vtt_text)} символов")
+                text = f"[Субтитры вебинара]\n\n{vtt_text}"
+                is_structure = False
+            else:
+                print(f"   ⚠️ Субтитры не найдены или слишком короткие")
+        except Exception as e:
+            print(f"   ⚠️ Ошибка VTT: {e}")
+
+    # Audio fallback: если нет VTT и текст короткий
     if video_url and (not text or len(text) < 1000):
         if is_structure:
             print(f"   🎬 Извлекаем аудио из-за structure page...")

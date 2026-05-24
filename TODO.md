@@ -71,11 +71,11 @@
 Study_automatization/
 ├── run_agent.py                 # Главный оркестратор
 ├── generate_summary.py           # LLM-генерация конспектов (OpenRouter)
-├── database.py                   # SQLite-хранилище
+├── (удалён) database.py          # SQLite-хранилище (не использовался)
 ├── push.sh                       # Автопуш на GitHub
 ├── requirements.txt              # Python-зависимости
 ├── .env                          # API ключи + логин Нетологии
-├── SYSTEM_PROMPT.md              # Промпт для модели
+├── Промпты/system.txt            # Промпт для модели
 ├── README.md                     # Главная документация
 ├── docs/
 │   ├── TODO.md                   # Этот файл
@@ -95,9 +95,7 @@ Study_automatization/
 │   ├── second_brain_cleanup.py   # Очистка/создание структуры SB
 │   ├── audio_extractor.py        # Извлечение аудио из MP4/M3U8
 │   ├── local_whisper.py          # Локальная транскрибация (Whisper GPU)
-│   ├── transcription_queue.py    # Очередь транскрибаций
-│   ├── deadline_extractor.py     # Извлечение дедлайнов
-│   └── calendar_builder.py       # Календарь дедлайнов
+│   ├── (удалён) transcription_queue.py  # Очередь транскрибаций (не использовалась)
 ├── 📁 Промпты/
 │   └── system.txt                # Системный промпт для DeepSeek
 ├── 📁 Тесты/
@@ -129,7 +127,7 @@ Study_automatization/
 │   ├── index.html
 │   ├── css/
 │   └── js/
-├── 📁 report/                    # Отчёты по итерациям
+├── 📁 reports/                   # Отчёты по итерациям (с датами)
 │   └── api_first_implementation_report.md
 └── 📁 output/                    # Логи прогонов
 ```
@@ -172,9 +170,9 @@ Study_automatization/
 | **19.05** | **v0.8.3: Финансовая модель v2** | ✅ Viral burst, LTV/CAC, scaling |
 | **19.05** | **v0.8.3: Массовый прогон бакалавриата** | ✅ 18 дисциплин, ~17 часов, 544 файла |
 | **23.05** | **v0.9.0: API-first режим** | ✅ `NetologyAPIClient`, `run_agent.py --api`. Тест: Тема 1 Мировая экономика — конспект 11 451 симв. |
-| **23.05** | **v0.9.0: Отчёт по итерации** | ✅ `report/api_first_implementation_report.md` |
+| **23.05** | **v0.9.0: Отчёт по итерации** | ✅ `reports/2026-05-23 Внедрение API-first архитектуры.md` |
 | **23.05** | **🔥 Прорыв: Kinescope Referer** | ✅ `Referer: https://netology.ru` даёт доступ к `master.m3u8`. API-first аудио fallback работает. Тест: Тема 1 — 51K симв. транскрипции, конспект 12K симв. |
-| **23.05** | **🔬 Исследование VTT из Kinescope** | ✅ Найден паттерн `{video_id}/subtitles/{timestamp}/{uuid}.vtt` в HTML embed. `extract_vtt_text()` — ~58K симв. за <1 сек. Fallback: VTT → Whisper → skip. Отчёт: `report/vtt_extraction_research.md` |
+| **23.05** | **🔬 Исследование VTT из Kinescope** | ✅ Найден паттерн `{video_id}/subtitles/{timestamp}/{uuid}.vtt` в HTML embed. `extract_vtt_text()` — ~58K симв. за <1 сек. Fallback: VTT → Whisper → skip. Отчёт: `reports/2026-05-23 Извлечение субтитров VTT без браузера.md` |
 | **24.05** | **v0.9.0: Оптимизация LLM-генерации** | ✅ CHUNK_SIZE 70K → 100K, параллельные chunks через ThreadPoolExecutor, убраны sleep(15). Прогон "Введение в специальность": 19 мин 42 сек, 7 конспектов + силлабус. Отчёт: `reports/2026-05-24 Результаты оптимизированного прогона Введение в специальность.md` |
 
 ---

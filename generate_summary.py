@@ -1,3 +1,4 @@
+import concurrent.futures
 import logging
 import os
 import re
@@ -15,7 +16,7 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 BASE_URL = "https://openrouter.ai/api/v1"
 
-CHUNK_SIZE = 70000
+CHUNK_SIZE = 100000
 MAX_CHUNKS = 3
 
 
@@ -29,7 +30,6 @@ def generate_chunk(text, subject, topic, retries=3):
     user_msg = f"Предмет: {subject}\nТема: {topic}\n\nТекст вебинара:\n{text[:CHUNK_SIZE]}"
 
     for attempt in range(retries + 1):
-        time.sleep(15)
         try:
             resp = requests.post(
                 f"{BASE_URL}/chat/completions",
@@ -179,15 +179,25 @@ def generate_summary(text, subject, topic):
 
     logger.info("Текст разбит на %s частей", len(chunks))
 
+    # Параллельная генерация всех chunks
+    logger.info("Запускаем %s LLM-запросов параллельно...", len(chunks))
     partial_summaries = []
-    for i, chunk in enumerate(chunks, 1):
-        logger.info("Часть %s/%s...", i, len(chunks))
-        summary = generate_chunk(chunk, subject, topic)
-        if not summary.startswith("Ошибка"):
-            summary = re.sub(r"^# .+?\n+", "", summary, flags=re.MULTILINE)
-            partial_summaries.append(summary.strip())
-        if i < len(chunks):
-            time.sleep(15)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(chunks)) as executor:
+        futures = {
+            executor.submit(generate_chunk, chunk, subject, topic): i
+            for i, chunk in enumerate(chunks)
+        }
+        results = [None] * len(chunks)
+        for future in concurrent.futures.as_completed(futures):
+            i = futures[future]
+            summary = future.result()
+            if not summary.startswith("Ошибка"):
+                summary = re.sub(r"^# .+?\n+", "", summary, flags=re.MULTILINE)
+                results[i] = summary.strip()
+            else:
+                logger.error("Ошибка при генерации части %s: %s", i + 1, summary)
+
+    partial_summaries = [r for r in results if r is not None]
 
     if not partial_summaries:
         return "Ошибка генерации"

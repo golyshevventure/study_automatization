@@ -24,7 +24,7 @@ from material_classifier import (
 )
 from subject_index import update_subject_index, reset_subject_index
 from conspect_writer import write_material, write_large_file_stub, wiki_link
-from audio_extractor import extract_audio_from_mp4
+from audio_extractor import extract_audio_from_mp4, extract_vtt_text
 from local_whisper import transcribe_to_text
 from logger_config import setup_logging, get_logger
 

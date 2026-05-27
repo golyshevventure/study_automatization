@@ -43,7 +43,33 @@
   - Обратная совместимость: без `--api` работает старый Playwright-режим
   - `audio_extractor.py`: `resolve_kinescope_video_url()` для short URL → master.m3u8
 - ✅ **Оптимизация LLM-генерации**: CHUNK_SIZE 100K, параллельные chunks (ThreadPoolExecutor), убраны sleep(15). Прогон "Введение в специальность": 19 мин 42 сек (было ~60-90 мин)
-- 🎨 **Frontend / Telegram Mini App**: веб-интерфейс на JS/HTML/CSS
+- ✅ **Frontend / Telegram Mini App**: полноценный UI на Vite + React + TypeScript + Tailwind
+  - `Welcome.tsx` — страница приветствия: неоновая тема (#020617), логотип, 4 функции с эмодзи, форма авторизации
+  - `Home.tsx` — главный дашборд: профиль студента, «Мои курсы» (16 программ из API), «Ближайшие дедлайны», «Недавние конспекты»
+  - `BottomNav.tsx` — нижняя навигация: Главная, Конспекты, Дедлайны, Уведомления. Активный таб фиолетовый (`#B794F6`) с glow
+  - `Deadlines.tsx` — страница всех дедлайнов с легендой, статистикой, автообновлением
+  - `Notes.tsx` — страница конспектов с поиском и фильтрами по предметам
+  - `NoteDetail.tsx` — детальная страница конспекта
+  - `Notifications.tsx` — страница уведомлений
+  - Единая дизайн-система: фон `#020617`, radial purple gradients, neon glow, JetBrains Mono, карточки `rgba(15, 23, 42, 0.6)`
+- ✅ **Frontend — система дедлайнов v1 (23.05)**:
+  - Типы: `DeadlineItem`, `EnrichedDeadlineItem`, `HomeworkStatus`, `DeadlineTaskType`
+  - Демо-данные: 16 записей на основе реального API
+  - Утилиты: парсинг ISO-дат, форматирование, сортировка, фильтрация
+  - Хук `useDeadlines` — polling с автообновлением раз в час
+  - Компонент `DeadlineCard` — цветная полоска-индикатор
+- ✅ **Frontend — система дедлайнов v2 (23.05) — РЕАЛЬНЫЕ ДАННЫЕ + ФИЛЬТРАЦИЯ ПО СЕМЕСТРАМ**:
+  - Удалены демо-данные, внедрены 11 реальных дедлайнов из API `/backend/api/user/student_learning/calendar`
+  - **Метод фильтрации по семестрам** (гибридный):
+    - Парсинг семестра из `title`: `"1 курс, 2 семестр: Философия"` → регулярка `^(\d+) курс, (\d+) семестр: (.+)$`
+    - Валидация через `profession_modules[].program.start_date/finish_date` из API расписания
+    - Текущий семестр определяется по дате: Фев–Июн = 2 сем, Сен–Янв = 1 сем
+    - Правило: бакалавриат → только текущий семестр, ИЛИ будущие дедлайны из прошлых семестров (пересдачи/академразница)
+  - Группировка по программам: `programName` сверху, под ним дедлайны дисциплин
+  - **Home.tsx**: топ-3 ВСЕГО + группировка + фильтр просроченных только за последний месяц
+  - **Deadlines.tsx**: фильтры-кнопки «Все / Обычное / Срочно / Просрочено» с счётчиками + группировка по программам
+  - Убраны дни недели из форматирования даты
+  - Добавлены типы: `ProgramGroup`, `DeadlineFilter`
 - 🔗 **Telegram WebApp SDK**: интеграция с ботом
 - 🐛 **Фикс битых конспектов**: 4 файла без контента (structure pages)
 - 🐛 **Фикс дублей**: dedup по content hash, не только по имени
@@ -74,15 +100,20 @@ Study_automatization/
 ├── (удалён) database.py          # SQLite-хранилище (не использовался)
 ├── push.sh                       # Автопуш на GitHub
 ├── requirements.txt              # Python-зависимости
+├── pyproject.toml                # Конфигурация проекта (Black, pytest)
 ├── .env                          # API ключи + логин Нетологии
 ├── Промпты/system.txt            # Промпт для модели
 ├── README.md                     # Главная документация
+├── TODO.md                       # Этот файл
 ├── docs/
-│   ├── TODO.md                   # Этот файл
+│   ├── TODO.md                   # Копия плана (историческая)
 │   ├── UNIT_ECONOMICS.md         # 💰 Финансовая модель (unit-экономика)
 │   ├── KIMI.md                   # Контекст для Kimi Code CLI
-│   └── StudyCore.drawio          # Диаграмма архитектуры
+│   ├── API_RESEARCH_REPORT.md    # Отчёт об исследовании API Нетологии
+│   ├── StudyCore.drawio          # Диаграмма архитектуры
+│   └── github_tasks.csv          # Задачи из GitHub
 ├── 📁 src/
+│   ├── __init__.py
 │   ├── 📁 Скрейперы/
 │   │   └── netology_scraper.py   # Playwright: auth, scraping, VTT/video
 │   ├── 📁 Генераторы/            # (резерв для будущих генераторов)
@@ -95,7 +126,9 @@ Study_automatization/
 │   ├── second_brain_cleanup.py   # Очистка/создание структуры SB
 │   ├── audio_extractor.py        # Извлечение аудио из MP4/M3U8
 │   ├── local_whisper.py          # Локальная транскрибация (Whisper GPU)
+│   ├── logger_config.py          # Единый логгер проекта
 │   ├── (удалён) transcription_queue.py  # Очередь транскрибаций (не использовалась)
+│   └── material_classifier.py    # Классификация материалов
 ├── 📁 Промпты/
 │   └── system.txt                # Системный промпт для DeepSeek
 ├── 📁 Тесты/
@@ -113,23 +146,62 @@ Study_automatization/
 │   ├── test_models.py            # Тест моделей
 │   ├── test_openrouter.py        # Тест OpenRouter API
 │   ├── test_program_id.py        # Тест program ID
-│   └── test_schedule_all.py      # Тест расписания
+│   ├── test_schedule_all.py      # Тест расписания
+│   └── test_api_endpoints.py     # Тест API endpoint'ов
 ├── 📁 Данные/
 │   ├── agent.db                  # SQLite база
 │   ├── discipline_overview.json  # Обзор дисциплин
 │   ├── materials_page.json       # Страница материалов
 │   ├── program_schedule.json     # Расписание программы
 │   ├── netology_page.html        # HTML страницы (debug)
-│   └── html_debug/               # HTML дампы для отладки
-├── 📁 data/                      # Временные данные (аудио, debug HTML)
-│   └── audio/                    # Извлечённые аудио файлы
-├── 📁 frontend/                  # Telegram Mini App (JS/HTML/CSS)
+│   ├── html_debug/               # HTML дампы для отладки
+│   └── archive/                  # Архивные API-ответы
+├── 📁 data/                      # Временные данные
+│   ├── audio/                    # Извлечённые аудио файлы
+│   └── html_debug/               # HTML дампы
+├── 📁 frontend/                  # Telegram Mini App (Vite + React + TS + Tailwind)
 │   ├── index.html
-│   ├── css/
-│   └── js/
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── src/
+│   │   ├── main.tsx              # Точка входа
+│   │   ├── App.tsx               # Роутер (HashRouter)
+│   │   ├── index.css             # Глобальные стили, анимации, neon utilities
+│   │   ├── data.ts               # Демо-данные (notes, subjects, notifications)
+│   │   ├── types/
+│   │   │   └── deadline.ts       # Типы дедлайнов
+│   │   ├── data/
+│   │   │   └── realDeadlines.ts  # Реальные дедлайны из API (11 записей)
+│   │   ├── utils/
+│   │   │   └── deadlineUtils.ts  # Утилиты дат, сортировки, форматирования
+│   │   ├── hooks/
+│   │   │   └── useDeadlines.ts   # Хук polling'а дедлайнов
+│   │   ├── components/
+│   │   │   ├── MobileFrame.tsx   # Рамка телефона (420×812)
+│   │   │   ├── BottomNav.tsx     # Нижняя навигация (4 таба)
+│   │   │   ├── DeadlineCard.tsx  # Карточка дедлайна
+│   │   │   └── ui/               # shadcn/ui компоненты (button, card, input и др.)
+│   │   └── pages/
+│   │       ├── Welcome.tsx       # Страница приветствия + авторизация
+│   │       ├── Home.tsx          # Главный дашборд
+│   │       ├── Deadlines.tsx     # Все дедлайны
+│   │       ├── Notes.tsx         # Список конспектов
+│   │       ├── NoteDetail.tsx    # Детальная страница конспекта
+│   │       └── Notifications.tsx # Уведомления
+│   └── public/
+│       └── logo.png              # Логотип StudyCore (белый)
 ├── 📁 reports/                   # Отчёты по итерациям (с датами)
-│   └── api_first_implementation_report.md
-└── 📁 output/                    # Логи прогонов
+│   ├── api_first_implementation_report.md
+│   ├── 2026-05-23 Внедрение API-first архитектуры.md
+│   ├── 2026-05-23 Извлечение субтитров VTT без браузера.md
+│   ├── 2026-05-24 Результаты оптимизированного прогона Введение в специальность.md
+│   └── 2026-05-23 Реализация системы дедлайнов на главной и странице Дедлайны.md
+├── 📁 output/                    # Логи прогонов
+├── 📁 tests/                     # Pytest тесты
+│   └── test_material_classifier.py
+└── 📁 .venv/                     # Python virtual environment
 ```
 
 ---
@@ -174,6 +246,14 @@ Study_automatization/
 | **23.05** | **🔥 Прорыв: Kinescope Referer** | ✅ `Referer: https://netology.ru` даёт доступ к `master.m3u8`. API-first аудио fallback работает. Тест: Тема 1 — 51K симв. транскрипции, конспект 12K симв. |
 | **23.05** | **🔬 Исследование VTT из Kinescope** | ✅ Найден паттерн `{video_id}/subtitles/{timestamp}/{uuid}.vtt` в HTML embed. `extract_vtt_text()` — ~58K симв. за <1 сек. Fallback: VTT → Whisper → skip. Отчёт: `reports/2026-05-23 Извлечение субтитров VTT без браузера.md` |
 | **24.05** | **v0.9.0: Оптимизация LLM-генерации** | ✅ CHUNK_SIZE 70K → 100K, параллельные chunks через ThreadPoolExecutor, убраны sleep(15). Прогон "Введение в специальность": 19 мин 42 сек, 7 конспектов + силлабус. Отчёт: `reports/2026-05-24 Результаты оптимизированного прогона Введение в специальность.md` |
+| **24.05** | **v0.9.0: Frontend Welcome страница** | ✅ Переработан `Welcome.tsx`: неоновая тема (#020617), логотип 200px, JetBrains Mono, 4 функции с эмодзи-анимациями, форма входа (email/password) → navigate("/"). Фон: radial purple gradients. |
+| **22–23.05** | **Frontend Home — «Мои курсы»** | ✅ Реальные данные из API `/programs/progress` (16 программ). Группировка: Активные / Не начато / Пройдено. Профессии: 5 модульных прогресс-баров + `+N`. Курсы: фиолетовый прогресс-бар. Кнопка «Показать все». |
+| **22–23.05** | **Frontend BottomNav** | ✅ Активный таб: `#B794F6` (лавандовый) с `drop-shadow` + `text-shadow` glow. Неактивный: `#94A3B8`. 4 таба: Главная, Конспекты, Дедлайны, Уведомления. |
+| **23.05** | **Frontend HMR polling** | ✅ `vite.config.ts`: `usePolling: 500` для WSL. Исправлены проблемы с отслеживанием файлов. |
+| **23.05** | **Frontend — фикс кавычек в Home.tsx** | ✅ Экранирование русских строк с кавычками (`"Системное администрирование"` → `\"Системное администрирование\"`). Предотвращает поломку Vite-парсера. |
+| **23.05** | **🔬 Исследование API дедлайнов** | ✅ `GET /backend/api/user/student_learning/calendar` — 62 записи, 370KB JSON. Подтверждено наличие `lesson_task.deadline` и `lesson_task.homework.status` со значениями: `null`, `in_progress`, `accepted`, `waiting_review`. |
+| **23.05** | **Frontend — система дедлайнов v1** | ✅ Полный модуль: типы, демо-данные, утилиты, хук `useDeadlines` (polling 1ч), `DeadlineCard`, интеграция в Home.tsx (top-3), обновление Deadlines.tsx (все + статистика). Отчёт: `reports/2026-05-23 Реализация системы дедлайнов на главной и странице Дедлайны.md` |
+| **23.05** | **Frontend — система дедлайнов v2** | ✅ Реальные данные из API (11 дедлайнов), удалены демо. Фильтрация по семестрам: парсинг title + валидация через profession_modules start_date/finish_date. Группировка по программам. Фильтры на Deadlines.tsx: Все/Обычное/Срочно/Просрочено. Просроченные > 1 месяца скрыты только на главной. Убраны дни недели. |
 
 ---
 
@@ -424,7 +504,34 @@ $ wc -c -m "Тема 8 «Валютные отношения в мировой �
 - ✅ **Structure pages** — ИСПРАВЛЕНО
 - ✅ **"КЛЮЧЕВЫЕ ВЫВОДЫ"** — ИСПРАВЛЕНО (0 файлов в прогоне)
 
-### P5 — Мониторинг качества
+### P5 — Frontend (новый блок задач)
+
+#### P5.1 — Подключение реальных API
+- **Статус:** Частично готово (данные из кэша API подключены, live fetch — нет)
+- **Уже реализовано:**
+  - `GET /backend/api/user/programs/progress` — данные курсов подключены в Home.tsx
+  - `GET /backend/api/user/student_learning/calendar` — данные дедлайнов извлечены из кэша в `realDeadlines.ts`
+  - Фильтрация по семестрам через парсинг title + валидация `start_date/finish_date` из profession schedule
+- **Осталось:** заменить статичный `realDeadlines.ts` на live fetch в `useDeadlines.ts`
+- **Блокер:** нужна авторизация через cookie / JWT
+- **Решение:** `useDeadlines.ts` уже подготовлен — заменить `fetchDeadlines()` на реальный fetch
+
+#### P5.2 — Кавычки в русских строках
+- **Проблема:** Inline данные с кавычками (например, `"Системное администрирование"`) ломают Vite-парсер
+- **Статус:** ✅ Исправлено (данные вынесены в `realDeadlines.ts`)
+
+#### P5.3 — HMR в WSL
+- **Статус:** ✅ Исправлено
+- **Решение:** `vite.config.ts` — `usePolling: 500`
+
+#### P5.4 — Дизайн-система
+- **Фон:** `#020617` (slate-950)
+- **Акценты:** `#8a2be2` (blue-violet) → `#00f0ff` (cyan) градиент
+- **Шрифт:** JetBrains Mono
+- **Карточки:** `rgba(15, 23, 42, 0.6)` + neon box-shadow
+- **Активный таб:** `#B794F6` с glow
+
+### P6 — Мониторинг качества
 - Post-generation check — длина, наличие ключевых секций
 - Отслеживание коротких конспектов (< 3000 символов) — флаг на review
 - Проверка на "К сожалению, текст не содержит..." — автоматический флаг

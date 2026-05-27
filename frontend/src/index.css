@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0F172A;
+  --bg-card: #1E293B;
+  --accent: #F59E0B;
+  --accent-indigo: #6366F1;
+  --accent-violet: #8B5CF6;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --success: #10B981;
+  --danger: #EF4444;
+}
+
+body {
+  background: #020617;
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+
+
+/* Скрыть скроллбар */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Neon pulse animation for feature cards */
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), 0 0 10px rgba(138, 43, 226, 0.5); }
+}
+
+/* Gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, #8a2be2, #00f0ff);
+}
+
+/* Feature card emoji animations */
+@keyframes write {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-4px) rotate(-12deg); }
+  50% { transform: translateX(2px) rotate(6deg); }
+  75% { transform: translateX(-2px) rotate(-4deg); }
+}
+
+@keyframes stack {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-3px); }
+  60% { transform: translateY(2px); }
+}
+
+@keyframes alarm {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  15% { transform: scale(1.15) rotate(-20deg); }
+  30% { transform: scale(1.2) rotate(20deg); }
+  45% { transform: scale(1.15) rotate(-15deg); }
+  60% { transform: scale(1.1) rotate(10deg); }
+  75% { transform: scale(1.05) rotate(-5deg); }
+}
+
+@keyframes bell {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(20deg); }
+  30% { transform: rotate(-20deg); }
+  45% { transform: rotate(15deg); }
+  60% { transform: rotate(-15deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.feature-card:hover .icon-write,
+.feature-card:active .icon-write {
+  animation: write 0.7s ease-in-out;
+}
+
+.feature-card:hover .icon-stack,
+.feature-card:active .icon-stack {
+  animation: stack 0.5s ease-in-out;
+}
+
+.feature-card:hover .icon-alarm,
+.feature-card:active .icon-alarm {
+  animation: alarm 0.7s ease-in-out;
+}
+
+.feature-card:hover .icon-bell,
+.feature-card:active .icon-bell {
+  animation: bell 0.6s ease-in-out;
+}
+
+

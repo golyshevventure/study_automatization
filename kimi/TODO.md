@@ -26,11 +26,9 @@
 - ✅ **Итого тестирование v0.8.2**: 56 конспектов за ~100 минут, 3 дисциплины
 - 📁 **Структура**: добавлена папка `frontend/`
 
-**v0.9.0** (в работе)
+**v0.9.0** (завершён)
 - ✅ **Pytest + Black**: 18 тестов проходят, код отформатирован
 - ✅ **Logging**: logger_config.py, заменён print в generate_summary.py и netology_scraper.py
-- ✅ **README.md**: описание, установка, архитектура, команды, roadmap
-- ✅ **docs/**: папка документации (TODO.md, UNIT_ECONOMICS.md, KIMI.md, StudyCore.drawio)
 - ✅ **ИССЛЕДОВАНИЕ API Нетологии**: найдены REST endpoint'ы!
   - `GET /backend/api/user/professions/{id}/schedule` — 23 модуля
   - `GET /backend/api/user/programs/{id}/schedule` — список занятий с lesson_items
@@ -75,6 +73,22 @@
 - 🐛 **Фикс дублей**: dedup по content hash, не только по имени
 - 🎯 **Цель**: полноценный UI для просмотра конспектов, дедлайнов, сводок
 
+**v0.9.1** (завершён, 28.05.2026)
+- ✅ **Реструктуризация проекта: backend/frontend разделение**
+  - `Утилиты/` → `backend/summary/summary_programs/` — решена проблема кириллицы в путях (WSL)
+  - `Тесты/` + `tests/` → `backend/tests/` — унификация тестовых скриптов
+  - `Данные/` → `backend/api_tests_etc/` — API cache + test endpoints
+  - `data/` → `backend/netology_cookies/` — cookies + audio output
+  - `output/` → `backend/logs/` (current, summaries, research, tests) — структурированные логи
+  - `Промпты/system.txt` → `backend/summary/prompt_for_deepsek_v3.2/system.txt`
+  - Удалены: `src/`, `database.py`, `docs/StudyCore.drawio`, `docs/UNIT_ECONOMICS.md`, `Утилиты/transcription_queue.py`
+  - Удалён мусор: `data/audio/` (962 MB), debug HTML, `agent.db`
+- ✅ **README.md**: полностью переписан — актуальная архитектура, структура, инструкции по развёртыванию backend и frontend
+- ✅ **.env.example**: шаблон переменных окружения
+- ✅ **.gitignore**: обновлён (`backend/logs/current/`, cookies, `__pycache__/`, `.pytest_cache/`, `*.wav`, `*.mp4`)
+- ✅ **logger_config.py**: путь к логам изменён на `backend/logs/current/`
+- ✅ **requirements.txt**: добавлены `httpx`, `torch`, `transformers`
+
 **v0.8.1** (коммит: `d93115f`)
 - ✅ Аудио-пайплайн: PyTorch cu128, Whisper GPU (RTX 5070), audio_extractor (M3U8/MP4)
 - ✅ SKIP_KEYWORDS + dedup + `--force`
@@ -95,113 +109,95 @@
 
 ```
 Study_automatization/
-├── run_agent.py                 # Главный оркестратор
-├── generate_summary.py           # LLM-генерация конспектов (OpenRouter)
-├── (удалён) database.py          # SQLite-хранилище (не использовался)
-├── push.sh                       # Автопуш на GitHub
-├── requirements.txt              # Python-зависимости
-├── pyproject.toml                # Конфигурация проекта (Black, pytest)
-├── .env                          # API ключи + логин Нетологии
-├── Промпты/system.txt            # Промпт для модели
-├── README.md                     # Главная документация
-├── TODO.md                       # Этот файл
-├── docs/
-│   ├── TODO.md                   # Копия плана (историческая)
-│   ├── UNIT_ECONOMICS.md         # 💰 Финансовая модель (unit-экономика)
-│   ├── KIMI.md                   # Контекст для Kimi Code CLI
-│   ├── API_RESEARCH_REPORT.md    # Отчёт об исследовании API Нетологии
-│   ├── StudyCore.drawio          # Диаграмма архитектуры
-│   └── github_tasks.csv          # Задачи из GitHub
-├── 📁 src/
-│   ├── __init__.py
-│   ├── 📁 Скрейперы/
-│   │   └── netology_scraper.py   # Playwright: auth, scraping, VTT/video
-│   ├── 📁 Генераторы/            # (резерв для будущих генераторов)
-│   └── 📁 Хранилище/             # (резерв для хранилищ)
-├── 📁 Утилиты/
-│   ├── netology_auth.py          # Авторизация в Нетологии
-│   ├── material_classifier.py    # Классификация материалов (keywords + LLM fallback)
-│   ├── conspect_writer.py        # Запись .md в Second Brain
-│   ├── subject_index.py          # Индексный файл дисциплины
-│   ├── second_brain_cleanup.py   # Очистка/создание структуры SB
-│   ├── audio_extractor.py        # Извлечение аудио из MP4/M3U8
-│   ├── local_whisper.py          # Локальная транскрибация (Whisper GPU)
-│   ├── logger_config.py          # Единый логгер проекта
-│   ├── (удалён) transcription_queue.py  # Очередь транскрибаций (не использовалась)
-│   └── material_classifier.py    # Классификация материалов
-├── 📁 Промпты/
-│   └── system.txt                # Системный промпт для DeepSeek
-├── 📁 Тесты/
-│   ├── check_auth.py             # Проверка авторизации
-│   ├── check_programs.py         # Проверка доступности программ
-│   ├── explore_structure.py      # Исследование структуры программы
-│   ├── explore_structure_fast.py # Быстрое исследование структуры
-│   ├── find_disciplines.py       # Поиск дисциплин в программе
-│   ├── list_programs.py          # Список программ пользователя
-│   ├── test_auth_and_disciplines.py  # Тест auth + дисциплины
-│   ├── test_click_discipline.py  # Тест клика по дисциплине
-│   ├── test_kinescope_vtt.py     # Тест VTT-перехвата Kinescope
-│   ├── test_login_page.py        # Тест страницы логина
-│   ├── test_manual_auth_steps.py # Тест ручной авторизации
-│   ├── test_models.py            # Тест моделей
-│   ├── test_openrouter.py        # Тест OpenRouter API
-│   ├── test_program_id.py        # Тест program ID
-│   ├── test_schedule_all.py      # Тест расписания
-│   └── test_api_endpoints.py     # Тест API endpoint'ов
-├── 📁 Данные/
-│   ├── agent.db                  # SQLite база
-│   ├── discipline_overview.json  # Обзор дисциплин
-│   ├── materials_page.json       # Страница материалов
-│   ├── program_schedule.json     # Расписание программы
-│   ├── netology_page.html        # HTML страницы (debug)
-│   ├── html_debug/               # HTML дампы для отладки
-│   └── archive/                  # Архивные API-ответы
-├── 📁 data/                      # Временные данные
-│   ├── audio/                    # Извлечённые аудио файлы
-│   └── html_debug/               # HTML дампы
-├── 📁 frontend/                  # Telegram Mini App (Vite + React + TS + Tailwind)
+├── backend/                          # Python backend
+│   ├── summary/                      # Основной пайплайн генерации конспектов
+│   │   ├── run_agent.py              # Главный оркестратор (ETL)
+│   │   ├── generate_summary.py       # LLM-генерация конспектов (OpenRouter)
+│   │   ├── netology_scraper.py       # Playwright scraper (legacy-режим)
+│   │   └── prompt_for_deepsek_v3.2/
+│   │       └── system.txt            # Системный промпт для DeepSeek
+│   ├── summary_programs/             # Вспомогательные модули
+│   │   ├── audio_extractor.py        # Извлечение аудио/VTT-субтитров
+│   │   ├── conspect_writer.py        # Запись .md файлов в Second Brain
+│   │   ├── local_whisper.py          # Локальная транскрибация Whisper (fallback)
+│   │   ├── logger_config.py          # Конфигурация логирования
+│   │   ├── material_classifier.py    # Классификация типа материала
+│   │   ├── netology_api_client.py    # API-first клиент Netology (httpx)
+│   │   ├── netology_auth.py          # Авторизация через Playwright
+│   │   ├── second_brain_cleanup.py   # Очистка Second Brain
+│   │   └── subject_index.py          # Индексные файлы предметов
+│   ├── tests/                        # Тестовые и debug-скрипты
+│   │   ├── check_auth.py
+│   │   ├── check_programs.py
+│   │   ├── explore_api.py
+│   │   ├── explore_structure.py
+│   │   ├── explore_structure_fast.py
+│   │   ├── find_disciplines.py
+│   │   ├── list_programs.py
+│   │   ├── test_api_endpoints.py
+│   │   ├── test_auth_and_disciplines.py
+│   │   ├── test_material_classifier.py
+│   │   └── ... (+ 12 скриптов)
+│   ├── api_tests_etc/                # Кэш API-ответов (JSON дампы)
+│   │   └── test_endpoints/
+│   ├── netology_cookies/             # Cookies авторизации
+│   │   └── netology_cookies.json
+│   └── logs/                         # Логи
+│       ├── current/                  # Активные логи (studycore.log, errors.log) — не в git
+│       ├── summaries/                # История прогонов run_agent
+│       ├── research/                 # Исследовательские логи
+│       └── tests/                    # Тестовые логи
+├── frontend/                         # Vite + React + TypeScript + Tailwind
 │   ├── index.html
-│   ├── vite.config.ts
+│   ├── vite.config.ts                # HMR polling для WSL
 │   ├── tsconfig.json
 │   ├── package.json
 │   ├── tailwind.config.js
 │   ├── src/
-│   │   ├── main.tsx              # Точка входа
-│   │   ├── App.tsx               # Роутер (HashRouter)
-│   │   ├── index.css             # Глобальные стили, анимации, neon utilities
-│   │   ├── data.ts               # Демо-данные (notes, subjects, notifications)
+│   │   ├── main.tsx                  # Точка входа
+│   │   ├── App.tsx                   # Роутер (HashRouter)
+│   │   ├── index.css                 # Глобальные стили, анимации, neon utilities
+│   │   ├── data.ts                   # Демо-данные (notes, subjects, notifications)
 │   │   ├── types/
-│   │   │   └── deadline.ts       # Типы дедлайнов
+│   │   │   └── deadline.ts           # Типы дедлайнов
 │   │   ├── data/
-│   │   │   └── realDeadlines.ts  # Реальные дедлайны из API (11 записей)
+│   │   │   └── realDeadlines.ts      # Реальные дедлайны из API (11 записей)
 │   │   ├── utils/
-│   │   │   └── deadlineUtils.ts  # Утилиты дат, сортировки, форматирования
+│   │   │   └── deadlineUtils.ts      # Утилиты дат, сортировки, форматирования
 │   │   ├── hooks/
-│   │   │   └── useDeadlines.ts   # Хук polling'а дедлайнов
+│   │   │   ├── useDeadlines.ts       # Хук polling'а дедлайнов
+│   │   │   └── use-mobile.ts         # Хук мобильной адаптации
 │   │   ├── components/
-│   │   │   ├── MobileFrame.tsx   # Рамка телефона (420×812)
-│   │   │   ├── BottomNav.tsx     # Нижняя навигация (4 таба)
-│   │   │   ├── DeadlineCard.tsx  # Карточка дедлайна
-│   │   │   └── ui/               # shadcn/ui компоненты (button, card, input и др.)
+│   │   │   ├── MobileFrame.tsx       # Рамка телефона (420×812)
+│   │   │   ├── BottomNav.tsx         # Нижняя навигация (4 таба)
+│   │   │   ├── DeadlineCard.tsx      # Карточка дедлайна
+│   │   │   └── ui/                   # shadcn/ui компоненты (50+)
 │   │   └── pages/
-│   │       ├── Welcome.tsx       # Страница приветствия + авторизация
-│   │       ├── Home.tsx          # Главный дашборд
-│   │       ├── Deadlines.tsx     # Все дедлайны
-│   │       ├── Notes.tsx         # Список конспектов
-│   │       ├── NoteDetail.tsx    # Детальная страница конспекта
-│   │       └── Notifications.tsx # Уведомления
+│   │       ├── Welcome.tsx           # Страница приветствия + авторизация
+│   │       ├── Home.tsx              # Главный дашборд (курсы, дедлайны, конспекты)
+│   │       ├── Deadlines.tsx         # Все дедлайны с фильтрами
+│   │       ├── Notes.tsx             # Список конспектов
+│   │       ├── NoteDetail.tsx        # Детальная страница конспекта
+│   │       └── Notifications.tsx     # Уведомления
 │   └── public/
-│       └── logo.png              # Логотип StudyCore (белый)
-├── 📁 reports/                   # Отчёты по итерациям (с датами)
-│   ├── api_first_implementation_report.md
-│   ├── 2026-05-23 Внедрение API-first архитектуры.md
-│   ├── 2026-05-23 Извлечение субтитров VTT без браузера.md
-│   ├── 2026-05-24 Результаты оптимизированного прогона Введение в специальность.md
-│   └── 2026-05-23 Реализация системы дедлайнов на главной и странице Дедлайны.md
-├── 📁 output/                    # Логи прогонов
-├── 📁 tests/                     # Pytest тесты
-│   └── test_material_classifier.py
-└── 📁 .venv/                     # Python virtual environment
+│       └── logo.png                  # Логотип StudyCore
+├── reports/                          # Markdown отчёты по датам
+│   ├── 23.05.2026/
+│   ├── 24.05.2026/
+│   ├── 28.05.2026/
+│   └── decisions/
+├── kimi/                             # Документация для Kimi CLI
+│   ├── TODO.md                       # Этот файл
+│   └── KIMI.md
+├── docs/                             # Доп. документация
+│   ├── API_RESEARCH_REPORT.md
+│   └── github_tasks.csv
+├── .env                              # Секреты (НЕ КОММИТИТЬ!)
+├── .env.example                      # Шаблон .env
+├── .gitignore
+├── README.md                         # Главная документация
+├── requirements.txt                  # Python зависимости
+└── pyproject.toml                    # Конфиг black/isort/pytest
 ```
 
 ---
@@ -247,6 +243,7 @@ Study_automatization/
 | **23.05** | **🔬 Исследование VTT из Kinescope** | ✅ Найден паттерн `{video_id}/subtitles/{timestamp}/{uuid}.vtt` в HTML embed. `extract_vtt_text()` — ~58K симв. за <1 сек. Fallback: VTT → Whisper → skip. Отчёт: `reports/2026-05-23 Извлечение субтитров VTT без браузера.md` |
 | **24.05** | **v0.9.0: Оптимизация LLM-генерации** | ✅ CHUNK_SIZE 70K → 100K, параллельные chunks через ThreadPoolExecutor, убраны sleep(15). Прогон "Введение в специальность": 19 мин 42 сек, 7 конспектов + силлабус. Отчёт: `reports/2026-05-24 Результаты оптимизированного прогона Введение в специальность.md` |
 | **24.05** | **v0.9.0: Frontend Welcome страница** | ✅ Переработан `Welcome.tsx`: неоновая тема (#020617), логотип 200px, JetBrains Mono, 4 функции с эмодзи-анимациями, форма входа (email/password) → navigate("/"). Фон: radial purple gradients. |
+| **28.05** | **v0.9.1: Реструктуризация backend/frontend** | ✅ Разделение на `backend/` и `frontend/`, удаление кириллических папок, чистка 965 MB мусора, новый README, .env.example, структурированные логи. Отчёт: `reports/28.05.2026/2026-05-28 Реструктуризация проекта backend-frontend.md` |
 | **22–23.05** | **Frontend Home — «Мои курсы»** | ✅ Реальные данные из API `/programs/progress` (16 программ). Группировка: Активные / Не начато / Пройдено. Профессии: 5 модульных прогресс-баров + `+N`. Курсы: фиолетовый прогресс-бар. Кнопка «Показать все». |
 | **22–23.05** | **Frontend BottomNav** | ✅ Активный таб: `#B794F6` (лавандовый) с `drop-shadow` + `text-shadow` glow. Неактивный: `#94A3B8`. 4 таба: Главная, Конспекты, Дедлайны, Уведомления. |
 | **23.05** | **Frontend HMR polling** | ✅ `vite.config.ts`: `usePolling: 500` для WSL. Исправлены проблемы с отслеживанием файлов. |
@@ -517,12 +514,18 @@ $ wc -c -m "Тема 8 «Валютные отношения в мировой �
 - **Решение:** `useDeadlines.ts` уже подготовлен — заменить `fetchDeadlines()` на реальный fetch
 
 #### P5.2 — Кавычки в русских строках
-- **Проблема:** Inline данные с кавычками (например, `"Системное администрирование"`) ломают Vite-парсер
+- **Проблема:** Inline данные с кавычками ломают Vite-парсер
 - **Статус:** ✅ Исправлено (данные вынесены в `realDeadlines.ts`)
 
 #### P5.3 — HMR в WSL
 - **Статус:** ✅ Исправлено
 - **Решение:** `vite.config.ts` — `usePolling: 500`
+
+### P7 — Python: sys.path fragility
+- **Проблема:** Несколько файлов используют `sys.path.insert` для cross-folder импортов вместо нормальной структуры пакета
+- **Файлы:** `run_agent.py`, `netology_scraper.py`, `generate_summary.py`
+- **Решение:** Превратить `backend/` в полноценный Python-пакет с `__init__.py` и относительными импортами
+- **Приоритет:** Низкий (работает, но хрупко)
 
 #### P5.4 — Дизайн-система
 - **Фон:** `#020617` (slate-950)

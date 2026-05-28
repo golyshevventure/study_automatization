@@ -1,0 +1,69 @@
+{
+  "endpoint": "GET /backend/api/user/programs/59690/schedule",
+  "status_code": 200,
+  "headers": {
+    "date": "Thu, 28 May 2026 10:24:19 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1141",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "set-cookie": "_netology-on-rails_session=123; domain=.netology.ru; path=/; expires=Wed, 28 May 2025 10:24:19 GMT, http_x_authentication=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4OTQyNTA2fQ.s0HuFuUrV6sgDQ3U_Ey3ag1E50F2CmbgTRPEI_riVXI; path=/; expires=Wed, 28 May 2036 10:24:19 GMT; SameSite=Lax, _netology-on-rails_session=9648932bc4c9069a03fd9684fdc66012; path=/; expires=Thu, 04 Jun 2026 10:24:19 GMT; HttpOnly",
+    "etag": "W/\"cfaab1a676dea93df5705ef607e76a4f\"",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "9bf8a515-7aa3-41a1-b476-2b6292a5ad45",
+    "x-runtime": "0.127631",
+    "vary": "Origin",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "server": "ycalb"
+  },
+  "data": {
+    "coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "current_program_coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "manager": {
+      "name": "Ксения Малыгина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7016010/thumb_fe6bc82274d86260.jpg"
+    },
+    "lessons": [],
+    "blocks": [],
+    "resource_packages": [],
+    "has_only_demo_access": false,
+    "has_demo_access": false,
+    "user_accesses": [
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      }
+    ],
+    "access_levels": [
+      {
+        "id": 63455,
+        "level_type": "common",
+        "name": "Обычный",
+        "description": null,
+        "status": "active",
+        "title": null,
+        "has_access": true,
+        "can_buy": false,
+        "current_program_id": 59690,
+        "price": 1,
+        "price_without_discount": 1
+      }
+    ],
+    "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+    "type": "distance_course",
+    "format_type": "new_format",
+    "program_family_url": "finansy-i-analiz-dannyh",
+    "program_type": "bachelor",
+    "terms": null
+  },
+  "timestamp": "2026-05-28T22:24:19.864871"
+}

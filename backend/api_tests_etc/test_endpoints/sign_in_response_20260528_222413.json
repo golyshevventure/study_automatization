@@ -1,0 +1,33 @@
+{
+  "endpoint": "POST /backend/api/user/sign_in",
+  "status_code": 200,
+  "headers": {
+    "date": "Thu, 28 May 2026 10:24:14 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1117",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "set-cookie": "_netology-on-rails_session=123; domain=.netology.ru; path=/; expires=Wed, 28 May 2025 10:24:13 GMT, http_x_authentication=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4OTQyNTA2fQ.s0HuFuUrV6sgDQ3U_Ey3ag1E50F2CmbgTRPEI_riVXI; path=/; expires=Wed, 28 May 2036 10:24:13 GMT; SameSite=Lax, remember_user_token=eyJfcmFpbHMiOnsibWVzc2FnZSI6IlcxczRPVFF5TlRBMlhTd2laamcxWkdRd01qTmtNalJsWmpBeFlqZGpNamxpTnpBNVpEVmxZekFpTENJeE56YzVPVFl6T0RVekxqYzVNRFkyTkRJaVhRPT0iLCJleHAiOiIyMDI2LTA4LTI4VDEwOjI0OjEzLjc5MFoiLCJwdXIiOiJjb29raWUucmVtZW1iZXJfdXNlcl90b2tlbiJ9fQ%3D%3D--25cc9050633c5e87fbe8345c81962371412bb418; path=/; expires=Fri, 28 Aug 2026 10:24:13 GMT; HttpOnly; SameSite=Lax, sg_uid=8942506; path=/; expires=Fri, 28 May 2027 10:24:13 GMT; SameSite=Lax, sg_reg_date=1693216094; path=/; expires=Fri, 28 May 2027 10:24:13 GMT; SameSite=Lax, sg_payment_exist=1; path=/; expires=Thu, 28 May 2026 11:24:13 GMT; SameSite=Lax, _netology-on-rails_session=9648932bc4c9069a03fd9684fdc66012; path=/; expires=Thu, 04 Jun 2026 10:24:13 GMT; HttpOnly, _yasc=q5gklRYZxVuPzKkyYV+JeLuAtin2GTsDe2U51rINkkUt+QbYmvSOzpd5mVaYMeIBeSo=.MTc3OTk2Mzg1Mzc2Nw==; domain=.netology.ru; path=/; expires=Sun, 25 May 2036 10:24:13 GMT; secure",
+    "etag": "W/\"7b789cc5a838f839ed4e8e30e1c304c4\"",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "e65a8980-c48a-4291-bdf1-f0bfe697a222",
+    "x-runtime": "0.226408",
+    "vary": "Origin",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "server": "ycalb"
+  },
+  "cookies_raw": {
+    "http_x_authentication": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4OTQyNTA2fQ.s0HuFuUrV6sgDQ3U_Ey3ag1E50F2CmbgTRPEI_riVXI",
+    "remember_user_token": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IlcxczRPVFF5TlRBMlhTd2laamcxWkdRd01qTmtNalJsWmpBeFlqZGpNamxpTnpBNVpEVmxZekFpTENJeE56YzVPVFl6T0RVekxqYzVNRFkyTkRJaVhRPT0iLCJleHAiOiIyMDI2LTA4LTI4VDEwOjI0OjEzLjc5MFoiLCJwdXIiOiJjb29raWUucmVtZW1iZXJfdXNlcl90b2tlbiJ9fQ%3D%3D--25cc9050633c5e87fbe8345c81962371412bb418",
+    "sg_uid": "8942506",
+    "sg_reg_date": "1693216094",
+    "sg_payment_exist": "1",
+    "_netology-on-rails_session": "9648932bc4c9069a03fd9684fdc66012",
+    "_yasc": "q5gklRYZxVuPzKkyYV+JeLuAtin2GTsDe2U51rINkkUt+QbYmvSOzpd5mVaYMeIBeSo=.MTc3OTk2Mzg1Mzc2Nw=="
+  },
+  "body_preview": "{\"server_time\":\"2026-05-28T13:24:13.837+03:00\",\"app_options\":{\"user\":{\"id\":8942506,\"registration_date\":1693216094,\"full_name\":\"Никита Голышев\",\"email\":\"golyshevventure@gmail.com\",\"email_confirmed\":false,\"phone\":\"79940219540\",\"medium_avatar_url\":\"https://u.netology.ru/backend/uploads/legacy/users/avatar/8942506/437cc7111b7e17b2.jpg\",\"admin\":false,\"expert\":false,\"subscriptions\":{\"deadlines\":true,\"digest\":true,\"events\":true,\"marketing_communications\":true,\"sms\":true,\"technical_notifications\":true},\"menuItems\":[{\"type\":\"menu\",\"name\":\"Моё обучение\",\"url\":\"/profile/8942506\"},{\"type\":\"notifications\",\"name\":\"Уведомления\",\"icon\":null,\"url\":\"/\"},{\"type\":\"separator\"},{\"type\":\"menu\",\"name\":\"Привести друга\",\"icon\":\"new\",\"url\":\"/affiliate\"},{\"type\":\"separator\"},{\"type\":\"menu\",\"name\":\"Настройки профиля\",\"url\":\"/profile/settings\"},{\"type\":\"separator\"}],\"messages\":{\"messages_count\":0,\"program_name\":false,\"order_id\":false},\"year_results\":{},\"interests\":[\"data-science\",\"degree\",\"development\",\"finance\",\"gamedesign-academy\",\"lifestyle-hobby\",\"management\"]}}}",
+  "timestamp": "2026-05-28T22:24:13.998955"
+}

@@ -1,0 +1,88 @@
+{
+  "url": "https://netology.ru/backend/api/user/profile",
+  "status": 200,
+  "data": {
+    "profile": {
+      "first_name": "Никита",
+      "last_name": "Голышев",
+      "patronymic": "Александрович",
+      "show_profile": 0,
+      "email": "golyshevventure@gmail.com",
+      "phone": "79940219540",
+      "profession": "Военнослужащий",
+      "birthday_attributes": {
+        "day": 16,
+        "month": 4,
+        "year": 2003
+      },
+      "social_links": {
+        "vkontakte": ""
+      },
+      "snils": null,
+      "snils_missing": false,
+      "delete_requested_at": null,
+      "delete_waiting_period": 29,
+      "is_deactivatable": false,
+      "subscriptions": {
+        "deadlines": true,
+        "digest": true,
+        "events": true,
+        "marketing_communications": true,
+        "sms": true,
+        "technical_notifications": true,
+        "telegram_free_lessons": false,
+        "notifications": true,
+        "values": {
+          "deadlines": true,
+          "digest": true,
+          "events": true,
+          "marketing_communications": true,
+          "sms": true,
+          "technical_notifications": true,
+          "telegram_free_lessons": false,
+          "notifications": true
+        }
+      },
+      "gender": "man",
+      "target": null,
+      "avatar_url": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8942506/thumb_437cc7111b7e17b2.jpg",
+      "has_mobile_devices": false,
+      "b2b_company": null,
+      "is_b2b_user": false,
+      "b2b_employee_position": null,
+      "is_header_for_hr": null,
+      "is_b2g_user": false,
+      "company": "",
+      "edu_inst_institute": null,
+      "is_edu_inst_user": false,
+      "edu_inst_student_additional_info": null,
+      "is_header_for_supervisor": null,
+      "documents": [],
+      "has_approved_documents": false,
+      "address": {},
+      "nationality_country": {},
+      "certificates_address": {},
+      "interests": [
+        "data-science",
+        "degree",
+        "development",
+        "finance",
+        "gamedesign-academy",
+        "lifestyle-hobby",
+        "management"
+      ],
+      "split_test_groups": [
+        "ai_assistant",
+        "grow_hub"
+      ],
+      "show_interactive_guide": false,
+      "show_special_offer": true,
+      "has_paid_products": true,
+      "has_only_paid_products": true,
+      "show_email_confirmation_notification": false,
+      "email_confirmed": true,
+      "student_learning_feedback": true,
+      "recurrents": []
+    }
+  }
+}

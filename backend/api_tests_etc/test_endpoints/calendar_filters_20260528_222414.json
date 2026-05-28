@@ -1,0 +1,39 @@
+{
+  "endpoint": "GET /backend/api/user/programs/calendar/filters",
+  "status_code": 200,
+  "headers": {
+    "date": "Thu, 28 May 2026 10:24:14 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "329",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "set-cookie": "_netology-on-rails_session=123; domain=.netology.ru; path=/; expires=Wed, 28 May 2025 10:24:14 GMT, http_x_authentication=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4OTQyNTA2fQ.s0HuFuUrV6sgDQ3U_Ey3ag1E50F2CmbgTRPEI_riVXI; path=/; expires=Wed, 28 May 2036 10:24:14 GMT; SameSite=Lax, _netology-on-rails_session=9648932bc4c9069a03fd9684fdc66012; path=/; expires=Thu, 04 Jun 2026 10:24:14 GMT; HttpOnly",
+    "etag": "W/\"3e357599f072cb0db3b93efa62161f3c\"",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "da8eab8e-8668-41b8-a6ce-307c0d415d9c",
+    "x-runtime": "0.338941",
+    "vary": "Origin",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "server": "ycalb"
+  },
+  "data": {
+    "programs": [
+      {
+        "id": 59690,
+        "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+        "urlcode": "bhebfad-25",
+        "type": "paid"
+      },
+      {
+        "id": 48767,
+        "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+        "urlcode": "spdata-1",
+        "type": "free"
+      }
+    ]
+  },
+  "timestamp": "2026-05-28T22:24:14.833764"
+}

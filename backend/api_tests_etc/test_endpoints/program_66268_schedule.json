@@ -1,0 +1,2644 @@
+{
+  "url": "https://netology.ru/backend/api/user/programs/66268/schedule",
+  "status": 200,
+  "data": {
+    "coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "current_program_coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "manager": {
+      "name": "Ксения Малыгина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7016010/thumb_fe6bc82274d86260.jpg"
+    },
+    "lessons": [
+      {
+        "feedback": {
+          "id": 5298778,
+          "score": 5,
+          "comment": null,
+          "created_at": "2025-10-07T14:45:12.000Z",
+          "feedback_type": "five_stars",
+          "feedback_tag_ids": [],
+          "passed": true
+        },
+        "id": 516138,
+        "block_id": 153092,
+        "title": "Силлабус",
+        "locked_description": "",
+        "number": 1,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172701
+        ],
+        "lesson_items": [
+          {
+            "id": 2796396,
+            "position": 1,
+            "lesson_id": 516138,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 10,
+            "title": "Силлабус",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516138/lesson_items/2796396",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524338,
+        "block_id": 153093,
+        "title": "Введение в Тему 1",
+        "locked_description": "",
+        "number": 2,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172702
+        ],
+        "lesson_items": [
+          {
+            "id": 2841224,
+            "position": 1,
+            "lesson_id": 524338,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Введение ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524338/lesson_items/2841224",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516139,
+        "block_id": 153093,
+        "title": "Тема 1. Основные понятия структур данных и алгоритмов",
+        "locked_description": "",
+        "number": 3,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172702
+        ],
+        "lesson_items": [
+          {
+            "id": 2841225,
+            "position": 1,
+            "lesson_id": 516139,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 16,
+            "title": "Операционные системы",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516139/lesson_items/2841225",
+            "passed": true
+          },
+          {
+            "id": 2796400,
+            "position": 2,
+            "lesson_id": 516139,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 9,
+            "title": "Среды программирования",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516139/lesson_items/2796400",
+            "passed": true
+          },
+          {
+            "id": 2796401,
+            "position": 3,
+            "lesson_id": 516139,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 14,
+            "title": "Информация.Файловая система. Структура данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516139/lesson_items/2796401",
+            "passed": true
+          },
+          {
+            "id": 2796402,
+            "position": 4,
+            "lesson_id": 516139,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 7,
+            "title": "Блок-схема алгоритма.",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516139/lesson_items/2796402",
+            "passed": true
+          },
+          {
+            "id": 2841833,
+            "position": 5,
+            "lesson_id": 516139,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 28,
+            "title": "Презентация к видеолекции",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516139/lesson_items/2841833",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "id": 5302057,
+          "score": 5,
+          "comment": null,
+          "created_at": "2025-10-09T09:17:25.000Z",
+          "feedback_type": "five_stars",
+          "feedback_tag_ids": [],
+          "passed": true
+        },
+        "id": 516140,
+        "block_id": 153093,
+        "title": "Вебинар 1. Языки программирования, среды разработки. Типы данных, точность. Первая программа на С++",
+        "locked_description": "",
+        "number": 4,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-09T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796404,
+            "position": 1,
+            "lesson_id": 516140,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 93,
+            "title": "Языки программирования, среды разработки. Типы данных, точность. Первая программа на С++",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516140/lesson_items/2796404",
+            "passed": true,
+            "starts_at": "2025-09-09T14:20:00.000Z",
+            "ends_at": "2025-09-09T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/ojyaRNPN1EwTsVxFTD9qna",
+            "webinar_url": "",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841227,
+            "position": 2,
+            "lesson_id": 516140,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 19,
+            "title": "Презентация к вебинару «Языки программирования, среды разработки» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516140/lesson_items/2841227",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524372,
+        "block_id": 153093,
+        "title": "Домашнее задание к вебинару «Языки программирования, среды разработки» (самостоятельное)",
+        "locked_description": "",
+        "number": 5,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-09T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841723,
+            "position": 1,
+            "lesson_id": 524372,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание к вебинару «Языки программирования, среды разработки» (самостоятельное). Дедлайн 15.09",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524372/lesson_items/2841723",
+            "passed": true,
+            "lesson_task": {
+              "id": 238288,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": true,
+              "independent_homework_example": null,
+              "homework": {
+                "id": 1617384,
+                "started_at": "2025-10-09T09:22:15.000Z",
+                "status": null,
+                "score": null,
+                "comments": []
+              }
+            },
+            "content": "![](https://u.netology.ru/backend/uploads/markdown_images/image/396746/image.png)\r\n\r\n**Задание** \r\nНайдите в интернете сведения о типах числовых данных в С++ — не менее трёх.\r\nСведения занесите в таблицу.\r\n\r\n\r\n\r\n|1. Наименование типа числовой переменной | \t2. Количество байт для хранения переменной\t| 3. Минимальное значение переменной |\t4. Максимальное значение переменной |\t5. Минимальное значение переменной по модулю |\t6. Максимальное значение переменной по модулю |\r\n| -------- | -------- | -------- |  -------- | -------- | -------- |\r\n|     |      |     |\r\n|     |      |     |\r\n\r\n**Чек-лист самопроверки**\r\n\r\nЗадание считается выполненным, если вы понимаете, откуда брать значения и чему они равны в столбцах 2–6.\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516141,
+        "block_id": 153093,
+        "title": "Вебинар 2. Простейшие программы на С++",
+        "locked_description": "",
+        "number": 6,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-16T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796407,
+            "position": 1,
+            "lesson_id": 516141,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 84,
+            "title": "Простейшие программы на С++",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516141/lesson_items/2796407",
+            "passed": true,
+            "starts_at": "2025-09-16T14:20:00.000Z",
+            "ends_at": "2025-09-16T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/k8RTKtWQqyFFuAPzKVAwyc",
+            "webinar_url": "",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841324,
+            "position": 2,
+            "lesson_id": 516141,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 16,
+            "title": "Презентация к вебинару «Простейшая программа на С++» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516141/lesson_items/2841324",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524373,
+        "block_id": 153093,
+        "title": "Домашнее задание «Простейшая программа на С++» (самостоятельное)",
+        "locked_description": "",
+        "number": 7,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-16T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841724,
+            "position": 1,
+            "lesson_id": 524373,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание «Простейшая программа на С++» (самостоятельное). Дедлайн 22.09",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524373/lesson_items/2841724",
+            "passed": true,
+            "lesson_task": {
+              "id": 238289,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": true,
+              "independent_homework_example": null,
+              "homework": {
+                "id": 1622769,
+                "started_at": "2025-10-15T10:35:51.000Z",
+                "status": null,
+                "score": null,
+                "comments": []
+              }
+            },
+            "content": "**Дисциплина**\t\r\nСтруктуры данных и алгоритмы\r\n\r\n**Тема**\t\r\nТема 1. Основные понятия структур данных и алгоритмов\r\n\r\n**Форма проверки**\t\r\nСамопроверка. Студент выполняет задание и самостоятельно проверяет его\r\n\r\n**Имя преподавателя**\t\r\nСергей Кононов\r\n\r\n**Время выполнения**\t\r\n1 час\r\n\r\n**Цель задания**\t\r\nОтработать навыки ввода-вывода данных\r\n\r\n**Инструменты для выполнения**\t\r\n[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler) \r\n\r\n**Правила приёма работы**\t\r\nПрикрепите ссылку на выполненное задание в личном кабинете Нетологии.\r\n\r\n**Важно:** убедитесь, что по ссылке есть доступ\r\n\r\n**Критерии оценки**\t\r\nЗадание считается выполненным, если:\r\n●\tприкреплена ссылка на скриншот с выполненным заданием;\r\n●\tдоступ к файлу открыт.\r\n\r\n**Задание не выполнено, если:**\r\n●\tскриншот с выполненным заданием не прикреплён;\r\n●\tотсутствует доступ по ссылке\r\n\r\n**Дедлайн**\t\r\nСрок сдачи — 6 дней после окончания вебинара\r\n\r\n\r\n**Важно**:  \r\n●\t**Для выполнения домашнего задания используйте код, с которым вы работали на вебинаре. \r\n●\tПерепишите исходный код под себя для решения задачи.** \r\n\r\n**Задание:**\r\n1.\tНапишите программу сложения четырёх чисел, которые вводятся с клавиатуры.\r\n2.\tЗапустите программу для двух или более наборов данных.\r\n3.\tПроверьте работоспособность вашей программы. \r\n4.\tСделайте скриншот вашего кода и прикрепите в личном кабинете.\r\n\r\n\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516142,
+        "block_id": 153093,
+        "title": "Вебинар 3. Правила поведения в среде разработки",
+        "locked_description": "",
+        "number": 8,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796410,
+            "position": 1,
+            "lesson_id": 516142,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 91,
+            "title": "Правила поведения в среде разработки",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516142/lesson_items/2796410",
+            "passed": true,
+            "starts_at": "2025-09-23T14:20:00.000Z",
+            "ends_at": "2025-09-23T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/4nXPhLBdzJgNMQNoZEwE7w",
+            "webinar_url": "",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841326,
+            "position": 2,
+            "lesson_id": 516142,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 13,
+            "title": "Презентация к вебинару «Правила поведения в среде разработки» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516142/lesson_items/2841326",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524374,
+        "block_id": 153093,
+        "title": "Домашнее задание к вебинару «Правила поведения в среде разработки» (тест)",
+        "locked_description": "",
+        "number": 9,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841725,
+            "position": 1,
+            "lesson_id": 524374,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Домашнее задание к вебинару «Правила поведения в среде разработки» (тест). Дедлайн 27 сентября",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524374/lesson_items/2841725",
+            "passed": true,
+            "lesson_test": {
+              "id": 66958,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70,
+              "user_test": {
+                "id": 2167962,
+                "status": "passed",
+                "right_answers_viewed": true,
+                "test_solutions_count": 2
+              }
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524371,
+        "block_id": 153093,
+        "title": "Итоги темы 1",
+        "locked_description": "",
+        "number": 10,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841722,
+            "position": 1,
+            "lesson_id": 524371,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Заключение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524371/lesson_items/2841722",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516143,
+        "block_id": 153094,
+        "title": "Введение в тему 2",
+        "locked_description": "",
+        "number": 11,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172703
+        ],
+        "lesson_items": [
+          {
+            "id": 2796414,
+            "position": 1,
+            "lesson_id": 516143,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Введение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516143/lesson_items/2796414",
+            "passed": true
+          },
+          {
+            "id": 2796415,
+            "position": 2,
+            "lesson_id": 516143,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 7,
+            "title": "Массивы и связные списки",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516143/lesson_items/2796415",
+            "passed": true
+          },
+          {
+            "id": 2796416,
+            "position": 3,
+            "lesson_id": 516143,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 5,
+            "title": "Стеки и очереди.",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516143/lesson_items/2796416",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516144,
+        "block_id": 153094,
+        "title": "Вебинар 4. Ввод и вывод данных. Преобразование типов. Цикл for",
+        "locked_description": "",
+        "number": 12,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-30T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796417,
+            "position": 1,
+            "lesson_id": 516144,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 82,
+            "title": "Ввод и вывод данных. Преобразование типов. Цикл for",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516144/lesson_items/2796417",
+            "passed": true,
+            "starts_at": "2025-09-30T14:20:00.000Z",
+            "ends_at": "2025-09-30T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/u9tR5tvxoCrSAWLo9hsmnE",
+            "webinar_url": "",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841669,
+            "position": 2,
+            "lesson_id": 516144,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 17,
+            "title": "Презентация к вебинару «Ввод и вывод данных. Преобразование типов. Цикл for» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516144/lesson_items/2841669",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524383,
+        "block_id": 153094,
+        "title": "Домашнее задание к вебинару «Ввод и вывод данных. Преобразование типов. Цикл for» (тест)",
+        "locked_description": "",
+        "number": 13,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-30T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841726,
+            "position": 1,
+            "lesson_id": 524383,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Домашнее задание к вебинару «Ввод и вывод данных. Преобразование типов. Цикл for» (тест). Дедлайн 4.10",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524383/lesson_items/2841726",
+            "passed": true,
+            "lesson_test": {
+              "id": 66959,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70,
+              "user_test": {
+                "id": 2187521,
+                "status": "passed",
+                "right_answers_viewed": true,
+                "test_solutions_count": 1
+              }
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516145,
+        "block_id": 153094,
+        "title": "Деревья и графы",
+        "locked_description": "",
+        "number": 14,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-09-30T14:20:00.000Z",
+        "resource_package_ids": [
+          172703
+        ],
+        "lesson_items": [
+          {
+            "id": 2796420,
+            "position": 1,
+            "lesson_id": 516145,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 6,
+            "title": "Деревья и графы.",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516145/lesson_items/2796420",
+            "passed": true
+          },
+          {
+            "id": 2796421,
+            "position": 2,
+            "lesson_id": 516145,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 22,
+            "title": "Презентация к видеолекции",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516145/lesson_items/2796421",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516146,
+        "block_id": 153094,
+        "title": "Вебинар 5. Ветвление в программе.  Цикл с предусловием и постусловием",
+        "locked_description": "",
+        "number": 15,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-07T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796422,
+            "position": 1,
+            "lesson_id": 516146,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 67,
+            "title": "Ветвление в программе.  Цикл с предусловием и постусловием",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516146/lesson_items/2796422",
+            "passed": true,
+            "starts_at": "2025-10-07T14:20:00.000Z",
+            "ends_at": "2025-10-07T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/mgK5GvEJnWrepvQhgynERu",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153294/redirect?code=ca69c716faa16eb24eb5be638c7f7211",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841668,
+            "position": 2,
+            "lesson_id": 516146,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 15,
+            "title": "Презентация к вебинару «Ветвление в программе. Цикл с предусловием и постусловием» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516146/lesson_items/2841668",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524384,
+        "block_id": 153094,
+        "title": "Домашнее задание к вебинару «Ветвление в программе. Цикл с предусловием и постусловием» (самостоятельное)",
+        "locked_description": "",
+        "number": 16,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-07T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841727,
+            "position": 1,
+            "lesson_id": 524384,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание. Дедлайн 13.10",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524384/lesson_items/2841727",
+            "passed": true,
+            "lesson_task": {
+              "id": 238290,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": true,
+              "independent_homework_example": null,
+              "homework": {
+                "id": 1642089,
+                "started_at": "2025-11-07T02:11:14.000Z",
+                "status": null,
+                "score": null,
+                "comments": []
+              }
+            },
+            "content": "**Дисциплина**\t\r\n«Структуры данных и алгоритмы»\r\n\r\n**Тема**\t\r\nТема 2. «Структуры данных»\r\n\r\n**Форма проверки**\t\r\nСамопроверка. Студент выполняет задание и самостоятельно проверяет его\r\n\r\n**Имя преподавателя**\t\r\nСергей Кононов\r\n\r\n**Время выполнения**\t\r\n1 час\r\n\r\n**Цель задания**\r\nОтработать навыки работы со строками\r\n\r\n**Инструменты для выполнения**\r\n[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler)\r\n\r\n**Правила приёма работы**\r\nПрикрепите ссылку на выполненное задание в личном кабинете Нетологии.\r\n\r\n**Важно:** убедитесь, что по ссылке есть доступ.\r\n\r\n**Критерии оценки**\t\r\nЗадание считается выполненным, если:\r\n●\tприкреплена ссылка на скриншот с выполненным заданием,\r\n●\tдоступ к файлу открыт.\r\n\r\n**Задание не выполнено, если:**\r\n●\tскриншот с выполненным заданием не прикреплён,\r\n●\tотсутствует доступ по ссылке\r\n\r\n\r\n**Важно:**\r\n●**для выполнения домашнего задания используйте [код задачи 1](https://onlinegdb.com/K4J7g7Eu-), с которым вы работали на вебинаре;\r\n●\tперепишите исходный код под себя для решения задачи.**\r\n\r\n\r\n**Задание**\r\n1.\tНапишите программу для ввода слова (строковой переменной без пробела) и выведите его с обратным порядком следования символов.\r\n2.\tЗапустите программу минимум для двух разных слов.\r\n3.\tПроверьте работоспособность вашей программы. \r\n4.\tСделайте скриншот вашего кода и прикрепите в личном кабинете.\r\n\r\n**Как проверить правильность выполненного задания**\r\nЗадание считается выполненным, если введённое слово будет повторяться строкой ниже с обратным порядком следования символов, то есть задом наперёд.\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524385,
+        "block_id": 153094,
+        "title": "Итоги темы 2",
+        "locked_description": "",
+        "number": 17,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-07T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841721,
+            "position": 1,
+            "lesson_id": 524385,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Заключение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524385/lesson_items/2841721",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516147,
+        "block_id": 153095,
+        "title": "Введение в тему 3",
+        "locked_description": "",
+        "number": 18,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172707
+        ],
+        "lesson_items": [
+          {
+            "id": 2796425,
+            "position": 1,
+            "lesson_id": 516147,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Введение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516147/lesson_items/2796425",
+            "passed": true
+          },
+          {
+            "id": 2796426,
+            "position": 2,
+            "lesson_id": 516147,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 8,
+            "title": "Поиск и сортировка данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516147/lesson_items/2796426",
+            "passed": true
+          },
+          {
+            "id": 2796427,
+            "position": 3,
+            "lesson_id": 516147,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 3,
+            "title": "Обход деревьев и графов",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516147/lesson_items/2796427",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516148,
+        "block_id": 153095,
+        "title": "Вебинар 6. Сортировка пузырьком. Быстрая сортировка",
+        "locked_description": "",
+        "number": 19,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-14T14:20:00.000Z",
+        "resource_package_ids": [
+          172707
+        ],
+        "lesson_items": [
+          {
+            "id": 2796428,
+            "position": 1,
+            "lesson_id": 516148,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 59,
+            "title": "Сортировка пузырьком. Быстрая сортировка",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516148/lesson_items/2796428",
+            "passed": true,
+            "starts_at": "2025-10-14T14:20:00.000Z",
+            "ends_at": "2025-10-14T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/7CKTbdmaedQWyFpE2XiMAA",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153295/redirect?code=5cfe537d43f895744d695bb0d9afe87a",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841667,
+            "position": 2,
+            "lesson_id": 516148,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 14,
+            "title": "Презентация к вебинару «Сортировка пузырьком. Быстрая сортировка» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516148/lesson_items/2841667",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 529333,
+        "block_id": 153095,
+        "title": "Видеолекция «Динамическое программирование»",
+        "locked_description": "",
+        "number": 20,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-14T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2865775,
+            "position": 1,
+            "lesson_id": 529333,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 5,
+            "title": "Динамическое программирование",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/529333/lesson_items/2865775",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524488,
+        "block_id": 153095,
+        "title": "Домашнее задание к вебинару «Сортировка пузырьком. Быстрая сортировка» (самостоятельное)",
+        "locked_description": "",
+        "number": 21,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-14T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841823,
+            "position": 1,
+            "lesson_id": 524488,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание. Дедлайн 20.10",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524488/lesson_items/2841823",
+            "passed": true,
+            "lesson_task": {
+              "id": 238299,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": true,
+              "independent_homework_example": null,
+              "homework": {
+                "id": 1657656,
+                "started_at": "2025-11-23T14:09:25.000Z",
+                "status": null,
+                "score": null,
+                "comments": []
+              }
+            },
+            "content": "**Тема\t3. «Алгоритмы»**\r\n\r\n**Форма проверки**\t\r\nСамопроверка. Студент выполняет задание и самостоятельно проверяет его\r\n\r\n**Цель задания**\t\r\nОтработать навыки работы со строками и циклами\r\n\r\n**Инструменты для выполнения**\t\r\n[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler) \r\n\r\n**Правила приёма работы**\t\r\nПрикрепите ссылку на выполненное задание в личном кабинете Нетологии. Убедитесь, что по ссылке есть доступ\r\n\r\n**Критерии оценки**\t\r\nЗадание считается выполненным, если:\r\n●\tприкреплена ссылка на скриншот с выполненным заданием,\r\n●\tдоступ к файлу открыт.\r\n\r\n**Задание не выполнено, если:**\r\n●\tскриншот с выполненным заданием не прикреплён,\r\n●\tотсутствует доступ по ссылке\r\n\r\n**Дедлайн**\t\r\nСрок сдачи — 10 дней после окончания вебинара\r\n\r\n**Важно:**\r\n●**для выполнения домашнего задания используйте [код задачи 1,](https://onlinegdb.com/_QoW09fre_) с которым вы работали на вебинаре, и результаты прошлого домашнего задания;\r\n●\tперепишите исходный код под себя для решения задачи.**\r\n\r\n**Задание**\r\n1.\tНапишите программу для ввода нескольких слов — строковой переменной, слова разделены пробелами — и выведите его в том же порядке слов, но с обратным порядком следования символов в каждом слове.\r\n2.\tЗапустите программу минимум для двух разных строк.\r\n3.\tПроверьте работоспособность вашей программы. \r\n4.\tСделайте скриншот вашего кода и прикрепите в личном кабинете.\r\n\r\n**Как проверить правильность выполненного задания**\r\n\r\nЗадание считается выполненным, если введённое предложение будет повторяться строкой ниже с тем же порядком слов, но обратным порядком следования символов в каждом слове.\r\n\r\n\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516149,
+        "block_id": 153095,
+        "title": "Вебинар 7. Задача о рюкзаке",
+        "locked_description": "",
+        "number": 22,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-21T14:20:00.000Z",
+        "resource_package_ids": [
+          172707
+        ],
+        "lesson_items": [
+          {
+            "id": 2796432,
+            "position": 1,
+            "lesson_id": 516149,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 62,
+            "title": "Задача о рюкзаке",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516149/lesson_items/2796432",
+            "passed": false,
+            "starts_at": "2025-10-21T14:20:00.000Z",
+            "ends_at": "2025-10-21T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/sfPxttiReui11JgcbwhSe4",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153296/redirect?code=d1aff31ff57aa11e5cfb4bc31cfaa8be",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841670,
+            "position": 2,
+            "lesson_id": 516149,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 16,
+            "title": "Презентация к вебинару «Задача о рюкзаке» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516149/lesson_items/2841670",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516150,
+        "block_id": 153095,
+        "title": "Домашнее задание к вебинару «Задача о рюкзаке» (тест)",
+        "locked_description": "",
+        "number": 23,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-21T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841824,
+            "position": 1,
+            "lesson_id": 516150,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Домашнее задание к вебинару «Задача о рюкзаке» (тест). Дедлайн 24.10",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516150/lesson_items/2841824",
+            "passed": false,
+            "lesson_test": {
+              "id": 66968,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70,
+              "user_test": {
+                "id": 2234053,
+                "status": "in_progress",
+                "right_answers_viewed": false,
+                "test_solutions_count": 1
+              }
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 529334,
+        "block_id": 153095,
+        "title": "Видеолекции «Жадные алгоритмы» и «Рекурсия»",
+        "locked_description": "",
+        "number": 24,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-21T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2865778,
+            "position": 1,
+            "lesson_id": 529334,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 5,
+            "title": "Жадные алгоритмы",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/529334/lesson_items/2865778",
+            "passed": false
+          },
+          {
+            "id": 2865779,
+            "position": 2,
+            "lesson_id": 529334,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 5,
+            "title": "Рекурсия",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/529334/lesson_items/2865779",
+            "passed": false
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516151,
+        "block_id": 153095,
+        "title": "Вебинар 8. Нахождение оптимального маршрута",
+        "locked_description": "",
+        "number": 25,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-28T14:20:00.000Z",
+        "resource_package_ids": [
+          172707
+        ],
+        "lesson_items": [
+          {
+            "id": 2796437,
+            "position": 1,
+            "lesson_id": 516151,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 40,
+            "title": "Нахождение оптимального маршрута",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516151/lesson_items/2796437",
+            "passed": false,
+            "starts_at": "2025-10-28T14:20:00.000Z",
+            "ends_at": "2025-10-28T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/4oYjmfRZkD3Ly6tF5mDrzK",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153297/redirect?code=b6bde5b573e77d9e02aefa6e6cb39ced",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841671,
+            "position": 2,
+            "lesson_id": 516151,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 15,
+            "title": "Презентация к вебинару «Нахождение оптимального маршрута» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516151/lesson_items/2841671",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524453,
+        "block_id": 153095,
+        "title": "Домашнее задание (с проверкой)",
+        "locked_description": "",
+        "number": 26,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-28T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841825,
+            "position": 1,
+            "lesson_id": 524453,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 360,
+            "title": "Домашнее задание ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524453/lesson_items/2841825",
+            "passed": false,
+            "lesson_task": {
+              "id": 238300,
+              "task_type": "common",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": "2025-11-09T20:59:59.000Z",
+              "deadline_endless": false,
+              "available_for_solve": true,
+              "deadline_in_days": 5,
+              "homework": {
+                "id": 3651947,
+                "status": "in_progress",
+                "score": null,
+                "solution_attempts_left": 5,
+                "started_at": "2025-11-05T09:13:45.000Z"
+              }
+            },
+            "content": "**Дисциплина\t«Структуры данных и алгоритмы»**\r\n\r\n**Тема**\tТема 3. «Алгоритмы»\r\n\r\n**Форма проверки**\tС проверкой. Студент выполняет задание, убеждается, что программа соблюдает условия задачи, и отправляет код на проверку преподавателю.\r\n\r\n**Имя преподавателя**\tСергей Кононов\r\n\r\n**Время выполнения**\t6 часов\r\n\r\n**Цель задания**\tОтработать навыки использования известного алгоритма в решении задач\r\n\r\n**Инструменты для выполнения**\t[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler)\r\n\r\n**Правила приёма работы**\tПрикрепите ссылку на выполненное задание в личном кабинете Нетологии. Убедитесь, что по ссылке открыт доступ\r\n\r\n**Критерии оценки**\t\r\nЗадание считается выполненным, если:\r\n●\tприкреплена ссылка на код с выполненным заданием,\r\n●\tработа соответствует критериям оценивания.\r\n\r\nЗадание не выполнено, если:\r\n●\tссылка на код с выполненным заданием отсутствует,\r\n●\tработа не соответствует критериям оценивания\r\n\r\n\r\n**Важно**\r\n●\tДля выполнения домашнего задания используйте [код задачи 2](https://onlinegdb.com/aUJCxlFJBP), с которым вы работали на вебинаре 7;\r\n●\tДля решения задачи перепишите исходный код под цели задания.\r\n\r\n**Задание**\r\n1.\tНапишите программу для реализации алгоритма решения задачи о рюкзаке с неограниченным числом предметов. При выполнении задания оставьте комментарии, поясняющие алгоритм.\r\n2.\tПодумайте и найдите максимальную стоимость предметов в рюкзаке при следующих условиях. При необходимости используйте визуализацию на бумаге, проведя рассуждения по любому из алгоритмов.\r\n\r\n\r\n**Условия задачи**: ранец может выдержать 17 кг. Выберите из трёх вещей:\r\n●\tфотоаппараты весом 2 кг и стоимостью 11 тыс. руб.;\r\n●\tлампы Аладдина без джинна весом 3 кг стоимостью 16 тыс. руб.;\r\n●\tтелефоны с зарядным устройством весом 1 кг и стоимостью 5 тыс. руб.\r\n3.\tПроверьте работоспособность вашей программы, чтобы она отвечала всем условиям задачи.\r\n4.\tПрикрепите код решения задачи в личном кабинете.\r\n\r\n\r\n**Критерии оценивания работы**\r\n\r\n\r\n| Критерий оценивания | Максимальный балл | \r\n| -------- | -------- | \r\n| Программа работает и выдаёт правильный ответ на задачу     | 1,71     | \r\n| Программа работает правильно при изменении вместительности и одного из параметров вещей (проверку проводит преподаватель)\t     | 1,14    | \r\n| Программа содержит полноценные комментарии, поясняющие работу кода    | 1,42   | \r\n| Программный код составлен логично. Допускаются ошибки в синтаксисе команд и пр.     | 1,42     | \r\n| **Итого**     | 5,7     | \r\n",
+            "content_type": "markdown",
+            "preview": ""
+          },
+          {
+            "id": 2841826,
+            "position": 2,
+            "lesson_id": 524453,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 6,
+            "title": "Дополнительный материал к ДЗ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524453/lesson_items/2841826",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 529335,
+        "block_id": 153095,
+        "title": "Видеолекция  «Анализ сложности алгоритмов»",
+        "locked_description": "",
+        "number": 27,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-10-28T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2865780,
+            "position": 1,
+            "lesson_id": 529335,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 7,
+            "title": "Анализ сложности алгоритмов",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/529335/lesson_items/2865780",
+            "passed": false
+          },
+          {
+            "id": 2865781,
+            "position": 2,
+            "lesson_id": 529335,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 29,
+            "title": "Презентация к видеолекции",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/529335/lesson_items/2865781",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516152,
+        "block_id": 153095,
+        "title": "Вебинар 9. Файловый ввод и вывод данных",
+        "locked_description": "",
+        "number": 28,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-11T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796443,
+            "position": 1,
+            "lesson_id": 516152,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 76,
+            "title": "Файловый ввод и вывод данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516152/lesson_items/2796443",
+            "passed": false,
+            "starts_at": "2025-11-11T14:20:00.000Z",
+            "ends_at": "2025-11-11T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/vKZenXcy7dtYJFcfeNGsG4",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153298/redirect?code=4f3d1e2e5d2bedecb6b18caf243a6523",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841672,
+            "position": 2,
+            "lesson_id": 516152,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 18,
+            "title": "Презентация к вебинару «Файловый ввод и вывод данных»",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516152/lesson_items/2841672",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524454,
+        "block_id": 153095,
+        "title": "Домашнее задание к вебинару «Файловый ввод и вывод данных» (тест)",
+        "locked_description": "",
+        "number": 29,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-11T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841827,
+            "position": 1,
+            "lesson_id": 524454,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Домашнее задание к вебинару «Файловый ввод и вывод данных» (тест). Дедлайн 05.11",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524454/lesson_items/2841827",
+            "passed": false,
+            "lesson_test": {
+              "id": 66969,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524375,
+        "block_id": 153095,
+        "title": "Итоги темы 3",
+        "locked_description": "",
+        "number": 30,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-11T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841720,
+            "position": 1,
+            "lesson_id": 524375,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Заключение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524375/lesson_items/2841720",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516153,
+        "block_id": 153096,
+        "title": "Введение в тему 4",
+        "locked_description": "",
+        "number": 31,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172713
+        ],
+        "lesson_items": [
+          {
+            "id": 2796447,
+            "position": 1,
+            "lesson_id": 516153,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Введение ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516153/lesson_items/2796447",
+            "passed": true
+          },
+          {
+            "id": 2796448,
+            "position": 2,
+            "lesson_id": 516153,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 4,
+            "title": "Анализ данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516153/lesson_items/2796448",
+            "passed": false
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516154,
+        "block_id": 153096,
+        "title": "Вебинар 10. Работа с многомерными массивами",
+        "locked_description": "",
+        "number": 32,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-18T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796449,
+            "position": 1,
+            "lesson_id": 516154,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 62,
+            "title": "Работа с многомерными массивами",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516154/lesson_items/2796449",
+            "passed": false,
+            "starts_at": "2025-11-18T14:20:00.000Z",
+            "ends_at": "2025-11-18T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/dR6WhbC5tsQzmc4dUDzE22",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153299/redirect?code=117c70286adb98be2608d917d403b350",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841704,
+            "position": 2,
+            "lesson_id": 516154,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 14,
+            "title": "Презентация к вебинару «Работа с многомерными массивами»",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516154/lesson_items/2841704",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524465,
+        "block_id": 153096,
+        "title": "Домашнее задание «Работа с многомерными массивами»(самостоятельное)",
+        "locked_description": "",
+        "number": 33,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-18T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841828,
+            "position": 1,
+            "lesson_id": 524465,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание «Работа с многомерными массивами»(самостоятельное). Дедлайн 24.11",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524465/lesson_items/2841828",
+            "passed": false,
+            "lesson_task": {
+              "id": 238301,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": false
+            },
+            "content": "**Тема\t4. «Анализ данных»**\r\n\r\n**Форма проверки**\tСамопроверка. Студент выполняет задание и самостоятельно проверяет его\r\n\r\n**Имя преподавателя**\t\r\nСергей Кононов\r\n\r\n**Время выполнения**\t\r\n60 минут\r\n\r\n**Цель задания**\t\r\nОтработать навыки работы с файлами\r\n\r\n**Инструменты для выполнения**\t\r\n[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler) \r\n\r\n**Правила приёма работы**\t\r\nПрикрепите ссылку на выполненное задание в личном кабинете Нетологии. Убедитесь, что по ссылке есть доступ\r\n\r\n**Критерии оценки**\t\r\n*Задание считается выполненным, если:*\r\n●\tприкреплена ссылка на код с выполненным заданием,\r\n●\tдоступ к файлу открыт.\r\n\r\n*Задание не выполнено, если:*\r\n●\tкод с выполненным заданием не прикреплён,\r\n●\tотсутствует доступ по ссылке\r\n\r\n\r\n\r\n#### Задание\r\n\r\n1.\tНапишите программу, считывающую из файла таблицу.\r\n2.\tПо данным таблицы рассчитайте матожидание и дисперсию.\r\n3.\tПроверьте работоспособность вашей программы на двух наборах данных.\r\n4.\tСсылку на программу прикрепите в личном кабинете.\r\n\r\n\r\n**Как проверить правильность выполненного задания**\r\n\r\nЗадание считается выполненным, если для двух предложенных ниже наборов данных (пример 1, 2) будут найдены верные ответы.\r\n\r\n**Пример 1**\r\nХ -1 0 1 2\r\nр 0.2 0.1 0.3 0.4\r\n\r\n\r\n**Пример 2**\r\nХ 2 3 5\r\nр 0.1 0.6 0.3\r\n\r\n\r\n**Дополнительные пояснения к выполнению домашнего задания**\r\n\r\nДля дискретной случайной величины X с таблицей распределения:\r\n\r\n![](https://u.netology.ru/backend/uploads/markdown_images/image/311062/Picture__13_.png)\r\n\r\n**математическим ожиданием** (или средним значением) называется число M[X], которое вычисляется по формуле:\r\n![](https://u.netology.ru/backend/uploads/markdown_images/image/311064/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_1_.png)\r\n\r\n**Дисперсия**\r\n\r\nДисперсию обозначают как **D(X)** и вычисляют по формуле ниже. То есть дисперсия — это математическое ожидание от формулы: случайная величина минус математическое ожидание X в квадрате:\r\n![](https://u.netology.ru/backend/uploads/markdown_images/image/311065/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_2.png)\r\n\r\n\r\n\r\n\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516155,
+        "block_id": 153096,
+        "title": "Применение структур данных и алгоритмов",
+        "locked_description": "",
+        "number": 34,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172713
+        ],
+        "lesson_items": [
+          {
+            "id": 2796452,
+            "position": 1,
+            "lesson_id": 516155,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 5,
+            "title": "Обработка финансовых данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516155/lesson_items/2796452",
+            "passed": false
+          },
+          {
+            "id": 2796453,
+            "position": 2,
+            "lesson_id": 516155,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 9,
+            "title": "Решение задач оптимизации и поиска",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516155/lesson_items/2796453",
+            "passed": false
+          },
+          {
+            "id": 2796454,
+            "position": 3,
+            "lesson_id": 516155,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 18,
+            "title": "Презентация к видеолекции",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516155/lesson_items/2796454",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516156,
+        "block_id": 153096,
+        "title": "Вебинар 11. Транспортная задача",
+        "locked_description": "",
+        "number": 35,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-25T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796455,
+            "position": 1,
+            "lesson_id": 516156,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 73,
+            "title": "Транспортная задача",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516156/lesson_items/2796455",
+            "passed": false,
+            "starts_at": "2025-11-25T14:20:00.000Z",
+            "ends_at": "2025-11-25T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/jHegmi64Er8Y9UZsUTaTLu",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153300/redirect?code=06a153fb53911beafcaa6b324ea534af",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841705,
+            "position": 2,
+            "lesson_id": 516156,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 19,
+            "title": "Презентация к вебинару «Транспортная задача»",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516156/lesson_items/2841705",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524466,
+        "block_id": 153096,
+        "title": "Домашнее задание «Транспортная задача» (самостоятельное)",
+        "locked_description": "",
+        "number": 36,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-25T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841829,
+            "position": 1,
+            "lesson_id": 524466,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 60,
+            "title": "Домашнее задание «Транспортная задача» (самостоятельное). Дедлайн 01.12",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524466/lesson_items/2841829",
+            "passed": false,
+            "lesson_task": {
+              "id": 238302,
+              "task_type": "independent",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": true,
+              "available_for_solve": true,
+              "deadline_in_days": 0,
+              "stupid_flag_meaning_independent_task_was_started": false
+            },
+            "content": "## Домашнее задание\r\n\r\n**Дисциплина**\r\nСтруктуры данных и алгоритмы\r\n\r\n**Тема**\r\nТема 4. Анализ данных\r\n\r\n**Форма проверки**\r\nСамопроверка. Студент выполняет задание и проверяет его самостоятельно\r\n\r\n**Имя преподавателя**\r\nСергей Кононов\r\n\r\n**Время выполнения**\r\n1 час\r\n\r\n**Цель задания**\r\nОтработать навыки работы со строками, циклами и вводом данных из файла\r\n\r\n**Инструменты для выполнения ДЗ**\r\n[Текстовый редактор среды разработки](https://www.onlinegdb.com/online_c++_compiler)\r\n\r\n**Правила приёма работы**\r\nПрикрепите ссылку на выполненное задание в личном кабинете Нетологии. Убедитесь, что по ссылке есть доступ\r\n\r\n**Задание считается выполненным, если:**\r\n●\tприкреплена ссылка на код с выполненным заданием,\r\n●\tоткрыт доступ к файлу.\r\n\r\n**Задание не выполнено, если:**\r\n●\tне прикреплён код с выполненным заданием,\r\n●\tнет доступа по ссылке\r\n\r\n**Дедлайн**\r\nСрок сдачи — 6 дней после вебинара\r\n\r\n**Задание**\r\n1.\tНапишите программу, считывающую из файла матрицу с коэффициентами системы линейных алгебраических уравнений размером 3×4.\r\n2.\tМетодом Гаусса найдите три корня системы уравнений.\r\n3.\tПроверьте работоспособность вашей программы на двух наборах данных. Сравните расчёты с результатами, полученными в [онлайн-калькуляторе.](https://ru.onlinemschool.com/math/assistance/equation/gaus/)\r\n4.\tПрикрепите ссылку на программу в личном кабинете.\r\nДополнительные материалы для решения домашнего задания можно посмотреть в презентации вебинара.\r\n",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524467,
+        "block_id": 153096,
+        "title": "Итоги темы 4",
+        "locked_description": "",
+        "number": 37,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-11-25T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841719,
+            "position": 1,
+            "lesson_id": 524467,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Заключение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524467/lesson_items/2841719",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516157,
+        "block_id": 153097,
+        "title": "Введение в тему 5",
+        "locked_description": "",
+        "number": 38,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172714
+        ],
+        "lesson_items": [
+          {
+            "id": 2796459,
+            "position": 1,
+            "lesson_id": 516157,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Введение",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516157/lesson_items/2796459",
+            "passed": true
+          },
+          {
+            "id": 2796460,
+            "position": 2,
+            "lesson_id": 516157,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 14,
+            "title": "Реализация структур данных и алгоритмов на языке программирования",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516157/lesson_items/2796460",
+            "passed": false
+          },
+          {
+            "id": 2796461,
+            "position": 3,
+            "lesson_id": 516157,
+            "locked": false,
+            "type": "video",
+            "approximate_progress_time": 13,
+            "title": "Оптимизация и улучшение алгоритмов. Проектирование и анализ алгоритмов",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516157/lesson_items/2796461",
+            "passed": false
+          },
+          {
+            "id": 2796462,
+            "position": 4,
+            "lesson_id": 516157,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 18,
+            "title": "Презентация к видеолекции",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516157/lesson_items/2796462",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516158,
+        "block_id": 153097,
+        "title": "Вебинар 12. Численные методы",
+        "locked_description": "",
+        "number": 39,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-02T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796463,
+            "position": 1,
+            "lesson_id": 516158,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 58,
+            "title": "Численные методы",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516158/lesson_items/2796463",
+            "passed": false,
+            "starts_at": "2025-12-02T14:20:00.000Z",
+            "ends_at": "2025-12-02T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/7yWYEhzxD2Gvy1R5fhpr66",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153301/redirect?code=69278b1994785431257141f8541fec67",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841706,
+            "position": 2,
+            "lesson_id": 516158,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 14,
+            "title": "Презентация к вебинару «Численные методы» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516158/lesson_items/2841706",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524469,
+        "block_id": 153097,
+        "title": "Задание к вебинару  «Численные методы» (тест)",
+        "locked_description": "",
+        "number": 40,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-02T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841830,
+            "position": 1,
+            "lesson_id": 524469,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Задание к вебинару  «Численные методы» (тест). Дедлайн 06.12",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524469/lesson_items/2841830",
+            "passed": false,
+            "lesson_test": {
+              "id": 66970,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516159,
+        "block_id": 153097,
+        "title": "Вебинар 13. Вывод данных в xml",
+        "locked_description": "",
+        "number": 41,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-09T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796466,
+            "position": 1,
+            "lesson_id": 516159,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 67,
+            "title": "Вывод данных в xml",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516159/lesson_items/2796466",
+            "passed": false,
+            "starts_at": "2025-12-09T14:20:00.000Z",
+            "ends_at": "2025-12-09T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/q23CgfV2uvbNRwv5pLr7cr",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153302/redirect?code=1dc6ce4c97aa9da84b703992a8ef8c32",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841707,
+            "position": 2,
+            "lesson_id": 516159,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 17,
+            "title": "Презентация к вебинару  «Вывод данных в XML» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516159/lesson_items/2841707",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524472,
+        "block_id": 153097,
+        "title": "Задание к вебинару «Вывод данных в XML»",
+        "locked_description": "",
+        "number": 42,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-09T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841831,
+            "position": 1,
+            "lesson_id": 524472,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 30,
+            "title": "Задание к вебинару «Вывод данных в XML». Дедлайн 13.12",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524472/lesson_items/2841831",
+            "passed": false,
+            "lesson_test": {
+              "id": 66971,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516160,
+        "block_id": 153097,
+        "title": "Вебинар 14. Оптимизация и модификация кода",
+        "locked_description": "",
+        "number": 43,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-16T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796469,
+            "position": 1,
+            "lesson_id": 516160,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 54,
+            "title": "Оптимизация и модификация кода",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516160/lesson_items/2796469",
+            "passed": false,
+            "starts_at": "2025-12-16T14:20:00.000Z",
+            "ends_at": "2025-12-16T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/q2w3HAhWWG1ZAYWDDXsGfB",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153303/redirect?code=f193dd70a4c01143035d6abcb92d412d",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841708,
+            "position": 2,
+            "lesson_id": 516160,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 15,
+            "title": "Презентация к вебинару «Оптимизация и модификация кода» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516160/lesson_items/2841708",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524473,
+        "block_id": 153097,
+        "title": "Задание к вебинару «Оптимизация и модификация кода»",
+        "locked_description": "",
+        "number": 44,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-16T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841832,
+            "position": 1,
+            "lesson_id": 524473,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 5,
+            "title": "Задание к вебинару «Оптимизация и модификация кода». Дедлайн 20.12",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524473/lesson_items/2841832",
+            "passed": false,
+            "lesson_test": {
+              "id": 66972,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70,
+              "user_test": {
+                "id": 2234042,
+                "status": "failed",
+                "right_answers_viewed": false,
+                "test_solutions_count": 2
+              }
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516161,
+        "block_id": 153097,
+        "title": "Вебинар 15. Разбор элементов программы сжатия данных",
+        "locked_description": "",
+        "number": 45,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2796472,
+            "position": 1,
+            "lesson_id": 516161,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 54,
+            "title": "Разбор элементов программы сжатия данных",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516161/lesson_items/2796472",
+            "passed": false,
+            "starts_at": "2025-12-23T14:20:00.000Z",
+            "ends_at": "2025-12-23T16:20:00.000Z",
+            "experts": [
+              {
+                "id": 8737734,
+                "full_name": "Сергей Кононов",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8737734/1f1e1cda5a2d2452.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/vebHqL9dmw8NegoaaqFLzT",
+            "webinar_url": "https://netology.ru/backend/api/webinars/153304/redirect?code=78b4450d08f39edc9c55ad680eba36ce",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 2841709,
+            "position": 2,
+            "lesson_id": 516161,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 13,
+            "title": "Презентация к вебинару «Разбор элементов программы сжатия данных» ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516161/lesson_items/2841709",
+            "passed": true
+          },
+          {
+            "id": 2841711,
+            "position": 3,
+            "lesson_id": 516161,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 1,
+            "title": "Глоссарий",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516161/lesson_items/2841711",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 524474,
+        "block_id": 153097,
+        "title": "Итоги темы 5",
+        "locked_description": "",
+        "number": 46,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 2841718,
+            "position": 1,
+            "lesson_id": 524474,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Итоги темы 5",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/524474/lesson_items/2841718",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 516162,
+        "block_id": 153098,
+        "title": "Зачет",
+        "locked_description": "",
+        "number": 47,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          172715
+        ],
+        "lesson_items": [
+          {
+            "id": 2796476,
+            "position": 1,
+            "lesson_id": 516162,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 90,
+            "title": "Итоговый тест по дисциплине «Структуры данных и алгоритмы»",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/516162/lesson_items/2796476",
+            "passed": true,
+            "lesson_test": {
+              "id": 66080,
+              "max_solutions_count": 2,
+              "percent_to_pass": 70,
+              "user_test": {
+                "id": 2236588,
+                "status": "passed",
+                "right_answers_viewed": true,
+                "test_solutions_count": 1
+              }
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 596177,
+        "block_id": 153098,
+        "title": "Вторая повторная промежуточная аттестация с 17 по 24 марта",
+        "locked_description": "",
+        "number": 48,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3211507,
+            "position": 1,
+            "lesson_id": 596177,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 90,
+            "title": "Тест для второй повторной промежуточной аттестации. Дедлайн - 24 марта",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/596177/lesson_items/3211507",
+            "passed": false,
+            "lesson_test": {
+              "id": 75116,
+              "max_solutions_count": 3,
+              "percent_to_pass": 99
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 607931,
+        "block_id": 191221,
+        "title": "Закрытие академической разницы",
+        "locked_description": "",
+        "number": 49,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2025-12-23T14:20:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3273410,
+            "position": 1,
+            "lesson_id": 607931,
+            "locked": false,
+            "type": "test",
+            "approximate_progress_time": 90,
+            "title": "Итоговый тест по дисциплине «Структуры данных и алгоритмы»",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/607931/lesson_items/3273410",
+            "passed": false,
+            "lesson_test": {
+              "id": 76377,
+              "max_solutions_count": 3,
+              "percent_to_pass": 99
+            }
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 567510,
+        "block_id": 172042,
+        "title": "Опрос после изучения дисциплины ",
+        "locked_description": "",
+        "number": 50,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          193251
+        ],
+        "lesson_items": [
+          {
+            "id": 3066647,
+            "position": 1,
+            "lesson_id": 567510,
+            "locked": false,
+            "type": "text",
+            "approximate_progress_time": 1,
+            "title": "Опрос после изучения дисциплины ",
+            "path": "/profile/program/bhebfad-25-sda-1/lessons/567510/lesson_items/3066647",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          70613
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "id": 153092,
+        "title": "Структуры данных и алгоритмы",
+        "position": 1,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153093,
+        "title": "Тема 1. Основные понятия структур данных и алгоритмов",
+        "position": 2,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153094,
+        "title": "Тема 2. Структуры данных",
+        "position": 3,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153095,
+        "title": "Тема 3. Алгоритмы",
+        "position": 4,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153096,
+        "title": "Тема 4. Применение структур данных и алгоритмов",
+        "position": 5,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153097,
+        "title": "Тема 5. Практические навыки работы с алгоритмами и структурами данных",
+        "position": 6,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 153098,
+        "title": "Зачет",
+        "position": 7,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 172042,
+        "title": "Опрос после изучения дисциплины ",
+        "position": 8,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 191221,
+        "title": "Закрытие академической разницы",
+        "position": 9,
+        "has_seen_achievement": false
+      }
+    ],
+    "resource_packages": [
+      {
+        "id": 172701,
+        "price": null,
+        "access_opens_at": "2025-08-25T21:00:00.000Z",
+        "description": "<p>Силлабус</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172702,
+        "price": null,
+        "access_opens_at": "2025-08-31T21:00:00.000Z",
+        "description": "<table>\r\n\t<tbody id=\"lessons_rows\">\r\n\t\t<tr data-update-url=\"/backend/admin/programs/56074/lessons/419399/move\">\r\n\t\t\t<td>\r\n\t\t\t<p>Тема 1. Основные понятия структур данных и алгоритмов</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172703,
+        "price": null,
+        "access_opens_at": "2025-09-23T21:00:00.000Z",
+        "description": "<table>\r\n\t<tbody id=\"lessons_rows\">\r\n\t\t<tr data-update-url=\"/backend/admin/programs/56074/lessons/430661/move\">\r\n\t\t\t<td>\r\n\t\t\t<p>Тема 2. Структуры данных</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172707,
+        "price": null,
+        "access_opens_at": "2025-10-07T21:00:00.000Z",
+        "description": "<p>Тема 3. Алгоритмы</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172713,
+        "price": null,
+        "access_opens_at": "2025-11-11T21:00:00.000Z",
+        "description": "<p>Тема 4. Применение структур данных и алгоритмов</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172714,
+        "price": null,
+        "access_opens_at": "2025-11-25T21:00:00.000Z",
+        "description": "<p>Тема 5. Практические навыки работы с алгоритмами и структурами данных</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 172715,
+        "price": null,
+        "access_opens_at": "2025-12-23T15:50:00.000Z",
+        "description": "<p>Зачет</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 193251,
+        "price": null,
+        "access_opens_at": "2025-12-22T21:00:00.000Z",
+        "description": "<p>Опрос откроется 23 декабря 2025 года.</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      },
+      {
+        "id": 204990,
+        "price": null,
+        "access_opens_at": "2026-02-24T07:00:00.000Z",
+        "description": "<p>.</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      }
+    ],
+    "has_only_demo_access": false,
+    "has_demo_access": false,
+    "user_accesses": [
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      }
+    ],
+    "access_levels": [
+      {
+        "id": 70613,
+        "level_type": "common",
+        "name": "Обычный",
+        "description": null,
+        "status": "active",
+        "title": null,
+        "has_access": true,
+        "can_buy": false,
+        "current_program_id": 66268,
+        "price": 0,
+        "price_without_discount": 0
+      }
+    ],
+    "title": "1 курс, 1 семестр: Структуры данных и алгоритмы",
+    "type": "distance_course",
+    "format_type": "new_format",
+    "program_family_url": "struktury-dannyh-i-algoritmy",
+    "program_type": "bachelor",
+    "terms": null
+  }
+}

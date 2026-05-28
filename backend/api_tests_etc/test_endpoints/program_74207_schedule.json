@@ -1,0 +1,616 @@
+{
+  "url": "https://netology.ru/backend/api/user/programs/74207/schedule",
+  "status": 200,
+  "data": {
+    "current_program_coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "manager": {
+      "name": "Ксения Малыгина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7016010/thumb_fe6bc82274d86260.jpg"
+    },
+    "lessons": [
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584246,
+        "block_id": 178735,
+        "title": "Силлабус",
+        "locked_description": "",
+        "number": 1,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149151,
+            "position": 1,
+            "lesson_id": 584246,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 8,
+            "title": "Силлабус",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584246/lesson_items/3149151",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584247,
+        "block_id": 178734,
+        "title": "Тема 0. Особенности  образовательной программы",
+        "locked_description": "",
+        "number": 2,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-02-03T11:00:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149134,
+            "position": 1,
+            "lesson_id": 584247,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 85,
+            "title": "Вебинар 1",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584247/lesson_items/3149134",
+            "passed": true,
+            "starts_at": "2026-02-03T11:00:00.000Z",
+            "ends_at": "2026-02-03T12:30:00.000Z",
+            "experts": [
+              {
+                "id": 7649468,
+                "full_name": "Татьяна Летаева",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7649468/5a4ac80e50b27fa8.jpg",
+                "has_photo": true
+              },
+              {
+                "id": 8908247,
+                "full_name": "Игорь Булава",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8908247/465a8376b558c831.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/gWfVQ9sXNfNEyy3zMvQ8L9",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169939/redirect?code=3eaa64d4e1cf1a4ed3210c791dc3242f",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3149135,
+            "position": 2,
+            "lesson_id": 584247,
+            "locked": false,
+            "type": "task",
+            "approximate_progress_time": 120,
+            "title": "Паспорт компетенций — Дедлайн 01.04",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584247/lesson_items/3149135",
+            "passed": true,
+            "lesson_task": {
+              "id": 260778,
+              "task_type": "common",
+              "dynamic_deadline_calculation": false,
+              "complete_type": "individual",
+              "recommended_deadline": null,
+              "questions_disabled": false,
+              "can_be_reviewed_by_ai_expert": false,
+              "deadline": null,
+              "deadline_endless": false,
+              "available_for_solve": true,
+              "deadline_in_days": 3,
+              "homework": {
+                "id": 3800571,
+                "status": "accepted",
+                "score": "good",
+                "solution_attempts_left": 4,
+                "started_at": "2026-02-04T09:49:23.000Z"
+              }
+            },
+            "content": "Шаблон для выполнения задания можно скачать [здесь](https://u.netology.ru/backend/uploads/lms/content_assets/file/14257/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%A4%D0%A3._%D0%B1%D0%B0%D0%BA_%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B5%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B9.xlsx)",
+            "content_type": "markdown",
+            "preview": ""
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584248,
+        "block_id": 178734,
+        "title": "Тема 1. Карьерные перспективы",
+        "locked_description": "",
+        "number": 3,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-02-10T15:55:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149136,
+            "position": 1,
+            "lesson_id": 584248,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 94,
+            "title": "Вебинар 2. Карьерные перспективы",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584248/lesson_items/3149136",
+            "passed": true,
+            "starts_at": "2026-02-10T15:55:00.000Z",
+            "ends_at": "2026-02-10T17:25:00.000Z",
+            "experts": [
+              {
+                "id": 8684104,
+                "full_name": "Максим Журавлев",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8684104/315086e287200eb6.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/nHTrsXBHkxeEKYAajfGNrj",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169940/redirect?code=ef00fcc11fda5102419ef7e8fbc245c5",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3149153,
+            "position": 2,
+            "lesson_id": 584248,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 7,
+            "title": "Презентация к вебинару \"Карьерные перспективы\"",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584248/lesson_items/3149153",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584249,
+        "block_id": 178734,
+        "title": "Тема 2. Аудиторы и бизнес-консультанты финансового сектора: кто это такие?",
+        "locked_description": "",
+        "number": 4,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-03-07T08:50:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149138,
+            "position": 1,
+            "lesson_id": 584249,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 85,
+            "title": "Вебинар 3. Аудиторы и бизнес-консультанты финансового сектора: кто это такие?",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584249/lesson_items/3149138",
+            "passed": true,
+            "starts_at": "2026-03-07T08:50:00.000Z",
+            "ends_at": "2026-03-07T10:20:00.000Z",
+            "experts": [
+              {
+                "id": 9369424,
+                "full_name": "Елизавета Подворная",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9369424/e70d8ba85e0f2fad.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/tLVv4tE6ySZqKkxSMb7PZz",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169941/redirect?code=88d38ce7328424f19ac8c439e70a0a95",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3226108,
+            "position": 2,
+            "lesson_id": 584249,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 17,
+            "title": "Презентация к вебинару 3",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584249/lesson_items/3226108",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584250,
+        "block_id": 178734,
+        "title": "Тема 3. Организация управления финансовыми рисками в организациях банковского сектора",
+        "locked_description": "",
+        "number": 5,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-03-14T08:50:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149140,
+            "position": 1,
+            "lesson_id": 584250,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 73,
+            "title": "Вебинар 4. Организация управления финансовыми рисками в организациях банковского сектора",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584250/lesson_items/3149140",
+            "passed": true,
+            "starts_at": "2026-03-14T08:50:00.000Z",
+            "ends_at": "2026-03-14T10:20:00.000Z",
+            "experts": [
+              {
+                "id": 9369424,
+                "full_name": "Елизавета Подворная",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9369424/e70d8ba85e0f2fad.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/v6dYMzXvJq6eRWD34zqNSp",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169942/redirect?code=034010f3f3e52fa074ec5505e4bf9218",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3226111,
+            "position": 2,
+            "lesson_id": 584250,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 16,
+            "title": "Презентация к вебинару 4",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584250/lesson_items/3226111",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584251,
+        "block_id": 178734,
+        "title": "Тема 4. Обзор текущего состояния финансовых рынков и актуальные вызовы для компаний банковского сектора",
+        "locked_description": "",
+        "number": 6,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-03-21T08:50:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149142,
+            "position": 1,
+            "lesson_id": 584251,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 58,
+            "title": "Вебинар 5. Обзор текущего состояния финансовых рынков и актуальные вызовы для компаний банковского сектора",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584251/lesson_items/3149142",
+            "passed": true,
+            "starts_at": "2026-03-21T08:50:00.000Z",
+            "ends_at": "2026-03-21T10:20:00.000Z",
+            "experts": [
+              {
+                "id": 9369424,
+                "full_name": "Елизавета Подворная",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9369424/e70d8ba85e0f2fad.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/0VhsK2skWJQAzWn7oPVXbB",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169943/redirect?code=a836214d309945720fe6843b67a75243",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3247551,
+            "position": 2,
+            "lesson_id": 584251,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 15,
+            "title": "Презентация к вебинару 5",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584251/lesson_items/3247551",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584252,
+        "block_id": 178734,
+        "title": "Тема 5. Современные  финансовые технологии",
+        "locked_description": "",
+        "number": 7,
+        "locked": false,
+        "type": "common",
+        "starts_at": null,
+        "resource_package_ids": [
+          208231
+        ],
+        "lesson_items": [
+          {
+            "id": 3149144,
+            "position": 1,
+            "lesson_id": 584252,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 93,
+            "title": "Вебинар 6. Блокчейн и цифровые активы",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584252/lesson_items/3149144",
+            "passed": true,
+            "starts_at": "2026-03-21T12:40:00.000Z",
+            "ends_at": "2026-03-21T14:10:00.000Z",
+            "experts": [
+              {
+                "id": 8952553,
+                "full_name": "Евгений Маркин",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8952553/d174b16110f91540.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/fSni3cMfcGDUMjLjdcYpa5",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169944/redirect?code=1c496f1c6844fb00caad24bd82b81005",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3254500,
+            "position": 2,
+            "lesson_id": 584252,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 23,
+            "title": "Презентация к вебинару «Блокчейн и цифровые активы»",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584252/lesson_items/3254500",
+            "passed": true
+          },
+          {
+            "id": 3149146,
+            "position": 3,
+            "lesson_id": 584252,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 94,
+            "title": "Вебинар 7. Криптовалюты и цифровой рубль",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584252/lesson_items/3149146",
+            "passed": true,
+            "starts_at": "2026-04-13T15:55:00.000Z",
+            "ends_at": "2026-04-13T17:25:00.000Z",
+            "experts": [
+              {
+                "id": 8952553,
+                "full_name": "Евгений Маркин",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8952553/d174b16110f91540.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/mQfHo6acx14rYcZrdzyR8G",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169945/redirect?code=d8871196c23c742b60c142f3c910b962",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          },
+          {
+            "id": 3254518,
+            "position": 4,
+            "lesson_id": 584252,
+            "locked": false,
+            "type": "attachment",
+            "approximate_progress_time": 16,
+            "title": "Презентация к вебинару «Криптовалюты и цифровой рубль»",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584252/lesson_items/3254518",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 584253,
+        "block_id": 178734,
+        "title": "Тема 6. Карьерный симулятор  Финансового университета",
+        "locked_description": "",
+        "number": 8,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-04-21T11:00:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3149148,
+            "position": 1,
+            "lesson_id": 584253,
+            "locked": false,
+            "type": "webinar",
+            "status": "passed",
+            "approximate_progress_time": 93,
+            "title": "Вебинар 8. Карьерный симулятор  Финансового университета",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/584253/lesson_items/3149148",
+            "passed": true,
+            "starts_at": "2026-04-21T11:00:00.000Z",
+            "ends_at": "2026-04-21T12:30:00.000Z",
+            "experts": [
+              {
+                "id": 8908247,
+                "full_name": "Игорь Булава",
+                "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8908247/465a8376b558c831.jpg",
+                "has_photo": true
+              }
+            ],
+            "video_url": "https://kinescope.io/aF6hjd9QmwDujFkxSSukBU",
+            "webinar_url": "https://netology.ru/backend/api/webinars/169946/redirect?code=534d381f55b08cf199f23027cef09e85",
+            "youtube_video_id": null,
+            "translation_adapter": "webinar_ru_native",
+            "ulms_duration": null,
+            "ulms_video_available": false
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      },
+      {
+        "feedback": {
+          "passed": false
+        },
+        "id": 617864,
+        "block_id": 194501,
+        "title": "Опрос по итогам дисциплины",
+        "locked_description": "",
+        "number": 11,
+        "locked": false,
+        "type": "common",
+        "starts_at": "2026-04-21T11:00:00.000Z",
+        "resource_package_ids": [],
+        "lesson_items": [
+          {
+            "id": 3321945,
+            "position": 1,
+            "lesson_id": 617864,
+            "locked": false,
+            "type": "poll",
+            "approximate_progress_time": 13,
+            "title": "Опрос по итогам дисциплины",
+            "path": "/profile/program/bhebfad-25-vvs-2/lessons/617864/lesson_items/3321945",
+            "passed": true
+          }
+        ],
+        "has_access": true,
+        "access_levels_ids": [
+          79022
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "id": 178734,
+        "title": "Введение в специальность «Финансы и анализ данных»",
+        "position": 1,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 178735,
+        "title": "Силлабус",
+        "position": 2,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 178736,
+        "title": "\t Вторая повторная промежуточная аттестация с 17 ноября 2025 года по 7 декабря 2025 года",
+        "position": 3,
+        "has_seen_achievement": false
+      },
+      {
+        "id": 194501,
+        "title": "Опрос по итогам дисциплины",
+        "position": 4,
+        "has_seen_achievement": false
+      }
+    ],
+    "resource_packages": [
+      {
+        "id": 208231,
+        "price": null,
+        "access_opens_at": "2026-03-20T21:00:00.000Z",
+        "description": "<p>Занятие откроется 21 марта</p>\r\n",
+        "access_type": "auto_openable",
+        "translated_package_type": "Стандартный блок",
+        "accessible": true
+      }
+    ],
+    "has_only_demo_access": false,
+    "has_demo_access": false,
+    "user_accesses": [
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      }
+    ],
+    "access_levels": [
+      {
+        "id": 79022,
+        "level_type": "common",
+        "name": "Обычный",
+        "description": null,
+        "status": "active",
+        "title": null,
+        "has_access": true,
+        "can_buy": false,
+        "current_program_id": 74207,
+        "price": 0,
+        "price_without_discount": 0
+      }
+    ],
+    "title": "1 курс, 2 семестр: Введение в специальность",
+    "type": "distance_course",
+    "format_type": "new_format",
+    "program_family_url": "vvedenie-v-specialnost-fad",
+    "program_type": "bachelor",
+    "terms": null
+  }
+}

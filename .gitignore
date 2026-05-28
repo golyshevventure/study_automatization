@@ -4,7 +4,8 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
-output/
+backend/logs/current/
 *.wav
 *.mp4
 push.sh
+backend/netology_cookies/netology_cookies.json

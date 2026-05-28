@@ -1,0 +1,137 @@
+🧹 Очистка старой структуры Second Brain...
+🍪 Cookies загружены
+✅ Уже авторизованы
+============================================================
+🔍 Сбор структуры...
+============================================================
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/schedule
+📚 Найдено разделов (legacy): 42
+  ✅ Рабочая программа дисциплины (id: 592809)
+  ✅ Тема 1 «Мировая экономика и ее основные субъекты. Международное разделение труда как материальная основа мировой экономики» (id: 592810)
+  ✅ Тема 2 «Ресурсная база мирового хозяйства» (id: 592811)
+  ✅ Тема 3 «Неравномерность экономического развития стран в мировой экономике» (id: 592812)
+  ✅ Тема 4 «Международные экономические отношения и их современные формы» (id: 592813)
+  ✅ Тема 5 «Современный мировой рынок, его структура, конъюнктура. Ценообразование на мировых товарных рынках» (id: 592814)
+  ✅ Тема 6 «Международная торговля и ее регулирование» (id: 592815)
+  ✅ Тема 7 «Международное движение факторов производства» (id: 592816)
+  ✅ Тема 8 «Валютные отношения в мировой экономике» (id: 592817)
+  ✅ Тема 9 «Международная экономическая интеграция» (id: 592818)
+  ✅ Тема 10 «Международные экономические организации и участие России в их деятельности» (id: 592819)
+  ✅ Домашнее задание 1 (id: 594465)
+  ✅ Домашнее задание 2 (id: 594475)
+  ✅ Домашнее задание 3 (id: 595076)
+  ✅ Домашнее задание 4 (id: 595077)
+  ✅ Домашнее задание 5 (id: 595086)
+  ✅ Домашнее задание 6 (id: 595087)
+  ✅ Домашнее задание 7 (id: 595088)
+  ✅ Домашнее задание 8 (id: 595089)
+  ✅ Домашнее задание 9 (id: 595090)
+  ✅ Домашнее задание 10 (id: 595091)
+  ✅ Вебинар 17.02 (id: 595092)
+  ✅ Вебинар 19.02 (id: 594458)
+  ✅ Вебинар 24.02 (id: 594473)
+  ✅ Вебинар 05.03 (id: 595072)
+  ✅ Вебинар 10.03 (id: 595073)
+  ✅ Вебинар 17.03 (id: 595074)
+  ✅ Вебинар 24.03 (id: 595075)
+  ✅ Вебинар 31.03 (id: 594454)
+  ✅ Вебинар 07.04 (id: 595078)
+  ✅ Вебинар 14.04 (id: 595079)
+  ✅ Вебинар 28.04 (id: 595080)
+  ✅ Вебинар 05.05 (id: 595081)
+  ✅ Вебинар 12.05 (id: 595082)
+  🔒 Вебинар 19.05 (id: 595083)
+  🔒 Вебинар 26.05 (id: 595084)
+  🔒 Вебинар 02.06 (id: 595085)
+  ✅ Домашнее творческое задание — Дедлайн 26.05 (id: 592820)
+  🔒 Консультация перед экзаменом (id: 592821)
+  🔒 Экзаменационный тест. Дедлайн — 17.06.2026 23:59 (id: 624668)
+  🔒 Экзамен (id: 616976)
+  🔒 Опрос по итогам дисциплины (id: 618064)
+
+📚 Предмет: Мировая экономика и международные экономические отношения
+   Разделов: 42
+   🔍 Фильтр: только разделы содержащие ['Вебинар 12.05', 'Вебинар 24.03', 'Вебинар 05.03']
+   📝 Имя предмета задано вручную: Мировая экономика и международные экономические отношения
+
+📂 Вебинар 05.03
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595072
+📄 Найдено материалов: 1
+  ✅ Мировая экономика и международные экономические отношения
+   📄 1 материалов, собираем контент...
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595072/lesson_items/3206952
+⏳ Ждём загрузку ресурсов...
+   🎬 Найдено видео (Мировая экономика и международные экономические отношения), извлекаем аудио...
+   🎙️  Транскрибируем аудио...
+🤖 Загрузка openai/whisper-small на cuda:0...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/479 [00:00<?, ?it/s]Loading weights:  63%|██████▎   | 301/479 [00:00<00:00, 3000.92it/s]Loading weights: 100%|██████████| 479/479 [00:00<00:00, 2997.00it/s]
+✅ Модель загружена. GPU: NVIDIA GeForce RTX 5070
+[transformers] A custom logits processor of type <class 'transformers.generation.logits_process.SuppressTokensLogitsProcessor'> has been passed to `.generate()`, but it was also created in `.generate()`, given its parameterization. The custom <class 'transformers.generation.logits_process.SuppressTokensLogitsProcessor'> will take precedence. Please check the docstring of <class 'transformers.generation.logits_process.SuppressTokensLogitsProcessor'> to see related `.generate()` flags.
+[transformers] A custom logits processor of type <class 'transformers.generation.logits_process.SuppressTokensAtBeginLogitsProcessor'> has been passed to `.generate()`, but it was also created in `.generate()`, given its parameterization. The custom <class 'transformers.generation.logits_process.SuppressTokensAtBeginLogitsProcessor'> will take precedence. Please check the docstring of <class 'transformers.generation.logits_process.SuppressTokensAtBeginLogitsProcessor'> to see related `.generate()` flags.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer WhisperTokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+   ✅ Транскрипция: 24391 символов
+   🧠 Стратегия: merge_conspect
+
+============================================================
+🎓 Вебинар 05.03
+============================================================
+   📁 Категория: Конспекты
+   Символов: 24478
+   ⏳ Генерация конспекта...
+💾 Сохранено: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Дисциплины/Мировая экономика и международные экономические отношения/Конспекты/Вебинар 05.03.md
+   ✅ Готово
+   ✅ Раздел завершён
+
+📂 Вебинар 24.03
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595075
+📄 Найдено материалов: 1
+  ✅ Мировая экономика и международные экономические отношения
+   📄 1 материалов, собираем контент...
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595075/lesson_items/3206955
+⏳ Ждём загрузку ресурсов...
+   🎬 Найдено видео (Мировая экономика и международные экономические отношения), извлекаем аудио...
+   🎙️  Транскрибируем аудио...
+   ✅ Транскрипция: 24391 символов
+   🧠 Стратегия: merge_conspect
+
+============================================================
+🎓 Вебинар 24.03
+============================================================
+   📁 Категория: Конспекты
+   Символов: 24478
+   ⏳ Генерация конспекта...
+💾 Сохранено: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Дисциплины/Мировая экономика и международные экономические отношения/Конспекты/Вебинар 24.03.md
+   ✅ Готово
+   ✅ Раздел завершён
+
+📂 Вебинар 12.05
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595082
+📄 Найдено материалов: 1
+  ✅ Мировая экономика и международные экономические отношения
+   📄 1 материалов, собираем контент...
+🌐 https://netology.ru/profile/program/bhebfad-25-memeo-2/lessons/595082/lesson_items/3206971
+⏳ Ждём загрузку ресурсов...
+✅ VTT: 62325 символов
+   🎬 Найдено видео (Мировая экономика и международные экономические отношения), извлекаем аудио...
+   🎙️  Транскрибируем аудио...
+   ✅ Транскрипция: 9597 символов
+   🧠 Стратегия: merge_conspect
+
+============================================================
+🎓 Вебинар 12.05
+============================================================
+   📁 Категория: Конспекты
+   Символов: 9684
+   ⏳ Генерация конспекта...
+💾 Сохранено: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Дисциплины/Мировая экономика и международные экономические отношения/Конспекты/Вебинар 12.05.md
+   ✅ Готово
+   ✅ Раздел завершён
+📝 Файл предмета обновлён: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Дисциплины/Мировая экономика и международные экономические отношения/Мировая экономика и международные экономические отношения.md
+🍪 Cookies сохранены
+
+============================================================
+🏁 Всё готово!
+============================================================
+🍪 Cookies сохранены

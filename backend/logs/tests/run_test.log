@@ -1,0 +1,141 @@
+🍪 Cookies загружены
+✅ Уже авторизованы
+============================================================
+🔍 Сбор структуры...
+============================================================
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/schedule
+📚 Найдено разделов: 9
+  ✅ Информация о дисциплине (id: 588979)
+  ✅ Учебные материалы (id: 588980)
+  ✅ Презентации (id: 588981)
+  ✅ Вебинар 05.02 (id: 586463)
+  ✅ Вебинар 19.02 (id: 589815)
+  ✅ Вебинар 27.02 (id: 595270)
+  ✅ Информация для получения зачета по дисциплине (id: 623641)
+  🔒 Зачёт (id: 616922)
+  🔒 Опрос по итогам дисциплины (id: 617973)
+
+📚 Предмет: Безопасность жизнедеятельности
+   Разделов: 9
+
+📂 Информация о дисциплине
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588979
+📄 Найдено материалов: 4
+  ✅ Информация о преподавателе
+  ✅ Критерии оценивания
+  ✅ Рабочая программа дисциплины
+  ✅ Методические указания для обучающихся
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588979/lesson_items/3173402
+⏳ Ждём загрузку ресурсов...
+
+============================================================
+🎓 Информация о дисциплине — Информация о преподавателе
+============================================================
+   Символов: 1732
+   ⏳ Генерация конспекта...
+   🔍 Терминов: 3
+   📝 Термин: **Заслуженный Деятель Науки Рф**
+   📝 Термин: **Доктор Технических Наук**
+   📝 Термин: **Генерал Майор Запаса**
+   💾 Конспект: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Конспекты/Безопасность жизнедеятельности/Информация о дисциплине — Информация о преподавателе.md
+   🔗 Ссылка добавлена
+   ✅ Готово
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588979/lesson_items/3173403
+⏳ Ждём загрузку ресурсов...
+
+============================================================
+🎓 Информация о дисциплине — Критерии оценивания
+============================================================
+   Символов: 2314
+   ⏳ Генерация конспекта...
+   🔍 Терминов: 3
+   📝 Термин: **Критерии Оценивания**
+   📝 Термин: **Интеллект Карта**
+   📝 Термин: **Период Пересдач**
+   💾 Конспект: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Конспекты/Безопасность жизнедеятельности/Информация о дисциплине — Критерии оценивания.md
+   🔗 Ссылка добавлена
+   ✅ Готово
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588979/lesson_items/3173404
+⏳ Ждём загрузку ресурсов...
+
+============================================================
+🎓 Информация о дисциплине — Рабочая программа дисциплины
+============================================================
+   Символов: 926
+   ⏳ Генерация конспекта...
+   🔍 Терминов: 5
+   📝 Термин: **Рабочая Программа Дисциплины**
+   📝 Термин: **Безопасность Жизнедеятельности**
+   📝 Термин: **Чрезвычайная Ситуация**
+   📝 Термин: **Культура Безопасности**
+   📝 Термин: **Критерии Оценивания**
+   💾 Конспект: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Конспекты/Безопасность жизнедеятельности/Информация о дисциплине — Рабочая программа дисциплины.md
+   🔗 Ссылка добавлена
+   ✅ Готово
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588979/lesson_items/3173405
+⏳ Ждём загрузку ресурсов...
+
+============================================================
+🎓 Информация о дисциплине — Методические указания для обучающихся
+============================================================
+   Символов: 1622
+   ⏳ Генерация конспекта...
+   🔍 Терминов: 3
+   📝 Термин: **Методические Указания Для Обучающихся**
+   📝 Термин: **Безопасность Жизнедеятельности**
+   📝 Термин: **Критерии Оценивания**
+   💾 Конспект: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Конспекты/Безопасность жизнедеятельности/Информация о дисциплине — Методические указания для обучающихся.md
+   🔗 Ссылка добавлена
+   ✅ Готово
+   ✅ Раздел завершён
+
+📂 Учебные материалы
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/lessons/588980
+⚠️ Страница раздела не открылась, пробуем fallback...
+Traceback (most recent call last):
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/run_agent.py", line 300, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/run_agent.py", line 253, in main
+    lessons = await scraper.get_discipline_lessons(program_id, disc["lesson_id"], disc.get("links", []))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/src/Скрейперы/netology_scraper.py", line 260, in get_discipline_lessons
+    items = await self.page.evaluate(f"""
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 8887, in evaluate
+    await self._impl_obj.evaluate(
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 464, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 320, in evaluate
+    await self._channel.send(
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+🍪 Cookies загружены
+✅ Уже авторизованы
+============================================================
+🔍 Сбор структуры...
+============================================================
+🌐 https://netology.ru/profile/program/bhebfad-25-bzhd-2/schedule
+⚠️ Дисциплины не найдены, HTML сохранён: data/debug_program.html
+
+📚 Предмет: Нетология — образовательная платформа
+   Разделов: 0
+📁 Создан предмет: /mnt/c/Users/golys/OneDrive/Рабочий стол/Second brain/Учеба (Фин. Ун.)/Предметы/Нетология — образовательная платформа.md
+🍪 Cookies сохранены
+
+============================================================
+🏁 Всё готово!
+============================================================

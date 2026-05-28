@@ -1,0 +1,43 @@
+🍪 Cookies загружены
+Traceback (most recent call last):
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/run_agent.py", line 292, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/run_agent.py", line 206, in main
+    login_ok = await ensure_netology_login(scraper.page)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/Утилиты/netology_auth.py", line 27, in ensure_netology_login
+    await page.goto("https://netology.ru/profile", wait_until="domcontentloaded", timeout=15000)
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 9365, in goto
+    await self._impl_obj.goto(
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/golys/OneDrive/Рабочий стол/Study_automatization/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://netology.ru/profile", waiting until "domcontentloaded"
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x72b60973cf40>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+  File "/usr/lib/python3.12/asyncio/base_subprocess.py", line 104, in close
+  File "/usr/lib/python3.12/asyncio/unix_events.py", line 767, in close
+  File "/usr/lib/python3.12/asyncio/unix_events.py", line 753, in write_eof
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 795, in call_soon
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 541, in _check_closed
+RuntimeError: Event loop is closed

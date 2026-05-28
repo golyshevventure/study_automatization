@@ -1,0 +1,3 @@
+Использование:
+  python run_agent.py <program_id>  — собрать всю программу
+  python run_agent.py <program_id> --subject 'Название'  — только разделы с этим словом

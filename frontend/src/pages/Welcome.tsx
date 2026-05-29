@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Список функций приложения, отображаемых на экране приветствия.
+ * Каждая функция имеет иконку, название и CSS-класс анимации.
+ */
 const features = [
   { icon: "📝", title: "Генерация конспектов", animClass: "icon-write" },
   { icon: "📚", title: "Систематизация знаний", animClass: "icon-stack" },
@@ -8,17 +12,81 @@ const features = [
   { icon: "🔔", title: "Smart-уведомления", animClass: "icon-bell" },
 ];
 
+/**
+ * Компонент страницы приветствия (Welcome / Auth).
+ *
+ * Состояния:
+ *  - "welcome" — экран с логотипом, функциями и кнопкой входа
+ *  - "auth"    — форма ввода email/пароля
+ *
+ * Авторизация:
+ *  При нажатии "Войти" отправляется POST-запрос на FastAPI backend
+ *  (localhost:8000/api/auth/netology). В случае успеха — редирект
+ *  на главную страницу "/". При ошибке — отображается текст ошибки.
+ */
 export default function Welcome() {
   const navigate = useNavigate();
+
+  // -------------------------------------------------------------------------
+  // Состояния UI
+  // -------------------------------------------------------------------------
+  // mode: "welcome" | "auth" — текущий экран
+  // login / password: значения полей ввода
+  // error: текст ошибки (null = нет ошибки)
+  // isLoading: идёт ли сейчас запрос на сервер
+  // -------------------------------------------------------------------------
   const [mode, setMode] = useState<"welcome" | "auth">("welcome");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * Проверяет, можно ли отправить форму.
+   * Кнопка активна только если оба поля непустые.
+   */
   const canSubmit = login.trim().length > 0 && password.trim().length > 0;
 
-  const handleLogin = () => {
-    if (canSubmit) {
-      navigate("/");
+  /**
+   * Обработчик нажатия кнопки "Войти".
+   *
+   * Отправляет POST-запрос на FastAPI backend с email и password.
+   * При успехе (success: true) — редирект на "/".
+   * При 401 (invalid_credentials) — показывает "Неверный логин или пароль".
+   * При сетевой ошибке — показывает "Ошибка авторизации. Попробуйте ещё раз".
+   */
+  const handleLogin = async () => {
+    if (!canSubmit || isLoading) return;
+
+    // Сбрасываем предыдущую ошибку и включаем спиннер
+    setError(null);
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:8000/api/auth/netology", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: login, password }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        // Успешная авторизация — переходим на главную
+        navigate("/");
+      } else if (data.error === "invalid_credentials") {
+        // Netology вернула 401 — неверные credentials
+        setError("Неверный логин или пароль");
+      } else {
+        // Любая другая ошибка от backend
+        setError("Ошибка авторизации. Попробуйте ещё раз");
+      }
+    } catch (e) {
+      // Сетевая ошибка (backend недоступен, timeout, CORS и т.д.)
+      setError("Ошибка авторизации. Попробуйте ещё раз");
+    } finally {
+      // Выключаем спиннер независимо от результата
+      setIsLoading(false);
     }
   };
 
@@ -26,7 +94,8 @@ export default function Welcome() {
     <div
       className="min-h-full flex flex-col items-center px-6 py-10 text-center"
       style={{
-        background: "radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.25), transparent 50%), radial-gradient(circle at 90% 90%, rgba(138, 43, 226, 0.15), transparent 50%), #020617",
+        background:
+          "radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.25), transparent 50%), radial-gradient(circle at 90% 90%, rgba(138, 43, 226, 0.15), transparent 50%), #020617",
       }}
     >
       {/* Logo */}
@@ -39,7 +108,12 @@ export default function Welcome() {
       {/* Title */}
       <h1
         className="text-5xl font-bold mb-2"
-        style={{ color: "#fff", letterSpacing: "-1px", textShadow: "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)" }}
+        style={{
+          color: "#fff",
+          letterSpacing: "-1px",
+          textShadow:
+            "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)",
+        }}
       >
         StudyCore
       </h1>
@@ -52,6 +126,9 @@ export default function Welcome() {
         Ваш персональный помощник в обучении
       </p>
 
+      {/* ================================================================== */}
+      {/* Экран приветствия (mode === "welcome")                              */}
+      {/* ================================================================== */}
       {mode === "welcome" && (
         <>
           {/* Features */}
@@ -62,10 +139,13 @@ export default function Welcome() {
                 className="feature-card flex items-center gap-3 rounded-2xl p-3.5 text-left transition-transform duration-150 active:scale-[0.98] cursor-pointer"
                 style={{
                   background: "rgba(15, 23, 42, 0.6)",
-                  boxShadow: "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)",
+                  boxShadow:
+                    "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)",
                 }}
               >
-                <span className={`text-xl inline-block ${f.animClass}`}>{f.icon}</span>
+                <span className={`text-xl inline-block ${f.animClass}`}>
+                  {f.icon}
+                </span>
                 <span
                   className="text-sm font-medium"
                   style={{ color: "#fff" }}
@@ -76,14 +156,15 @@ export default function Welcome() {
             ))}
           </div>
 
-          {/* Auth button */}
+          {/* Auth button — переключает на экран авторизации */}
           <button
             onClick={() => setMode("auth")}
             className="w-full max-w-[320px] py-4 rounded-2xl font-medium text-sm transition-all duration-200 hover:shadow-xl hover:brightness-110 active:scale-95"
             style={{
               background: "#8a2be2",
               color: "#fff",
-              boxShadow: "0 0 10px rgba(138, 43, 226, 0.6), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(0, 240, 255, 0.2)",
+              boxShadow:
+                "0 0 10px rgba(138, 43, 226, 0.6), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(0, 240, 255, 0.2)",
               textShadow: "0 0 5px rgba(255,255,255,0.5)",
             }}
           >
@@ -92,8 +173,12 @@ export default function Welcome() {
         </>
       )}
 
+      {/* ================================================================== */}
+      {/* Экран авторизации (mode === "auth")                                 */}
+      {/* ================================================================== */}
       {mode === "auth" && (
         <div className="w-full max-w-[320px] flex flex-col gap-4">
+          {/* Заголовок формы */}
           <h2
             className="text-lg font-semibold mb-1"
             style={{ color: "#fff" }}
@@ -101,6 +186,26 @@ export default function Welcome() {
             Вход в Нетологию
           </h2>
 
+          {/* -------------------------------------------------------------- */}
+          {/* Блок ошибки (между заголовком и полем email)                   */}
+          {/* Показывается при:                                              */}
+          /*   - 401 от Netology → "Неверный логин или пароль"              */
+          /*   - Сетевая ошибка → "Ошибка авторизации. Попробуйте ещё раз"  */
+          {/* -------------------------------------------------------------- */}
+          {error && (
+            <div
+              className="text-sm text-center font-medium px-3 py-2 rounded-xl"
+              style={{
+                color: "#ef4444",
+                background: "rgba(239, 68, 68, 0.1)",
+                border: "1px solid rgba(239, 68, 68, 0.3)",
+              }}
+            >
+              {error}
+            </div>
+          )}
+
+          {/* Поле email */}
           <input
             type="text"
             placeholder="Email / Логин"
@@ -113,8 +218,10 @@ export default function Welcome() {
               border: "1px solid rgba(255,255,255,0.2)",
             }}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            disabled={isLoading}
           />
 
+          {/* Поле пароля */}
           <input
             type="password"
             placeholder="Пароль"
@@ -127,26 +234,55 @@ export default function Welcome() {
               border: "1px solid rgba(255,255,255,0.2)",
             }}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            disabled={isLoading}
           />
 
+          {/* Кнопка "Войти" */}
+          {/*
+            Состояния:
+              - disabled (!canSubmit || isLoading) — серая, неактивна
+              - isLoading — показывает спиннер вместо текста
+              - canSubmit && !isLoading — фиолетовая, активна
+          */}
           <button
             onClick={handleLogin}
-            disabled={!canSubmit}
-            className="w-full py-4 rounded-2xl font-medium text-sm transition-all duration-200 hover:shadow-xl hover:brightness-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={!canSubmit || isLoading}
+            className="w-full py-4 rounded-2xl font-medium text-sm transition-all duration-200 hover:shadow-xl hover:brightness-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             style={{
-              background: canSubmit ? "#8a2be2" : "rgba(138, 43, 226, 0.5)",
+              background: canSubmit && !isLoading ? "#8a2be2" : "rgba(138, 43, 226, 0.5)",
               color: "#fff",
-              boxShadow: canSubmit
-                ? "0 0 10px rgba(138, 43, 226, 0.6), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(0, 240, 255, 0.2)"
-                : "none",
-              textShadow: canSubmit ? "0 0 5px rgba(255,255,255,0.5)" : "none",
+              boxShadow:
+                canSubmit && !isLoading
+                  ? "0 0 10px rgba(138, 43, 226, 0.6), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(0, 240, 255, 0.2)"
+                  : "none",
+              textShadow:
+                canSubmit && !isLoading
+                  ? "0 0 5px rgba(255,255,255,0.5)"
+                  : "none",
             }}
           >
-            Войти
+            {isLoading ? (
+              <>
+                {/* CSS-спиннер (анимация вращения) */}
+                <span
+                  className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+                  style={{ animationDuration: "0.8s" }}
+                />
+                <span>Вход...</span>
+              </>
+            ) : (
+              "Войти"
+            )}
           </button>
 
+          {/* Кнопка "Назад" */}
           <button
-            onClick={() => setMode("welcome")}
+            onClick={() => {
+              setMode("welcome");
+              setError(null);
+              setLogin("");
+              setPassword("");
+            }}
             className="text-sm mt-1 transition-opacity hover:opacity-80"
             style={{ color: "rgba(255,255,255,0.6)" }}
           >

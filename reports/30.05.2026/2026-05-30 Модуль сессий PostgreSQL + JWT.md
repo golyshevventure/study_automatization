@@ -143,9 +143,39 @@ cd backend && uvicorn main:app --reload --port 8000
 
 ---
 
+## Защита роутов: welcome ↔ главная
+
+### Реализовано
+
+**Бэкенд:**
+- `GET /api/auth/me` — проверка сессии по JWT-cookie
+- `POST /api/auth/logout` — удаление сессии и cookie
+
+**Фронтенд:**
+- `AuthContext` — глобальное состояние авторизации, проверка при старте
+- `ProtectedRoute` — доступна только авторизованным, иначе редирект на `/welcome`
+- `PublicOnlyRoute` — доступна только НЕавторизованным, иначе редирект на `/`
+- `Welcome.tsx` — после успешного логина вызывает `authLogin()`, `PublicOnlyRoute` автоматически редиректит на главную
+
+### Логика работы
+
+| Состояние | Открывает | Редирект |
+|-----------|-----------|----------|
+| Не авторизован | Только `/welcome` | Все остальные → `/welcome` |
+| Авторизован | `/`, `/notes`, `/deadlines` и т.д. | `/welcome` → `/` |
+
+### Последовательность
+
+1. Пользователь открывает приложение
+2. `AuthContext` шлёт `GET /api/auth/me` с cookie
+3. Если 401 — `isAuthenticated = false` → `ProtectedRoute` редиректит на `/welcome`
+4. Если 200 — `isAuthenticated = true` → `PublicOnlyRoute` редиректит на `/`
+5. После логина `Welcome.tsx` вызывает `authLogin()` → повторная проверка → редирект на `/`
+
+---
+
 ## Следующие шаги
 
-1. **Интеграция с фронтендом** — Welcome.tsx должен получать и хранить user_id
-2. **Защищённые endpoint'ы** — интеграция `get_current_session` в роутеры для lesson_items, programs и т.д.
-3. **Logout endpoint** — удаление сессии и cookie
-4. **Автообновление cookies** — при истечении срока Netology-сессии
+1. **Кнопка "Выйти"** на главной странице
+2. **Защищённые endpoint'ы** для lesson_items, programs и т.д.
+3. **Автообновление cookies** — при истечении срока Netology-сессии

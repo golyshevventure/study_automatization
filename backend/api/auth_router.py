@@ -1,22 +1,23 @@
 """FastAPI роутер для авторизации в Netology.
 
-Предоставляет endpoint POST /api/auth/netology, который:
-1. Авторизует пользователя в Netology
-2. Сохраняет cookies в PostgreSQL
-3. Устанавливает JWT-cookie для запоминания сессии
+Предоставляет endpoints:
+- POST /api/auth/netology — авторизация + установка JWT-cookie
+- GET /api/auth/me — проверка текущей сессии
 """
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.core.database import get_db
-from backend.core.security import create_jwt_token
+from backend.core.security import create_jwt_token, verify_jwt_token
+from backend.dependencies.session_dep import get_current_session
+from backend.models.session import UserSession
 from backend.services.auth_service.netology_auth import NetologyAuthError, NetologyAuthService
 from backend.services.session_service.session_manager import SessionManager
 
 # ---------------------------------------------------------------------------
-# Pydantic-схемы запросов и ответов
+# Pydantic-схемы
 # ---------------------------------------------------------------------------
 
 
@@ -34,6 +35,14 @@ class AuthResponse(BaseModel):
     message: str | None = None
     error: str | None = None
     user_id: str | None = None
+
+
+class MeResponse(BaseModel):
+    """Ответ на проверку текущей сессии."""
+
+    authenticated: bool
+    user_id: str | None = None
+    email: str | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -58,16 +67,7 @@ async def authenticate_netology(
     response: Response,
     db: AsyncSession = Depends(get_db),
 ) -> AuthResponse:
-    """Авторизовать пользователя и создать сессию.
-
-    Args:
-        request: Объект AuthRequest с email и password.
-        response: FastAPI Response для установки cookie.
-        db: Асинхронная сессия БД.
-
-    Returns:
-        AuthResponse с результатом авторизации и user_id.
-    """
+    """Авторизовать пользователя и создать сессию."""
     try:
         # 1. Авторизация в Netology
         cookies = _auth_service.authenticate(request.email, request.password)
@@ -126,3 +126,49 @@ async def authenticate_netology(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Внутренняя ошибка: {exc}",
         ) from exc
+
+
+@router.get(
+    "/auth/me",
+    response_model=MeResponse,
+    summary="Проверка текущей сессии",
+    description="Возвращает данные текущего пользователя по JWT-cookie.",
+)
+async def get_me(
+    session: UserSession = Depends(get_current_session),
+) -> MeResponse:
+    """Проверить текущую сессию.
+
+    Извлекает session_token из cookie, проверяет JWT
+    и возвращает данные пользователя.
+    """
+    return MeResponse(
+        authenticated=True,
+        user_id=str(session.user_id),
+        email=session.email,
+    )
+
+
+@router.post(
+    "/auth/logout",
+    summary="Выход из аккаунта",
+    description="Удаляет JWT-cookie и сессию из БД.",
+)
+async def logout(
+    request: Request,
+    response: Response,
+    db: AsyncSession = Depends(get_db),
+) -> dict[str, str]:
+    """Выйти из аккаунта.
+
+    Удаляет сессию из БД и очищает cookie.
+    """
+    token = request.cookies.get("session_token")
+    if token:
+        user_id = verify_jwt_token(token)
+        if user_id:
+            manager = SessionManager(db)
+            await manager.delete_session(user_id)
+
+    response.delete_cookie("session_token")
+    return {"message": "Выход выполнен"}

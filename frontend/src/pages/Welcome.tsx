@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 /**
  * Список функций приложения, отображаемых на экране приветствия.
@@ -55,10 +56,11 @@ export default function Welcome() {
    * При 401 (invalid_credentials) — показывает "Неверный логин или пароль".
    * При сетевой ошибке — показывает "Ошибка авторизации. Попробуйте ещё раз".
    */
+  const { login: authLogin } = useAuth();
+
   const handleLogin = async () => {
     if (!canSubmit || isLoading) return;
 
-    // Сбрасываем предыдущую ошибку и включаем спиннер
     setError(null);
     setIsLoading(true);
 
@@ -67,25 +69,22 @@ export default function Welcome() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: login, password }),
+        credentials: "include",
       });
 
       const data = await res.json();
 
       if (data.success) {
-        // Успешная авторизация — переходим на главную
-        navigate("/");
+        // Успешная авторизация — обновляем AuthContext, router сам редиректит
+        authLogin();
       } else if (data.error === "invalid_credentials") {
-        // Netology вернула 401 — неверные credentials
         setError("Неверный логин или пароль");
       } else {
-        // Любая другая ошибка от backend
         setError("Ошибка авторизации. Попробуйте ещё раз");
       }
     } catch (e) {
-      // Сетевая ошибка (backend недоступен, timeout, CORS и т.д.)
       setError("Ошибка авторизации. Попробуйте ещё раз");
     } finally {
-      // Выключаем спиннер независимо от результата
       setIsLoading(false);
     }
   };

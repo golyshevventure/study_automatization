@@ -1,0 +1,389 @@
+{
+  "status_code": 200,
+  "data": {
+    "name": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+    "starts_on": null,
+    "finishes_on": null,
+    "coordinator": {
+      "name": "Светлана Иванова",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7232469/thumb_733f82e6af437e63.jpg"
+    },
+    "current_program_coordinator": {
+      "name": "Светлана Иванова",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7232469/thumb_733f82e6af437e63.jpg"
+    },
+    "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+    "lessons_available": {
+      "total": 28,
+      "demo": 0,
+      "common": 32
+    },
+    "profession_modules": [
+      {
+        "id": 109919,
+        "position": 1,
+        "program": {
+          "id": 49393,
+          "color": "#50b9e1",
+          "description": "",
+          "duration": "1 день",
+          "experts_amount": "0 экспертов",
+          "label": "",
+          "is_async": true,
+          "name": "Вводная информация для студентов",
+          "program_image": "",
+          "projects_amount": 3,
+          "slider_description": "",
+          "starts_at": "",
+          "type": "online",
+          "url": "https://netology.ru/profile/program/info-spdata-1",
+          "url_to_replace": "",
+          "is_profession": false,
+          "is_profession_module": true,
+          "parent_profession": {
+            "id": 48767,
+            "urlcode": "spdata-1",
+            "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+            "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+            "start_date": null,
+            "finish_date": null,
+            "price": 0,
+            "is_paid": false,
+            "price_without_discount": 0,
+            "terms": null,
+            "education_format_type": "asynchronous",
+            "user_start_date": null,
+            "user_finish_date": null,
+            "program_family_price_type": "free",
+            "main_direction": {
+              "slug": "data-science",
+              "name": "Аналитика"
+            }
+          },
+          "start_date": null,
+          "finish_date": null,
+          "price": 0,
+          "price_without_discount": 0,
+          "terms": null,
+          "user_accesses": [
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:44.000Z"
+            },
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:46.000Z"
+            }
+          ],
+          "program_with_demo_access": false,
+          "lessons_available": {
+            "total": 3,
+            "demo": 0,
+            "common": 3
+          },
+          "landing_url": "/programs/",
+          "consultation": false
+        }
+      },
+      {
+        "id": 109683,
+        "position": 2,
+        "program": {
+          "id": 49207,
+          "color": "#50b9e1",
+          "description": "",
+          "duration": "14 дней",
+          "experts_amount": "0 экспертов",
+          "label": "",
+          "is_async": true,
+          "name": "Введение в SQL и работу с базой данных",
+          "program_image": "",
+          "projects_amount": 8,
+          "slider_description": "",
+          "starts_at": "",
+          "type": "online",
+          "url": "https://netology.ru/profile/program/sql-free",
+          "url_to_replace": "",
+          "is_profession": false,
+          "is_profession_module": true,
+          "parent_profession": {
+            "id": 48767,
+            "urlcode": "spdata-1",
+            "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+            "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+            "start_date": null,
+            "finish_date": null,
+            "price": 0,
+            "is_paid": false,
+            "price_without_discount": 0,
+            "terms": null,
+            "education_format_type": "asynchronous",
+            "user_start_date": null,
+            "user_finish_date": null,
+            "program_family_price_type": "free",
+            "main_direction": {
+              "slug": "data-science",
+              "name": "Аналитика"
+            }
+          },
+          "start_date": null,
+          "finish_date": null,
+          "price": 0,
+          "price_without_discount": 0,
+          "terms": null,
+          "user_accesses": [
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:44.000Z"
+            },
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:46.000Z"
+            }
+          ],
+          "program_with_demo_access": false,
+          "lessons_available": {
+            "total": 8,
+            "demo": 0,
+            "common": 9
+          },
+          "landing_url": "/programs/vvedenie-v-sql-i-rabotu-s-bazoi-dannih-free",
+          "actual_program": {
+            "start_date": null
+          },
+          "consultation": false
+        }
+      },
+      {
+        "id": 109684,
+        "position": 3,
+        "program": {
+          "id": 49268,
+          "color": "#50b9e1",
+          "description": "",
+          "duration": "14 дней",
+          "experts_amount": "0 экспертов",
+          "label": "",
+          "is_async": true,
+          "name": "Основы работы с Python для аналитиков",
+          "program_image": "",
+          "projects_amount": 7,
+          "slider_description": "",
+          "starts_at": "",
+          "type": "online",
+          "url": "https://netology.ru/profile/program/python-free",
+          "url_to_replace": "",
+          "is_profession": false,
+          "is_profession_module": true,
+          "parent_profession": {
+            "id": 48767,
+            "urlcode": "spdata-1",
+            "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+            "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+            "start_date": null,
+            "finish_date": null,
+            "price": 0,
+            "is_paid": false,
+            "price_without_discount": 0,
+            "terms": null,
+            "education_format_type": "asynchronous",
+            "user_start_date": null,
+            "user_finish_date": null,
+            "program_family_price_type": "free",
+            "main_direction": {
+              "slug": "data-science",
+              "name": "Аналитика"
+            }
+          },
+          "start_date": null,
+          "finish_date": null,
+          "price": 0,
+          "price_without_discount": 0,
+          "terms": null,
+          "user_accesses": [
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:44.000Z"
+            },
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:46.000Z"
+            }
+          ],
+          "program_with_demo_access": false,
+          "lessons_available": {
+            "total": 7,
+            "demo": 0,
+            "common": 8
+          },
+          "landing_url": "/programs/",
+          "consultation": false
+        }
+      },
+      {
+        "id": 109740,
+        "position": 4,
+        "program": {
+          "id": 49303,
+          "color": "#50b9e1",
+          "description": "",
+          "duration": "14 дней",
+          "experts_amount": "0 экспертов",
+          "label": "",
+          "is_async": true,
+          "name": "Основы визуализации данных",
+          "program_image": "",
+          "projects_amount": 8,
+          "slider_description": "",
+          "starts_at": "",
+          "type": "online",
+          "url": "https://netology.ru/profile/program/bi-free",
+          "url_to_replace": "",
+          "is_profession": false,
+          "is_profession_module": true,
+          "parent_profession": {
+            "id": 48767,
+            "urlcode": "spdata-1",
+            "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+            "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+            "start_date": null,
+            "finish_date": null,
+            "price": 0,
+            "is_paid": false,
+            "price_without_discount": 0,
+            "terms": null,
+            "education_format_type": "asynchronous",
+            "user_start_date": null,
+            "user_finish_date": null,
+            "program_family_price_type": "free",
+            "main_direction": {
+              "slug": "data-science",
+              "name": "Аналитика"
+            }
+          },
+          "start_date": null,
+          "finish_date": null,
+          "price": 0,
+          "price_without_discount": 0,
+          "terms": null,
+          "user_accesses": [
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:44.000Z"
+            },
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:46.000Z"
+            }
+          ],
+          "program_with_demo_access": false,
+          "lessons_available": {
+            "total": 8,
+            "demo": 0,
+            "common": 9
+          },
+          "landing_url": "/programs/",
+          "consultation": false
+        }
+      },
+      {
+        "id": 109741,
+        "position": 5,
+        "program": {
+          "id": 49304,
+          "color": "#50b9e1",
+          "description": "",
+          "duration": "1 день",
+          "experts_amount": "0 экспертов",
+          "label": "",
+          "is_async": true,
+          "name": "Подводим итоги обучения и определяем дальнейшие шаги",
+          "program_image": "",
+          "projects_amount": 2,
+          "slider_description": "",
+          "starts_at": "",
+          "type": "online",
+          "url": "https://netology.ru/profile/program/fin-ds",
+          "url_to_replace": "",
+          "is_profession": false,
+          "is_profession_module": true,
+          "parent_profession": {
+            "id": 48767,
+            "urlcode": "spdata-1",
+            "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+            "landing_url": "/programs/osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+            "start_date": null,
+            "finish_date": null,
+            "price": 0,
+            "is_paid": false,
+            "price_without_discount": 0,
+            "terms": null,
+            "education_format_type": "asynchronous",
+            "user_start_date": null,
+            "user_finish_date": null,
+            "program_family_price_type": "free",
+            "main_direction": {
+              "slug": "data-science",
+              "name": "Аналитика"
+            }
+          },
+          "start_date": null,
+          "finish_date": null,
+          "price": 0,
+          "price_without_discount": 0,
+          "terms": null,
+          "user_accesses": [
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:44.000Z"
+            },
+            {
+              "level_type": "common",
+              "access_expired_at": "2074-05-12T12:36:46.000Z"
+            }
+          ],
+          "program_with_demo_access": false,
+          "lessons_available": {
+            "total": 2,
+            "demo": 0,
+            "common": 3
+          },
+          "landing_url": "/programs/fin-ds-podvodim-itogi-obychenia",
+          "actual_program": {
+            "start_date": null
+          },
+          "consultation": false
+        }
+      }
+    ],
+    "termination": {
+      "termination_rules": [
+        {
+          "id": 49623,
+          "rule_type": "x_modules_completed",
+          "required_count": 3,
+          "completed_ids": [],
+          "status": "in_progress",
+          "items": [
+            {
+              "type": "profession_module",
+              "id": 109683,
+              "completed": false
+            },
+            {
+              "type": "profession_module",
+              "id": 109684,
+              "completed": false
+            },
+            {
+              "type": "profession_module",
+              "id": 109740,
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "passed": false
+    }
+  }
+}

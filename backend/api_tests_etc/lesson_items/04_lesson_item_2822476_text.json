@@ -1,0 +1,24 @@
+{
+  "id": 2822476,
+  "type": "text",
+  "status_code": 200,
+  "data": {
+    "id": 2822476,
+    "position": 2,
+    "lesson_id": 520963,
+    "locked": false,
+    "type": "text",
+    "approximate_progress_time": 1,
+    "title": "Журнал успеваемости / ведомость ",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520963/lesson_items/2822476",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "text_scroll",
+    "passed_value": null,
+    "passed": true,
+    "content": "Дорогие студенты!\r\n\r\nПромежуточные и итоговые оценки находятся в [Журнале успеваемости ](https://netospace.ru/drive/d/s/14v4Wp07ugyPG4HLfzLU9oJrQmuKeeNA/VNHK7SNJvbfOB6vFqm1kcxKN1u3Lkf8a-zr7AnkpWnQw).\r\n\r\n*Итоговые оценки по дисциплинам вы можете найти в личном кабинете студента ФУ.*",
+    "content_type": "markdown"
+  },
+  "preview": null
+}

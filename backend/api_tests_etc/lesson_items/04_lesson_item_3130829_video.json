@@ -1,0 +1,23 @@
+{
+  "id": 3130829,
+  "type": "video",
+  "status_code": 200,
+  "data": {
+    "id": 3130829,
+    "position": 2,
+    "lesson_id": 576205,
+    "locked": false,
+    "type": "video",
+    "approximate_progress_time": 11,
+    "title": "Графическое представление данных",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576205/lesson_items/3130829",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "video_view_X",
+    "passed_value": 80,
+    "passed": true,
+    "video_url": "https://kinescope.io/hrhMNZTt7HdzjcUJ6d8rrW"
+  },
+  "preview": null
+}

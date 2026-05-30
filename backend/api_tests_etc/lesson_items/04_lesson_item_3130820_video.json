@@ -1,0 +1,23 @@
+{
+  "id": 3130820,
+  "type": "video",
+  "status_code": 200,
+  "data": {
+    "id": 3130820,
+    "position": 2,
+    "lesson_id": 576204,
+    "locked": false,
+    "type": "video",
+    "approximate_progress_time": 10,
+    "title": "Определения и основные понятия ",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576204/lesson_items/3130820",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "video_view_X",
+    "passed_value": 80,
+    "passed": true,
+    "video_url": "https://kinescope.io/tQh7UAcuDDQAboyHfQwC5c"
+  },
+  "preview": null
+}

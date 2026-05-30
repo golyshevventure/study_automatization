@@ -1,0 +1,254 @@
+{
+  "id": 2678327,
+  "type": "longread",
+  "status_code": 200,
+  "data": {
+    "id": 2678327,
+    "position": 5,
+    "lesson_id": 347428,
+    "locked": false,
+    "type": "longread",
+    "approximate_progress_time": 1,
+    "title": "Как получить сертификат",
+    "path": "/profile/program/info-spdata-1/lessons/347428/lesson_items/2678327",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "longread_scroll",
+    "passed_value": null,
+    "passed": false,
+    "content": {
+      "version": 1,
+      "elements": [
+        {
+          "id": "04113fa3-e0f1-42e3-96a6-53886f369876",
+          "type": "list",
+          "items": [
+            {
+              "id": "8371f557-fb5d-432d-8835-db16768c7896",
+              "value": "<a href=\"#certificate\">Что нужно сделать для получения сертификата</a>",
+              "parentId": "04113fa3-e0f1-42e3-96a6-53886f369876"
+            },
+            {
+              "id": "90051d3e-6b11-4680-98f6-bec0b7871145",
+              "value": "<a href=\"#appneto\">Как скачать сертификат в мобильном приложении</a>",
+              "parentId": "04113fa3-e0f1-42e3-96a6-53886f369876"
+            },
+            {
+              "id": "1d54aa8d-e953-4296-827c-1f51925cba78",
+              "value": "<a href=\"#browser\">Как скачать сертификат в браузере на любом устройстве</a>",
+              "parentId": "04113fa3-e0f1-42e3-96a6-53886f369876"
+            },
+            {
+              "id": "74be0d9b-6022-4dce-b54c-ffbf7fbf6c02",
+              "value": "<a href=\"#surname\">Как изменить ФИО в сертификате</a>",
+              "parentId": "04113fa3-e0f1-42e3-96a6-53886f369876"
+            }
+          ],
+          "label": "Список",
+          "title": "После завершения курса вы можете получить сертификат.",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "33f25a59-776e-43b7-b7ce-698961c1f680",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Что нужно сделать для получения сертификата</b></h3>",
+          "settings": {
+            "anchor": "certificate",
+            "indent": 16
+          }
+        },
+        {
+          "id": "02f3098a-0683-4e23-8ad4-b49280a75c07",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>Для получения сертификата нужно пройти все материалы и задания курса.&nbsp;</p><p>Посмотреть, что не пройдено, можно&nbsp;<span style=\"letter-spacing: 0em;\">в разделе </span><span style=\"letter-spacing: 0em; background-color: rgb(255, 255, 255);\">«Что нужно сделать, чтобы получить сертификат»</span><span style=\"letter-spacing: 0em;\">. Он самый первый по ссылке, до вводного блока. Нажмите на стрелку справа от названия, чтобы раскрыть блок и посмотреть, что осталось пройти.</span></p><p><span style=\"letter-spacing: 0em;\">Если все условия выполнены, появится блок «Поздравляем с завершением обучения!», и вы сможете скачать сертификат.</span></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "bc9f44c6-7bdd-4973-b32f-7c877a4e2945",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 4836,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4836/file/8b761b10-f27f-4fd7-981c-972e505dc76d.png"
+            },
+            {
+              "id": 4837,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4837/file/b5315e99-02d4-4496-8a33-658774d92145.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        },
+        {
+          "id": "693a4dba-dc83-48bc-a6f7-558f1afb92e7",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Как скачать сертификат в мобильном приложении</b></h3>",
+          "settings": {
+            "anchor": "appneto",
+            "indent": 16
+          }
+        },
+        {
+          "id": "1bc71af6-1a31-4769-ad46-9728fcd25075",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>В мобильном приложении нажмите на иконку в правом нижнем углу и перейдите в раздел «Сертификаты об окончании обучения».</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "a815a1a8-9831-48eb-bcb2-68c0b7795e60",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 4945,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4945/file/29b9ff11-bfaa-4ea6-9982-4d5c377b60d4.jpg"
+            },
+            {
+              "id": 4946,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4946/file/cbfe518d-528c-407c-81e2-f53d0bc46194.jpg"
+            },
+            {
+              "id": 4949,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4949/file/ade0126f-531e-448b-9d39-02a41150d0cd.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        },
+        {
+          "id": "76272cc0-a6af-41e7-9896-de0b8162eef7",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Как скачать сертификат в браузере на любом устройстве</b></h3>",
+          "settings": {
+            "anchor": "browser",
+            "indent": 16
+          }
+        },
+        {
+          "id": "ce386d11-c172-46cb-a27e-63c5e087356a",
+          "type": "text",
+          "label": "Текст",
+          "value": "<div bis_skin_checked=\"1\">В браузере на любом устройстве вы можете скачать сертификат прямо в курсе или в разделе <a href=\"https://netology.ru/profile/achievements\">«Достижения»</a>.</div>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "c6c29aeb-8069-4f6f-9cb7-355aabcf2c39",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 4943,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4943/file/5b87286b-2087-4971-8b3d-4b48d094b790.jpg"
+            },
+            {
+              "id": 4944,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4944/file/9df3bcb6-1e27-481a-afb8-3292688c4daf.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        },
+        {
+          "id": "c88c0986-13e4-4bb7-91fa-3d8063a19efb",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Как изменить ФИО в сертификате</b></h3>",
+          "settings": {
+            "anchor": "surname",
+            "indent": 16
+          }
+        },
+        {
+          "id": "4a11fdf3-2e17-4a35-a7e7-0f27eb9c808f",
+          "type": "text",
+          "label": "Текст",
+          "value": "Имя и фамилия для сертификата автоматически берутся из данных, которые вы указали в&nbsp;<a href=\"https://netology.ru/profile/settings\">профиле</a>. Если вы внесёте правки, вы сможете скачать обновлённый сертификат.",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "7aa3934a-251e-44bc-8f95-7c7979cda1f2",
+          "type": "image",
+          "label": "Изображение",
+          "title": "В мобильном приложении",
+          "images": [
+            {
+              "id": 4951,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4951/file/fbdf6a83-eb21-4fc6-aef6-7aeeff9e7c8b.jpg"
+            },
+            {
+              "id": 4952,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4952/file/6b5e8592-4480-4727-b709-328962ecb09d.jpg"
+            },
+            {
+              "id": 4953,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4953/file/5c7ff013-fde9-44b5-8dda-52a203aafeca.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "d080b039-07de-4f2d-812a-c028f75ad11c",
+          "type": "image",
+          "label": "Изображение",
+          "title": "В браузере на любом устройстве",
+          "images": [
+            {
+              "id": 4950,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/5/4950/file/a6a7d34e-3b02-46b4-94ff-f50afb4e11da.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        }
+      ]
+    }
+  },
+  "preview": null
+}

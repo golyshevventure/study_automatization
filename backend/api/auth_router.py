@@ -10,7 +10,7 @@ email и password пользователя, отправляет их в API Net
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 
-from backend.auth_service.netology_auth import NetologyAuthService, NetologyAuthError
+from backend.services.auth_service.netology_auth import NetologyAuthService, NetologyAuthError
 
 # ---------------------------------------------------------------------------
 # Pydantic-схемы запросов и ответов

@@ -1,0 +1,78 @@
+{
+  "status_code": 200,
+  "data": {
+    "coordinator": {
+      "name": "Светлана Иванова",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7232469/thumb_733f82e6af437e63.jpg"
+    },
+    "current_program_coordinator": {
+      "name": "Светлана Иванова",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7232469/thumb_733f82e6af437e63.jpg"
+    },
+    "lessons": [],
+    "blocks": [],
+    "resource_packages": [],
+    "termination": {
+      "termination_rules": [
+        {
+          "id": 49623,
+          "rule_type": "x_modules_completed",
+          "required_count": 3,
+          "completed_ids": [],
+          "status": "in_progress",
+          "items": [
+            {
+              "type": "profession_module",
+              "id": 109683,
+              "completed": false
+            },
+            {
+              "type": "profession_module",
+              "id": 109684,
+              "completed": false
+            },
+            {
+              "type": "profession_module",
+              "id": 109740,
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "passed": false
+    },
+    "has_only_demo_access": false,
+    "has_demo_access": false,
+    "user_accesses": [
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      },
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      }
+    ],
+    "access_levels": [
+      {
+        "id": 51446,
+        "level_type": "common",
+        "name": "Обычный",
+        "description": null,
+        "status": "active",
+        "title": null,
+        "has_access": true,
+        "can_buy": false,
+        "current_program_id": 48767,
+        "price": 0,
+        "price_without_discount": 0
+      }
+    ],
+    "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+    "type": "distance_course",
+    "format_type": "new_format",
+    "program_family_url": "osnovy-raboty-s-instrumentami-dlya-analiza-dannyh",
+    "program_type": "course",
+    "terms": null
+  }
+}

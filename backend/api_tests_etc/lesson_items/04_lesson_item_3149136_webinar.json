@@ -1,0 +1,39 @@
+{
+  "id": 3149136,
+  "type": "webinar",
+  "status_code": 200,
+  "data": {
+    "id": 3149136,
+    "position": 1,
+    "lesson_id": 584248,
+    "locked": false,
+    "type": "webinar",
+    "status": "passed",
+    "approximate_progress_time": 94,
+    "title": "Вебинар 2. Карьерные перспективы",
+    "path": "/profile/program/bhebfad-25-vvs-2/lessons/584248/lesson_items/3149136",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "webinar_button_end",
+    "passed_value": null,
+    "passed": true,
+    "starts_at": "2026-02-10T15:55:00.000Z",
+    "ends_at": "2026-02-10T17:25:00.000Z",
+    "experts": [
+      {
+        "id": 8684104,
+        "full_name": "Максим Журавлев",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8684104/315086e287200eb6.jpg",
+        "has_photo": true
+      }
+    ],
+    "video_url": "https://kinescope.io/nHTrsXBHkxeEKYAajfGNrj",
+    "webinar_url": "https://netology.ru/backend/api/webinars/169940/redirect?code=ef00fcc11fda5102419ef7e8fbc245c5",
+    "youtube_video_id": null,
+    "translation_adapter": "webinar_ru_native",
+    "ulms_duration": null,
+    "ulms_video_available": false
+  },
+  "preview": null
+}

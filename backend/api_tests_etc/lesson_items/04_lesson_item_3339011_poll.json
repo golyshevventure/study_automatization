@@ -1,0 +1,409 @@
+{
+  "id": 3339011,
+  "type": "poll",
+  "status_code": 200,
+  "data": {
+    "id": 3339011,
+    "position": 1,
+    "lesson_id": 621014,
+    "locked": false,
+    "type": "poll",
+    "approximate_progress_time": 24,
+    "title": "Опрос про обучение на программе",
+    "path": "/profile/program/bhebfad-25-opros-1/lessons/621014/lesson_items/3339011",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "poll_finish",
+    "passed_value": null,
+    "passed": true,
+    "lesson_poll": {
+      "id": 3339011
+    },
+    "questions": [
+      {
+        "id": 2689,
+        "title": "Насколько вы довольны обучением на программе в целом? (5 — полностью удовлетворён, а 1 — абсолютно не удовлетворён) ",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2690,
+        "title": "Насколько программа помогает вам развивать навыки, нужные для работы или проектов? (5 — однозначно помогает, а 1 — совсем не помогает)",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2691,
+        "title": "Насколько вы удовлетворены качеством решения вопросов, связанных с обучением? (5 — полностью удовлетворён, а 1 — абсолютно не удовлетворён)",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2692,
+        "title": "Насколько понятно организован учебный процесс (расписание, сроки)? (5 — полностью понятно, а 1 — абсолютно не понятно)",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2693,
+        "title": "Насколько удобно для вас использовать личный кабинет студента на платформе Нетологии? (5 — очень удобно, а 1 — совсем не удобно)",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2694,
+        "title": "Если вы пользуетесь личным кабинетом на платформе ВУЗа, насколько он удобен для вас? Если не пользуетесь, пропустите вопрос (5 — очень удобно, а 1 — совсем не удобно) ",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2695,
+        "title": "Насколько удобно использовать платформу  видео-конференц-связи для участия в вебинарах? (5 — очень удобно, а 1 — совсем не удобно)",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 5
+        },
+        "answers": []
+      },
+      {
+        "id": 2696,
+        "title": "Изменилась ли ваша учебная цель за этот год обучения?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5935,
+            "value": "Да",
+            "position": 1
+          },
+          {
+            "id": 5936,
+            "value": "Нет",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "id": 2697,
+        "title": "Если ваша цель НЕ изменилась, считаете ли вы что вы приблизились к достижению цели за прошедший учебный год?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5938,
+            "value": "Не приблизился к цели (цель не менялась)",
+            "position": 1
+          },
+          {
+            "id": 5937,
+            "value": "Приблизился к цели (цель не менялась)",
+            "position": 2
+          },
+          {
+            "id": 5939,
+            "value": "Цель изменилась",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "id": 2698,
+        "title": "Вы дополнили своё портфолио и резюме по результатам этого учебного года?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5940,
+            "value": "Да",
+            "position": 1
+          },
+          {
+            "id": 5941,
+            "value": "Нет",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "id": 2699,
+        "title": "Применяете ли вы уже навыки и знания, которые получили во время обучения на программе, или понимаете, как сможете применить их на работе / проекте?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5942,
+            "value": "Да",
+            "position": 1
+          },
+          {
+            "id": 5943,
+            "value": "Нет",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "id": 2700,
+        "title": "С какой вероятностью вы порекомендуете программу знакомым? (10 —  точно порекомендую, 1 — точно не порекомендую) ",
+        "description": "",
+        "label": "",
+        "question_type": "scale",
+        "answer_params": {
+          "maximum_value": 10
+        },
+        "answers": []
+      },
+      {
+        "id": 2701,
+        "title": "Расскажите о своих впечатлениях от программы. Напишите свои пожелания команде программы.",
+        "description": "",
+        "label": "",
+        "question_type": "text",
+        "answer_params": {
+          "multistring": true
+        },
+        "answers": []
+      },
+      {
+        "id": 2702,
+        "title": "Хотели бы вы поделиться вашим мнением о программе на сторонних ресурсах (Сравни.ру. Яндекс. Учеба.ру и др.)?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5944,
+            "value": "Да",
+            "position": 1
+          },
+          {
+            "id": 5945,
+            "value": "Нет",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "id": 2703,
+        "title": "Даёте ли вы согласие разместить ваш отзыв на сайте https://netology.ru согласно политике обработки персональных данных https://netology.ru/legal/115?",
+        "description": "",
+        "label": "",
+        "question_type": "checkbox",
+        "answer_params": {
+          "multiple": false,
+          "answers_source": "linked_answers",
+          "dynamic_answers_list_source": null
+        },
+        "answers": [
+          {
+            "id": 5946,
+            "value": "Да",
+            "position": 1
+          },
+          {
+            "id": 5947,
+            "value": "Нет",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "user_answered": true,
+    "user_poll_results": [
+      {
+        "id": 17929525,
+        "question_id": 2689,
+        "raw_result": {
+          "answer": 4
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929526,
+        "question_id": 2690,
+        "raw_result": {
+          "answer": 5
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929527,
+        "question_id": 2691,
+        "raw_result": {
+          "answer": 4
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929528,
+        "question_id": 2692,
+        "raw_result": {
+          "answer": 4
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929529,
+        "question_id": 2693,
+        "raw_result": {
+          "answer": 3
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929530,
+        "question_id": 2694,
+        "raw_result": {
+          "answer": 3
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929531,
+        "question_id": 2695,
+        "raw_result": {
+          "answer": 5
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929532,
+        "question_id": 2696,
+        "raw_result": {
+          "answers_ids": [
+            5936
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929533,
+        "question_id": 2697,
+        "raw_result": {
+          "answers_ids": [
+            5937
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929534,
+        "question_id": 2698,
+        "raw_result": {
+          "answers_ids": [
+            5940
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929535,
+        "question_id": 2699,
+        "raw_result": {
+          "answers_ids": [
+            5942
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929536,
+        "question_id": 2700,
+        "raw_result": {
+          "answer": 8
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929537,
+        "question_id": 2702,
+        "raw_result": {
+          "answers_ids": [
+            5945
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:00.000Z"
+      },
+      {
+        "id": 17929538,
+        "question_id": 2703,
+        "raw_result": {
+          "answers_ids": [
+            5946
+          ],
+          "answers_table": "lms_polls_answers"
+        },
+        "created_at": "2026-05-26T08:37:01.000Z"
+      }
+    ],
+    "similar_user_poll_results": []
+  },
+  "preview": null
+}

@@ -1,0 +1,45 @@
+{
+  "id": 2872860,
+  "type": "webinar",
+  "status_code": 200,
+  "data": {
+    "id": 2872860,
+    "position": 1,
+    "lesson_id": 530688,
+    "locked": false,
+    "type": "webinar",
+    "status": "passed",
+    "approximate_progress_time": 53,
+    "title": "Вводная встреча с руководителями программы от Финансового университета и Нетологии",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/530688/lesson_items/2872860",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "webinar_button_end",
+    "passed_value": null,
+    "passed": true,
+    "starts_at": "2025-09-04T08:00:00.000Z",
+    "ends_at": "2025-09-04T09:30:00.000Z",
+    "experts": [
+      {
+        "id": 8908247,
+        "full_name": "Игорь Булава",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8908247/465a8376b558c831.jpg",
+        "has_photo": true
+      },
+      {
+        "id": 9946309,
+        "full_name": "Юлия Панасенко",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9946309/e92c5a67f6ae00ba.jpg",
+        "has_photo": true
+      }
+    ],
+    "video_url": "https://kinescope.io/rM8AvXof2H5hXPsUpMz7yi",
+    "webinar_url": "",
+    "youtube_video_id": null,
+    "translation_adapter": "webinar_ru_native",
+    "ulms_duration": null,
+    "ulms_video_available": false
+  },
+  "preview": null
+}

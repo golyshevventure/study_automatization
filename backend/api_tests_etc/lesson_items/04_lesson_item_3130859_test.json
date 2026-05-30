@@ -1,0 +1,492 @@
+{
+  "id": 3130859,
+  "type": "test",
+  "status_code": 200,
+  "data": {
+    "id": 3130859,
+    "position": 2,
+    "lesson_id": 576211,
+    "locked": false,
+    "type": "test",
+    "approximate_progress_time": 45,
+    "title": "Домашнее задание 1 по Теме 5 «Дискретные случайные величины». Дедлайн 11.03",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576211/lesson_items/3130859",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "test_finish_correct",
+    "passed_value": null,
+    "passed": true,
+    "lesson_test": {
+      "id": 73328,
+      "max_solutions_count": 2,
+      "percent_to_pass": 70,
+      "user_test": {
+        "id": 2403901,
+        "status": "passed",
+        "right_answers_viewed": true,
+        "test_solutions_count": 1
+      },
+      "can_send_attempt_request": false,
+      "attempt_requests": []
+    },
+    "duration": 0,
+    "questions_per_page": 0,
+    "question_pages_count": 1,
+    "questions_count": 10,
+    "last_solution": {
+      "test_solution_id": 3312050,
+      "status": "passed",
+      "started_at": "2026-04-15T06:14:23.000Z",
+      "finished_at": null,
+      "has_timer": false,
+      "end_of_timer": null,
+      "correct_answers_count": 8,
+      "incorrect_answers_ids": [
+        93581,
+        93583
+      ],
+      "percent": 80,
+      "submitted_answers": [
+        {
+          "question_id": 93575,
+          "answers": [
+            {
+              "id": 321261,
+              "content": "0,10"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93576,
+          "answers": [
+            {
+              "id": 321262,
+              "content": "4,85"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93577,
+          "answers": [
+            {
+              "id": 321263,
+              "correct": true
+            },
+            {
+              "id": 321264,
+              "correct": true
+            },
+            {
+              "id": 321265,
+              "correct": true
+            },
+            {
+              "id": 321266,
+              "correct": false
+            },
+            {
+              "id": 321267,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93578,
+          "answers": [
+            {
+              "id": 321268,
+              "correct": true
+            },
+            {
+              "id": 321269,
+              "correct": false
+            },
+            {
+              "id": 321270,
+              "correct": false
+            },
+            {
+              "id": 321271,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93579,
+          "answers": [
+            {
+              "id": 321272,
+              "correct": true
+            },
+            {
+              "id": 321273,
+              "correct": false
+            },
+            {
+              "id": 321274,
+              "correct": false
+            },
+            {
+              "id": 321275,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93580,
+          "answers": [
+            {
+              "id": 321276,
+              "correct": true
+            },
+            {
+              "id": 321277,
+              "correct": false
+            },
+            {
+              "id": 321278,
+              "correct": false
+            },
+            {
+              "id": 321279,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93581,
+          "answers": [
+            {
+              "id": 321280,
+              "correct": true
+            },
+            {
+              "id": 321281,
+              "correct": false
+            },
+            {
+              "id": 321282,
+              "correct": false
+            },
+            {
+              "id": 321283,
+              "correct": false
+            },
+            {
+              "id": 321284,
+              "correct": true
+            },
+            {
+              "id": 321285,
+              "correct": true
+            }
+          ],
+          "errors": [
+            321282,
+            321284
+          ]
+        },
+        {
+          "question_id": 93582,
+          "answers": [
+            {
+              "id": 321286,
+              "content": "0,1667"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 93583,
+          "answers": [
+            {
+              "id": 321287
+            }
+          ],
+          "errors": [
+            "",
+            "0,0405"
+          ]
+        },
+        {
+          "question_id": 93584,
+          "answers": [
+            {
+              "id": 321288,
+              "content": "6,26"
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "questions_count": 10,
+      "duration": 0,
+      "questions_per_page": 0,
+      "question_pages_count": 1,
+      "questions": [
+        {
+          "id": 93575,
+          "position": 1,
+          "title": "Вопрос 1",
+          "question_type": "compliance_check",
+          "content": "В отделении банка может одновременно работать 0, 1, 2 или 3 окна с вероятностью, показанной в таблице:\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10856/Screenshot_2025-02-26_160628.png)\n\nНайдите значение k. В ответ запишите число в виде десятичной дроби, разделитель — запятая (укажите два знака после запятой)\n",
+          "answers": [
+            {
+              "id": 321261,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 93576,
+          "position": 2,
+          "title": "Вопрос 2",
+          "question_type": "compliance_check",
+          "content": "Предположим, что случайная величина Х количества лет, необходимых для получения степени бакалавра, задается следующим образом:\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10857/Screenshot_2025-02-26_160903.png)\n\nВ среднем, сколько лет потребуется человеку, чтобы получить степень бакалавра? \nПодсказка: вычислите математическое ожидание.\nВ ответ запишите число в виде десятичной дроби (укажите два знака после запятой)\n",
+          "answers": [
+            {
+              "id": 321262,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 93577,
+          "position": 3,
+          "title": "Вопрос 3",
+          "question_type": "choose_many",
+          "content": "Выберите характеристики биномиального распределения. Выберите несколько правильных ответов.",
+          "answers": [
+            {
+              "id": 321263,
+              "is_numeric": false,
+              "position": 1,
+              "content": "испытания независимы"
+            },
+            {
+              "id": 321264,
+              "is_numeric": false,
+              "position": 2,
+              "content": "количество испытаний фиксировано"
+            },
+            {
+              "id": 321265,
+              "is_numeric": false,
+              "position": 3,
+              "content": "вероятность успеха в каждом испытании одинакова"
+            },
+            {
+              "id": 321266,
+              "is_numeric": false,
+              "position": 4,
+              "content": "вероятность успеха в каждом испытании может отличаться"
+            },
+            {
+              "id": 321267,
+              "is_numeric": false,
+              "position": 5,
+              "content": "испытания могут быть зависимыми"
+            }
+          ]
+        },
+        {
+          "id": 93578,
+          "position": 4,
+          "title": "Вопрос 4",
+          "question_type": "choose_one",
+          "content": "Распределение Пуассона можно использовать для аппроксимации",
+          "answers": [
+            {
+              "id": 321268,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Биномиального распределения"
+            },
+            {
+              "id": 321269,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Любого дискретного распределения"
+            },
+            {
+              "id": 321270,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Геометрического распределения"
+            },
+            {
+              "id": 321271,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Гипергеометрического распределения"
+            }
+          ]
+        },
+        {
+          "id": 93579,
+          "position": 5,
+          "title": "Вопрос 5",
+          "question_type": "choose_one",
+          "content": "Подсчитано, что только около 30% жителей Города имеют достаточные запасы средств на случай чрезвычайной ситуации. Предположим, нас интересует количество жителей Города, которые мы должны обследовать, пока не найдем жителя, у которого нет достаточных запасов средств на случай ЧС.\nУкажите распределение, которое моделирует описанную ситуацию.",
+          "answers": [
+            {
+              "id": 321272,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Геометрическое"
+            },
+            {
+              "id": 321273,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Пуассоновское"
+            },
+            {
+              "id": 321274,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Биномиальное"
+            },
+            {
+              "id": 321275,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Гипергеометрическое"
+            }
+          ]
+        },
+        {
+          "id": 93580,
+          "position": 6,
+          "title": "Вопрос 6",
+          "question_type": "choose_one",
+          "content": "Число, которое показывает, насколько далеки результаты статистического эксперимента от среднего значения распределения, называется",
+          "answers": [
+            {
+              "id": 321276,
+              "is_numeric": false,
+              "position": 1,
+              "content": "стандартным отклонением"
+            },
+            {
+              "id": 321277,
+              "is_numeric": false,
+              "position": 2,
+              "content": "математическим ожиданием"
+            },
+            {
+              "id": 321278,
+              "is_numeric": false,
+              "position": 3,
+              "content": "эксцессом"
+            },
+            {
+              "id": 321279,
+              "is_numeric": false,
+              "position": 4,
+              "content": "медианой"
+            }
+          ]
+        },
+        {
+          "id": 93581,
+          "position": 7,
+          "title": "Вопрос 7",
+          "question_type": "choose_many",
+          "content": "Укажите дискретные случайные величины. Выберите несколько правильных ответов.",
+          "answers": [
+            {
+              "id": 321280,
+              "is_numeric": false,
+              "position": 1,
+              "content": "число людей в очереди"
+            },
+            {
+              "id": 321281,
+              "is_numeric": false,
+              "position": 2,
+              "content": "дальность броска футбольного мяча"
+            },
+            {
+              "id": 321282,
+              "is_numeric": false,
+              "position": 3,
+              "content": "количество бросков в баскетбольную корзину до первого попадания"
+            },
+            {
+              "id": 321283,
+              "is_numeric": false,
+              "position": 4,
+              "content": "расход электроэнергии за месяц"
+            },
+            {
+              "id": 321284,
+              "is_numeric": false,
+              "position": 5,
+              "content": "рост студента"
+            },
+            {
+              "id": 321285,
+              "is_numeric": false,
+              "position": 6,
+              "content": "размер одежды студента"
+            }
+          ]
+        },
+        {
+          "id": 93582,
+          "position": 8,
+          "title": "Вопрос 8",
+          "question_type": "compliance_check",
+          "content": "Случайная величина X принимает значения −2, 0 и 4. Известно, что\nP(X = −2) = 2p, P(X = 0) = p, P(X = 4) = 3p.\nНайдите значение р.\nВ ответ запишите число в виде десятичной дроби (округлите до 4 знака!)",
+          "answers": [
+            {
+              "id": 321286,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 93583,
+          "position": 9,
+          "title": "Вопрос 9",
+          "question_type": "compliance_check",
+          "content": "Распределение вероятностей случайной величины X показано в следующей таблице\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10859/Screenshot_2025-02-26_161851.png)\n\nМатематическое ожидание μ = 1,05\nНайдите значения p и q. В ответ запишите произведение этих значений (p ⋅ q)\nВ ответ запишите число в виде десятичной дроби (округлите до 4 знака!)\n",
+          "answers": [
+            {
+              "id": 321287,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 93584,
+          "position": 10,
+          "title": "Вопрос 10",
+          "question_type": "compliance_check",
+          "content": "Группа студентов-статистиков разделена на две группы: по специальностям, связанным с бизнесом, и по специальностям, не связанным с бизнесом. В группе 16 студентов бизнес-направления и 7 некоммерческих специальностей. Берётся случайная выборка из 9 студентов. В среднем, сколько студентов в этой выборке, по вашему мнению, обучаются по бизнес-специальности?\n\nВ ответ запишите число в виде десятичной дроби (округлите до 2 знака!)",
+          "answers": [
+            {
+              "id": 321288,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        }
+      ],
+      "seconds_remaining": 0
+    }
+  },
+  "preview": null
+}

@@ -1,0 +1,131 @@
+{
+  "id": 3130818,
+  "type": "test",
+  "status_code": 200,
+  "data": {
+    "id": 3130818,
+    "position": 2,
+    "lesson_id": 576198,
+    "locked": false,
+    "type": "test",
+    "approximate_progress_time": 45,
+    "title": "Тест по теме 1 «Комбинаторика» — Дедлайн 13.02",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576198/lesson_items/3130818",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "test_finish_correct",
+    "passed_value": null,
+    "passed": true,
+    "lesson_test": {
+      "id": 73324,
+      "max_solutions_count": 2,
+      "percent_to_pass": 70,
+      "user_test": {
+        "id": 2386965,
+        "status": "passed",
+        "right_answers_viewed": true,
+        "test_solutions_count": 1
+      },
+      "can_send_attempt_request": false,
+      "attempt_requests": []
+    },
+    "duration": 0,
+    "questions_per_page": 0,
+    "question_pages_count": 1,
+    "questions_count": 3,
+    "last_solution": {
+      "test_solution_id": 3287976,
+      "status": "passed",
+      "started_at": "2026-04-05T03:32:29.000Z",
+      "finished_at": null,
+      "has_timer": false,
+      "end_of_timer": null,
+      "correct_answers_count": 3,
+      "incorrect_answers_ids": [],
+      "percent": 100,
+      "submitted_answers": [
+        {
+          "question_id": 91670,
+          "answers": [
+            {
+              "id": 315033,
+              "content": "5040"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91671,
+          "answers": [
+            {
+              "id": 315034,
+              "content": "210"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91672,
+          "answers": [
+            {
+              "id": 315035,
+              "content": "56"
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "questions_count": 3,
+      "duration": 0,
+      "questions_per_page": 0,
+      "question_pages_count": 1,
+      "questions": [
+        {
+          "id": 91670,
+          "position": 1,
+          "title": "Вопрос 1",
+          "question_type": "compliance_check",
+          "content": "Екатерина составляет личное расписание прохождения курса. Ей необходимо изучать 7 разных дисциплин каждую неделю. При этом она не может изучать в один день несколько дисциплин. Сколькими способами она может составить такое расписание? Для решения используйте метод перестановки.",
+          "answers": [
+            {
+              "id": 315033,
+              "is_numeric": true,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91671,
+          "position": 2,
+          "title": "Вопрос 2",
+          "question_type": "compliance_check",
+          "content": "Екатерина составляет личное расписание прохождения курса. Ей необходимо изучать 7 разных дисциплин каждую неделю. При этом она может изучать в один день несколько дисциплин. Сколькими способами она может составить расписание на понедельник из трёх дисциплин? Для решения используйте метод размещения.",
+          "answers": [
+            {
+              "id": 315034,
+              "is_numeric": true,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91672,
+          "position": 3,
+          "title": "Вопрос 3",
+          "question_type": "compliance_check",
+          "content": "Екатерина составляет личный учебный план из дисциплин по выбору. Ей необходимо выбрать 3 разные дисциплины из 8 предложенных по её направлению. Сколькими способами она может составить свой набор дисциплин?Для решения используйте метод сочетания.",
+          "answers": [
+            {
+              "id": 315035,
+              "is_numeric": true,
+              "position": 1
+            }
+          ]
+        }
+      ],
+      "seconds_remaining": 0
+    }
+  },
+  "preview": null
+}

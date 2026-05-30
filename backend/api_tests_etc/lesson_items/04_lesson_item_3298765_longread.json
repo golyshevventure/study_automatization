@@ -1,0 +1,658 @@
+{
+  "id": 3298765,
+  "type": "longread",
+  "status_code": 200,
+  "data": {
+    "id": 3298765,
+    "position": 3,
+    "lesson_id": 520963,
+    "locked": false,
+    "type": "longread",
+    "approximate_progress_time": 8,
+    "title": "Как добавиться в сообщество студентов в VK",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520963/lesson_items/3298765",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "longread_scroll",
+    "passed_value": null,
+    "passed": true,
+    "content": {
+      "version": 1,
+      "elements": [
+        {
+          "id": "0399e6a3-fb2f-42a7-adbf-283e91461417",
+          "type": "list",
+          "items": [
+            {
+              "id": "2c8c0fef-0039-488a-b5d1-eea401ebd5e3",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;strong&quot;}]}\" pm-open-left=\"1\"><a href=\"#reg\">Регистрация аккаунта в социальной сети Вконтакте</a></p>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            },
+            {
+              "id": "a8b68a59-440e-4194-b152-67afe93751da",
+              "value": "<p pm-open-left=\"1\"><a href=\"#comm\">Учебное сообщество</a></p>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            },
+            {
+              "id": "59a0bc03-819c-4427-a180-9b5f97669fe4",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\"><a href=\"#profil\">Настройка профиля и уведомлений</a></p>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            },
+            {
+              "id": "d1b44c48-4ccc-4a5e-82eb-77708e594a82",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\"><a href=\"#nav\">Навигация по сообществу</a></p>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            },
+            {
+              "id": "537ed092-13fd-4e80-a6bb-7515e9ba85b3",
+              "value": "<a href=\"#say\">Общение в процессе обучения</a>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            },
+            {
+              "id": "ef1c8de8-bfcc-4f80-9512-5d193571bfc7",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\"><a href=\"#pravila\">Правила общения в сообществе</a></p>",
+              "parentId": "0399e6a3-fb2f-42a7-adbf-283e91461417"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": true
+          }
+        },
+        {
+          "id": "54e43fd7-bba4-4dee-bfef-7a7cd1d3d44f",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Регистрация аккаунта в социальной сети Вконтакте (далее VK)</h2>",
+          "settings": {
+            "anchor": "reg",
+            "indent": 32
+          }
+        },
+        {
+          "id": "d84dfc33-c202-4786-9708-afc360527b4a",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\">Чтобы создать аккаунт:<br></p><ol start=\"1\" data-syno-attrs=\"{&quot;id&quot;:&quot;3BUT78Xr1S&quot;,&quot;configs&quot;:[{&quot;start&quot;:1,&quot;format&quot;:&quot;decimal&quot;,&quot;text&quot;:&quot;%1.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerLetter&quot;,&quot;text&quot;:&quot;%2.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerRoman&quot;,&quot;text&quot;:&quot;%3.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;decimal&quot;,&quot;text&quot;:&quot;%4.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerLetter&quot;,&quot;text&quot;:&quot;%5.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerRoman&quot;,&quot;text&quot;:&quot;%6.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;decimal&quot;,&quot;text&quot;:&quot;%7.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerLetter&quot;,&quot;text&quot;:&quot;%8.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;lowerRoman&quot;,&quot;text&quot;:&quot;%9.&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]}]}\"><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Откройте страницу регистрации (<a href=\"https://vk.com/\" target=\"_blank\" rel=\"noreferrer\">vk.com</a>) и нажмите Создать аккаунт. Если при переходе по ссылке открывается лента новостей, выйдите из всех аккаунтов, в которых вы авторизованы.</p></li><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Укажите номер телефона — он будет привязан к профилю. Зарегистрироваться без номера не получится.</p></li><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Подтвердите действие с помощью кода из SMS.</p></li><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Укажите имя, фамилию и другую информацию о себе, на основе которой будет сформирован ваш профиль VK. Достоверные данные в профиле помогут нам быстрее найти именно вас в сообществе студентов.</p></li></ol><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;10pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Всю подробную информацию о регистрации можно посмотреть <a href=\"https://vk.com/faq18549?ysclid=mnno9ben8933449122\" target=\"_blank\" rel=\"noreferrer\"><u>здесь</u></a>.<br><br>Для удобства и быстроты общения рекомендуем вам установить <a href=\"https://vk.com/faq18549?ysclid=mnno9ben8933449122\" target=\"_blank\" rel=\"noreferrer\"><u>приложение</u></a> на мобильный телефон.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "cb581946-d983-4497-b601-d217af417b9d",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Учебное сообщество</h2>",
+          "settings": {
+            "anchor": "comm",
+            "indent": 32
+          }
+        },
+        {
+          "id": "78d8a1eb-b593-4282-b744-2b4711f13a82",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Как попасть в сообщество</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "11f6b366-cbe1-4b7c-95a4-36a8d47e015d",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\">После регистрации в социальной сети пройдите по ссылке приглашению и нажмите на кнопку «Подать заявку», вы автоматически станете участником сообщества.&nbsp;<br></p><p pm-open-left=\"1\">После подключения рекомендуем обновить страницу, чтобы сразу увидеть все разделы меню сообщества.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "b06fb520-e861-4ed6-944f-9bb390c8361a",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11358,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11358/file/3bc7f0ae-cdb0-478f-ae3c-295ef2f88ef7.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "99a86d60-9ef5-44a4-a75b-002d115c9e5b",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Где найти ссылку приглашение?</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "eb88f29f-a702-4346-ae1d-74fe320fd0f1",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\">Обычно ссылка на учебное сообщество содержится в письме об открытии доступа к программе.</p><p>Кроме того, её можно найти в презентации к вводной встрече с координатором и командой программы.</p><p>Или кликнув по значку в правом верхнем углу меню программы.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "f4e6ef45-df18-4789-9497-f7f8c866c566",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11359,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11359/file/69f11a1b-9f29-442e-bf90-1c65c44ed186.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "41a2b246-97f6-4488-b264-ad7d09ae6b31",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Настройка профиля и уведомлений</h2>",
+          "settings": {
+            "anchor": "profil",
+            "indent": 32
+          }
+        },
+        {
+          "id": "e22165ee-91dd-4113-932a-d19d9fe78493",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Настройка уведомлений</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "1411ad0a-a414-47cd-86f7-a92a8ff92ded",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\">Уже на старте рекомендуем вам настроить уведомления о постах в сообществе, чтобы своевременно получать всю важную информацию в процессе обучения.<br></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "63e321b0-bbd8-41df-9b47-e6cbace08195",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11360,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11360/file/6393f7e8-df86-4d18-bd2d-7bd2a07f5512.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "edb82a6f-63a1-44b8-9cc9-70fcd8788411",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Рекомендации по настройкам профиля</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "ca4b4062-700d-4665-adec-e7cae043abd9",
+          "type": "text",
+          "label": "Текст",
+          "value": "<div><p pm-open-left=\"1\"><b>Ограничение доступа к профилю. </b></p><p>Нажмите на свой аватар и выберите «Настройки», раздел «Приватность». Выберите подходящие вам настройки для каждого вида информации.&nbsp;</p></div>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "0fe44c4f-a62d-4177-a8c8-10c6febb83b8",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11361,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11361/file/2a97a4a8-9234-4ef6-a889-49cbe92fe815.jpg"
+            },
+            {
+              "id": 11362,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11362/file/a240bb12-b3f0-4c6f-8386-cd7bf6250de8.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "8ae85c84-9c15-4ace-b457-7aeb4787ad55",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\"><b>Настройки безопасности.</b></p><p>Аккаунт в безопасности, если в нём включена двухвакторная аутентификация</p><p>В этом случае даже после ввода кода злоумышленникам нужно будет ввести пароль, который знает только владелец аккаунта.</p><p>Перейдите в «Настройки», раздел «Безопасность». Выберите раздел «Двухфакторная аутентификация» и включите эту функцию.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "b5e0b359-d036-4c90-8fc5-8e3bfe01291f",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11365,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11365/file/184ed058-c3ce-4a95-ac4e-852ed16f3f3d.jpg"
+            },
+            {
+              "id": 11366,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11366/file/4c2ca661-933e-44c5-81b8-f5e6c97850d6.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "56d3ab0d-7618-4f82-81b6-f3e9ce48565b",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Навигация по сообществу</h2>",
+          "settings": {
+            "anchor": "nav",
+            "indent": 32
+          }
+        },
+        {
+          "id": "c4f7b465-c3de-4f5b-b232-05510189af65",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Стена сообщества и статьи</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "b84cc87c-98bc-411a-a4c8-0baa7553658e",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\">Здесь будет публиковаться информация по организационным моментам.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "ce7e4bd8-dfd1-4f27-b874-c958aa94dc9c",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11368,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11368/file/249d88d4-7b41-4fd0-82c3-acfd63c43889.jpg"
+            }
+          ],
+          "settings": {
+            "width": 50,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "afcbe236-b9df-4b4e-9007-f7835dbb5d5a",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Чаты сообщества</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "321ea7c6-3795-4f73-9b92-cb170e8f66dd",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\"><b>«Расписание»</b> — информация о расписании на неделю, об изменениях, а также напоминания о вебинарах.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\"><b>«FAQ»</b> — тема с ответами на часто задаваемые вопросы и информацией, которая позволит вам быстрее адаптироваться к обучению.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\"><b>«Вопрос-ответ»</b> — задавайте вопросы команде поддержки.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\"><b>«Чат программы»</b> — можно общаться на любые темы: выкладывать анонсы мероприятий, обсуждать книги, делиться проектами и искать единомышленников, организовывать различные активности и т.д.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "78646a9d-076d-4037-a258-45ecf2d28a88",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11369,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11369/file/2e70682b-454c-42de-b7ee-a83bacf2335e.jpg"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "b20d0df6-8cc5-43ef-ab33-a51b54bffbee",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;serif&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\">Также в процессе обучения координатор будет создавать отдельные чаты по дисциплинам для общения с преподавателями. Их расположение показано на скриншоте ниже.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "a348c9f2-cbfb-4527-a16a-1e70ac7f69e6",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11370,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11370/file/f35466df-1421-49c3-aae2-7540c48637ad.jpg"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "42c55cdc-7e78-40e1-bfd1-065f2690c00f",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\" pm-open-left=\"1\">В чатах вы сможете:</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\">— общаться друг с другом;</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\">— задавать вопросы координатору и преподавателям.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#fff001&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\">Для общения в чате или отслеживания сообщений, вам необходимо присоединиться к нему по ссылке, которую координатор разместил на стене сообщества. Далее нажать кнопку «+Присоединиться».</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "fbc375c3-ddb3-471f-8f9d-c2deb7ac5c56",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11371,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11371/file/8dcab26b-8b38-4519-a409-03cca4e7334e.jpg"
+            }
+          ],
+          "settings": {
+            "width": 50,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "a76fb384-97b6-4284-a92d-ffc40d3182ca",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;}]}\" pm-open-left=\"1\"><b>Обратите внимание</b>, если вы присоединитесь к чату из списка чатов или меню сообщества, то сможете увидеть сообщения только с момента вступления в чат. Если вы присоединитесь к чату по соответствующей ссылке на стене сообщества, то вам будут доступны все сообщения чата и до момента вступления.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\">После этого все чаты появятся у вас в сообщениях в ВК Мессенджере. Для удобства рекомендуем объединить их в одну папку — так всё будет под рукой.&nbsp;</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false}]}\"><span style=\"letter-spacing: 0em;\">При необходимости вы можете настроить уведомления и отключить их в чатах дисциплин, которые уже прошли.</span><br></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "951fd73b-0d6d-4632-b114-476508275bbd",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11372,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11372/file/32b7af9a-8f89-4eeb-af0c-ae5ec0c6b622.jpg"
+            },
+            {
+              "id": 11373,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11373/file/41554d4d-93e0-4a2f-9bc2-b64f288c2a78.jpg"
+            },
+            {
+              "id": 11374,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11374/file/cec84ba7-d6fe-4e40-9571-9df27073cdd2.jpg"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "7613882d-4e80-4cc5-8506-f7fa131cd981",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Общение в процессе обучения</h2>",
+          "settings": {
+            "anchor": "say",
+            "indent": 32
+          }
+        },
+        {
+          "id": "ba5e0eb1-02d3-436d-a1b3-edb3f59f5162",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Общение с однокурсниками</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "b8d9d162-34fd-48a5-a9c3-eb3ac24ee627",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>На странице сообщества по вкладке Подписчики вы можете увидеть своих однокурсников и добавить их в Друзья.</p><p>Чат Болталка на странице сообщества создан для поддержки общения студентов в процессе обучения.<br><br></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "1f44e711-3a86-4dd6-85d0-85ab5acfc5cd",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11375,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11375/file/033f2175-265d-47f6-9c05-cecaf8087955.jpg"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "2da9c707-f4fc-40df-84aa-a4e51e3f98e5",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Общение с командой программы</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "0914af3b-4d05-49f7-a42e-ced0abbf97cc",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p><b>Координатор Нетологии</b></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "c6b367c9-d2e2-456d-82fc-49b49eba5f58",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>Координатор Нетологии поможет:<br>— спланировать обучение<br>— выстроить коммуникации в обучении<br>— разобраться с вопросами по процессу обучения<br>— ответить на вопросы по работе платформы Нетологии.</p><br><p>Вы можете написать свой вопрос в <a href=\"https://netology.ru/profile?modal=support&amp;type=new-ticket\">чат поддержки</a> на платформе Нетологии или задать его через Сообщение на странице сообщества.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "3de4e702-6dc8-4675-9215-51a56435c217",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11376,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11376/file/2bc676ec-a4f5-49a0-b918-0fa1e2418456.jpg"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "5b8341e4-4ad9-4e7a-b7e8-03388279f336",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p><b>Координатор ВУЗа</b></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "785258ab-c31b-4d67-b790-65ec2df167ad",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>Если на вашей программе предусмотрено взаимодействие с координатором ВУЗа, то вы можете задать ему вопрос в личных сообщениях&nbsp;в разделе «Контакты» на правой панели сообщества.</p><p>Координатор ВУЗа может помочь с:</p><p>– оформлением справок и других документов<br>– переносом дедлайна<br>– оформлением/продлением академического отпуска<br>– переводом/отчислением<br>– и другим моментам, которые связаны с вашим обучением на программе.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "bdf2e3f8-ceba-4b84-b365-acb7b1c9cd77",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 11377,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2026/4/11377/file/65da126b-bc5c-4ed1-8b10-007781243378.jpg"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "40c09388-71f0-4db0-8828-6d71ba760316",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2>Правила общения в сообществе</h2>",
+          "settings": {
+            "anchor": "pravila",
+            "indent": 32
+          }
+        },
+        {
+          "id": "48ab9553-300c-496d-86a3-f7b6958d63ad",
+          "type": "list",
+          "items": [
+            {
+              "id": "48458fbf-fb88-4613-826c-a86400b099a3",
+              "value": "У нас принято общаться открыто и вежливо, с пониманием относиться к точке зрения собеседника. Запрещены реклама, спам, флуд и т. д.",
+              "parentId": "48ab9553-300c-496d-86a3-f7b6958d63ad"
+            },
+            {
+              "id": "b4a978c9-1a3b-4906-a769-6e8ec7b41632",
+              "value": "Вопрос лучше писать одним сообщением. Если хотите дополнить и/или уточнить его, отредактируйте сообщение: нажмите на три точки и выберите действие «редактировать».",
+              "parentId": "48ab9553-300c-496d-86a3-f7b6958d63ad"
+            },
+            {
+              "id": "4b22b735-99bb-4caf-89fb-31d4f730f253",
+              "value": "Вопросы вы можете задавать в любое время (кто-то любит учиться и по ночам), но координатор или преподаватель вам ответит в рабочее время. В нерабочее время, выходные и праздничные дни время ответа может увеличиться. Просим отнестись к этому с пониманием.",
+              "parentId": "48ab9553-300c-496d-86a3-f7b6958d63ad"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "b3b1240a-2f9c-4d8d-a6af-13a37e7512bd",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;}]}\" pm-open-left=\"1\">Это основные моменты, которые помогут вам сориентироваться в учебном сообществе.</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;transparent&quot;},{&quot;_&quot;:&quot;strike&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;underline&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;subscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;superscript&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Arial&quot;},{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;11pt&quot;}]}\">Надеемся, ваша адаптация на программе пройдет быстро и комфортно! Успехов в обучении!</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        }
+      ]
+    }
+  },
+  "preview": null
+}

@@ -1,0 +1,19 @@
+{
+  "id": 3322578,
+  "type": "poll",
+  "status_code": 200,
+  "data": {
+    "id": 3322578,
+    "position": 1,
+    "lesson_id": 617973,
+    "locked": true,
+    "type": "poll",
+    "approximate_progress_time": 13,
+    "title": "Опрос по итогам дисциплины",
+    "path": "/profile/program/bhebfad-25-bzhd-2/lessons/617973/lesson_items/3322578",
+    "passed_rule": "poll_finish",
+    "passed_value": null,
+    "passed": false
+  },
+  "preview": null
+}

@@ -1,0 +1,40 @@
+{
+  "video_url": "https://kinescope.io/tMovmrw31bN9CrcsEcsyuf",
+  "label": "webinar_1",
+  "oembed": {
+    "status_code": 200,
+    "data": {
+      "title": "ФУ ФАД-1-25 (BHEBFAD-25-MEMEO-2) Мировая экономика и международные экономические отношения 17.02.2026",
+      "type": "video",
+      "provider_name": "Kinescope",
+      "provider_url": "https://kinescope.io",
+      "version": "1.0",
+      "html": "<iframe src=\"https://kinescope.io/tMovmrw31bN9CrcsEcsyuf\" width=\"400\" height=\"225\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; encrypted-media;\" allowfullscreen></iframe>",
+      "width": "400",
+      "height": "225",
+      "thumbnail_width": "480",
+      "thumbnail_height": "270",
+      "thumbnail_url": "https://edge-msk-8.kinescopecdn.net/c02499e6-bd48-46e7-804b-0f3f73719e2c/posters/9c2b8942-5890-4b48-b5c6-5d94ba5597b9/poster_lg/019c6f3e-0789-7c60-a868-c45c3c4bdfe2.jpg"
+    }
+  },
+  "embed_page": {
+    "status_code": 200,
+    "content_length": 10392,
+    "marker_found": null,
+    "has_m3u8": true,
+    "m3u8_url": "https://kinescope.io/e0fd1555-3d36-4422-a260-79e0a73fff66/master.m3u8"
+  },
+  "graphql": {
+    "status_code": 404,
+    "data": "<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Thu May 28 2026 09:31:51 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain=\"www.kinescope.com\" data-wf-page=\"688dba7aa82abb168bebd52b\" data-wf-site=\"686263828ef9b871c877f4fd\" data-wf-status="
+  },
+  "api_v1": {
+    "status_code": 404,
+    "data": "<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Thu May 28 2026 09:31:51 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain=\"www.kinescope.com\" data-wf-page=\"688dba7aa82abb168bebd52b\" data-wf-site=\"686263828ef9b871c877f4fd\" data-wf-status="
+  },
+  "vtt": {
+    "url": "https://kinescope.io/tMovmrw31bN9CrcsEcsyuf/subtitles",
+    "status_code": 404,
+    "content_type": "text/plain; charset=utf-8"
+  }
+}

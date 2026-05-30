@@ -1,0 +1,32 @@
+{
+  "id": 2822462,
+  "type": "attachment",
+  "status_code": 200,
+  "data": {
+    "id": 2822462,
+    "position": 3,
+    "lesson_id": 520965,
+    "locked": false,
+    "type": "attachment",
+    "approximate_progress_time": 2,
+    "title": "Технические неполадки",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520965/lesson_items/2822462",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "attachment_open",
+    "passed_value": null,
+    "passed": true,
+    "content": "",
+    "files": [
+      {
+        "id": 82649,
+        "name": "Технические неполадки",
+        "link": "https://u.netology.ru/backend/uploads/lms/attachments/files/data/82649/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8.pdf",
+        "extension": "pdf",
+        "size": "169,3 КБ"
+      }
+    ]
+  },
+  "preview": null
+}

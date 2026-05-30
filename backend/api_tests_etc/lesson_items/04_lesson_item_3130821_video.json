@@ -1,0 +1,23 @@
+{
+  "id": 3130821,
+  "type": "video",
+  "status_code": 200,
+  "data": {
+    "id": 3130821,
+    "position": 3,
+    "lesson_id": 576204,
+    "locked": false,
+    "type": "video",
+    "approximate_progress_time": 20,
+    "title": "Данные и выборка",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576204/lesson_items/3130821",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "video_view_X",
+    "passed_value": 80,
+    "passed": true,
+    "video_url": "https://kinescope.io/h4oi4vG2qoGS4kSQTFzjuB"
+  },
+  "preview": null
+}

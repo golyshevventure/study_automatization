@@ -1,0 +1,45 @@
+{
+  "id": 3149134,
+  "type": "webinar",
+  "status_code": 200,
+  "data": {
+    "id": 3149134,
+    "position": 1,
+    "lesson_id": 584247,
+    "locked": false,
+    "type": "webinar",
+    "status": "passed",
+    "approximate_progress_time": 85,
+    "title": "Вебинар 1",
+    "path": "/profile/program/bhebfad-25-vvs-2/lessons/584247/lesson_items/3149134",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "webinar_button_end",
+    "passed_value": null,
+    "passed": true,
+    "starts_at": "2026-02-03T11:00:00.000Z",
+    "ends_at": "2026-02-03T12:30:00.000Z",
+    "experts": [
+      {
+        "id": 7649468,
+        "full_name": "Татьяна Летаева",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7649468/5a4ac80e50b27fa8.jpg",
+        "has_photo": true
+      },
+      {
+        "id": 8908247,
+        "full_name": "Игорь Булава",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8908247/465a8376b558c831.jpg",
+        "has_photo": true
+      }
+    ],
+    "video_url": "https://kinescope.io/gWfVQ9sXNfNEyy3zMvQ8L9",
+    "webinar_url": "https://netology.ru/backend/api/webinars/169939/redirect?code=3eaa64d4e1cf1a4ed3210c791dc3242f",
+    "youtube_video_id": null,
+    "translation_adapter": "webinar_ru_native",
+    "ulms_duration": null,
+    "ulms_video_available": false
+  },
+  "preview": null
+}

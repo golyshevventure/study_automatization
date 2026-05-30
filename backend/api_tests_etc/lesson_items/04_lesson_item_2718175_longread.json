@@ -1,0 +1,566 @@
+{
+  "id": 2718175,
+  "type": "longread",
+  "status_code": 200,
+  "data": {
+    "id": 2718175,
+    "position": 1,
+    "lesson_id": 347428,
+    "locked": false,
+    "type": "longread",
+    "approximate_progress_time": 4,
+    "title": "О Нетологии",
+    "path": "/profile/program/info-spdata-1/lessons/347428/lesson_items/2718175",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "longread_scroll",
+    "passed_value": null,
+    "passed": false,
+    "content": {
+      "version": 1,
+      "elements": [
+        {
+          "id": "769bcd81-8c74-4e49-b55a-881ac09e3bd8",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p><strong>«Нетология»</strong> — российская компания и образовательная онлайн-платформа, запущенная в 2011 году.&nbsp;</p><p>Мы помогаем расти в профессии и открывать новые карьерные горизонты.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "1b9c2340-424e-461d-b52c-c460e92eaf1d",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Нетология сегодня&nbsp;</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "edb11ef8-677f-4db4-9b1b-dd1059ce3661",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3449,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3449/file/f9f16bed-2043-44fb-a1fb-820e4caa3307.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "83f30cc4-86ae-4f49-8216-e1cb4cbe122f",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Наши достижения</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "077e2ef6-9fd7-4d0b-a791-8bbb7f6e18f9",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3454,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3454/file/7eb8f4b5-1c44-4e39-a679-38502aeacf2a.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "b2ef6af4-75b8-42b7-8b53-cf5c728bfaba",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3455,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3455/file/91010345-574d-41ee-b03a-0f52bb4caac5.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "aee1b903-5e20-49ee-b454-2933c139fc93",
+          "type": "panel",
+          "badge": "РАЦИО",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<p><b>В 2023 году стали учредителями&nbsp;</b><b style=\"letter-spacing: 0em;\">Ассоциации цифровых инноваций в образовании (<a href=\"https://racio.tech/\">РАЦИО</a>)</b></p>",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "0be569e8-edec-44f3-830b-065a3efa0907",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Наши клиенты и партнёры — лидеры индустрии</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "9a1ee3be-3abd-49e3-84ed-049f33664b03",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3456,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3456/file/bbc3c031-2474-4092-b3b4-347ce273192b.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "3293da76-7da5-490b-99e8-dd6005085c9f",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Нетология — бренд с высокой социальной ответственностью</b></h3><p>Мы не просто продаём курсы&nbsp;<span style=\"letter-spacing: 0em;\">— мы помогаем людям найти своё призвание, быть причастными к чему-то значимому и </span><span style=\"letter-spacing: 0em;\">делать добро.</span></p><p><i><b>За благотворительную инициативу Нетология завоевала премию Reforum Awards.</b></i></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "a6391e2c-9f4d-4f84-b38a-333fa101271d",
+          "type": "image",
+          "label": "Изображение",
+          "title": "<a href=\"https://netology.ru/lapki?utm_campaign=all_brand_lapki_main_01_08&amp;utm_source=triggers&amp;utm_medium=block\">Сайт проекта</a>",
+          "images": [
+            {
+              "id": 3457,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3457/file/8ddb691c-3c92-4b7a-8775-d00bbc3631af.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 56
+          }
+        },
+        {
+          "id": "95a6a906-cb01-478c-8b82-ba58b38b11ed",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2><b>Нетология — это полный цикл профессионального образования</b></h2>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "fe9db0b6-b97e-4ead-b03e-81e3c7a82349",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Направления обучения</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "7e1f2882-434a-4b0a-952d-67d32d38d169",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3458,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3458/file/cb86d2d2-38ff-459a-93b5-2bc2dfb38de4.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "a455df0b-69f2-4cff-9b98-88c6e86731f4",
+          "type": "panel",
+          "badge": "Результат",
+          "label": "Панель с текстом",
+          "title": "За 14 лет мы обучили 130+ тыс. специалистов",
+          "caption": "",
+          "content": "<span style=\"letter-spacing: 0em;\">Мы собрали команду опытных преподавателей-практиков.</span><p>Разработали собственные методологии, протестировали разные подходы к обучению и выбрали самые эффективные.</p>",
+          "settings": {
+            "icon": true,
+            "anchor": "",
+            "indent": 16,
+            "iconType": 9,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "bfabe09c-b592-452a-853c-c63dad02cfcf",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Помогаем специалистам расти на всех этапах карьеры</b></h3><p><span style=\"letter-spacing: 0em;\">Мы верим, что мир состоит из талантливых и способных людей.</span></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "c682a815-9373-4076-a19c-98e51cac599f",
+          "type": "panel",
+          "badge": "Миссия",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<p><b>Наша миссия </b>— помочь человеку найти свой путь роста и дать ему всё&nbsp;<span style=\"letter-spacing: 0em;\">необходимое для развития в карьере: знания, навыки, вдохновение.</span></p><p>На всём пути студента: от новичка до руководителя.</p>",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "9ebf3880-b1b8-4bd7-ac12-b272b0466c72",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2><b>Полный цикл образования</b></h2>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "f5da2cd2-6b31-4d8b-b969-2f2fc01c1ca5",
+          "type": "table",
+          "label": "Таблица",
+          "value": "[{\"column1\":\"<div class=\\\"cellBgContainer greenColor\\\"><p><b><a href=\\\"https://netology.ru/navigation?level=neo\\\">Начинающим</a></b></p><p>Освоить актуальную профессию</p><p><i>150+ программ длительностью от месяца до 2 лет для изучения новой сферы или профессии — с практикой и помощью в трудоустройстве</i></p></div>\",\"column2\":\"<div class=\\\"cellBgContainer greyColor\\\"><p><b><a href=\\\"https://netology.ru/navigation?level=pro\\\">Специалистам</a></b></p><p>Вырасти в карьере<br></p><p><i>40+ программ для специалистов с опытом — чтобы углубиться в профессиональную сферу или освоить новый инструмент</i></p></div>\"},{\"column1\":\"<div class=\\\"cellBgContainer blueColor\\\"><p><b><a href=\\\"https://netology.ru/degree\\\">Начинающим + Специалистам</a></b></p><p>Получить диплом вуза</p><p><i>Онлайн-магистратуры и онлайн-бакалавриаты с вузами. Фундаментальные знания, стажировки и акселерация проектов, диплом вуза</i><br></p></div>\",\"column2\":\"<div class=\\\"cellBgContainer orangeColor\\\"><p><b><a href=\\\"https://netology.ru/soft-skills\\\">Руководителям</a></b></p><p>Усилить лидерские навыки</p><p><i>От коротких интенсивов до узкоспециализированных курсов, которые помогут трансформировать себя как лидера и найти новые решения в бизнесе</i><br></p></div>\"},{\"column1\":\"<div class=\\\"cellBgContainer greyColor\\\"><p><b><a href=\\\"https://netology.ru/programs/b2b\\\">Бизнесу</a></b></p><p>Обучить команды</p><p><i>Современное корпоративное обучение для команд и специалистов: готовые программы, курсы по подписке или в SCORM и индивидуальные проекты</i></p></div>\",\"column2\":\"<div class=\\\"cellBgContainer greenColor\\\"><p><b><a href=\\\"https://netology.ru/lifestyle-hobby?customPage=lifestyle-hobby\\\">Всем</a></b></p><p>Курсы по хобби и саморазвитию<br></p><p><i>Помогаем найти баланс между работой, личной жизнью и увлечениями, проявить себя и повысить личную эффективность</i></p></div>\"}]",
+          "content": "[{\"field\":\"column1\",\"title\":\"\",\"visible\":true,\"width\":470,\"minWidth\":40,\"headerWordWrap\":false,\"resizable\":true,\"headerSort\":false,\"tooltip\":false,\"headerTooltip\":false},{\"field\":\"column2\",\"title\":\"\",\"visible\":true,\"width\":470,\"minWidth\":40,\"headerWordWrap\":false,\"resizable\":true,\"headerSort\":false,\"tooltip\":false,\"headerTooltip\":false}]",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "09c31d40-d852-4047-aac5-1f3a2d971d7e",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2><b>Работаем по лицензии</b></h2>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "3334576d-968a-404b-abe3-19e705e2ef33",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>ООО «Нетология» ведёт образовательную деятельность на основании лицензии на осуществление образовательной деятельности, выданной Департаментом образования и науки г. Москвы<br><a href=\"https://islod.obrnadzor.gov.ru/rlic/details/997542a2-0e2b-956f-9413-7ec2f35f38d8/\" target=\"_blank\">‍Выписка из реестра лицензий на осуществление образовательной деятельности</a>*</p><p><i>*С 1 января 2021 года, в связи с изменениями в законодательстве об образовании, лицензии на осуществление образовательной деятельности на бланках не выдаются. Наличие образовательной лицензии у организации подтверждается выпиской из <a href=\"https://islod.obrnadzor.gov.ru/rlic/details/997542a2-0e2b-956f-9413-7ec2f35f38d8/\" target=\"_blank\">‍федерального реестра </a>.</i></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "97fb200a-3315-4081-a29a-515a20c7189c",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Выпускники получают&nbsp;<span style=\"letter-spacing: 0em;\">два вида документов Нетологии</span></b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "c91fd85a-3520-43f3-8ebe-df8506f7b7a1",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3461,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3461/file/76ddf5fc-a51e-440a-bac5-ec731674357d.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        },
+        {
+          "id": "4b740e26-3627-45d8-abe5-bb8a5a6c8364",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Квалификацию бакалавра и магистра подтвердят государственные дипломы ведущих вузов России</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "06691e85-e0b5-45c2-9e22-e75206ef597b",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3462,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3462/file/7cf326e5-49ec-4c9b-97ee-c6243e55aefd.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "f35b5743-ed52-4d7c-ac55-c5a76872e29c",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Поддерживаем выпускников</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "cdbece60-fb2f-4680-9e56-863835284c0e",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>После обучения начинается самое интересное: презентация себя на рынке труда, поиск работы, интеграция в профессиональное сообщество.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "991b3758-35b4-4506-9190-705bd5222724",
+          "type": "list",
+          "items": [
+            {
+              "id": "6e64060a-7878-4750-abe7-f2a77d140661",
+              "value": "<p>Помогаем&nbsp;<span style=\"letter-spacing: 0em;\">с трудоустройством и стажировками.</span></p>",
+              "parentId": "991b3758-35b4-4506-9190-705bd5222724"
+            },
+            {
+              "id": "13c59105-077d-4fa3-a656-165831cf9dd9",
+              "value": "<p>Обучаем с<span style=\"letter-spacing: 0em;\">амопрезентации, помогаем с резюме.</span></p>",
+              "parentId": "991b3758-35b4-4506-9190-705bd5222724"
+            },
+            {
+              "id": "a42df91d-51e9-45c5-8a55-5a8d19a4aa6d",
+              "value": "<p>Формируем комьюнити для общения&nbsp;<span style=\"letter-spacing: 0em;\">и обмена опытом.</span></p>",
+              "parentId": "991b3758-35b4-4506-9190-705bd5222724"
+            },
+            {
+              "id": "3d2bc66c-cdd4-4f4d-adb5-3c7e545451a7",
+              "value": "<p>Делимся историями наших выпускников&nbsp;<span style=\"letter-spacing: 0em;\">с внешней аудиторией.</span></p>",
+              "parentId": "991b3758-35b4-4506-9190-705bd5222724"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>Мы рядом на каждом этапе:</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": true
+          }
+        },
+        {
+          "id": "c58e9346-c0fe-4c37-bf45-179d835d6313",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h2><b>Нетология — это команда профессионалов и высоких стандартов&nbsp;качества</b></h2>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "478f1586-1c71-4550-8fa6-1b8e055a4dce",
+          "type": "list",
+          "items": [
+            {
+              "id": "6c365ff0-a81a-4d26-b01c-bfb844484aea",
+              "value": "Мы не просто обучаем — мы создаём платформу для обмена опытом и взаимного роста.",
+              "parentId": "478f1586-1c71-4550-8fa6-1b8e055a4dce"
+            },
+            {
+              "id": "bc41846c-e54b-48f3-8467-0c92d3d648ba",
+              "value": "<p>Все наши преподаватели — будь то специалисты из крупных&nbsp;<span style=\"letter-spacing: 0em;\">компаний, опытные предприниматели или основатели стартапов — практикующие эксперты в своей сфере.</span></p>",
+              "parentId": "478f1586-1c71-4550-8fa6-1b8e055a4dce"
+            },
+            {
+              "id": "29ea36ad-8195-4bb5-9532-c68a117a36c7",
+              "value": "Мы создаём продукт, которым пользуемся сами.",
+              "parentId": "478f1586-1c71-4550-8fa6-1b8e055a4dce"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>Команда и преподаватели Нетологии — эксперты рынка</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "3bb8895b-c1d4-4a21-8f93-c35788c1e5ac",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3463,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3463/file/47bccbb3-f117-4c22-9665-7c17c62a8391.png"
+            }
+          ],
+          "settings": {
+            "width": 70,
+            "anchor": "",
+            "border": true,
+            "indent": 32
+          }
+        },
+        {
+          "id": "c35ce626-8b46-4a67-9e47-180828a9e87a",
+          "type": "list",
+          "items": [
+            {
+              "id": "230cabbe-dc75-4a2c-b45e-de9556514b7f",
+              "value": "<p><b>Прогнозируемый процесс производства курса.</b></p><p>Рассчитываем длительность разработки обучения, организуем упорядоченную работу и ничего не упускаем.</p>",
+              "parentId": "c35ce626-8b46-4a67-9e47-180828a9e87a"
+            },
+            {
+              "id": "7eb41723-3c69-48fb-adb4-917e9436051c",
+              "value": "<p><b>Собственный видеопродакшн.</b></p><p>4 профессиональные студии и опытная команда.</p>",
+              "parentId": "c35ce626-8b46-4a67-9e47-180828a9e87a"
+            },
+            {
+              "id": "c59e05cf-9865-40f1-ae5e-f7a54b6e7ae2",
+              "value": "<p><b>Держим стандарты качества.</b></p><p>90+ параметров качества оценки курсов</p>",
+              "parentId": "c35ce626-8b46-4a67-9e47-180828a9e87a"
+            },
+            {
+              "id": "07363131-4433-4a8e-8b7b-92deb063fba6",
+              "value": "<p><b>Контролируем активность на курсе.</b></p><p>Видим вовлечённость студентов и находим точки для улучшений.</p>",
+              "parentId": "c35ce626-8b46-4a67-9e47-180828a9e87a"
+            },
+            {
+              "id": "7af6d637-2157-4898-acac-a27c5af9ac0e",
+              "value": "<p><b>Учим учить.</b></p><p>Быть специалистом в своей области — не значит уметь преподавать. Поэтому экспертов мы обучаем преподаванию: помогаем освоить навыки проектирования и проведения занятий.</p>",
+              "parentId": "c35ce626-8b46-4a67-9e47-180828a9e87a"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>В компании действует внутренний контроль качества и есть собственные мощности&nbsp;</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "a51f0a41-9a1c-448e-b2cb-eb91ec89cefa",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3><b>Фокусируемся на результате студента</b></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "d58156bd-7135-49af-ab71-0191fc50860c",
+          "type": "image",
+          "label": "Изображение",
+          "title": "",
+          "images": [
+            {
+              "id": 3464,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/3/3464/file/5262735b-a1a1-49de-8e63-8bede388aa4b.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": true,
+            "indent": 16
+          }
+        },
+        {
+          "id": "6a699ea3-aad5-46a3-8bcd-0adba2aa07d7",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Нетология — надёжный партнёр в онлайн-образовании",
+          "caption": "",
+          "content": "<p><i><b>В каждом есть сила и талант, чтобы добиваться больших целей. Мы помогаем найти путь развития и реализовать себя через профессию — так, как вам этого хочется.</b></i><br></p>",
+          "settings": {
+            "icon": true,
+            "anchor": "",
+            "indent": 16,
+            "iconType": 50,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "59f6d36b-c60e-40b7-bef1-0dc0daa66be9",
+          "type": "video",
+          "label": "Видео",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          },
+          "lessonResource": {
+            "id": 65461,
+            "url": "https://kinescope.io/aCfqTRNzjFSPadXFpbforG",
+            "title": "Нетология: может пора выпустить его?",
+            "videoId": "aCfqTRNzjFSPadXFpbforG"
+          }
+        }
+      ]
+    }
+  },
+  "preview": null
+}

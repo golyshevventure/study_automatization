@@ -1,0 +1,23 @@
+{
+  "id": 3130830,
+  "type": "video",
+  "status_code": 200,
+  "data": {
+    "id": 3130830,
+    "position": 3,
+    "lesson_id": 576205,
+    "locked": false,
+    "type": "video",
+    "approximate_progress_time": 9,
+    "title": "Измерение положения данных",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576205/lesson_items/3130830",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "video_view_X",
+    "passed_value": 80,
+    "passed": true,
+    "video_url": "https://kinescope.io/ut68kZYWf5RuZp2zsi8tJY"
+  },
+  "preview": null
+}

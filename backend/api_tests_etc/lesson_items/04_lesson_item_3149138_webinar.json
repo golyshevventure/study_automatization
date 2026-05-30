@@ -1,0 +1,39 @@
+{
+  "id": 3149138,
+  "type": "webinar",
+  "status_code": 200,
+  "data": {
+    "id": 3149138,
+    "position": 1,
+    "lesson_id": 584249,
+    "locked": false,
+    "type": "webinar",
+    "status": "passed",
+    "approximate_progress_time": 85,
+    "title": "Вебинар 3. Аудиторы и бизнес-консультанты финансового сектора: кто это такие?",
+    "path": "/profile/program/bhebfad-25-vvs-2/lessons/584249/lesson_items/3149138",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "webinar_button_end",
+    "passed_value": null,
+    "passed": true,
+    "starts_at": "2026-03-07T08:50:00.000Z",
+    "ends_at": "2026-03-07T10:20:00.000Z",
+    "experts": [
+      {
+        "id": 9369424,
+        "full_name": "Елизавета Подворная",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9369424/e70d8ba85e0f2fad.jpg",
+        "has_photo": true
+      }
+    ],
+    "video_url": "https://kinescope.io/tLVv4tE6ySZqKkxSMb7PZz",
+    "webinar_url": "https://netology.ru/backend/api/webinars/169941/redirect?code=88d38ce7328424f19ac8c439e70a0a95",
+    "youtube_video_id": null,
+    "translation_adapter": "webinar_ru_native",
+    "ulms_duration": null,
+    "ulms_video_available": false
+  },
+  "preview": null
+}

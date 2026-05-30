@@ -1,0 +1,32 @@
+{
+  "id": 2822457,
+  "type": "attachment",
+  "status_code": 200,
+  "data": {
+    "id": 2822457,
+    "position": 1,
+    "lesson_id": 520964,
+    "locked": false,
+    "type": "attachment",
+    "approximate_progress_time": 9,
+    "title": "Организация сопровождения процесса обучения",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520964/lesson_items/2822457",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "attachment_open",
+    "passed_value": null,
+    "passed": true,
+    "content": "",
+    "files": [
+      {
+        "id": 82645,
+        "name": "Организация сопровождения процесса обучения",
+        "link": "https://u.netology.ru/backend/uploads/lms/attachments/files/data/82645/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0_%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B5__1_.pdf",
+        "extension": "pdf",
+        "size": "1,1 МБ"
+      }
+    ]
+  },
+  "preview": null
+}

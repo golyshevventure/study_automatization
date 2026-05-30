@@ -1,0 +1,269 @@
+{
+  "id": 1877923,
+  "type": "quiz",
+  "status_code": 200,
+  "data": {
+    "id": 1877923,
+    "position": 3,
+    "lesson_id": 346902,
+    "locked": false,
+    "type": "quiz",
+    "approximate_progress_time": 27,
+    "title": "Таблица или нет?",
+    "path": "/profile/program/bi-free/lessons/346902/lesson_items/1877923",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "quiz_start",
+    "passed_value": null,
+    "passed": false,
+    "legend": "Из урока вы узнали основные постулаты принципа табличности: \r\n1) в таблице все однородные значения стоят в одном и только одном столбце\r\n2) значения однородны, если для любых текстовых значений имеет смысл отношение «лучше-хуже», а для числовых имеет смысл результат сложения \r\n\r\nДавайте потренируемся в определении таблиц - ведь принцип табличности крайне важен для эффективного анализа данных. \r\n\r\n\r\n",
+    "questions": [
+      {
+        "id": 2994,
+        "position": 1,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Отлично, идем дальше!",
+        "hint_content": "Есть строки с промежуточными значениями. ",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2994/1.png",
+        "answers": [
+          {
+            "id": 8610,
+            "position": 1,
+            "content_before": "Нет. ",
+            "content_after": "Верно! ",
+            "right": true,
+            "image": null
+          },
+          {
+            "id": 8611,
+            "position": 2,
+            "content_before": "Да. ",
+            "content_after": "Попробуй воспользоваться подсказкой",
+            "right": false,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 2995,
+        "position": 2,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Переходи к следующему вопросу!",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2995/2.png",
+        "answers": [
+          {
+            "id": 8612,
+            "position": 1,
+            "content_before": "Да.",
+            "content_after": "Подумай хорошенько! ",
+            "right": false,
+            "image": null
+          },
+          {
+            "id": 8613,
+            "position": 2,
+            "content_before": "Нет. ",
+            "content_after": "Верно! Это не таблица, ведь есть объединённые ячейки с заголовками годов. Однородные значения (выручка и количество) разнесены по двум столбцам.\r\n\r\nТы молодец!\r\n",
+            "right": true,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 2996,
+        "position": 3,
+        "title": "Таблица или нет? ",
+        "content_before": "",
+        "content_after": "Отличный настрой! Не сдавайся!",
+        "hint_content": "Однородные значения для разных кварталов в разных столбцах.",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2996/3.png",
+        "answers": [
+          {
+            "id": 8614,
+            "position": 1,
+            "content_before": "Нет.",
+            "content_after": "Да ты профи! ",
+            "right": true,
+            "image": null
+          },
+          {
+            "id": 8615,
+            "position": 2,
+            "content_before": "Да.",
+            "content_after": "Ты уверен? Однородные значения для разных кварталов находятся в разных в разных столбцах.",
+            "right": false,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 2997,
+        "position": 4,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Вау! Впечатляет! Двигайся дальше!",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2997/4.png",
+        "answers": [
+          {
+            "id": 8616,
+            "position": 1,
+            "content_before": "Да.",
+            "content_after": "На этот раз подвоха нет - все в порядке и перед нами самая настоящая таблица!",
+            "right": true,
+            "image": null
+          },
+          {
+            "id": 8617,
+            "position": 2,
+            "content_before": "Нет. ",
+            "content_after": "Найди хоть одну причину, почему :)",
+            "right": false,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 2998,
+        "position": 5,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Ты уже на экваторе этого квиза, молодец! ",
+        "hint_content": "И в столбце «Показатель», и в столбце «Значение» разнородные показатели. \r\n\r\n",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2998/5.png",
+        "answers": [
+          {
+            "id": 8618,
+            "position": 1,
+            "content_before": "Нет.",
+            "content_after": "Верно! ",
+            "right": true,
+            "image": null
+          },
+          {
+            "id": 8619,
+            "position": 2,
+            "content_before": "Да.",
+            "content_after": "И в столбце «Показатель», и в столбце «Значение» разнородные показатели. Фактически одному событию соответствуют две строки.\r\n\r\n",
+            "right": false,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 2999,
+        "position": 6,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/2999/6.png",
+        "answers": [
+          {
+            "id": 8620,
+            "position": 1,
+            "content_before": "Нет.",
+            "content_after": "Согласны, вид непривычный, но все же это таблица, ведь все правила соблюдены. ",
+            "right": false,
+            "image": null
+          },
+          {
+            "id": 8621,
+            "position": 2,
+            "content_before": "Да. ",
+            "content_after": "Ты прав! Хотя столбец с числовыми показателями стоит первым, что непривычно, всё в порядке.\r\n",
+            "right": true,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 3000,
+        "position": 7,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Осталось немного!",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/3000/7.png",
+        "answers": [
+          {
+            "id": 8622,
+            "position": 1,
+            "content_before": "Нет.",
+            "content_after": "Супер! Ты победитель таблиц!",
+            "right": true,
+            "image": null
+          },
+          {
+            "id": 8623,
+            "position": 2,
+            "content_before": "Да. ",
+            "content_after": "Точно? В столбце «Месяц» в некоторых строках содержатся записи о нескольких событиях.\r\n",
+            "right": false,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 3001,
+        "position": 8,
+        "title": "Таблица или нет?",
+        "content_before": "",
+        "content_after": "Последний рывок, держись!",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/3001/8.png",
+        "answers": [
+          {
+            "id": 8624,
+            "position": 1,
+            "content_before": "Нет. ",
+            "content_after": "Хотя отсутствуют заголовки столбцов, все остальное в порядке и принцип табличности не нарушен.\r\n",
+            "right": false,
+            "image": null
+          },
+          {
+            "id": 8625,
+            "position": 2,
+            "content_before": "Да. ",
+            "content_after": "Верно, Хотя отсутствуют заголовки столбцов, это таблица.\r\n",
+            "right": true,
+            "image": null
+          }
+        ]
+      },
+      {
+        "id": 3002,
+        "position": 9,
+        "title": "Таблица или нет? ",
+        "content_before": "",
+        "content_after": "Вот и все! Отличная работа, молодец. Надеемся, теперь ты профи в таблицах! ",
+        "hint_content": "",
+        "image": "https://u.netology.ru/backend/uploads/lms/quizzes/questions/image/3002/9.png",
+        "answers": [
+          {
+            "id": 8626,
+            "position": 1,
+            "content_before": "Нет.",
+            "content_after": "Нет, хотя отсутствует заголовок столбца и есть только одна строка, это таблица. Просто очень маленькая.\r\n",
+            "right": false,
+            "image": null
+          },
+          {
+            "id": 8627,
+            "position": 2,
+            "content_before": "Да. ",
+            "content_after": "Это таблица-малыш из одной строки, ты прав. Молодец!",
+            "right": true,
+            "image": null
+          }
+        ]
+      }
+    ],
+    "user_answers": []
+  },
+  "preview": null
+}

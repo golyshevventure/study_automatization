@@ -1,0 +1,117 @@
+{
+  "id": 2749507,
+  "type": "longread",
+  "status_code": 200,
+  "data": {
+    "id": 2749507,
+    "position": 1,
+    "lesson_id": 438918,
+    "locked": false,
+    "type": "longread",
+    "approximate_progress_time": 3,
+    "title": "Помогаем определиться с профессией без шаблонов и спешки",
+    "path": "/profile/program/info-spdata-1/lessons/438918/lesson_items/2749507",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "longread_scroll",
+    "passed_value": null,
+    "passed": false,
+    "content": {
+      "version": 1,
+      "elements": [
+        {
+          "id": "b61686cd-2490-4257-ba46-7657ed93f609",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\">Иногда кажется, что новая профессия — это путь с нуля. Но на деле у вас уже есть необходимые навыки и опыт — остаётся понять, как правильно ими воспользоваться.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "82592083-91ff-4410-aeb5-ed77e44f9aaa",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<p pm-open-left=\"1\">Найти ваши сильные стороны и определиться с направлением поможем <u><a href=\"https://netology.ru/programs/airecommendations?utm_source=lk&amp;utm_medium=specialproject_free&amp;utm_campaign=re_all_all_bou&amp;utm_content=1_1&amp;utm_term=block_bonus\">на бесплатной консультации</a></u>. Вы получите рекомендации от нейросети Нетологии и обсудите их с карьерным экспертом.</p>",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "6292dbd5-b992-444f-832b-7727da9164b7",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p pm-open-left=\"1\" class=\"\"><span style=\"letter-spacing: 0em;\">Наши консультанты — практики с опытом более 7 лет, а нейросеть обучена на реальных кейсах тысяч студентов. Никаких шаблонных рекомендаций — в центре всегда вы: ваш ритм, интересы и цели.</span></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "3294cc4c-0e2f-490a-98fe-4690d17aa0a8",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Как это работает",
+          "caption": "",
+          "content": "<ul data-syno-attrs=\"{&quot;id&quot;:&quot;R5kDy99VJe&quot;,&quot;configs&quot;:[{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%1&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%2&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%3&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%4&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%5&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%6&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%7&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%8&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%9&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]}]}\" pm-open-left=\"1\"><li><p>Заполняете анкету, где рассказываете о своём опыте и предпочтениях.</p></li><li><p>Получаете развёрнутые карьерные рекомендации от нейросети.</p></li><li><p>Обсуждаете результаты с экспертом — он позвонит вам на следующий день.</p></li></ul>",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "ab94339e-6271-48d9-86de-b3b61666b104",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p>Не обещаем решить все карьерные вопросы на свете, но обязательно предложим подходящие вам направления и варианты развития.</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "b76e939c-f3a9-4b62-8993-4d4b0e4c6782",
+          "type": "image",
+          "label": "Изображение",
+          "title": "<p pm-open-left=\"1\">Заполните анкету и получите индивидуальные рекомендации бесплатно, чтобы увереннее двигаться дальше.</p>",
+          "images": [
+            {
+              "id": 6203,
+              "url": "https://u.netology.ru/backend/uploads/lms/assets/2025/6/6203/file/b403a1ae-f368-4f41-a787-7ab6edabf35e.png"
+            }
+          ],
+          "settings": {
+            "width": 100,
+            "anchor": "",
+            "border": false,
+            "indent": 32
+          }
+        },
+        {
+          "id": "dcd7fbca-1893-4948-921b-f13769b33a0f",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p><a href=\"https://netology.ru/programs/airecommendations?utm_source=lk&amp;utm_medium=specialproject_free&amp;utm_campaign=re_all_all_bou&amp;utm_content=1_1&amp;utm_term=block_bonus\">Найти своё направление</a></p>",
+          "settings": {
+            "anchor": "",
+            "indent": 16
+          }
+        }
+      ]
+    }
+  },
+  "preview": null
+}

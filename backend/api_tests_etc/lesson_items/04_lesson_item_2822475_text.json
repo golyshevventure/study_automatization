@@ -1,0 +1,24 @@
+{
+  "id": 2822475,
+  "type": "text",
+  "status_code": 200,
+  "data": {
+    "id": 2822475,
+    "position": 1,
+    "lesson_id": 520963,
+    "locked": false,
+    "type": "text",
+    "approximate_progress_time": 1,
+    "title": "Расписание ",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520963/lesson_items/2822475",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "text_scroll",
+    "passed_value": null,
+    "passed": true,
+    "content": "*Дорогие студенты!*\r\n\r\n*Расписание занятий с названием дисциплин, ФИО преподавателей, будет размещено в файле (ссылка). Мы оперативно вносим изменения.*\r\n\r\n***Расписание занятий можно отслеживать несколькими способами:***\r\n* в личном кабинете на платформе Нетологии в разделе «Расписание»\r\n* в учебном чате группы в Telegram-канале. ",
+    "content_type": "markdown"
+  },
+  "preview": null
+}

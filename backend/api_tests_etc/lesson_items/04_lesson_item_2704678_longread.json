@@ -1,0 +1,539 @@
+{
+  "id": 2704678,
+  "type": "longread",
+  "status_code": 200,
+  "data": {
+    "id": 2704678,
+    "position": 1,
+    "lesson_id": 499457,
+    "locked": false,
+    "type": "longread",
+    "approximate_progress_time": 15,
+    "title": "Как нейросети помогают в учёбе: практическое руководство",
+    "path": "/profile/program/info-spdata-1/lessons/499457/lesson_items/2704678",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "longread_scroll",
+    "passed_value": null,
+    "passed": false,
+    "content": {
+      "version": 1,
+      "elements": [
+        {
+          "id": "ace75e20-8403-439b-aa82-8a123550a1ad",
+          "type": "list",
+          "items": [
+            {
+              "id": "85728817-30fe-4f02-a4be-b21d64d2b6bf",
+              "value": "<a href=\"#Обработка информации\">Обработка информации</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "97fe682a-8a3d-48eb-bb75-a48fc8d1fe4a",
+              "value": "<a href=\"#Изучение языков\">Изучение языков</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "b3c26dc7-75f4-49ee-b6ca-7b274456675c",
+              "value": "<a href=\"#Подготовка к экзаменам\">Подготовка к экзаменам</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "4debe020-3b2f-49ff-b13c-a69c6ffe22bc",
+              "value": "<a href=\"#Научные исследования\">Научные исследования</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "dca294d1-6f0a-485d-a9f1-e6584303cefc",
+              "value": "<a href=\"#Популярные нейросетевые инструменты\">Популярные нейросетевые инструменты</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "33b57cfb-4e2e-4259-aa68-2dfa11eba0b3",
+              "value": "<a href=\"#Как писать эффективные запросы (промты)?\">Как писать эффективные промты (запросы)</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            },
+            {
+              "id": "b99d81b3-1a28-4c28-8955-ac1a81bdd5c0",
+              "value": "<a href=\"#Ограничения нейросетей\">Ограничения нейросетей</a>",
+              "parentId": "ace75e20-8403-439b-aa82-8a123550a1ad"
+            }
+          ],
+          "label": "Список",
+          "title": "<b>Содержание занятия:</b>",
+          "settings": {
+            "anchor": "",
+            "indent": 56,
+            "ordered": false
+          }
+        },
+        {
+          "id": "4a2aa3e2-8f1e-4e52-a249-d7f8a5126155",
+          "type": "list",
+          "items": [
+            {
+              "id": "3ad54818-c3c1-4010-bd72-c911676ee7d7",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Экономить время </b>(быстрый поиск информации, генерация контента).</p>",
+              "parentId": "4a2aa3e2-8f1e-4e52-a249-d7f8a5126155"
+            },
+            {
+              "id": "0288a9ed-122c-4c6d-8ba0-594b07bd3e39",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Персонализировать обучение</b> (адаптивные планы, индивидуальные задания).</p>",
+              "parentId": "4a2aa3e2-8f1e-4e52-a249-d7f8a5126155"
+            },
+            {
+              "id": "61ad603b-c532-43db-817a-f280ef387c77",
+              "value": "<b>Улучшать понимание сложных тем</b> (объяснения простым языком, визуализации).",
+              "parentId": "4a2aa3e2-8f1e-4e52-a249-d7f8a5126155"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>Нейросети — это мощные инструменты, которые помогают:</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "7b3d37cb-5dc4-4131-834d-a2c318036176",
+          "type": "text",
+          "label": "Текст",
+          "value": "<p><i>Пример:</i></p><blockquote><p><i>Преподаватель создаёт настольные игры с помощью ИИ для студентов-переводчиков, превращая скучные темы в увлекательные квесты.</i></p></blockquote>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "2825aa3e-7071-4434-9afc-8c2b0cbb8c09",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<h2>Как нейросети помогают в учёбе?</h2>",
+          "settings": {
+            "icon": true,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 57,
+            "background": "green-blue"
+          }
+        },
+        {
+          "id": "6412d30f-c31f-4898-b455-79186be09e1a",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Обработка информации",
+          "caption": "",
+          "content": "Нейросети берут на себя рутинную работу с данными: ищут, анализируют и структурируют информацию за вас.",
+          "settings": {
+            "icon": false,
+            "anchor": "Обработка информации",
+            "indent": 16,
+            "iconType": 0,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "259d10f7-dba2-41c6-9449-2442b51b0c3c",
+          "type": "list",
+          "items": [
+            {
+              "id": "15d7a3a6-431c-4325-ad85-336d2575925f",
+              "value": "<p pm-open-left=\"1\"><b>Поиск и анализ данных<br></b>Как работает: Анализ информации из интернета, научных баз и документов<br>Пример запроса: «Найди последние исследования по нейроинтерфейсам за 2024 год. Выдели основные тенденции»<br>Сервисы: <a href=\"https://www.perplexity.ai/\" target=\"_blank\" rel=\"noreferrer\">Perplexity</a></p>",
+              "parentId": "259d10f7-dba2-41c6-9449-2442b51b0c3c"
+            },
+            {
+              "id": "87e88bfe-74a4-49a4-930f-2372da876f02",
+              "value": "<p pm-open-left=\"1\"><b>Прогнозирование и предсказание<br></b>Как работает: Выявление закономерностей для построения прогнозов<br>Пример запроса: «Проанализируй данные о продажах и предскажи спрос на декабрь»</p>",
+              "parentId": "259d10f7-dba2-41c6-9449-2442b51b0c3c"
+            },
+            {
+              "id": "665b10ca-8c45-4601-97a7-1eaaf35cbd95",
+              "value": "<p pm-open-left=\"1\"><b>Обработка больших массивов данных<br></b>Как работает: Быстрый анализ тысяч документов или числовых данных<br>Пример запроса: «Обработай 50 PDF-отчётов и составь сравнительную таблицу»<br>Сервисы: <a href=\"https://www.chatpdf.com/\" target=\"_blank\" rel=\"noreferrer\">ChatPDF</a>, <a href=\"https://www.humata.ai/\" target=\"_blank\" rel=\"noreferrer\">Humata</a>, <a href=\"https://www.ibm.com/watson\" target=\"_blank\" rel=\"noreferrer\">IBM Watson</a></p>",
+              "parentId": "259d10f7-dba2-41c6-9449-2442b51b0c3c"
+            },
+            {
+              "id": "e3bcc1ec-2349-452d-b346-96e9d01de0b7",
+              "value": "<p><b>Обработка видеофайлов<br></b>Как работает: Отправь ссылку и получи краткий пересказ видео из Rutube и VK Видео<br>Пример запроса: «Просмотри видео, сделай краткий пересказ и выдели ключевые моменты»<br>Сервисы: <a href=\"https://giga.chat/?utm_source=ya&amp;utm_medium=cpc&amp;utm_campaign=gigachat_person_perform_frk_202402050004_rk486314gr3763_context_search_brand_rus_aon|107076666&amp;utm_content=cid|107076666|gid|5398027183|ad|15810090315_15810090315|ph_id|50375111485|src|none_search|geo|%D0%A1%D0%B5%D0%B2%D0%B0%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C_959|&amp;yclid=4396895752456503295\">GigaChat</a></p>",
+              "parentId": "259d10f7-dba2-41c6-9449-2442b51b0c3c"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": true
+          }
+        },
+        {
+          "id": "7a4ee24b-8cbc-492d-9549-42f0e8f8a905",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Изучение языков",
+          "caption": "",
+          "content": "С нейросетями практиковать языки стало проще – они заменяют собеседника, подбирают материалы под ваш уровень и исправляют ошибки.&nbsp;",
+          "settings": {
+            "icon": false,
+            "anchor": "Изучение языков",
+            "indent": 16,
+            "iconType": 0,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "6cfbf8aa-aa45-43a4-a31b-b6fc084739e5",
+          "type": "list",
+          "items": [
+            {
+              "id": "b3e5f105-ef61-43f7-b8e7-0c12eb681866",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Практика речи:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Инструменты: <a href=\"https://speakmateai.com/\" target=\"_blank\" rel=\"noreferrer\">SpeakMate AI</a>, <a href=\"https://character.ai/\" target=\"_blank\" rel=\"noreferrer\">Character.ai </a>(виртуальные собеседники).</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Пример: «Поболтай со мной на английском о путешествиях. Используй слова уровня B1».</p>",
+              "parentId": "6cfbf8aa-aa45-43a4-a31b-b6fc084739e5"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "57ecdfbc-1a14-4e6b-ba7a-e1d2ab9d13b3",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Подготовка к экзаменам",
+          "caption": "",
+          "content": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"0\">Доверьте нейросетям составление персонального графика обучения и отработайте сложные темы в удобном формате.</p>",
+          "settings": {
+            "icon": false,
+            "anchor": "Подготовка к экзаменам",
+            "indent": 16,
+            "iconType": 0,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "88a2a6fc-fbab-456d-a368-6bfd2949a111",
+          "type": "list",
+          "items": [
+            {
+              "id": "d0f577a1-0140-4e38-a860-39fb14e1d84f",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Создание учебного плана:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Пример запроса для <a href=\"https://chatgpt.com/\" target=\"_blank\" rel=\"noreferrer\">ChatGPT</a>: «Составь план подготовки к экзамену по биологии на 3 недели. Включи темы, тесты и ссылки на видео».</p>",
+              "parentId": "88a2a6fc-fbab-456d-a368-6bfd2949a111"
+            },
+            {
+              "id": "16270732-9f6e-4f07-a2c7-31efdd49720b",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Тренировка с «учителем»:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Промт: «Ты — строгий преподаватель. Задавай мне вопросы по теме «Клеточное дыхание» и исправляй ошибки».</p>",
+              "parentId": "88a2a6fc-fbab-456d-a368-6bfd2949a111"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "0f86d8aa-3226-40a9-b1c6-ae5fbe3cdc86",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "Научные исследования",
+          "caption": "",
+          "content": "Делегируйте поиск источников и анализ данных нейросетям, чтобы сосредоточиться на самом главном – на вашем исследовании.",
+          "settings": {
+            "icon": false,
+            "anchor": "Научные исследования",
+            "indent": 16,
+            "iconType": 0,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "12f676a4-22de-4c57-a856-7b727205c151",
+          "type": "list",
+          "items": [
+            {
+              "id": "c8b6f66f-c208-40d9-ae71-450c635922fb",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Поиск статей:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Инструмент: <a href=\"https://scholarai.io/\" target=\"_blank\" rel=\"noreferrer\">AI Scholar</a> (встроен в ChatPDF).&nbsp;<span style=\"letter-spacing: 0em;\">Пример: «Найди статьи об искусственном интеллекте в медицине за 2024 год. Покажи аннотации».</span></p>",
+              "parentId": "12f676a4-22de-4c57-a856-7b727205c151"
+            },
+            {
+              "id": "018d6a0f-9e30-41a9-934e-fff832313483",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Обработка данных:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">Пример: Загружаете таблицу с результатами опроса → просите нейросеть построить график.</p>",
+              "parentId": "12f676a4-22de-4c57-a856-7b727205c151"
+            }
+          ],
+          "label": "Список",
+          "title": "",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "1a63e283-12dd-4094-902d-ec22a3093e74",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<h3 synohead=\"04mnF3ONJk\" data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;18pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\">Популярные нейросетевые инструменты&nbsp;</h3>",
+          "settings": {
+            "icon": false,
+            "anchor": "Популярные нейросетевые инструменты",
+            "indent": 16,
+            "iconType": 38,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "8c7a7cb6-55c9-4639-91ae-1510efe89e99",
+          "type": "table",
+          "label": "Таблица",
+          "value": "[{\"column1\":\"<div class='cellBgContainer orangeColor'><p><b>Для чего полезен?</b></p></div>\",\"column2\":\"<div class='cellBgContainer orangeColor'><p><b>Инструмент</b></p></div>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<div class='cellBgContainer orangeColor'><p><b>Пример использования</b></p></div>\"},{\"column1\":\"<p>Генерация идей, объяснение тем</p>\",\"column2\":\"<p><b>ChatGPT</b></p>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<p>«Объясни квантовую физику метафорами»</p>\"},{\"column1\":\"<p>Поиск точной информации с источниками</p>\",\"column2\":\"<p><b>Perplexity</b></p>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<p>«Какие новые законы об ИИ приняты в РФ?»</p>\"},{\"column2\":\"<p><b>DeepSeek</b></p>\",\"column1\":\"<p>Анализ данных, сложные запросы</p>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<p>«Проанализируй этот CSV-файл»</p>\"},{\"column2\":\"<p><b>QwenAI</b></p>\",\"column1\":\"<p>Генерация видео/иллюстраций&nbsp;</p>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<p>«Создай 3D-модель клетки»</p>\"},{\"column2\":\"<p><b>Gigachat</b></p>\",\"column1\":\"<p>Генерация текста и изображений</p>\",\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\":\"<p>«Проанализируй этот текст и выдели ключевые идеи, тезисы и рекомендации»</p>\"}]",
+          "content": "[{\"field\":\"column2\",\"title\":\"\",\"visible\":true,\"width\":313,\"minWidth\":40,\"headerWordWrap\":false,\"resizable\":true,\"headerSort\":false,\"tooltip\":false,\"headerTooltip\":false},{\"field\":\"column1\",\"title\":\"\",\"visible\":true,\"width\":313,\"minWidth\":40,\"headerWordWrap\":false,\"resizable\":true,\"headerSort\":false,\"tooltip\":false,\"headerTooltip\":false},{\"field\":\"column-72034e1b-386d-4d17-85b6-00c3b0919c7b\",\"title\":\"\",\"visible\":true,\"width\":314,\"minWidth\":40,\"headerWordWrap\":false,\"resizable\":true,\"headerSort\":false,\"tooltip\":false,\"headerTooltip\":false}]",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "92f3f3ba-3fcf-402b-9a9a-581e7129dcae",
+          "type": "text",
+          "label": "Текст",
+          "value": "<i><strong>Совет</strong>: Используйте несколько инструментов сразу. Например, Perplexity для фактов, ChatGPT для творческих задач.</i>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "8ef0a6ad-4063-4969-8576-879bc5f105a1",
+          "type": "panel",
+          "badge": "Лайфхак",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "Храните промты в приложении заметок, создайте закрытую группу в telegram для своих промтов или выберите любой удобный онлайн-документ — так вы сможете быстро их повторно использовать.",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "grey"
+          }
+        },
+        {
+          "id": "34a24180-32b4-4b7b-9736-714ef98eabf4",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<h3 synohead=\"04mnF3ONJk\" data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;18pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\">Как писать эффективные запросы (промты)?</h3>",
+          "settings": {
+            "icon": false,
+            "anchor": "Как писать эффективные запросы (промты)?",
+            "indent": 16,
+            "iconType": 38,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "3723b095-568d-4a98-b590-fe7b736f047a",
+          "type": "list",
+          "items": [
+            {
+              "id": "da04ddc2-9a91-46d5-aee6-4151592976f4",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Задайте роль:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">«Ты — репетитор по математике. Объясни тему «Производные»».</p>",
+              "parentId": "3723b095-568d-4a98-b590-fe7b736f047a"
+            },
+            {
+              "id": "63072841-88ff-43a5-9ac8-69a8673af59e",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Укажите контекст:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">«Я студент-первокурсник, уровень — базовый».</p>",
+              "parentId": "3723b095-568d-4a98-b590-fe7b736f047a"
+            },
+            {
+              "id": "571e91ba-8d98-4b14-886f-9557b33086cd",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Определите формат:</b></p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\">«Дай ответ в виде списка с примерами».</p>",
+              "parentId": "3723b095-568d-4a98-b590-fe7b736f047a"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>Алгоритм идеального промта:</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": true
+          }
+        },
+        {
+          "id": "f1dc7c48-712d-48ee-abf0-8b62ed5e3869",
+          "type": "text",
+          "label": "Текст",
+          "value": "<div><i><strong style=\"letter-spacing: 0em;\">Плохой запрос</strong><span style=\"letter-spacing: 0em;\">:</span></i></div><blockquote><p><i>«Расскажи про ИИ».</i></p></blockquote><p><i><strong>Хороший запрос</strong>:</i></p><blockquote><p><i>«Сравни ИИ, машинное обучение и нейросети. Ответь в таблице из 3 колонок: определение, пример, применение».</i></p></blockquote>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "79a092e1-d826-4a9f-a15f-ac2915f57b89",
+          "type": "list",
+          "items": [
+            {
+              "id": "79e0818f-8b26-4709-9aa0-e25d7e6985a3",
+              "value": "<p><strong>Chain-of-Thought (Цепочка рассуждений) </strong></p><blockquote><p>Что это? </p>Это когда ты просишь нейросеть объяснять что-то <strong>по шагам</strong>, как если бы она думала вслух. Чтобы понять ход решения, а не просто готовый ответ. <br><p><i>Пример запроса: «Пошагово объясни, как решить это уравнение».</i></p></blockquote>",
+              "parentId": "79a092e1-d826-4a9f-a15f-ac2915f57b89"
+            },
+            {
+              "id": "5f1cd2e7-87ff-41c1-a0c9-32abee99323d",
+              "value": "<p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\"><b>Self-Consistency (Самопроверка)<br></b>Что это?<br>Это когда нейросеть перепроверяет свой же ответ, чтобы найти ошибки или улучшить его. Нейросети иногда ошибаются, и эта техника помогает получить более точный результат</p><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><i>Пример запроса: «Проверь свой ответ на ошибки и выдели изменения».&nbsp;</i></p>",
+              "parentId": "79a092e1-d826-4a9f-a15f-ac2915f57b89"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3><strong>Продвинутые техники</strong></h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": false
+          }
+        },
+        {
+          "id": "75ec396b-96d0-4c36-90d1-15b32af1a5d3",
+          "type": "text",
+          "label": "Текст",
+          "value": "<h3>Практические примеры</h3><p><b>Задача</b>: Понять разницу между ИИ и нейросетями.<br><b>Запрос</b>: «Объясни разницу между ИИ, нейросетями и машинным обучением. Используй метафору».<br><b>Ответ нейросети:</b> «ИИ — это дерево, машинное обучение — его ветви, а нейросети — корни, которые передают питательные вещества (данные)».</p>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "e386bc06-3001-4add-874a-390f00c43d24",
+          "type": "list",
+          "items": [
+            {
+              "id": "c4121f2b-27a8-4a49-84b7-43b002ed7d33",
+              "value": "<p>Попросите <a href=\"https://alice.yandex.ru/\">YandexGPT</a> сделать структуру: «Напиши план презентации о CRISPR-технологиях для студентов-биологов».</p>",
+              "parentId": "e386bc06-3001-4add-874a-390f00c43d24"
+            },
+            {
+              "id": "f5bfdf53-4aa8-474e-af07-4f07dcd3b3ec",
+              "value": "<div>Загрузите текст в <a href=\"https://gamma.app/ru\">Gamma.app</a> → получите готовые слайды.&nbsp;</div>",
+              "parentId": "e386bc06-3001-4add-874a-390f00c43d24"
+            }
+          ],
+          "label": "Список",
+          "title": "<h3>Создание презентации</h3>",
+          "settings": {
+            "anchor": "",
+            "indent": 32,
+            "ordered": true
+          }
+        },
+        {
+          "id": "5ba4332d-2f1d-4838-853e-09f3ec8743f3",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<h3 synohead=\"04mnF3ONJk\" data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;18pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\" pm-open-left=\"1\">Ограничения нейросетей</h3>",
+          "settings": {
+            "icon": false,
+            "anchor": "Ограничения нейросетей",
+            "indent": 16,
+            "iconType": 0,
+            "background": "black-frame"
+          }
+        },
+        {
+          "id": "ef4e4650-8baa-4bc1-ba35-cc74b090cd43",
+          "type": "text",
+          "label": "Текст",
+          "value": "<ul data-syno-attrs=\"{&quot;id&quot;:&quot;952xdKWJ2P&quot;,&quot;configs&quot;:[{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%1&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%2&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%3&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%4&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%5&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%6&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%7&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%8&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%9&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]}]}\" pm-open-left=\"1\"><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><b>Неточности</b>: Всегда перепроверяйте факты.<br>Пример: Если нейросеть называет Пушкина «блогером», уточните:&nbsp;<span style=\"letter-spacing: 0em;\">«Дай ссылки на источники».</span></p></li></ul><ul data-syno-attrs=\"{&quot;id&quot;:&quot;952xdKWJ2P&quot;,&quot;configs&quot;:[{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%1&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%2&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%3&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%4&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%5&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%6&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_●&quot;,&quot;text&quot;:&quot;%7&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_○&quot;,&quot;text&quot;:&quot;%8&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]},{&quot;start&quot;:1,&quot;format&quot;:&quot;bullet_■&quot;,&quot;text&quot;:&quot;%9&quot;,&quot;align&quot;:&quot;left&quot;,&quot;marks&quot;:[]}]}\"><li data-syno-attrs=\"{&quot;listMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><p data-syno-attrs=\"{&quot;textMarks&quot;:[{&quot;_&quot;:&quot;font_size&quot;,&quot;value&quot;:&quot;14pt&quot;},{&quot;_&quot;:&quot;font_family&quot;,&quot;value&quot;:&quot;Golos&quot;},{&quot;_&quot;:&quot;em&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;strong&quot;,&quot;value&quot;:false},{&quot;_&quot;:&quot;color&quot;,&quot;value&quot;:&quot;#080809&quot;},{&quot;_&quot;:&quot;background_color&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]}\"><b>Отсутствие критического мышления</b>: Нейросети не заменяют анализ.&nbsp;<span style=\"letter-spacing: 0em;\">Совет: Используйте связку «нейросеть + официальные источники» (</span><a href=\"https://scholar.google.com/\" target=\"_blank\" rel=\"noreferrer\" style=\"letter-spacing: 0em; background-color: rgb(255, 255, 255);\">Google Scholar,</a><span style=\"letter-spacing: 0em;\"> учебники).</span></p></li></ul>",
+          "settings": {
+            "anchor": "",
+            "indent": 32
+          }
+        },
+        {
+          "id": "bc165d7d-f42d-455e-81df-bd30f8ba6059",
+          "type": "list",
+          "items": [
+            {
+              "id": "f3ee504e-86d0-418b-939e-49279f2368b4",
+              "value": "Быстрого поиска.",
+              "parentId": "bc165d7d-f42d-455e-81df-bd30f8ba6059"
+            },
+            {
+              "id": "8164f72d-7f4f-41d7-a1f8-fa9c30286dbe",
+              "value": "Тренировки навыков.",
+              "parentId": "bc165d7d-f42d-455e-81df-bd30f8ba6059"
+            },
+            {
+              "id": "c93f34b5-983b-40e0-b87f-5c864d747cdc",
+              "value": "Планирования учебы.",
+              "parentId": "bc165d7d-f42d-455e-81df-bd30f8ba6059"
+            }
+          ],
+          "label": "Список",
+          "title": "Нейросети — как умный, но иногда ошибающийся помощник. Используйте их для:",
+          "settings": {
+            "anchor": "",
+            "indent": 16,
+            "ordered": false
+          }
+        },
+        {
+          "id": "dc2be94d-cae4-407a-abb6-a3434987ae26",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "",
+          "caption": "",
+          "content": "<i>Но всегда сохраняйте критическое мышление!</i>",
+          "settings": {
+            "icon": true,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 3,
+            "background": "red-frame"
+          }
+        },
+        {
+          "id": "ec527631-3095-4179-ae99-b1e3093fa6eb",
+          "type": "panel",
+          "badge": "",
+          "label": "Панель с текстом",
+          "title": "В качестве тренировки, попробуйте сделать домашнее задание:",
+          "caption": "",
+          "content": "<ul><li><p><strong>Для новичков</strong>: Попросите <a href=\"https://chat.deepseek.com/sign_in\">DeepSeek</a> объяснить тему вашего курса «как для пятиклассника».</p></li><li><p><strong>Для продвинутых</strong>: Создайте в <a href=\"https://www.perplexity.ai/\">Perplexity</a> индивидуальный план подготовки к экзамену.</p></li></ul>",
+          "settings": {
+            "icon": false,
+            "anchor": "",
+            "indent": 32,
+            "iconType": 0,
+            "background": "grey"
+          }
+        }
+      ]
+    }
+  },
+  "preview": null
+}

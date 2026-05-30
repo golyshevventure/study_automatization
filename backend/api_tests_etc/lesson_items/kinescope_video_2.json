@@ -1,0 +1,40 @@
+{
+  "video_url": "https://kinescope.io/dbSLrR1LWpNtrnwK2aXCGw",
+  "label": "video_2",
+  "oembed": {
+    "status_code": 200,
+    "data": {
+      "title": "Мировая экономика и международные экономические отношения_ Тема 01 часть 1",
+      "type": "video",
+      "provider_name": "Kinescope",
+      "provider_url": "https://kinescope.io",
+      "version": "1.0",
+      "html": "<iframe src=\"https://kinescope.io/dbSLrR1LWpNtrnwK2aXCGw\" width=\"400\" height=\"225\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; encrypted-media;\" allowfullscreen></iframe>",
+      "width": "400",
+      "height": "225",
+      "thumbnail_width": "480",
+      "thumbnail_height": "270",
+      "thumbnail_url": "https://edge-msk-10.kinescopecdn.net/3b9ece5c-5b26-4d61-8721-2b9d2c7f14d8/posters/5f182ca0-38cd-491a-bfbf-236db3adbae8/poster_lg/702753d4-354c-4626-b242-ef77d1581419.jpg"
+    }
+  },
+  "embed_page": {
+    "status_code": 200,
+    "content_length": 11684,
+    "marker_found": null,
+    "has_m3u8": true,
+    "m3u8_url": "https://kinescope.io/62b26330-f928-4c0b-be33-453e01421ec6/master.m3u8?expires=1780137833\\u0026sign=e59292a7a308d751"
+  },
+  "graphql": {
+    "status_code": 404,
+    "data": "<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Thu May 28 2026 09:31:51 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain=\"www.kinescope.com\" data-wf-page=\"688dba7aa82abb168bebd52b\" data-wf-site=\"686263828ef9b871c877f4fd\" data-wf-status="
+  },
+  "api_v1": {
+    "status_code": 404,
+    "data": "<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Thu May 28 2026 09:31:51 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain=\"www.kinescope.com\" data-wf-page=\"688dba7aa82abb168bebd52b\" data-wf-site=\"686263828ef9b871c877f4fd\" data-wf-status="
+  },
+  "vtt": {
+    "url": "https://kinescope.io/dbSLrR1LWpNtrnwK2aXCGw/subtitles",
+    "status_code": 404,
+    "content_type": "text/plain; charset=utf-8"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "data": {
+    "programs": [
+      {
+        "id": 59690,
+        "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+        "urlcode": "bhebfad-25",
+        "type": "paid"
+      },
+      {
+        "id": 48767,
+        "title": "Основы анализа данных в SQL, Python, Power BI, DataLens",
+        "urlcode": "spdata-1",
+        "type": "free"
+      }
+    ]
+  }
+}

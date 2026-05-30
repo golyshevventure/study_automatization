@@ -1,0 +1,19 @@
+{
+  "id": 26935,
+  "type": "goals_poll",
+  "status_code": 200,
+  "data": {
+    "id": 26935,
+    "position": 3,
+    "lesson_id": 6833,
+    "locked": true,
+    "type": "text",
+    "approximate_progress_time": 1,
+    "title": "Установка и настройка PostgreSQL",
+    "path": "/profile/program/ADPY-2/lessons/6833/lesson_items/26935",
+    "passed_rule": "text_open",
+    "passed_value": null,
+    "passed": false
+  },
+  "preview": null
+}

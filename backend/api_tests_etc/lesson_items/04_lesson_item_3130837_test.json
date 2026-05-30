@@ -1,0 +1,393 @@
+{
+  "id": 3130837,
+  "type": "test",
+  "status_code": 200,
+  "data": {
+    "id": 3130837,
+    "position": 2,
+    "lesson_id": 576202,
+    "locked": false,
+    "type": "test",
+    "approximate_progress_time": 45,
+    "title": "Домашнее задание 1. Тест — Дедлайн 25.02",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576202/lesson_items/3130837",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "test_finish_correct",
+    "passed_value": null,
+    "passed": false,
+    "lesson_test": {
+      "id": 73326,
+      "max_solutions_count": 2,
+      "percent_to_pass": 70,
+      "user_test": {
+        "id": 2400858,
+        "status": "failed",
+        "right_answers_viewed": false,
+        "test_solutions_count": 2
+      },
+      "can_send_attempt_request": true,
+      "attempt_requests": []
+    },
+    "duration": 0,
+    "questions_per_page": 0,
+    "question_pages_count": 1,
+    "questions_count": 10,
+    "last_solution": {
+      "test_solution_id": 3309547,
+      "status": "failed",
+      "started_at": "2026-04-13T07:45:26.000Z",
+      "finished_at": null,
+      "has_timer": false,
+      "end_of_timer": null,
+      "correct_answers_count": 5,
+      "incorrect_answers_ids": [
+        91727,
+        91728,
+        91729,
+        91731,
+        91733
+      ],
+      "percent": 50,
+      "questions_count": 10,
+      "duration": 0,
+      "questions_per_page": 0,
+      "question_pages_count": 1,
+      "questions": [
+        {
+          "id": 91725,
+          "position": 1,
+          "title": "Вопрос 1",
+          "question_type": "choose_one",
+          "content": "У 111, которые делали покупки в интернет-магазине дизайнерских пуговиц, спросили, сколько у них есть пуговиц стоимостью более 100 рублей каждая.\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10199/Picture__1_.png)\nПроцент людей, у которых есть не более трёх таких пуговиц, составляет примерно:",
+          "answers": [
+            {
+              "id": 315230,
+              "is_numeric": true,
+              "position": 1,
+              "content": "21"
+            },
+            {
+              "id": 315231,
+              "is_numeric": true,
+              "position": 2,
+              "content": "41"
+            },
+            {
+              "id": 315232,
+              "is_numeric": true,
+              "position": 3,
+              "content": "59"
+            },
+            {
+              "id": 315233,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Нельзя определить"
+            }
+          ]
+        },
+        {
+          "id": 91726,
+          "position": 2,
+          "title": "Вопрос 2",
+          "question_type": "choose_one",
+          "content": "Коробковая диаграмма показывает численность населения в стране N в 2020 году.\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10200/Picture__2_.png)\n12,6% — люди в возрасте 65 лет и старше. Приблизительно какой процент населения составляют взрослые трудоспособного возраста (от 18 до 65 лет)?",
+          "answers": [
+            {
+              "id": 315234,
+              "is_numeric": false,
+              "position": 1,
+              "content": "12,4"
+            },
+            {
+              "id": 315235,
+              "is_numeric": false,
+              "position": 2,
+              "content": "37,4"
+            },
+            {
+              "id": 315236,
+              "is_numeric": false,
+              "position": 3,
+              "content": "87,4"
+            },
+            {
+              "id": 315237,
+              "is_numeric": false,
+              "position": 4,
+              "content": "62,4"
+            }
+          ]
+        },
+        {
+          "id": 91727,
+          "position": 3,
+          "title": "Вопрос 3",
+          "question_type": "choose_one",
+          "content": "Опишите отношение между характеристиками по гистограмме:\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10201/Picture__3_.png)",
+          "answers": [
+            {
+              "id": 315238,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Мода равна медиане"
+            },
+            {
+              "id": 315239,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Мода меньше медианы"
+            },
+            {
+              "id": 315240,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Мода больше медианы"
+            },
+            {
+              "id": 315241,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Нельзя определить"
+            }
+          ]
+        },
+        {
+          "id": 91728,
+          "position": 4,
+          "title": "Вопрос 4",
+          "question_type": "choose_one",
+          "content": "Опишите отношение между характеристиками по гистограмме:\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10202/Picture__4_.png)",
+          "answers": [
+            {
+              "id": 315242,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Медиана больше среднего"
+            },
+            {
+              "id": 315243,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Медиана меньше среднего"
+            },
+            {
+              "id": 315244,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Медиана равна среднему"
+            },
+            {
+              "id": 315245,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Нельзя определить"
+            }
+          ]
+        },
+        {
+          "id": 91729,
+          "position": 5,
+          "title": "Вопрос 5",
+          "question_type": "choose_one",
+          "content": "У 100 клиентов спортклуба спросили, сколько дней в неделю они ходят в бассейн.\n![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10203/Picture__5_.png)\nЧему равен 80-й процентиль?",
+          "answers": [
+            {
+              "id": 315246,
+              "is_numeric": true,
+              "position": 1,
+              "content": "5"
+            },
+            {
+              "id": 315247,
+              "is_numeric": true,
+              "position": 2,
+              "content": "80"
+            },
+            {
+              "id": 315248,
+              "is_numeric": true,
+              "position": 3,
+              "content": "4"
+            },
+            {
+              "id": 315249,
+              "is_numeric": true,
+              "position": 4,
+              "content": "3"
+            }
+          ]
+        },
+        {
+          "id": 91730,
+          "position": 6,
+          "title": "Вопрос 6",
+          "question_type": "choose_one",
+          "content": "Стандартное отклонение случайной выборки всегда:",
+          "answers": [
+            {
+              "id": 315250,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Меньше единицы"
+            },
+            {
+              "id": 315251,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Положительное"
+            },
+            {
+              "id": 315252,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Меньше среднего"
+            },
+            {
+              "id": 315253,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Отрицательное"
+            }
+          ]
+        },
+        {
+          "id": 91731,
+          "position": 7,
+          "title": "Вопрос 7",
+          "question_type": "choose_one",
+          "content": "![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10204/Picture__6_.png)\nВсе выборки на рисунке имеют:",
+          "answers": [
+            {
+              "id": 315254,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Одинаковую меру центра и одинаковую меру разброса"
+            },
+            {
+              "id": 315255,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Одинаковую меру центра и разные меры разброса"
+            },
+            {
+              "id": 315256,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Разные меры центра и одинаковую меру разброса"
+            },
+            {
+              "id": 315257,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Разные меры центра и разные меры разброса"
+            }
+          ]
+        },
+        {
+          "id": 91732,
+          "position": 8,
+          "title": "Вопрос 8",
+          "question_type": "choose_one",
+          "content": "Что обычно используют, чтобы отображать большие непрерывные количественные данные?",
+          "answers": [
+            {
+              "id": 315258,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Многоугольник частот"
+            },
+            {
+              "id": 315259,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Гистограмма"
+            },
+            {
+              "id": 315260,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Временной ряд"
+            },
+            {
+              "id": 315261,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Диаграмма «Стебель-листья»"
+            }
+          ]
+        },
+        {
+          "id": 91733,
+          "position": 9,
+          "title": "Вопрос 9",
+          "question_type": "choose_many",
+          "content": "Какие из характеристик являются мерой центра данных?",
+          "answers": [
+            {
+              "id": 315262,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Среднее"
+            },
+            {
+              "id": 315263,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Медиана"
+            },
+            {
+              "id": 315264,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Дисперсия"
+            },
+            {
+              "id": 315265,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Ассиметрия"
+            }
+          ]
+        },
+        {
+          "id": 91734,
+          "position": 10,
+          "title": "Вопрос 10",
+          "question_type": "choose_one",
+          "content": "Как называется значение, которое резко отличается от других значений в выборке?",
+          "answers": [
+            {
+              "id": 315266,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Мода"
+            },
+            {
+              "id": 315267,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Прорыв"
+            },
+            {
+              "id": 315268,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Выброс"
+            },
+            {
+              "id": 315269,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Пик"
+            }
+          ]
+        }
+      ],
+      "seconds_remaining": 0
+    }
+  },
+  "preview": null
+}

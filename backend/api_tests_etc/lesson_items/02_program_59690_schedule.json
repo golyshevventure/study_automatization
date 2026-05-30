@@ -1,0 +1,49 @@
+{
+  "status_code": 200,
+  "data": {
+    "coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "current_program_coordinator": {
+      "name": "Юлия Заварина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+    },
+    "manager": {
+      "name": "Ксения Малыгина",
+      "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7016010/thumb_fe6bc82274d86260.jpg"
+    },
+    "lessons": [],
+    "blocks": [],
+    "resource_packages": [],
+    "has_only_demo_access": false,
+    "has_demo_access": false,
+    "user_accesses": [
+      {
+        "level_type": "common",
+        "access_expired_at": null
+      }
+    ],
+    "access_levels": [
+      {
+        "id": 63455,
+        "level_type": "common",
+        "name": "Обычный",
+        "description": null,
+        "status": "active",
+        "title": null,
+        "has_access": true,
+        "can_buy": false,
+        "current_program_id": 59690,
+        "price": 1,
+        "price_without_discount": 1
+      }
+    ],
+    "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+    "type": "distance_course",
+    "format_type": "new_format",
+    "program_family_url": "finansy-i-analiz-dannyh",
+    "program_type": "bachelor",
+    "terms": null
+  }
+}

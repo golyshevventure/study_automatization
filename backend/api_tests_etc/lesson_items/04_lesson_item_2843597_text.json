@@ -1,0 +1,24 @@
+{
+  "id": 2843597,
+  "type": "text",
+  "status_code": 200,
+  "data": {
+    "id": 2843597,
+    "position": 4,
+    "lesson_id": 520962,
+    "locked": false,
+    "type": "text",
+    "approximate_progress_time": 1,
+    "title": "Анкета студента",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/520962/lesson_items/2843597",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "text_scroll",
+    "passed_value": null,
+    "passed": true,
+    "content": "Дорогие студенты!\r\n\r\nНам важно сделать процесс обучения максимально полезным для каждого из наших студентов. \r\nЗаполните, пожалуйста, [анкету студента](https://forms.yandex.ru/cloud/68af619feb61460e095232e0) бакалавриата «Финансы и анализ данных» и поделитесь, каким опытом, связанным с темой бакалавриата, вы обладаете, каких целей вы планируете достичь в ходе обучения и что вам важно получить за время учебы. ",
+    "content_type": "markdown"
+  },
+  "preview": null
+}

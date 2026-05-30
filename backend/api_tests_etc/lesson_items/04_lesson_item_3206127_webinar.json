@@ -1,0 +1,51 @@
+{
+  "id": 3206127,
+  "type": "webinar",
+  "status_code": 200,
+  "data": {
+    "id": 3206127,
+    "position": 2,
+    "lesson_id": 530688,
+    "locked": false,
+    "type": "webinar",
+    "status": "passed",
+    "approximate_progress_time": 26,
+    "title": "Встреча-рефлексия с командой программы",
+    "path": "/profile/program/bhebfad-25-am-1/lessons/530688/lesson_items/3206127",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "webinar_button_end",
+    "passed_value": null,
+    "passed": false,
+    "starts_at": "2026-02-19T12:40:00.000Z",
+    "ends_at": "2026-02-19T14:10:00.000Z",
+    "experts": [
+      {
+        "id": 7649468,
+        "full_name": "Татьяна Летаева",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7649468/5a4ac80e50b27fa8.jpg",
+        "has_photo": true
+      },
+      {
+        "id": 8373675,
+        "full_name": "Юлия Заварина",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/61dcd8ce1b129bd9.jpg",
+        "has_photo": true
+      },
+      {
+        "id": 9946309,
+        "full_name": "Юлия Панасенко",
+        "avatar_path": "https://u.netology.ru/backend/uploads/legacy/users/avatar/9946309/e92c5a67f6ae00ba.jpg",
+        "has_photo": true
+      }
+    ],
+    "video_url": "https://kinescope.io/bKW4n8cQVZ4wkK8d4wdat7",
+    "webinar_url": "https://netology.ru/backend/api/webinars/172362/redirect?code=31c50a92a0749d5afdf036651ff174fd",
+    "youtube_video_id": null,
+    "translation_adapter": "webinar_ru_native",
+    "ulms_duration": null,
+    "ulms_video_available": false
+  },
+  "preview": null
+}

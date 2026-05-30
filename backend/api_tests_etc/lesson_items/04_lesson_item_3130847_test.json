@@ -1,0 +1,397 @@
+{
+  "id": 3130847,
+  "type": "test",
+  "status_code": 200,
+  "data": {
+    "id": 3130847,
+    "position": 2,
+    "lesson_id": 576208,
+    "locked": false,
+    "type": "test",
+    "approximate_progress_time": 45,
+    "title": "Домашнее задание 1 по Теме 4 — Дедлайн 04.03",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576208/lesson_items/3130847",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "test_finish_correct",
+    "passed_value": null,
+    "passed": true,
+    "lesson_test": {
+      "id": 73327,
+      "max_solutions_count": 2,
+      "percent_to_pass": 70,
+      "user_test": {
+        "id": 2402007,
+        "status": "passed",
+        "right_answers_viewed": true,
+        "test_solutions_count": 2
+      },
+      "can_send_attempt_request": false,
+      "attempt_requests": []
+    },
+    "duration": 0,
+    "questions_per_page": 0,
+    "question_pages_count": 1,
+    "questions_count": 10,
+    "last_solution": {
+      "test_solution_id": 3311906,
+      "status": "passed",
+      "started_at": "2026-04-14T21:16:38.000Z",
+      "finished_at": null,
+      "has_timer": false,
+      "end_of_timer": null,
+      "correct_answers_count": 9,
+      "incorrect_answers_ids": [
+        91790
+      ],
+      "percent": 90,
+      "submitted_answers": [
+        {
+          "question_id": 91783,
+          "answers": [
+            {
+              "id": 315445,
+              "content": "0,05"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91785,
+          "answers": [
+            {
+              "id": 315450,
+              "content": "55"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91788,
+          "answers": [
+            {
+              "id": 315461,
+              "correct": false
+            },
+            {
+              "id": 315462,
+              "correct": true
+            },
+            {
+              "id": 315463,
+              "correct": false
+            },
+            {
+              "id": 315464,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91789,
+          "answers": [
+            {
+              "id": 315465,
+              "correct": true
+            },
+            {
+              "id": 315466,
+              "correct": false
+            },
+            {
+              "id": 315467,
+              "correct": false
+            },
+            {
+              "id": 315468,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91790,
+          "answers": [
+            {
+              "id": 315469,
+              "content": "0,4"
+            }
+          ],
+          "errors": [
+            "0,4",
+            "0,4375"
+          ]
+        },
+        {
+          "question_id": 91791,
+          "answers": [
+            {
+              "id": 315470,
+              "content": "0,4"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91792,
+          "answers": [
+            {
+              "id": 315471,
+              "correct": false
+            },
+            {
+              "id": 315472,
+              "correct": true
+            },
+            {
+              "id": 315473,
+              "correct": true
+            },
+            {
+              "id": 315474,
+              "correct": false
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91793,
+          "answers": [
+            {
+              "id": 315475,
+              "content": "0,125"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91794,
+          "answers": [
+            {
+              "id": 315476,
+              "content": "0,5"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "question_id": 91795,
+          "answers": [
+            {
+              "id": 315477,
+              "content": "0,8811"
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "questions_count": 10,
+      "duration": 0,
+      "questions_per_page": 0,
+      "question_pages_count": 1,
+      "questions": [
+        {
+          "id": 91783,
+          "position": 1,
+          "title": "Вопрос 1",
+          "question_type": "compliance_check",
+          "content": "Найдите P(A ⋅ B), если P(A) = 0,2, P(B) = 0,1, P(A + B) = 0,25\nВ ответ запишите число в виде десятичной дроби (не округляйте).",
+          "answers": [
+            {
+              "id": 315445,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91785,
+          "position": 2,
+          "title": "Вопрос 2",
+          "question_type": "compliance_check",
+          "content": "У 90% студентов онлайн-университета есть курс по математике, а у 3 из 5 есть курс по логике. У двадцатой части студентов нет ни курса математики, ни курса логики. Какой процент студентов изучают оба этих курса?\nВ ответ запишите число без символа «процент».",
+          "answers": [
+            {
+              "id": 315450,
+              "is_numeric": true,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91788,
+          "position": 3,
+          "title": "Вопрос 3",
+          "question_type": "choose_one",
+          "content": "Вероятность любого события всегда удовлетворяет следующему условию",
+          "answers": [
+            {
+              "id": 315461,
+              "is_numeric": false,
+              "position": 1,
+              "content": "0 < P(A) < 1"
+            },
+            {
+              "id": 315462,
+              "is_numeric": false,
+              "position": 2,
+              "content": "0 ≤ P(A) ≤ 1"
+            },
+            {
+              "id": 315463,
+              "is_numeric": false,
+              "position": 3,
+              "content": "P(A) < 1"
+            },
+            {
+              "id": 315464,
+              "is_numeric": false,
+              "position": 4,
+              "content": "P(A) — дробное число"
+            }
+          ]
+        },
+        {
+          "id": 91789,
+          "position": 4,
+          "title": "Вопрос 4",
+          "question_type": "choose_one",
+          "content": "Формулировка теоремы сложения в виде:\nP(A + B) = P(A) + P(B)\nсправедлива",
+          "answers": [
+            {
+              "id": 315465,
+              "is_numeric": false,
+              "position": 1,
+              "content": "Для несовместных событий"
+            },
+            {
+              "id": 315466,
+              "is_numeric": false,
+              "position": 2,
+              "content": "Для совместных событий"
+            },
+            {
+              "id": 315467,
+              "is_numeric": false,
+              "position": 3,
+              "content": "Для любых случайных событий"
+            },
+            {
+              "id": 315468,
+              "is_numeric": false,
+              "position": 4,
+              "content": "Для независимых событий"
+            }
+          ]
+        },
+        {
+          "id": 91790,
+          "position": 5,
+          "title": "Вопрос 5",
+          "question_type": "compliance_check",
+          "content": "![](https://u.netology.ru/backend/uploads/lms/content_assets/file/10239/Picture__4_.png)\n\nВероятность того, что Иннокентий пойдёт в бассейн в любой день, равна 0,2. В день, когда он идёт купаться, вероятность того, что Иннокентий съест на ужин пиццу, равна 0,75.\nВ день, когда он не ходит купаться, вероятность того, что он съест на ужин пиццу, равна x.\nВероятность того, что Иннокентий в любой день съест на ужин пиццу, равна 0,5.\nЧему равен х? В ответ запишите число в виде десятичной дроби (не округляйте).",
+          "answers": [
+            {
+              "id": 315469,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91791,
+          "position": 6,
+          "title": "Вопрос 6",
+          "question_type": "compliance_check",
+          "content": "Найдите P(В′), если P(A) = 0,2, P(A ⋅ B) = 0,1, а P(A + B) = 0,7.\n\nВ ответ запишите число в виде десятичной дроби (не округляйте).",
+          "answers": [
+            {
+              "id": 315470,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91792,
+          "position": 7,
+          "title": "Вопрос 7",
+          "question_type": "choose_many",
+          "content": "Эксперимент заключается в последовательном подбрасывании двух монет. Рассматриваются события:\nА = на первой монете выпал орёл.\nВ = выпал хотя бы один орёл.\nС = выпала хотя бы одна решка.\nD = на второй монете выпал орёл.\n\nВыберите несколько верных утверждений:",
+          "answers": [
+            {
+              "id": 315471,
+              "is_numeric": false,
+              "position": 1,
+              "content": "А и С независимы"
+            },
+            {
+              "id": 315472,
+              "is_numeric": false,
+              "position": 2,
+              "content": "A и D независимы"
+            },
+            {
+              "id": 315473,
+              "is_numeric": false,
+              "position": 3,
+              "content": "В и С зависимы"
+            },
+            {
+              "id": 315474,
+              "is_numeric": false,
+              "position": 4,
+              "content": "В и D независимы"
+            }
+          ]
+        },
+        {
+          "id": 91793,
+          "position": 8,
+          "title": "Вопрос 8",
+          "question_type": "compliance_check",
+          "content": "Вам нужно бросить дротик в цветовой круг. У каждого сектора круга одинаковая площадь.\n\n[](https://u.netology.ru/backend/uploads/lms/content_assets/file/10240/Picture__1_.png)\n\nЕсли вы попадёте в синий сектор, получите главный приз. Найдите Р (синий). \nВ ответ запишите число в виде десятичной дроби (не округляйте).",
+          "answers": [
+            {
+              "id": 315475,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91794,
+          "position": 9,
+          "title": "Вопрос 9",
+          "question_type": "compliance_check",
+          "content": "Найдите P(A | B), если P(A) = 0,4, P(B) = 0,7, a P(A ⋅ B) = 0,35.\n\nВ ответ запишите число в виде десятичной дроби (не округляйте).",
+          "answers": [
+            {
+              "id": 315476,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 91795,
+          "position": 10,
+          "title": "Вопрос 10",
+          "question_type": "compliance_check",
+          "content": "Доля звонков от телефонных мошенников составляет 2,5%. Какова вероятность, что из 5 последних звонков вам не поступило ни одного подозрительного звонка?\nВ ответ запишите число в виде десятичной дроби (округлите до 4-го знака).",
+          "answers": [
+            {
+              "id": 315477,
+              "is_numeric": false,
+              "position": 1
+            }
+          ]
+        }
+      ],
+      "seconds_remaining": 0
+    }
+  },
+  "preview": null
+}

@@ -1,0 +1,23 @@
+{
+  "id": 3130822,
+  "type": "video",
+  "status_code": 200,
+  "data": {
+    "id": 3130822,
+    "position": 4,
+    "lesson_id": 576204,
+    "locked": false,
+    "type": "video",
+    "approximate_progress_time": 10,
+    "title": "Частоты и частотные таблицы",
+    "path": "/profile/program/bhebfad-25-tv-2/lessons/576204/lesson_items/3130822",
+    "feedback": {
+      "passed": false
+    },
+    "passed_rule": "video_view_X",
+    "passed_value": 80,
+    "passed": true,
+    "video_url": "https://kinescope.io/iSNJ3MjZXTMqBVJY5L4eXS"
+  },
+  "preview": null
+}

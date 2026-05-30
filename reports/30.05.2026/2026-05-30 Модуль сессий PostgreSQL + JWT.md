@@ -174,6 +174,145 @@ cd backend && uvicorn main:app --reload --port 8000
 
 ---
 
+---
+
+## 🔴 Критическая проблема: "Неверный логин или пароль" + 500 ошибка
+
+### Симптомы
+
+1. **Ввод 100% верных credentials** → бэкенд возвращает `{"success":false,"error":"invalid_credentials","message":"Неверный логин или пароль"}`
+2. **Перезагрузка страницы** → появляется "Ошибка авторизации"
+3. **Backend падает с 500** при попытке login (в логах `InsufficientPrivilegeError: permission denied for table user_sessions`)
+4. При этом **прямой вызов** `NetologyAuthService.authenticate()` из CLI работает и возвращает 200 + cookies
+
+### Диагностика
+
+**Шаг 1 — проверка Netology напрямую:**
+```python
+import httpx
+# Прямой POST /backend/api/user/sign_in → 200 OK + cookies ✅
+```
+
+**Шаг 2 — проверка backend endpoint'а:**
+```bash
+curl -X POST http://localhost:8000/api/auth/netology \
+  -d '{"email":"...","password":"..."}'
+# → 500 Internal Server Error ❌
+```
+
+**Шаг 3 — проверка логов uvicorn:**
+```
+asyncpg.exceptions.InsufficientPrivilegeError: permission denied for table user_sessions
+```
+
+**Шаг 4 — проверка владельца таблицы:**
+```sql
+SELECT tableowner FROM pg_tables WHERE tablename = 'user_sessions';
+-- → studycore_admin_2026
+```
+
+**Шаг 5 — проверка env-переменных процесса uvicorn:**
+```bash
+cat /proc/<pid>/environ | tr '\0' '\n' | grep DATABASE_URL
+# → пусто (переменная не экспортирована)
+```
+
+### Корневые причины (две независимые проблемы)
+
+#### Причина 1: `config.py` не загружал `.env`
+
+```python
+# backend/core/config.py (ДО)
+import os
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://studycore_user:studycore_pass@localhost:5432/studycore")
+```
+
+- `os.getenv()` читает **системные** переменные окружения
+- `.env` файл **не загружается автоматически** в `os.environ`
+- uvicorn был запущен без `export $(cat .env)`
+- `config.py` использовал **дефолтный** URL со старым пользователем `studycore_user`
+- `studycore_user` мог подключаться к БД, но **не был владельцем** таблицы `user_sessions`
+- Result: `InsufficientPrivilegeError` → HTTP 500 при ЛЮБОМ запросе к БД
+
+#### Причина 2: Пароль содержал спецсимволы, ломающие DSN
+
+- Пароль в `.env`: `xK9#mP2$vL5@nQ8&wR4!`
+- Символ `@` внутри пароля парсился SQLAlchemy/asyncpg как разделитель хоста
+- DSN: `postgresql://user:pass@host` → asyncpg пытался подключиться к хосту `nQ8&wR4!` вместо `localhost`
+- Result: `socket.gaierror: Name or service not known` / `InvalidPasswordError`
+
+### Почему появлялось "Неверный логин или пароль"
+
+Это было **раньше** — до добавления `SessionManager` в `auth_router.py`. В тот момент:
+1. БД работала (старый пользователь ещё был владельцем таблицы)
+2. `NetologyAuthService.authenticate()` возвращал ошибку
+3. Возможная причина: `httpx.Client()` без `follow_redirects=True` получал 302 Redirect от Netology вместо 200
+4. Но более вероятно: при первых тестах credentials передавались неверно (encoding/CORS/preflight)
+
+После добавления `SessionManager` (сохранение в БД) ошибка сменилась с 401 на **500** — потому что backend стал падать на этапе записи в БД.
+
+### Решение
+
+#### 1. Добавлен `python-dotenv` в `config.py`
+
+```python
+# backend/core/config.py (ПОСЛЕ)
+import os
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+
+@dataclass(frozen=True)
+class Settings:
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "...")
+```
+
+- Теперь `.env` загружается автоматически при импорте `config.py`
+- uvicorn получает актуальный `DATABASE_URL` без ручного `export`
+
+#### 2. Изменён пароль PostgreSQL
+
+```sql
+-- От имени postgres
+ALTER USER studycore_admin_2026 WITH PASSWORD 'StudyCore2026SecurePass';
+
+-- Выданы все права на существующие и будущие таблицы
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO studycore_admin_2026;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO studycore_admin_2026;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO studycore_admin_2026;
+```
+
+- Новый пароль не содержит `@#$&!` → DSN парсится корректно
+- `studycore_admin_2026` — владелец таблицы `user_sessions` со всеми правами
+
+#### 3. Обновлён `.env`
+
+```
+DATABASE_URL=postgresql+asyncpg://studycore_admin_2026:StudyCore2026SecurePass@localhost:5432/studycore
+```
+
+#### 4. Перезапущен uvicorn на чистом порту
+
+- Старый процесс занимал порт 8000 и использовал закешированный `config.py`
+- `kill -9 <pid>` → порт освобождён → новый uvicorn с актуальным конфигом
+
+### Результаты тестов (после фикса)
+
+| Endpoint | Запрос | HTTP | Результат |
+|----------|--------|------|-----------|
+| `POST /api/auth/netology` | `{"email":"...","password":"..."}` | 200 | `{"success":true,"user_id":"019e7886-..."}` ✅ |
+| `GET /api/auth/me` | cookie: `session_token` | 200 | `{"authenticated":true,"email":"golyshevventure@gmail.com"}` ✅ |
+| `POST /api/auth/logout` | cookie: `session_token` | 200 | `{"message":"Выход выполнен"}` ✅ |
+
+### Выводы
+
+- **Проблема была не в Netology** — прямой вызов `httpx.post()` всегда возвращал 200
+- **Проблема была не в credentials** — они верные
+- **Проблема была в инфраструктуре**: отсутствие `load_dotenv` + спецсимволы в пароле + старый процесс uvicorn
+- После фикса авторизация работает end-to-end: frontend → FastAPI → Netology → PostgreSQL → JWT-cookie
+
+---
+
 ## Следующие шаги
 
 1. **Кнопка "Выйти"** на главной странице

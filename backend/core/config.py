@@ -6,6 +6,11 @@
 import os
 from dataclasses import dataclass
 
+from dotenv import load_dotenv
+
+# Загружаем .env из корня проекта (родитель backend/)
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+
 
 @dataclass(frozen=True)
 class Settings:

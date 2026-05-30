@@ -1,69 +1,53 @@
 """Главный файл FastAPI приложения StudyCore backend.
 
-Предоставляет REST API для фронтенда. На текущий момент
-реализован единственный роут — авторизация в Netology.
-
-Запуск:
-    cd backend && uvicorn main:app --reload --port 8000
-
-Документация (Swagger UI):
-    http://localhost:8000/docs
+Предоставляет REST API для фронтенда с поддержкой:
+- Авторизации Netology
+- PostgreSQL сессий
+- JWT-cookie аутентификации
 """
+
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.auth_router import router as auth_router
+from backend.core.database import engine
 
-# ---------------------------------------------------------------------------
-# Создание FastAPI приложения
-# ---------------------------------------------------------------------------
-# title: имя приложения (отображается в Swagger UI)
-# version: текущая версия API
-# docs_url: путь к Swagger UI (None — отключить)
-# redoc_url: путь к ReDoc (None — отключить)
-# ---------------------------------------------------------------------------
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan: подключение к БД при старте, отключение при остановке."""
+    # Startup
+    print("🚀 StudyCore API запускается...")
+    yield
+    # Shutdown
+    print("🛑 StudyCore API останавливается...")
+    await engine.dispose()
+
+
 app = FastAPI(
     title="StudyCore API",
-    version="0.9.2",
+    version="0.9.3",
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
-# ---------------------------------------------------------------------------
-# CORS (Cross-Origin Resource Sharing)
-# ---------------------------------------------------------------------------
-# Фронтенд запускается на localhost:5173 (Vite dev server).
-# Бэкенд — на localhost:8000. Без CORS браузер блокирует
-# запросы между разными origin'ами.
-#
-# allow_origins: список доменов, которым разрешён доступ.
-#    ["*"] — разрешить всем (только для разработки!).
-# allow_credentials: разрешить передачу cookies.
-# allow_methods: разрешить все HTTP-методы.
-# allow_headers: разрешить все заголовки.
-# ---------------------------------------------------------------------------
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # TODO: заменить на конкретный origin в production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ---------------------------------------------------------------------------
-# Подключение роутеров
-# ---------------------------------------------------------------------------
-# Все endpoint'ы авторизации доступны по префиксу /api/auth/*
-# ---------------------------------------------------------------------------
+# Роутеры
 app.include_router(auth_router, prefix="/api")
 
 
 @app.get("/", tags=["health"])
 def root() -> dict[str, str]:
-    """Health-check endpoint.
-
-    Returns:
-        dict: Статус приложения.
-    """
+    """Health-check endpoint."""
     return {"status": "ok", "service": "StudyCore API"}

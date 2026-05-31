@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import PublicOnlyRoute from "./components/auth/PublicOnlyRoute";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
+import CourseDetail from "./pages/CourseDetail";
 import Notes from "./pages/Notes";
 import NoteDetail from "./pages/NoteDetail";
 import Deadlines from "./pages/Deadlines";
@@ -36,6 +37,7 @@ export default function App() {
                 <MobileFrame>
                   <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/course/:id" element={<CourseDetail />} />
                     <Route path="/notes" element={<Notes />} />
                     <Route path="/notes/:id" element={<NoteDetail />} />
                     <Route path="/deadlines" element={<Deadlines />} />

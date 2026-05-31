@@ -12,6 +12,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.auth_router import router as auth_router
+from backend.api.programs_router import router as programs_router
 from backend.core.database import engine
 
 
@@ -50,6 +51,7 @@ app.add_middleware(
 
 # Роутеры
 app.include_router(auth_router, prefix="/api")
+app.include_router(programs_router, prefix="/api")
 
 
 @app.get("/", tags=["health"])

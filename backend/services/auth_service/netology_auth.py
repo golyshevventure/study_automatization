@@ -5,7 +5,7 @@
 """
 
 import httpx
-from typing import Optional
+from typing import NamedTuple, Optional
 
 NETOLOGY_SIGN_IN_URL = "https://netology.ru/backend/api/user/sign_in"
 
@@ -15,11 +15,24 @@ class NetologyAuthError(Exception):
     pass
 
 
+class AuthResult(NamedTuple):
+    """Результат успешной авторизации в Netology.
+
+    Attributes:
+        cookies: Cookies сессии (session_id и пр.).
+        full_name: Полное имя пользователя (или None).
+        avatar_url: URL аватара пользователя (или None).
+    """
+    cookies: httpx.Cookies
+    full_name: Optional[str]
+    avatar_url: Optional[str]
+
+
 class NetologyAuthService:
     """Сервис авторизации в Netology.
 
     Получает логин/пароль, отправляет POST /sign_in,
-    возвращает cookies (session_id и пр.).
+    возвращает cookies и профиль пользователя.
 
     НЕ сохраняет и НЕ логирует credentials.
     НЕ выводит cookies в stdout/stderr.
@@ -28,15 +41,15 @@ class NetologyAuthService:
     def __init__(self, timeout: float = 15.0):
         self.timeout = timeout
 
-    def authenticate(self, email: str, password: str) -> httpx.Cookies:
-        """Авторизоваться в Netology и вернуть cookies.
+    def authenticate(self, email: str, password: str) -> AuthResult:
+        """Авторизоваться в Netology и вернуть cookies + профиль.
 
         Args:
             email: Email от аккаунта Netology.
             password: Пароль от аккаунта Netology.
 
         Returns:
-            httpx.Cookies с _netology-on-rails_session и прочими cookies.
+            AuthResult с cookies, full_name и avatar_url.
 
         Raises:
             NetologyAuthError: при ошибке сети, неверных credentials или
@@ -65,4 +78,20 @@ class NetologyAuthService:
                 f"{response.text[:200]}"
             )
 
-        return client.cookies
+        # Парсим профиль пользователя из ответа
+        full_name: Optional[str] = None
+        avatar_url: Optional[str] = None
+        try:
+            payload = response.json()
+            user = payload.get("app_options", {}).get("user", {})
+            full_name = user.get("full_name")
+            avatar_url = user.get("medium_avatar_url")
+        except Exception:
+            # Если JSON сломан — не критично, просто нет профиля
+            pass
+
+        return AuthResult(
+            cookies=client.cookies,
+            full_name=full_name,
+            avatar_url=avatar_url,
+        )

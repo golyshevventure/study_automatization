@@ -3,6 +3,7 @@ import { FileText, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { notes } from "../data";
 import { useDeadlines } from "../hooks/useDeadlines";
+import { useAuth } from "../contexts/AuthContext";
 import DeadlineCard from "../components/DeadlineCard";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
@@ -209,6 +210,34 @@ const myCourses = [
 ];
 
 
+function HomeHeader() {
+  const { user } = useAuth();
+
+  const displayName = user?.full_name || user?.email || "Пользователь";
+  const avatarSrc =
+    user?.avatar_url ||
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=8a2be2&color=fff&size=96`;
+
+  return (
+    <div className="px-5 pt-8 pb-6 flex items-center justify-between">
+      <div>
+        <p className="text-sm font-medium mb-1" style={{ color: "rgba(255,255,255,0.7)" }}>
+          Студент Нетологии
+        </p>
+        <h1 className="text-2xl font-bold" style={{ color: "#fff", textShadow: neonShadowLight }}>
+          {displayName}
+        </h1>
+      </div>
+      <img
+        src={avatarSrc}
+        alt={displayName}
+        className="w-12 h-12 rounded-full"
+        style={{ boxShadow: "0 0 10px rgba(138, 43, 226, 0.5)" }}
+      />
+    </div>
+  );
+}
+
 function CourseCard({ course }: { course: (typeof myCourses)[0] }) {
   const isProfession = course.type === "Профессия";
   const MAX_VISIBLE_MODULES = 5;
@@ -325,22 +354,7 @@ export default function Home() {
       }}
     >
       {/* Header */}
-      <div className="px-5 pt-8 pb-6 flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium mb-1" style={{ color: "rgba(255,255,255,0.7)" }}>
-            Студент Нетологии
-          </p>
-          <h1 className="text-2xl font-bold" style={{ color: "#fff", textShadow: neonShadowLight }}>
-            Алексей Петров
-          </h1>
-        </div>
-        <img
-          src="https://ui-avatars.com/api/?name=Alexey+Petrov&background=8a2be2&color=fff&size=96"
-          alt="Алексей Петров"
-          className="w-12 h-12 rounded-full"
-          style={{ boxShadow: "0 0 10px rgba(138, 43, 226, 0.5)" }}
-        />
-      </div>
+      <HomeHeader />
 
       {/* My Courses */}
       <div className="mt-2 px-4">

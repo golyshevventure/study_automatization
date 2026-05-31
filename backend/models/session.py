@@ -57,6 +57,16 @@ class UserSession(Base):
         nullable=True,
     )
 
+    # Профиль пользователя (из Netology, кешируется при логине)
+    full_name: Mapped[Optional[str]] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+    avatar_url: Mapped[Optional[str]] = mapped_column(
+        Text,
+        nullable=True,
+    )
+
     # Метаданные
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),

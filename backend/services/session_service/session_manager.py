@@ -24,12 +24,16 @@ class SessionManager:
         self,
         email: str,
         cookies: dict,
+        full_name: Optional[str] = None,
+        avatar_url: Optional[str] = None,
     ) -> UserSession:
         """Создать или обновить сессию пользователя.
 
         Args:
             email: Email от аккаунта Netology.
             cookies: Все cookies из httpx.Cookies (dict-формат).
+            full_name: Полное имя пользователя (из Netology).
+            avatar_url: URL аватара пользователя (из Netology).
 
         Returns:
             UserSession: созданная или обновлённая сессия.
@@ -42,9 +46,13 @@ class SessionManager:
         existing = result.scalar_one_or_none()
 
         if existing:
-            # Обновляем cookies
+            # Обновляем cookies и профиль
             existing.netology_session = netology_session
             existing.cookies_json = dict(cookies)
+            if full_name is not None:
+                existing.full_name = full_name
+            if avatar_url is not None:
+                existing.avatar_url = avatar_url
             existing.updated_at = datetime.now(timezone.utc)
             existing.expires_at = datetime.now(timezone.utc) + timedelta(days=settings.JWT_EXPIRE_DAYS)
             await self.db.commit()
@@ -56,6 +64,8 @@ class SessionManager:
             email=email,
             netology_session=netology_session,
             cookies_json=dict(cookies),
+            full_name=full_name,
+            avatar_url=avatar_url,
             expires_at=datetime.now(timezone.utc) + timedelta(days=settings.JWT_EXPIRE_DAYS),
         )
         self.db.add(new_session)

@@ -3,6 +3,8 @@ import { createContext, useContext, useState, useEffect, type ReactNode } from "
 interface AuthUser {
   user_id: string;
   email: string;
+  full_name: string | null;
+  avatar_url: string | null;
 }
 
 interface AuthContextType {
@@ -39,7 +41,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const data = await res.json();
         if (data.authenticated) {
           setIsAuthenticated(true);
-          setUser({ user_id: data.user_id, email: data.email });
+          setUser({
+            user_id: data.user_id,
+            email: data.email,
+            full_name: data.full_name,
+            avatar_url: data.avatar_url,
+          });
         } else {
           setIsAuthenticated(false);
           setUser(null);

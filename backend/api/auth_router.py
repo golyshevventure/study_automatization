@@ -2,7 +2,8 @@
 
 Предоставляет endpoints:
 - POST /api/auth/netology — авторизация + установка JWT-cookie
-- GET /api/auth/me — проверка текущей сессии
+- GET /api/auth/me — проверка текущей сессии + профиль
+- POST /api/auth/logout — выход из аккаунта
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
@@ -38,11 +39,13 @@ class AuthResponse(BaseModel):
 
 
 class MeResponse(BaseModel):
-    """Ответ на проверку текущей сессии."""
+    """Ответ на проверку текущей сессии с профилем пользователя."""
 
     authenticated: bool
     user_id: str | None = None
     email: str | None = None
+    full_name: str | None = None
+    avatar_url: str | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -59,7 +62,7 @@ _auth_service = NetologyAuthService(timeout=15.0)
     summary="Авторизация в Netology",
     description=(
         "Принимает email и password, авторизуется в Netology, "
-        "сохраняет cookies в БД и устанавливает JWT-cookie."
+        "сохраняет cookies и профиль в БД и устанавливает JWT-cookie."
     ),
 )
 async def authenticate_netology(
@@ -69,14 +72,16 @@ async def authenticate_netology(
 ) -> AuthResponse:
     """Авторизовать пользователя и создать сессию."""
     try:
-        # 1. Авторизация в Netology
-        cookies = _auth_service.authenticate(request.email, request.password)
+        # 1. Авторизация в Netology (cookies + профиль)
+        auth_result = _auth_service.authenticate(request.email, request.password)
 
-        # 2. Сохраняем сессию в БД
+        # 2. Сохраняем сессию и профиль в БД
         manager = SessionManager(db)
         session = await manager.create_or_update_session(
             email=request.email,
-            cookies=dict(cookies),
+            cookies=dict(auth_result.cookies),
+            full_name=auth_result.full_name,
+            avatar_url=auth_result.avatar_url,
         )
 
         # 3. Создаём JWT-токен
@@ -132,7 +137,7 @@ async def authenticate_netology(
     "/auth/me",
     response_model=MeResponse,
     summary="Проверка текущей сессии",
-    description="Возвращает данные текущего пользователя по JWT-cookie.",
+    description="Возвращает данные текущего пользователя (профиль + JWT-cookie).",
 )
 async def get_me(
     session: UserSession = Depends(get_current_session),
@@ -140,12 +145,14 @@ async def get_me(
     """Проверить текущую сессию.
 
     Извлекает session_token из cookie, проверяет JWT
-    и возвращает данные пользователя.
+    и возвращает данные пользователя из БД (включая кешированный профиль).
     """
     return MeResponse(
         authenticated=True,
         user_id=str(session.user_id),
         email=session.email,
+        full_name=session.full_name,
+        avatar_url=session.avatar_url,
     )
 
 

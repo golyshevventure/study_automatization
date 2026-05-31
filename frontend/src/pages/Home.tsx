@@ -47,7 +47,7 @@ function CourseCard({ course }: { course: Course }) {
 
   return (
     <div
-      onClick={() => navigate(`/course/${course.id}`)}
+      onClick={() => navigate(`/course/${course.id}`, { state: { course } })}
       className="rounded-2xl p-4 flex flex-col gap-2 cursor-pointer transition-transform active:scale-[0.98]"
       style={{
         background: "rgba(15, 23, 42, 0.6)",

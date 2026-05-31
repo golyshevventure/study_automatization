@@ -67,6 +67,16 @@ class UserSession(Base):
         nullable=True,
     )
 
+    # Кэш данных программ (чтобы не ддосить Netology)
+    programs_cache_json: Mapped[Optional[dict]] = mapped_column(
+        JSONB,
+        nullable=True,
+    )
+    programs_cached_at: Mapped[Optional[datetime]] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+    )
+
     # Метаданные
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),

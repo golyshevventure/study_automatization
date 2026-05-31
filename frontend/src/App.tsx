@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
 import MobileFrame from "./components/MobileFrame";
 import BottomNav from "./components/BottomNav";
@@ -12,10 +13,22 @@ import NoteDetail from "./pages/NoteDetail";
 import Deadlines from "./pages/Deadlines";
 import Notifications from "./pages/Notifications";
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,    // 5 минут — данные считаются свежими
+      gcTime: 10 * 60 * 1000,      // 10 минут — храним в памяти после размонтирования
+      refetchOnWindowFocus: true,  // обновляем при возврате на вкладку
+      retry: 1,                    // 1 повторная попытка при ошибке
+    },
+  },
+});
+
 export default function App() {
   return (
-    <AuthProvider>
-      <HashRouter>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <HashRouter>
         <Routes>
           {/* Страница welcome — только для неавторизованных */}
           <Route element={<PublicOnlyRoute />}>
@@ -51,5 +64,6 @@ export default function App() {
         </Routes>
       </HashRouter>
     </AuthProvider>
+    </QueryClientProvider>
   );
 }

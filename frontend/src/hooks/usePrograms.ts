@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export interface CourseModule {
   title: string;
@@ -15,32 +15,31 @@ export interface Course {
   modules: CourseModule[];
 }
 
-export function usePrograms() {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const PROGRAMS_QUERY_KEY = ["programs"];
 
-  useEffect(() => {
-    fetch("http://localhost:8000/api/programs", {
-      credentials: "include",
-      headers: { Accept: "application/json" },
-    })
-      .then(async (res) => {
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.detail || `HTTP ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data: Course[]) => {
-        setCourses(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  return { courses, loading, error };
+async function fetchPrograms(): Promise<Course[]> {
+  const res = await fetch("http://localhost:8000/api/programs", {
+    credentials: "include",
+    headers: { Accept: "application/json" },
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.detail || `HTTP ${res.status}`);
+  }
+  return res.json();
 }
+
+export function usePrograms() {
+  const { data: courses, isLoading: loading, error } = useQuery({
+    queryKey: PROGRAMS_QUERY_KEY,
+    queryFn: fetchPrograms,
+  });
+
+  return {
+    courses: courses ?? [],
+    loading,
+    error: error ? (error as Error).message : null,
+  };
+}
+
+export { PROGRAMS_QUERY_KEY };

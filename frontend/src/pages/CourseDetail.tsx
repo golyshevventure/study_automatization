@@ -1,8 +1,9 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useCourse } from "../hooks/useCourse";
 import ModuleCard from "../components/ModuleCard";
 import ProgressBar from "../components/ProgressBar";
+import type { Course } from "../hooks/usePrograms";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
 const neonShadowLight = "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)";
@@ -10,7 +11,9 @@ const neonShadowLight = "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240,
 export default function CourseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { course, loading, error } = useCourse(id);
+  const location = useLocation();
+  const preloadedCourse = (location.state as { course?: Course } | null)?.course;
+  const { course, loading, error } = useCourse(id, preloadedCourse);
 
   if (loading) {
     return (

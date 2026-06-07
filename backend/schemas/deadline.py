@@ -26,7 +26,15 @@ class DeadlineEventResponse(BaseModel):
     @computed_field
     @property
     def item_count(self) -> int:
-        return len(self.raw_items) if self.raw_items else 1
+        """Количество уникальных групп/вариантов (не дубли из двух API)."""
+        if not self.raw_items:
+            return 1
+        unique_ids = {
+            item.get("id")
+            for item in self.raw_items
+            if item.get("id") is not None
+        }
+        return len(unique_ids) or 1
 
 
 class DeadlineEventDetailResponse(DeadlineEventResponse):

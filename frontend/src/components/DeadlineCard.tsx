@@ -1,45 +1,59 @@
-import { Clock, AlertCircle } from "lucide-react";
-import type { EnrichedDeadlineItem } from "../types/deadline";
+import { Clock, CheckCircle2, BookOpen, GraduationCap, CalendarDays, FileText } from "lucide-react";
+import type { DeadlineEvent } from "../types/deadline";
 
 interface DeadlineCardProps {
-  deadline: EnrichedDeadlineItem;
-  showProgram?: boolean;
+  event: DeadlineEvent;
 }
 
-/**
- * Цветовая схема индикаторов статуса:
- *   - overdue (просрочен) → красный #EF4444
- *   - urgent (срочный, < 3 дней) → оранжевый #F59E0B
- *   - normal (обычный) → фиолетовый/синий #B794F6
- */
-const STATUS_COLORS = {
-  overdue: {
-    strip: "#EF4444",
-    glow: "0 0 8px rgba(239, 68, 68, 0.4)",
-    dateText: "#EF4444",
-    badgeBg: "rgba(239, 68, 68, 0.15)",
-    badgeText: "#EF4444",
-  },
-  urgent: {
-    strip: "#F59E0B",
-    glow: "0 0 8px rgba(245, 158, 11, 0.4)",
-    dateText: "#F59E0B",
-    badgeBg: "rgba(245, 158, 11, 0.15)",
-    badgeText: "#F59E0B",
-  },
-  normal: {
-    strip: "#B794F6",
-    glow: "0 0 8px rgba(183, 148, 246, 0.3)",
-    dateText: "#94A3B8",
-    badgeBg: "rgba(183, 148, 246, 0.15)",
-    badgeText: "#B794F6",
-  },
-};
+/** Иконка по типу события. */
+function EventIcon({ type, subType }: { type: string; subType: string }) {
+  if (type === "task") return <FileText size={16} color="#F59E0B" />;
+  if (type === "test") return <CalendarDays size={16} color="#F59E0B" />;
+  if (subType === "exam") return <GraduationCap size={16} color="#EF4444" />;
+  if (subType === "credit") return <GraduationCap size={16} color="#EF4444" />;
+  return <BookOpen size={16} color="#3B82F6" />;
+}
+
+/** Цвет полоски-индикатора. */
+function getStripColor(type: string, subType: string, status: string): string {
+  if (status === "passed" || status === "approved") return "#10B981";
+  if (type === "task" || type === "test") return "#F59E0B";
+  if (subType === "exam") return "#EF4444";
+  if (subType === "credit") return "#EF4444";
+  return "#3B82F6";
+}
+
+/** Подпись типа события. */
+function getTypeLabel(type: string, subType: string): string {
+  if (type === "task") return "ДЗ / Работа";
+  if (type === "test") return "Тест";
+  if (subType === "exam") return "Экзамен";
+  if (subType === "credit") return "Зачёт";
+  if (subType === "consultation") return "Консультация";
+  return "Занятие";
+}
+
+/** Форматирование даты. */
+function formatDate(dateStr: string | null, timeStr: string | null): string {
+  if (!dateStr) return "Дата не указана";
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  const formatted = date.toLocaleDateString("ru-RU", {
+    day: "numeric",
+    month: "long",
+  });
+  if (timeStr) {
+    const [h, m] = timeStr.split(":");
+    return `${formatted}, ${h}:${m} МСК`;
+  }
+  return formatted;
+}
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
 
-export default function DeadlineCard({ deadline, showProgram = false }: DeadlineCardProps) {
-  const colors = STATUS_COLORS[deadline.displayStatus];
+export default function DeadlineCard({ event }: DeadlineCardProps) {
+  const stripColor = getStripColor(event.event_type, event.sub_type, event.status);
+  const isPassed = event.status === "passed" || event.status === "approved";
 
   return (
     <div
@@ -47,91 +61,71 @@ export default function DeadlineCard({ deadline, showProgram = false }: Deadline
       style={{
         background: "rgba(15, 23, 42, 0.6)",
         boxShadow: neonShadow,
+        opacity: isPassed ? 0.75 : 1,
       }}
     >
-      {/* Левая цветная полоска — индикатор статуса */}
+      {/* Левая цветная полоска */}
       <div
         className="w-1.5 self-stretch rounded-full shrink-0"
         style={{
-          background: colors.strip,
-          boxShadow: colors.glow,
+          background: stripColor,
+          boxShadow: `0 0 8px ${stripColor}66`,
         }}
       />
 
       <div className="flex-1 min-w-0">
-        {/* Название программы (опционально) */}
-        {showProgram && (
+        {/* Название программы */}
+        {event.program_title && (
           <p
-            className="text-xs font-medium uppercase tracking-wider mb-1"
+            className="text-xs font-medium uppercase tracking-wider mb-1 truncate"
             style={{ color: "#64748B" }}
           >
-            {deadline.programName}
+            {event.program_title}
           </p>
         )}
 
-        {/* Верхняя строка: дисциплина */}
-        <p
-          className="text-xs font-medium uppercase tracking-wider mb-1"
-          style={{ color: "#B794F6" }}
-        >
-          {deadline.disciplineName}
-        </p>
-
-        {/* Название задания */}
+        {/* Название события */}
         <p className="text-sm font-medium leading-snug" style={{ color: "#fff" }}>
-          {deadline.title}
+          {event.title}
         </p>
 
-        {/* Тип задания + статусный бейдж */}
+        {/* Тип + статус */}
         <div className="flex items-center gap-2 mt-1.5">
-          <span className="text-xs" style={{ color: "#64748B" }}>
-            {deadline.typeLabel}
+          <EventIcon type={event.event_type} subType={event.sub_type} />
+          <span className="text-xs" style={{ color: "#94A3B8" }}>
+            {getTypeLabel(event.event_type, event.sub_type)}
           </span>
-          {deadline.status === "in_progress" && (
+          {isPassed && (
+            <span
+              className="text-xs font-medium px-1.5 py-0.5 rounded-full flex items-center gap-1"
+              style={{
+                background: "rgba(16, 185, 129, 0.15)",
+                color: "#10B981",
+              }}
+            >
+              <CheckCircle2 size={10} />
+              Выполнено
+            </span>
+          )}
+          {event.item_count > 1 && (
             <span
               className="text-xs font-medium px-1.5 py-0.5 rounded-full"
               style={{
-                background: "rgba(138, 43, 226, 0.2)",
+                background: "rgba(183, 148, 246, 0.15)",
                 color: "#B794F6",
               }}
             >
-              В процессе
+              {event.item_count} вариантов
             </span>
           )}
         </div>
 
-        {/* Дата и время дедлайна */}
+        {/* Дата */}
         <div className="flex items-center gap-1.5 mt-2.5">
-          {deadline.isOverdue ? (
-            <AlertCircle size={14} color={colors.dateText} />
-          ) : (
-            <Clock size={14} color={colors.dateText} />
-          )}
-          <span className="text-xs font-medium" style={{ color: colors.dateText }}>
-            {deadline.formattedDate}
+          <Clock size={14} color={isPassed ? "#10B981" : "#94A3B8"} />
+          <span className="text-xs font-medium" style={{ color: isPassed ? "#10B981" : "#94A3B8" }}>
+            {formatDate(event.event_date, event.event_time)}
           </span>
-          {deadline.isOverdue && (
-            <span
-              className="text-xs font-medium px-1.5 py-0.5 rounded-full ml-1"
-              style={{
-                background: colors.badgeBg,
-                color: colors.badgeText,
-              }}
-            >
-              Просрочено
-            </span>
-          )}
-          {deadline.isUrgent && (
-            <span
-              className="text-xs font-medium px-1.5 py-0.5 rounded-full ml-1"
-              style={{
-                background: colors.badgeBg,
-                color: colors.badgeText,
-              }}
-            >
-              Срочно
-            </span>
-          )}
         </div>
       </div>
     </div>

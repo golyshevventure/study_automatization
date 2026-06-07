@@ -1,122 +1,100 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-import type { DeadlineItem, EnrichedDeadlineItem, DeadlineFilter } from "../types/deadline";
-import { getTopDeadlines, getAllDeadlines, getNowMsk, getDeadlineCounts } from "../utils/deadlineUtils";
-import { realDeadlines } from "../data/realDeadlines";
-
-/**
- * Интервал обновления данных по умолчанию — 1 час (в миллисекундах).
- */
-const DEFAULT_REFRESH_INTERVAL = 60 * 60 * 1000;
-
-/**
- * Режим работы хука:
- *   - "top3": возвращает только топ-3 дедлайна (для главной страницы)
- *   - "all": возвращает все дедлайны (для страницы «Все дедлайны»)
- */
-type UseDeadlinesMode = "top3" | "all";
+import { useState, useCallback } from "react";
+import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import type { DeadlineEvent, DeadlineFilter } from "../types/deadline";
+import { getDeadlines, syncDeadlines } from "../api/deadlines";
 
 interface UseDeadlinesResult {
-  /** Текущий список дедлайнов для отображения */
-  deadlines: EnrichedDeadlineItem[];
-  /** Время последнего обновления */
-  lastUpdated: Date | null;
-  /** Идёт ли сейчас загрузка/обновление */
+  events: DeadlineEvent[];
+  total: number;
   isLoading: boolean;
-  /** Форсированно перезапросить данные */
+  isFetchingMore: boolean;
+  isSyncing: boolean;
+  hasMore: boolean;
+  error: string | null;
   refetch: () => void;
-  /** Количества по фильтрам */
-  counts: { all: number; normal: number; urgent: number; overdue: number };
+  loadMore: () => void;
+  doSync: () => void;
+  doSilentSync: () => Promise<void>;
 }
 
-/**
- * Кастомный хук для получения и автообновления дедлайнов.
- *
- * Логика:
- *   1. При mount выполняется первый запрос данных (immediate)
- *   2. Запускается setInterval с заданным интервалом
- *   3. При каждом тике:
- *        - имитируем fetch (сейчас — реальные данные из кэша API)
- *        - пересчитываем фильтрацию, сортировку, обогащение
- *        - обновляем state
- *   4. При unmount — clearInterval
- *
- * В будущем заменить fetcher на реальный API-запрос:
- *   const response = await fetch("/backend/api/user/student_learning/calendar");
- *   const raw = await response.json();
- *   return extractDeadlines(raw);
- */
+const FILTER_LABELS: Record<DeadlineFilter, string> = {
+  lessons: "Занятия",
+  works: "Работы",
+  control: "Контроль",
+  all: "Все",
+};
+
+const PAGE_SIZE = 20;
+
 export function useDeadlines(
-  mode: UseDeadlinesMode = "top3",
   filter: DeadlineFilter = "all",
-  refreshInterval: number = DEFAULT_REFRESH_INTERVAL
+  limit = PAGE_SIZE,
+  program?: string
 ): UseDeadlinesResult {
-  const [deadlines, setDeadlines] = useState<EnrichedDeadlineItem[]>([]);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [counts, setCounts] = useState({ all: 0, normal: 0, urgent: 0, overdue: 0 });
+  const queryClient = useQueryClient();
+  const [error, setError] = useState<string | null>(null);
 
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const {
+    data,
+    isLoading,
+    isFetchingNextPage,
+    hasNextPage,
+    fetchNextPage,
+    refetch,
+  } = useInfiniteQuery({
+    queryKey: ["deadlines", filter, limit, program],
+    queryFn: ({ pageParam = 0 }) => getDeadlines(filter, limit, pageParam, program),
+    getNextPageParam: (lastPage, allPages) => {
+      const loaded = allPages.reduce((sum, p) => sum + p.events.length, 0);
+      return loaded < lastPage.total ? loaded : undefined;
+    },
+    initialPageParam: 0,
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
 
-  /**
-   * Симуляция получения данных с сервера.
-   * В текущей реализации возвращает реальные данные из кэша API.
-   */
-  const fetchDeadlines = useCallback(async (): Promise<DeadlineItem[]> => {
-    const delay = 200 + Math.random() * 400;
-    await new Promise((resolve) => setTimeout(resolve, delay));
+  const syncMutation = useMutation({
+    mutationFn: syncDeadlines,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["deadlines"] });
+    },
+    onError: (err: Error) => {
+      setError(err.message);
+    },
+  });
 
-    // TODO: заменить на реальный API-запрос
-    return realDeadlines;
-  }, []);
+  const doSync = useCallback(() => {
+    setError(null);
+    syncMutation.mutate();
+  }, [syncMutation]);
 
-  /**
-   * Основная функция обновления данных.
-   */
-  const refetch = useCallback(async () => {
-    setIsLoading(true);
-
+  const doSilentSync = useCallback(async () => {
     try {
-      const rawItems = await fetchDeadlines();
-      const now = getNowMsk();
-
-      let enriched: EnrichedDeadlineItem[];
-      if (mode === "top3") {
-        enriched = getTopDeadlines(rawItems, 3, now);
-      } else {
-        enriched = getAllDeadlines(rawItems, filter, now);
-      }
-
-      setDeadlines(enriched);
-      setLastUpdated(now);
-      setCounts(getDeadlineCounts(rawItems, now));
-    } catch (err) {
-      console.error("[useDeadlines] Ошибка получения дедлайнов:", err);
-    } finally {
-      setIsLoading(false);
+      await syncDeadlines();
+      queryClient.invalidateQueries({ queryKey: ["deadlines"] });
+    } catch (e) {
+      // Бесшумно — пользователь не должен видеть ошибку фоновой синхронизации
+      console.warn("[SilentSync] Фоновая синхронизация не удалась:", e);
     }
-  }, [fetchDeadlines, mode, filter]);
+  }, [queryClient]);
 
-  // Первичная загрузка + interval
-  useEffect(() => {
-    refetch();
-
-    intervalRef.current = setInterval(() => {
-      refetch();
-    }, refreshInterval);
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-    };
-  }, [refetch, refreshInterval]);
+  const events = data?.pages.flatMap((p) => p.events) ?? [];
+  const total = data?.pages[0]?.total ?? 0;
 
   return {
-    deadlines,
-    lastUpdated,
+    events,
+    total,
     isLoading,
+    isFetchingMore: isFetchingNextPage,
+    isSyncing: syncMutation.isPending,
+    hasMore: !!hasNextPage,
+    error: error || (syncMutation.error?.message ?? null),
     refetch,
-    counts,
+    loadMore: fetchNextPage,
+    doSync,
+    doSilentSync,
   };
 }
+
+export { FILTER_LABELS };
+export type { DeadlineFilter };

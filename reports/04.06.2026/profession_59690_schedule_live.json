@@ -1,0 +1,1514 @@
+{
+  "name": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+  "starts_on": "2025-09-01",
+  "finishes_on": "2029-07-30",
+  "coordinator": {
+    "name": "Юлия Заварина",
+    "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+  },
+  "current_program_coordinator": {
+    "name": "Юлия Заварина",
+    "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/8373675/thumb_61dcd8ce1b129bd9.jpg"
+  },
+  "manager": {
+    "name": "Ксения Малыгина",
+    "image": "https://u.netology.ru/backend/uploads/legacy/users/avatar/7016010/thumb_fe6bc82274d86260.jpg"
+  },
+  "landing_url": "/programs/finansy-i-analiz-dannyh-3",
+  "lessons_available": {
+    "total": 591,
+    "demo": 0,
+    "common": 610
+  },
+  "profession_modules": [
+    {
+      "id": 157464,
+      "position": 1,
+      "program": {
+        "id": 69757,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "48 месяцев",
+        "experts_amount": "4 эксперта",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "Адаптационный модуль для бакалавриата «Финансы и анализ данных»",
+        "program_image": "",
+        "projects_amount": 8,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-am-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2029-08-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 8,
+          "demo": 0,
+          "common": 8
+        },
+        "landing_url": "/programs/bhebfad-adaptacionnyj-modul-4",
+        "actual_program": {
+          "start_date": "2026-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157747,
+      "position": 2,
+      "program": {
+        "id": 70599,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "48 месяцев",
+        "experts_amount": "0 экспертов",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "Опрос про обучение в бакалавриате",
+        "program_image": "",
+        "projects_amount": 1,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-opros-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2029-08-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 1,
+          "demo": 0,
+          "common": 2
+        },
+        "landing_url": "/programs/opros-pro-obuchenie-v-bakalavriate",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175856,
+      "position": 3,
+      "program": {
+        "id": 74207,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "3 месяца",
+        "experts_amount": "5 экспертов",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Введение в специальность",
+        "program_image": "",
+        "projects_amount": 9,
+        "slider_description": "",
+        "starts_at": "1 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-vvs-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-01",
+        "finish_date": "2026-04-21",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 9,
+          "demo": 0,
+          "common": 11
+        },
+        "landing_url": "/programs/",
+        "consultation": false
+      }
+    },
+    {
+      "id": 175866,
+      "position": 4,
+      "program": {
+        "id": 74206,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "3 месяца",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Теория вероятностей и математическая статистика в профессиональной деятельности",
+        "program_image": "",
+        "projects_amount": 33,
+        "slider_description": "",
+        "starts_at": "1 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-tv-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-01",
+        "finish_date": "2026-04-25",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 33,
+          "demo": 0,
+          "common": 35
+        },
+        "landing_url": "/programs/",
+        "consultation": false
+      }
+    },
+    {
+      "id": 175857,
+      "position": 5,
+      "program": {
+        "id": 77221,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Безопасность жизнедеятельности",
+        "program_image": "",
+        "projects_amount": 9,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-bzhd-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 9,
+          "demo": 0,
+          "common": 9
+        },
+        "landing_url": "/programs/bezopasnost-zhiznedeyatelnosti",
+        "actual_program": {
+          "start_date": "2025-02-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175858,
+      "position": 6,
+      "program": {
+        "id": 77222,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "2 эксперта",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Иностранный язык",
+        "program_image": "",
+        "projects_amount": 46,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-iya-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 46,
+          "demo": 0,
+          "common": 46
+        },
+        "landing_url": "/programs/bhebfad-inostrannyj-yazyk",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175859,
+      "position": 7,
+      "program": {
+        "id": 77223,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Философия",
+        "program_image": "",
+        "projects_amount": 33,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-fil-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 33,
+          "demo": 0,
+          "common": 33
+        },
+        "landing_url": "/programs/filosofiya-fad",
+        "actual_program": {
+          "start_date": "2024-02-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175860,
+      "position": 8,
+      "program": {
+        "id": 77224,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Логика. Теория аргументации",
+        "program_image": "",
+        "projects_amount": 22,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-lta-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 22,
+          "demo": 0,
+          "common": 22
+        },
+        "landing_url": "/programs/logika-teoriya-argumentacii",
+        "actual_program": {
+          "start_date": "2024-02-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175861,
+      "position": 9,
+      "program": {
+        "id": 77225,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Основы российской государственности",
+        "program_image": "",
+        "projects_amount": 22,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-org-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 22,
+          "demo": 0,
+          "common": 25
+        },
+        "landing_url": "/programs/bhebfad-org-24-2",
+        "actual_program": {
+          "start_date": "2025-02-03"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175862,
+      "position": 10,
+      "program": {
+        "id": 77226,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Экономическая теория",
+        "program_image": "",
+        "projects_amount": 32,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-et-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 32,
+          "demo": 0,
+          "common": 32
+        },
+        "landing_url": "/programs/ehkonomicheskaya-teoriya",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175863,
+      "position": 11,
+      "program": {
+        "id": 77227,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: История экономических учений",
+        "program_image": "",
+        "projects_amount": 24,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-ieu-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 24,
+          "demo": 0,
+          "common": 24
+        },
+        "landing_url": "/programs/istoriya-ekonomicheskih-uchenij-24-2",
+        "actual_program": {
+          "start_date": "2025-02-03"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175864,
+      "position": 12,
+      "program": {
+        "id": 77228,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Мировая экономика и международные экономические отношения",
+        "program_image": "",
+        "projects_amount": 42,
+        "slider_description": "",
+        "starts_at": "2 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-memeo-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-02",
+        "finish_date": "2026-06-30",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 42,
+          "demo": 0,
+          "common": 46
+        },
+        "landing_url": "/programs/bhebfad-memeo-24-2",
+        "actual_program": {
+          "start_date": "2025-02-03"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 175865,
+      "position": 13,
+      "program": {
+        "id": 77229,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "4 месяца",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Учебно-научный семинар",
+        "program_image": "",
+        "projects_amount": 7,
+        "slider_description": "",
+        "starts_at": "5 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-uns-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-05",
+        "finish_date": "2026-06-05",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 7,
+          "demo": 0,
+          "common": 7
+        },
+        "landing_url": "/programs/bhebfad-uns",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 176662,
+      "position": 14,
+      "program": {
+        "id": 77798,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "4 месяца",
+        "experts_amount": "1 эксперт",
+        "label": "Изучаю",
+        "is_async": false,
+        "name": "1 курс, 2 семестр: Политология",
+        "program_image": "",
+        "projects_amount": 30,
+        "slider_description": "",
+        "starts_at": "11 февраля",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-pol-2",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2026-02-11",
+        "finish_date": "2026-06-20",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 30,
+          "demo": 0,
+          "common": 30
+        },
+        "landing_url": "/programs/politologiya-24-2",
+        "actual_program": {
+          "start_date": "2025-02-03"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157570,
+      "position": 15,
+      "program": {
+        "id": 66267,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Элементы высшей математики",
+        "program_image": "",
+        "projects_amount": 52,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-evm-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 52,
+          "demo": 0,
+          "common": 57
+        },
+        "landing_url": "/programs/elementy_vysshey_matematiki",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 154369,
+      "position": 16,
+      "program": {
+        "id": 66268,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Структуры данных и алгоритмы",
+        "program_image": "",
+        "projects_amount": 50,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-sda-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 50,
+          "demo": 0,
+          "common": 50
+        },
+        "landing_url": "/programs/struktury-dannyh-i-algoritmy",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157571,
+      "position": 17,
+      "program": {
+        "id": 66269,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "3 эксперта",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: IT-системы в экономике",
+        "program_image": "",
+        "projects_amount": 21,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-isve-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 21,
+          "demo": 0,
+          "common": 21
+        },
+        "landing_url": "/programs/it-sistemy-v-ekonomike",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157748,
+      "position": 18,
+      "program": {
+        "id": 70600,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Экономическая теория",
+        "program_image": "",
+        "projects_amount": 33,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-et-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 33,
+          "demo": 0,
+          "common": 34
+        },
+        "landing_url": "/programs/ehkonomicheskaya-teoriya",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157749,
+      "position": 19,
+      "program": {
+        "id": 70601,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Финансовый университет: история и современность",
+        "program_image": "",
+        "projects_amount": 6,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-fuis-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 6,
+          "demo": 0,
+          "common": 6
+        },
+        "landing_url": "/programs/finansovyy-universitet-istoriya-i-sovremennost",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157750,
+      "position": 20,
+      "program": {
+        "id": 70602,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "3 эксперта",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Иностранный язык",
+        "program_image": "",
+        "projects_amount": 40,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-iya-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 40,
+          "demo": 0,
+          "common": 40
+        },
+        "landing_url": "/programs/bhebfad-inostrannyj-yazyk",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157751,
+      "position": 21,
+      "program": {
+        "id": 70603,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Физическая культура и спорт",
+        "program_image": "",
+        "projects_amount": 6,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-fks-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 6,
+          "demo": 0,
+          "common": 7
+        },
+        "landing_url": "/programs/fizicheskaya-kultura-i-sport",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157752,
+      "position": 22,
+      "program": {
+        "id": 70604,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: Основы права",
+        "program_image": "",
+        "projects_amount": 27,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-op-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 27,
+          "demo": 0,
+          "common": 27
+        },
+        "landing_url": "/programs/osnovy-prava-fu-fad",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    },
+    {
+      "id": 157753,
+      "position": 23,
+      "program": {
+        "id": 70605,
+        "color": "#50b9e1",
+        "description": "",
+        "duration": "5 месяцев",
+        "experts_amount": "1 эксперт",
+        "label": "",
+        "is_async": false,
+        "name": "1 курс, 1 семестр: История России",
+        "program_image": "",
+        "projects_amount": 38,
+        "slider_description": "",
+        "starts_at": "1 сентября",
+        "type": "online",
+        "url": "https://netology.ru/profile/program/bhebfad-25-ir-1",
+        "url_to_replace": "",
+        "is_profession": false,
+        "is_profession_module": true,
+        "parent_profession": {
+          "id": 59690,
+          "urlcode": "bhebfad-25",
+          "title": "Бакалавриат «Финансы и анализ данных» c Финансовым университетом",
+          "landing_url": "/programs/finansy-i-analiz-dannyh",
+          "start_date": "2026-09-01",
+          "finish_date": "2030-07-30",
+          "price": 1,
+          "is_paid": true,
+          "price_without_discount": 1,
+          "terms": null,
+          "education_format_type": "online",
+          "user_start_date": "2025-09-01",
+          "user_finish_date": "2029-07-30",
+          "program_family_price_type": "paid",
+          "main_direction": {
+            "slug": "degree",
+            "name": "Высшее образование"
+          }
+        },
+        "start_date": "2025-09-01",
+        "finish_date": "2026-01-31",
+        "price": 0,
+        "price_without_discount": 0,
+        "terms": null,
+        "user_accesses": [
+          {
+            "level_type": "common",
+            "access_expired_at": "2075-10-06T15:18:31.000Z"
+          }
+        ],
+        "program_with_demo_access": false,
+        "lessons_available": {
+          "total": 38,
+          "demo": 0,
+          "common": 38
+        },
+        "landing_url": "/programs/istoriya-rossii",
+        "actual_program": {
+          "start_date": "2025-09-01"
+        },
+        "consultation": false
+      }
+    }
+  ]
+}

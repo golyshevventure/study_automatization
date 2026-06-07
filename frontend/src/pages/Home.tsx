@@ -120,7 +120,7 @@ function CourseCard({ course }: { course: Course }) {
 export default function Home() {
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
-  const { deadlines } = useDeadlines("top3");
+  const { events } = useDeadlines("all", 3);
   const { courses, loading, error } = usePrograms();
 
   if (loading) {
@@ -256,7 +256,7 @@ export default function Home() {
           </button>
         </div>
         <div className="flex flex-col gap-3">
-          {deadlines.length === 0 ? (
+          {events.length === 0 ? (
             <div
               className="rounded-2xl p-6 text-center"
               style={{
@@ -274,11 +274,11 @@ export default function Home() {
           ) : (
             (() => {
               // Группировка по программе для отображения
-              const groups = new Map<string, typeof deadlines>();
-              for (const d of deadlines) {
-                const key = d.programName;
+              const groups = new Map<string, typeof events>();
+              for (const e of events) {
+                const key = e.program_title || "Без программы";
                 if (!groups.has(key)) groups.set(key, []);
-                groups.get(key)!.push(d);
+                groups.get(key)!.push(e);
               }
               return Array.from(groups.entries()).map(([programName, items]) => (
                 <div key={programName}>
@@ -289,8 +289,8 @@ export default function Home() {
                     {programName}
                   </p>
                   <div className="flex flex-col gap-3">
-                    {items.map((d) => (
-                      <DeadlineCard key={d.id} deadline={d} />
+                    {items.map((e) => (
+                      <DeadlineCard key={e.id} event={e} />
                     ))}
                   </div>
                 </div>

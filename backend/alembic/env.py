@@ -17,6 +17,7 @@ from alembic import context
 
 from backend.models.base import Base
 import backend.models.session  # noqa: F401 — регистрирует модель в metadata
+import backend.models.deadline_event  # noqa: F401 — регистрирует модели дедлайнов
 
 # this is the Alembic Config object
 config = context.config

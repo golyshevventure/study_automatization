@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 /**
@@ -26,8 +25,6 @@ const features = [
  *  на главную страницу "/". При ошибке — отображается текст ошибки.
  */
 export default function Welcome() {
-  const navigate = useNavigate();
-
   // -------------------------------------------------------------------------
   // Состояния UI
   // -------------------------------------------------------------------------

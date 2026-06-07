@@ -1,71 +1,30 @@
-/**
- * Типы заданий в системе дедлайнов
- */
-export type DeadlineTaskType =
-  | "homework"
-  | "exam"
-  | "coursework"
-  | "creative"
-  | "test"
-  | "control_work";
-
-/**
- * Статус выполнения домашнего задания из API Нетологии
- */
-export type HomeworkStatus =
-  | null
-  | "in_progress"
-  | "accepted"
-  | "waiting_review";
-
-/**
- * Элемент дедлайна — единичное задание/работа/экзамен
- */
-export interface DeadlineItem {
-  id: number;
-  /** Название программы (например, "Бакалавриат «Финансы и анализ данных»") */
-  programName: string;
-  /** Название дисциплины/предмета (например, "Философия") */
-  disciplineName: string;
-  /** Семестр (например, "1 курс, 2 семестр") */
-  semester: string;
-  /** Название конкретного задания */
+/** API-тип: сгруппированное событие (дедлайн / зачёт / экзамен / занятие). */
+export interface DeadlineEvent {
+  id: string;
+  event_type: "task" | "test" | "webinar";
+  sub_type: "lesson" | "consultation" | "credit" | "exam";
   title: string;
-  /** Тип задания */
-  type: DeadlineTaskType;
-  /** Дедлайн в ISO-формате с timezone (+03:00 = МСК) */
-  deadline: string;
-  /** Статус выполнения из API */
-  status: HomeworkStatus;
+  program_title: string | null;
+  event_date: string | null; // YYYY-MM-DD
+  event_time: string | null; // HH:MM:SS
+  status: "pending" | "approved" | "passed" | "overdue";
+  source: "calendar" | "schedule" | "merged";
+  item_count: number;
 }
 
-/**
- * Отображаемый статус после фильтрации и обработки
- */
-export type DisplayStatus = "overdue" | "urgent" | "normal";
+/** Доступные фильтры. */
+export type DeadlineFilter = "lessons" | "works" | "control" | "all";
 
-/**
- * Обогащенный элемент дедлайна с вычисляемыми полями для UI
- */
-export interface EnrichedDeadlineItem extends DeadlineItem {
-  isOverdue: boolean;
-  isUrgent: boolean;
-  displayStatus: DisplayStatus;
-  formattedDate: string;
-  typeLabel: string;
+/** Ответ API на список событий. */
+export interface DeadlineListResponse {
+  events: DeadlineEvent[];
+  total: number;
+  filter: DeadlineFilter;
 }
 
-/**
- * Группировка дедлайнов по программе/дисциплине
- */
-export interface ProgramGroup {
-  programName: string;
-  disciplineName: string;
-  semester: string;
-  deadlines: EnrichedDeadlineItem[];
+/** Ответ API на синхронизацию. */
+export interface DeadlineSyncResponse {
+  synced: number;
+  duration_ms: number;
+  message: string;
 }
-
-/**
- * Фильтр для страницы «Все дедлайны»
- */
-export type DeadlineFilter = "all" | "normal" | "urgent" | "overdue";

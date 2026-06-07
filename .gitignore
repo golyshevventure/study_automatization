@@ -9,3 +9,6 @@ backend/logs/current/
 *.mp4
 push.sh
 backend/netology_cookies/netology_cookies.json
+.kimi/
+.agents/*
+!.agents/skills/

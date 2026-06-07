@@ -130,14 +130,23 @@ def group_items(items: list[dict]) -> list[dict]:
                 program_title = pt
                 break
 
-        # Источник
+        # Источник: определяем по наличию данных в calendar / schedule
         sources = set()
         for g in group_items_list:
             raw = g.get("raw")
             if isinstance(raw, list):
-                sources.add("merged")
+                has_calendar = raw[0] is not None
+                has_schedule = len(raw) > 1 and raw[1] is not None
+                if has_calendar and has_schedule:
+                    sources.add("merged")
+                elif has_calendar:
+                    sources.add("calendar")
+                elif has_schedule:
+                    sources.add("schedule")
+                else:
+                    sources.add("calendar")  # fallback
             else:
-                sources.add("calendar" if g in group_items_list else "schedule")
+                sources.add("calendar" if raw is not None else "schedule")
         source = "merged" if len(sources) > 1 else (sources.pop() if sources else "calendar")
 
         result.append({

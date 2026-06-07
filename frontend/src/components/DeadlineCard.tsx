@@ -1,6 +1,26 @@
 import { Clock, CheckCircle2, BookOpen, GraduationCap, CalendarDays, FileText } from "lucide-react";
 import type { DeadlineEvent } from "../types/deadline";
 
+/** Плюрализация русских слов (вариант/варианта/вариантов). */
+function pluralize(count: number, one: string, few: string, many: string): string {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod100 >= 11 && mod100 <= 19) return `${count} ${many}`;
+  if (mod10 === 1) return `${count} ${one}`;
+  if (mod10 >= 2 && mod10 <= 4) return `${count} ${few}`;
+  return `${count} ${many}`;
+}
+
+/** Проверяет, что событие уже прошло (дата < сегодня). */
+function isEventPast(event: DeadlineEvent): boolean {
+  if (!event.event_date) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const [year, month, day] = event.event_date.split("-").map(Number);
+  const eventDate = new Date(year, month - 1, day);
+  return eventDate < today;
+}
+
 interface DeadlineCardProps {
   event: DeadlineEvent;
 }
@@ -53,7 +73,10 @@ const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 
 
 export default function DeadlineCard({ event }: DeadlineCardProps) {
   const stripColor = getStripColor(event.event_type, event.sub_type, event.status);
-  const isPassed = event.status === "passed" || event.status === "approved";
+  // "Выполнено" показываем только если статус passed/approved И событие уже прошло
+  // (для зачётов/экзаменов статус может приходить заранее из API, но бейдж неактуален до даты)
+  const isPassed =
+    (event.status === "passed" || event.status === "approved") && isEventPast(event);
 
   return (
     <div
@@ -115,7 +138,7 @@ export default function DeadlineCard({ event }: DeadlineCardProps) {
                 color: "#B794F6",
               }}
             >
-              {event.item_count} вариантов
+              {pluralize(event.item_count, "вариант", "варианта", "вариантов")}
             </span>
           )}
         </div>

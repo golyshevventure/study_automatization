@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useDeadlines, FILTER_LABELS } from "../hooks/useDeadlines";
 import DeadlineCard from "../components/DeadlineCard";
 import { RefreshCw, CheckCircle2, CalendarDays, BookOpen, GraduationCap, List } from "lucide-react";
@@ -40,33 +40,47 @@ export default function Deadlines() {
   const [program, setProgram] = useState<string>("");
   const { events, total, isLoading, isFetchingMore, isSyncing, hasMore, error, doSync, doSilentSync, loadMore } = useDeadlines(filter, 20, program || undefined);
   const [lastSync, setLastSync] = useState<number | null>(getLastSyncTime);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Уникальные программы из загруженных событий (для селекта)
   const programs = Array.from(new Set(events.map((e) => e.program_title).filter((p): p is string => !!p))).sort();
 
-  // Авто-синхронизация при входе и каждые 30 мин (бесшовная — без спиннера)
+  // Авто-синхронизация при входе и каждые 30 мин (бесшумная — без спиннера).
+  // Используем рекурсивный setTimeout вместо setInterval, чтобы избежать
+  // параллельных вызовов если sync занимает дольше интервала.
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let cancelled = false;
+
+    const scheduleNext = (delay: number) => {
+      timeoutId = setTimeout(async () => {
+        if (cancelled) return;
+        await doSilentSync();
+        if (!cancelled) {
+          const t = Date.now();
+          setLastSync(t);
+          setLastSyncTime(t);
+        }
+        scheduleNext(SYNC_INTERVAL_MS);
+      }, delay);
+    };
+
     const runSilent = async () => {
       const last = getLastSyncTime();
       const now = Date.now();
       if (!last || now - last > MIN_SYNC_INTERVAL_MS) {
         await doSilentSync();
-        setLastSync(now);
-        setLastSyncTime(now);
+        if (!cancelled) {
+          setLastSync(now);
+          setLastSyncTime(now);
+        }
       }
+      scheduleNext(SYNC_INTERVAL_MS);
     };
     runSilent();
 
-    intervalRef.current = setInterval(async () => {
-      await doSilentSync();
-      const t = Date.now();
-      setLastSync(t);
-      setLastSyncTime(t);
-    }, SYNC_INTERVAL_MS);
-
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+      cancelled = true;
+      if (timeoutId) clearTimeout(timeoutId);
     };
   }, [doSilentSync]);
 

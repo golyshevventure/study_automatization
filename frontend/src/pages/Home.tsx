@@ -120,7 +120,7 @@ function CourseCard({ course }: { course: Course }) {
 export default function Home() {
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
-  const { events } = useDeadlines("all", 3);
+  const { events, total } = useDeadlines("all", 3);
   const { courses, loading, error } = usePrograms();
 
   if (loading) {
@@ -241,20 +241,11 @@ export default function Home() {
         )}
       </div>
 
-      {/* Upcoming Deadlines */}
+      {/* Upcoming Events */}
       <div className="mt-6 px-4">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-semibold" style={{ color: "#fff", textShadow: neonShadowLight }}>
-            Ближайшие дедлайны
-          </h2>
-          <button
-            onClick={() => navigate("/deadlines")}
-            className="flex items-center gap-1 text-sm"
-            style={{ color: "#B794F6" }}
-          >
-            Все <ChevronRight size={16} />
-          </button>
-        </div>
+        <h2 className="text-lg font-semibold mb-3" style={{ color: "#fff", textShadow: neonShadowLight }}>
+          Ближайшие события
+        </h2>
         <div className="flex flex-col gap-3">
           {events.length === 0 ? (
             <div
@@ -265,7 +256,7 @@ export default function Home() {
               }}
             >
               <p className="text-sm font-medium" style={{ color: "#fff" }}>
-                Нет активных дедлайнов
+                Нет предстоящих событий
               </p>
               <p className="text-xs mt-1" style={{ color: "#94A3B8" }}>
                 Все задания выполнены или на проверке
@@ -298,6 +289,20 @@ export default function Home() {
             })()
           )}
         </div>
+        {events.length > 0 && total > events.length && (
+          <button
+            onClick={() => navigate("/deadlines")}
+            className="w-full mt-4 py-3 rounded-2xl text-sm font-medium transition-all active:scale-95"
+            style={{
+              background: "rgba(138, 43, 226, 0.15)",
+              color: "#B794F6",
+              border: "1px solid rgba(138, 43, 226, 0.3)",
+              boxShadow: "0 0 10px rgba(138, 43, 226, 0.2)",
+            }}
+          >
+            Показать все ({total})
+          </button>
+        )}
       </div>
 
       {/* Recent Notes */}

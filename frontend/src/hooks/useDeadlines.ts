@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import type { DeadlineEvent, DeadlineFilter } from "../types/deadline";
 import { getDeadlines, syncDeadlines } from "../api/deadlines";
@@ -53,6 +53,8 @@ export function useDeadlines(
     retry: 1,
   });
 
+  const silentSyncLock = useRef(false);
+
   const syncMutation = useMutation({
     mutationFn: syncDeadlines,
     onSuccess: () => {
@@ -69,16 +71,23 @@ export function useDeadlines(
   }, [syncMutation]);
 
   const doSilentSync = useCallback(async () => {
+    if (silentSyncLock.current) return;
+    silentSyncLock.current = true;
     try {
       await syncDeadlines();
       queryClient.invalidateQueries({ queryKey: ["deadlines"] });
     } catch (e) {
-      // Бесшумно — пользователь не должен видеть ошибку фоновой синхронизации
       console.warn("[SilentSync] Фоновая синхронизация не удалась:", e);
+    } finally {
+      silentSyncLock.current = false;
     }
   }, [queryClient]);
 
-  const events = data?.pages.flatMap((p) => p.events) ?? [];
+  // Дедупликация: если бэкенд вернул дубли — убираем их по id
+  const events =
+    data?.pages
+      .flatMap((p) => p.events)
+      .filter((e, idx, arr) => arr.findIndex((x) => x.id === e.id) === idx) ?? [];
   const total = data?.pages[0]?.total ?? 0;
 
   return {

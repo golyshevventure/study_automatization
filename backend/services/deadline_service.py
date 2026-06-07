@@ -46,15 +46,30 @@ class DeadlineService:
         # 2. Merge + group
         events = build_deadline_events(cal_items, sch_items)
 
-        # 3. Удаляем старые события пользователя
-        await self.db.execute(
-            delete(DeadlineEvent).where(DeadlineEvent.user_id == user_id)
-        )
+        # 3. Удаляем события, которых больше нет в новых данных
+        new_keys = {
+            (event["lesson_id"], event["event_type"], event["title"])
+            for event in events
+        }
+        if new_keys:
+            # Получаем существующие события пользователя
+            existing_stmt = select(DeadlineEvent).where(DeadlineEvent.user_id == user_id)
+            existing_result = await self.db.execute(existing_stmt)
+            existing = existing_result.scalars().all()
+            to_delete = [
+                e.id for e in existing
+                if (e.lesson_id, e.event_type, e.title) not in new_keys
+            ]
+            if to_delete:
+                await self.db.execute(
+                    delete(DeadlineEvent).where(DeadlineEvent.id.in_(to_delete))
+                )
 
-        # 4. Вставляем новые (генерируем UUID вручную)
+        # 4. Upsert: INSERT новых / UPDATE существующих
         for event in events:
-            self.db.add(
-                DeadlineEvent(
+            stmt = (
+                insert(DeadlineEvent)
+                .values(
                     id=std_uuid.uuid4(),
                     user_id=user_id,
                     lesson_id=event["lesson_id"],
@@ -70,7 +85,21 @@ class DeadlineService:
                     source=event["source"],
                     raw_items=event.get("raw_items", []),
                 )
+                .on_conflict_do_update(
+                    index_elements=["user_id", "lesson_id", "event_type", "title"],
+                    set_={
+                        "sub_type": event["sub_type"],
+                        "program_title": event.get("program_title"),
+                        "event_date": event["date"].date() if event["date"] else None,
+                        "event_time": event["date"].time() if event["date"] else None,
+                        "status": event["status"],
+                        "source": event["source"],
+                        "raw_items": event.get("raw_items", []),
+                        "updated_at": datetime.now(timezone.utc),
+                    },
+                )
             )
+            await self.db.execute(stmt)
 
         # 5. Обновляем лог синхронизации
         checksum = self._compute_checksum(cal_items, sch_items)

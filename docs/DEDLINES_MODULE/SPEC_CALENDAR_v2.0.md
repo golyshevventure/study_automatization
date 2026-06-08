@@ -2,7 +2,7 @@
 
 **Версия:** 2.0  
 **Дата:** 2026-06-23  
-**Статус:** Черновик (на утверждение)  
+**Статус:** В работе — Этап A ✅ выполнен  
 **База:** SPEC_PATCH_v1.2.1.md + анализ YetAnotherCalendar  
 **Milestone:** [Календарь v2.0](https://github.com/golyshevventure/study_automatization/milestone/4)
 
@@ -137,10 +137,10 @@
 
 ```
 GET /api/calendar/month?year=2026&month=6&filter=all
-→ { days: { "2026-06-08": [events], "2026-06-09": [events], ... } }
+→ { year, month, filter, days: { "2026-06-08": [events], ... }, total }
 
-GET /api/calendar/week?start=2026-06-08&filter=all
-→ { days: { "2026-06-08": [events], ... } }
+GET /api/calendar/week?year=2026&week=23&filter=all
+→ { year, week, filter, days: { "2026-06-08": [events], ... }, total }
 ```
 
 **Изменения:**
@@ -206,12 +206,12 @@ src/
 
 ## 5. Этапы реализации
 
-### Этап A: Backend — API календаря
-- [ ] Создать `backend/routers/calendar.py`
-- [ ] Создать `backend/services/calendar_service.py` (группировка по дням)
-- [ ] Фикс `netology_schedule_service.py` — убрать +1 год
-- [ ] Удалить старые endpoints `/deadlines/*` (или deprecate)
-- [ ] Тесты
+### Этап A: Backend — API календаря ✅
+- [x] Создать `backend/api/calendar_router.py`
+- [x] Создать `backend/services/calendar_service.py` (группировка по дням/неделям)
+- [x] Фикс `netology_schedule_service.py` — smarter semester heuristic
+- [x] Подключить роутер в `backend/main.py`
+- [x] Тесты: 37 событий в июне, 20 в неделе 23, 551 после sync
 
 ### Этап B: Frontend — компоненты календаря
 - [ ] `CalendarMonthView` — сетка месяца

@@ -263,30 +263,11 @@ export default function Home() {
               </p>
             </div>
           ) : (
-            (() => {
-              // Группировка по программе для отображения
-              const groups = new Map<string, typeof events>();
-              for (const e of events) {
-                const key = e.program_title || "Без программы";
-                if (!groups.has(key)) groups.set(key, []);
-                groups.get(key)!.push(e);
-              }
-              return Array.from(groups.entries()).map(([programName, items]) => (
-                <div key={programName}>
-                  <p
-                    className="text-xs font-medium uppercase tracking-wider mb-2 mt-1"
-                    style={{ color: "rgba(255,255,255,0.5)" }}
-                  >
-                    {programName}
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    {items.map((e) => (
-                      <DeadlineCard key={e.id} event={e} />
-                    ))}
-                  </div>
-                </div>
-              ));
-            })()
+            <div className="flex flex-col gap-3">
+              {events.map((e) => (
+                <DeadlineCard key={e.id} event={e} />
+              ))}
+            </div>
           )}
         </div>
         {events.length > 0 && total > events.length && (

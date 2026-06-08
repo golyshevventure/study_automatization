@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from "react";
-import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useInfiniteQuery, useMutation } from "@tanstack/react-query";
 import type { DeadlineEvent, DeadlineFilter } from "../types/deadline";
 import { getDeadlines, syncDeadlines } from "../api/deadlines";
 
@@ -31,7 +31,6 @@ export function useDeadlines(
   limit = PAGE_SIZE,
   program?: string
 ): UseDeadlinesResult {
-  const queryClient = useQueryClient();
   const [error, setError] = useState<string | null>(null);
 
   const {
@@ -49,7 +48,8 @@ export function useDeadlines(
       return loaded < lastPage.total ? loaded : undefined;
     },
     initialPageParam: 0,
-    staleTime: 5 * 60 * 1000,
+    staleTime: Infinity,           // данные никогда не считаются устаревшими автоматически
+    refetchOnWindowFocus: false,   // не refetch при возврате на вкладку
     retry: 1,
   });
 
@@ -58,7 +58,7 @@ export function useDeadlines(
   const syncMutation = useMutation({
     mutationFn: syncDeadlines,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["deadlines"] });
+      refetch(); // обновляем данные немедленно, без инвалидации других экранов
     },
     onError: (err: Error) => {
       setError(err.message);
@@ -75,13 +75,13 @@ export function useDeadlines(
     silentSyncLock.current = true;
     try {
       await syncDeadlines();
-      queryClient.invalidateQueries({ queryKey: ["deadlines"] });
+      await refetch(); // фоновый refetch: isLoading остаётся false
     } catch (e) {
       console.warn("[SilentSync] Фоновая синхронизация не удалась:", e);
     } finally {
       silentSyncLock.current = false;
     }
-  }, [queryClient]);
+  }, [refetch]);
 
   // Дедупликация: если бэкенд вернул дубли — убираем их по id
   const events =

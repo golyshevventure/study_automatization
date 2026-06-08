@@ -12,6 +12,7 @@ import CourseDetail from "./pages/CourseDetail";
 import Notes from "./pages/Notes";
 import NoteDetail from "./pages/NoteDetail";
 import Deadlines from "./pages/Deadlines";
+import Calendar from "./pages/Calendar";
 import Notifications from "./pages/Notifications";
 
 const queryClient = new QueryClient({
@@ -63,6 +64,7 @@ export default function App() {
                     <Route path="/notes" element={<Notes />} />
                     <Route path="/notes/:id" element={<NoteDetail />} />
                     <Route path="/deadlines" element={<Deadlines />} />
+<Route path="/calendar" element={<Calendar />} />
                     <Route path="/notifications" element={<Notifications />} />
                   </Routes>
                   <BottomNav />

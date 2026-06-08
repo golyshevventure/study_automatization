@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -24,7 +25,15 @@ const queryClient = new QueryClient({
   },
 });
 
+// Очищаем протухший кэш при старте приложения (F5)
+queryClient.clear();
+
 export default function App() {
+  useEffect(() => {
+    // Дополнительная очистка при монтировании App
+    queryClient.clear();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>

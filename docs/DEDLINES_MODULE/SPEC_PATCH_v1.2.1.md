@@ -106,3 +106,17 @@
 - **Commits:** `17ad3aa`, `787c527`, `1037518`, `50d9f5e`
 - **Миграция:** `backend/alembic/versions/2d60fe661c56_add_deadline_unique_constraint.py`
 - **GitHub Milestone:** [Deadlines Patch v1.2](https://github.com/golyshevventure/study_automatization/milestone/3)
+
+### 3.9 🔴 События прошлых лет в кэше (issue #54)
+
+**Проблема:** На странице событий среди актуальных появляются события сентября 2025 года.
+
+**Корень:** React Query кэш содержит старые данные. `staleTime: Infinity` + перезапуски бэкенда = кэш никогда не обновляется.
+
+**Решение:**
+1. `queryClient.clear()` при старте приложения (App.tsx)
+2. `isEventUpcoming()` — фронтенд-фильтрация прошедших событий
+3. Retry (3 попытки) в `doSilentSync` при ошибке соединения
+4. `gcTime: 10 минут` — автоматическая очистка после размонтирования
+
+**Файлы:** `frontend/src/App.tsx`, `frontend/src/hooks/useDeadlines.ts`

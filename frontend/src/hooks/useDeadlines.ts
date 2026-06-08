@@ -26,6 +26,16 @@ const FILTER_LABELS: Record<DeadlineFilter, string> = {
 
 const PAGE_SIZE = 20;
 
+/** Проверяет, что событие не в прошлом (защита от протухших данных в кэше). */
+function isEventUpcoming(event: DeadlineEvent): boolean {
+  if (!event.event_date) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const [year, month, day] = event.event_date.split("-").map(Number);
+  const eventDate = new Date(year, month - 1, day);
+  return eventDate >= today;
+}
+
 export function useDeadlines(
   filter: DeadlineFilter = "all",
   limit = PAGE_SIZE,
@@ -48,8 +58,9 @@ export function useDeadlines(
       return loaded < lastPage.total ? loaded : undefined;
     },
     initialPageParam: 0,
-    staleTime: Infinity,           // данные никогда не считаются устаревшими автоматически
-    refetchOnWindowFocus: false,   // не refetch при возврате на вкладку
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    gcTime: 10 * 60 * 1000, // 10 минут — кэш очищается после размонтирования
     retry: 1,
   });
 
@@ -58,7 +69,7 @@ export function useDeadlines(
   const syncMutation = useMutation({
     mutationFn: syncDeadlines,
     onSuccess: () => {
-      refetch(); // обновляем данные немедленно, без инвалидации других экранов
+      refetch();
     },
     onError: (err: Error) => {
       setError(err.message);
@@ -73,20 +84,35 @@ export function useDeadlines(
   const doSilentSync = useCallback(async () => {
     if (silentSyncLock.current) return;
     silentSyncLock.current = true;
+
+    const attempt = async (retriesLeft: number): Promise<void> => {
+      try {
+        await syncDeadlines();
+        await refetch();
+      } catch (e) {
+        if (retriesLeft > 0) {
+          console.warn(
+            `[SilentSync] Повторная попытка через 3с... (${retriesLeft} осталось)`
+          );
+          await new Promise((r) => setTimeout(r, 3000));
+          return attempt(retriesLeft - 1);
+        }
+        console.warn("[SilentSync] Фоновая синхронизация не удалась:", e);
+      }
+    };
+
     try {
-      await syncDeadlines();
-      await refetch(); // фоновый refetch: isLoading остаётся false
-    } catch (e) {
-      console.warn("[SilentSync] Фоновая синхронизация не удалась:", e);
+      await attempt(3);
     } finally {
       silentSyncLock.current = false;
     }
   }, [refetch]);
 
-  // Дедупликация: если бэкенд вернул дубли — убираем их по id
+  // Дедупликация + фильтрация прошедших событий (защита от протухшего кэша)
   const events =
     data?.pages
       .flatMap((p) => p.events)
+      .filter(isEventUpcoming)
       .filter((e, idx, arr) => arr.findIndex((x) => x.id === e.id) === idx) ?? [];
   const total = data?.pages[0]?.total ?? 0;
 

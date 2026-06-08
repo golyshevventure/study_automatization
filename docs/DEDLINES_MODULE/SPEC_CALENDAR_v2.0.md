@@ -213,14 +213,14 @@ src/
 - [x] Подключить роутер в `backend/main.py`
 - [x] Тесты: 37 событий в июне, 20 в неделе 23, 551 после sync
 
-### Этап B: Frontend — компоненты календаря
-- [ ] `CalendarMonthView` — сетка месяца
-- [ ] `CalendarWeekView` — сетка недели
-- [ ] `CalendarDayCell` — ячейка с событиями
-- [ ] `EventDetailModal` — детали события
-- [ ] `CalendarHeader` — навигация
-- [ ] `CalendarFilterBar` — фильтры
-- [ ] `useCalendar` — хук загрузки
+### Этап B: Frontend — компоненты календаря ✅
+- [x] `CalendarMonthView` — сетка месяца 7×6 с точками событий
+- [x] `CalendarWeekView` — сетка недели 7 колонок + строка дедлайнов
+- [x] `CalendarDayCell` — ячейка с цветными точками, счётчик overflow
+- [x] `EventDetailModal` — bottom-sheet с деталями
+- [x] `CalendarHeader` — навигация месяц/неделя, кнопки ← → Сегодня
+- [x] `CalendarFilterBar` — фильтры (Все / Занятия / Работы / Контроль)
+- [x] `useCalendar` — хук загрузки с React Query, авто-sync
 
 ### Этап C: Интеграция и навигация
 - [ ] Страница `Calendar.tsx` (замена `Deadlines.tsx`)

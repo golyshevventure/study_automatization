@@ -53,12 +53,24 @@ def _parse_deadline_from_title(title: str) -> datetime | None:
     except ValueError:
         return None
 
-    # Эвристика: если дата в прошлом более чем на 30 дней — следующий год
+    # Эвристика: если дата без года в прошлом более чем на 30 дней —
+    # проверяем семестр. Если обе даты в одном семестре (весна: янв-май
+    # или осень: сен-дек), оставляем текущий год — это просроченное
+    # задание текущего семестра. Иначе — следующий год (задание из
+    # будущего семестра, загруженное заранее).
     if (now - candidate).days > 30:
-        try:
-            candidate = datetime(now.year + 1, int(month), int(day), 23, 59, tzinfo=timezone.utc)
-        except ValueError:
-            return None
+        def _semester(m: int) -> int:
+            if 1 <= m <= 5:
+                return 1  # весна
+            if 9 <= m <= 12:
+                return 2  # осень
+            return 0  # лето
+
+        if _semester(candidate.month) != _semester(now.month) or _semester(now.month) == 0:
+            try:
+                candidate = datetime(now.year + 1, int(month), int(day), 23, 59, tzinfo=timezone.utc)
+            except ValueError:
+                return None
 
     return candidate
 

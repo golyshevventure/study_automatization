@@ -20,11 +20,18 @@ export default function CalendarDayCell({ date, events, isCurrentMonth, isToday,
   return (
     <button
       onClick={onClick}
-      className="relative flex flex-col items-center justify-start py-1 rounded-lg transition-all active:scale-95 min-h-[52px] sm:min-h-[64px]"
+      className="relative flex flex-col items-center justify-start py-1 rounded-lg transition-all duration-200 active:scale-95 min-h-[52px] sm:min-h-[64px] hover:bg-white/5"
       style={{
-        background: isToday ? "rgba(138, 43, 226, 0.2)" : "transparent",
-        border: isToday ? "1px solid rgba(138, 43, 226, 0.4)" : "1px solid transparent",
-        opacity: isCurrentMonth ? 1 : 0.35,
+        background: isToday
+          ? "rgba(138, 43, 226, 0.15)"
+          : "transparent",
+        border: isToday
+          ? "1px solid rgba(138, 43, 226, 0.5)"
+          : "1px solid transparent",
+        boxShadow: isToday
+          ? "0 0 12px rgba(138, 43, 226, 0.25)"
+          : "none",
+        opacity: isCurrentMonth ? 1 : 0.3,
       }}
     >
       <span
@@ -32,6 +39,7 @@ export default function CalendarDayCell({ date, events, isCurrentMonth, isToday,
         style={{
           color: isToday ? "#fff" : isWeekend ? "#EF4444" : "#CBD5E1",
           background: isToday ? "#8A2BE2" : "transparent",
+          textShadow: isToday ? "0 0 6px rgba(138, 43, 226, 0.6)" : "none",
         }}
       >
         {dayNum}
@@ -44,7 +52,7 @@ export default function CalendarDayCell({ date, events, isCurrentMonth, isToday,
             <div
               key={i}
               className="w-1.5 h-1.5 rounded-full"
-              style={{ background: e.color }}
+              style={{ background: e.color, boxShadow: `0 0 3px ${e.color}60` }}
             />
           ))}
         </div>

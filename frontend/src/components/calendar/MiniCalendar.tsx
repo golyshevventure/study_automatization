@@ -1,8 +1,11 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getCalendarWeek } from "../../api/calendar";
 import type { CalendarEvent } from "../../types/calendar";
+import { formatDateKey } from "../../utils/date";
+import DaySheet from "./DaySheet";
+import EventDetailModal from "./EventDetailModal";
 
 const WEEKDAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
@@ -27,6 +30,8 @@ export default function MiniCalendar() {
   const navigate = useNavigate();
   const today = new Date();
   const { year, week } = getISOWeek(today);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
 
   const { data } = useQuery({
     queryKey: ["calendar", "week", year, week, "all"],
@@ -46,7 +51,7 @@ export default function MiniCalendar() {
     for (let i = 0; i < 7; i++) {
       const date = new Date(monday);
       date.setDate(monday.getDate() + i);
-      const key = date.toISOString().split("T")[0];
+      const key = formatDateKey(date);
       result.push({
         date,
         weekday: WEEKDAYS[i],
@@ -58,7 +63,7 @@ export default function MiniCalendar() {
 
   return (
     <div
-      className="rounded-2xl p-4 cursor-pointer transition-transform active:scale-[0.98]"
+      className="rounded-2xl p-4 transition-transform active:scale-[0.98]"
       style={{
         background: "rgba(15, 23, 42, 0.6)",
         boxShadow: "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)",
@@ -80,8 +85,15 @@ export default function MiniCalendar() {
           const hasEvents = d.events.length > 0;
           const colors = d.events.slice(0, 3).map((e) => e.color);
 
+          const handleDayClick = (e: React.MouseEvent) => {
+            e.stopPropagation();
+            if (hasEvents) {
+              setSelectedDate(d.date);
+            }
+          };
+
           return (
-            <div key={i} className="flex flex-col items-center gap-1.5">
+            <button key={i} className="flex flex-col items-center gap-1.5" onClick={handleDayClick}>
               <span
                 className="text-[10px] font-medium"
                 style={{ color: isToday ? "#B794F6" : "#64748B" }}
@@ -107,10 +119,18 @@ export default function MiniCalendar() {
                   <div className="w-1 h-1 rounded-full" style={{ background: "transparent" }} />
                 )}
               </div>
-            </div>
+            </button>
           );
         })}
       </div>
+
+      <DaySheet
+        date={selectedDate}
+        events={selectedDate ? data?.days[formatDateKey(selectedDate)] ?? [] : []}
+        onClose={() => setSelectedDate(null)}
+        onEventClick={(e) => setSelectedEvent(e)}
+      />
+      <EventDetailModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
     </div>
   );
 }

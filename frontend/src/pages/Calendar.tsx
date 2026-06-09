@@ -1,5 +1,6 @@
 import { useCalendar } from "../hooks/useCalendar";
 import CalendarHeader from "../components/calendar/CalendarHeader";
+import CalendarFilterBar from "../components/calendar/CalendarFilterBar";
 import CalendarMonthView from "../components/calendar/CalendarMonthView";
 import CalendarWeekView from "../components/calendar/CalendarWeekView";
 import { BookOpen, CalendarDays, GraduationCap, FileText } from "lucide-react";
@@ -73,6 +74,8 @@ export default function Calendar() {
     goToPrev,
     goToNext,
     goToToday,
+    filter,
+    setFilter,
     isSyncing,
     doSync,
   } = useCalendar();
@@ -95,6 +98,8 @@ export default function Calendar() {
         isSyncing={isSyncing}
         onSync={doSync}
       />
+
+      <CalendarFilterBar filter={filter} onChange={setFilter} />
 
       {/* Legend */}
       <div className="px-4 mb-3 flex gap-3 overflow-x-auto hide-scrollbar pb-1">

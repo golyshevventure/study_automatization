@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import type { CalendarEvent, CalendarView } from "../types/calendar";
+import type { CalendarEvent, CalendarFilter, CalendarView } from "../types/calendar";
 import { getCalendarMonth, getCalendarWeek, type CalendarMonthResponse, type CalendarWeekResponse } from "../api/calendar";
 import { syncDeadlines } from "../api/deadlines";
 
@@ -16,6 +16,8 @@ interface UseCalendarResult {
   goToPrev: () => void;
   goToNext: () => void;
   goToToday: () => void;
+  filter: CalendarFilter;
+  setFilter: (f: CalendarFilter) => void;
   isSyncing: boolean;
   doSync: () => void;
   doSilentSync: () => Promise<void>;
@@ -39,6 +41,7 @@ function getISOWeek(date: Date): { year: number; week: number } {
 export function useCalendar(): UseCalendarResult {
   const [view, setView] = useState<CalendarView>("month");
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
+  const [filter, setFilter] = useState<CalendarFilter>("all");
   const [error, setError] = useState<string | null>(null);
 
   const silentSyncLock = useRef(false);
@@ -49,14 +52,14 @@ export function useCalendar(): UseCalendarResult {
 
   const queryKey =
     view === "month"
-      ? ["calendar", "month", yearMonth, month]
-      : ["calendar", "week", year, week];
+      ? ["calendar", "month", yearMonth, month, filter]
+      : ["calendar", "week", year, week, filter];
 
   const queryFn = async (): Promise<CalendarMonthResponse | CalendarWeekResponse> => {
     if (view === "month") {
-      return getCalendarMonth(yearMonth, month, "all");
+      return getCalendarMonth(yearMonth, month, filter);
     }
-    return getCalendarWeek(year, week, "all");
+    return getCalendarWeek(year, week, filter);
   };
 
   const {
@@ -161,6 +164,8 @@ export function useCalendar(): UseCalendarResult {
     goToPrev,
     goToNext,
     goToToday,
+    filter,
+    setFilter,
     isSyncing: syncMutation.isPending,
     doSync,
     doSilentSync,

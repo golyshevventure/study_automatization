@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import type { CalendarEvent } from "../../types/calendar";
+import { formatDateKey } from "../../utils/date";
 import EventDetailModal from "./EventDetailModal";
 
 interface Props {
@@ -57,7 +58,7 @@ export default function CalendarWeekView({ currentDate, days }: Props) {
     for (let i = 0; i < 7; i++) {
       const date = new Date(monday);
       date.setDate(monday.getDate() + i);
-      const key = date.toISOString().split("T")[0];
+      const key = formatDateKey(date);
       result.push({
         date,
         weekday: WEEKDAYS[i],

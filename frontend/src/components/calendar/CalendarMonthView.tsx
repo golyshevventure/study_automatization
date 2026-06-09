@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import type { CalendarEvent } from "../../types/calendar";
+import { formatDateKey } from "../../utils/date";
 import CalendarDayCell, { WeekdayHeader } from "./CalendarDayCell";
+import DaySheet from "./DaySheet";
 import EventDetailModal from "./EventDetailModal";
 
 interface Props {
@@ -18,44 +20,40 @@ function isSameDay(a: Date, b: Date): boolean {
 }
 
 export default function CalendarMonthView({ year, month, days }: Props) {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
 
   const cells = useMemo(() => {
     const firstDayOfMonth = new Date(year, month - 1, 1);
-    const daysInMonth = new Date(year, month, 0).getDate();
+    const lastDayOfMonth = new Date(year, month, 0);
 
-    // День недели первого числа (0=Вс, 1=Пн...)
-    let startDay = firstDayOfMonth.getDay();
-    if (startDay === 0) startDay = 7; // Вс = 7
+    // Понедельник первой недели
+    const firstMonday = new Date(firstDayOfMonth);
+    const dow = firstDayOfMonth.getDay() || 7; // 1=Пн...7=Вс
+    firstMonday.setDate(firstDayOfMonth.getDate() - (dow - 1));
 
-    const totalCells = 42; // 7×6
+    // Воскресенье последней недели
+    const lastSunday = new Date(lastDayOfMonth);
+    const lastDow = lastDayOfMonth.getDay() || 7;
+    lastSunday.setDate(lastDayOfMonth.getDate() + (7 - lastDow));
+
+    // Генерируем все дни между firstMonday и lastSunday
     const cells: {
       date: Date;
       isCurrentMonth: boolean;
       events: CalendarEvent[];
     }[] = [];
 
-    // Дни предыдущего месяца
-    const prevMonthDays = new Date(year, month - 1, 0).getDate();
-    for (let i = startDay - 2; i >= 0; i--) {
-      const d = new Date(year, month - 2, prevMonthDays - i);
-      const key = d.toISOString().split("T")[0];
-      cells.push({ date: d, isCurrentMonth: false, events: days[key] ?? [] });
-    }
-
-    // Дни текущего месяца
-    for (let i = 1; i <= daysInMonth; i++) {
-      const d = new Date(year, month - 1, i);
-      const key = d.toISOString().split("T")[0];
-      cells.push({ date: d, isCurrentMonth: true, events: days[key] ?? [] });
-    }
-
-    // Дни следующего месяца
-    const remaining = totalCells - cells.length;
-    for (let i = 1; i <= remaining; i++) {
-      const d = new Date(year, month, i);
-      const key = d.toISOString().split("T")[0];
-      cells.push({ date: d, isCurrentMonth: false, events: days[key] ?? [] });
+    const cursor = new Date(firstMonday);
+    while (cursor <= lastSunday) {
+      const d = new Date(cursor);
+      const key = formatDateKey(d);
+      cells.push({
+        date: d,
+        isCurrentMonth: d.getMonth() === month - 1,
+        events: days[key] ?? [],
+      });
+      cursor.setDate(cursor.getDate() + 1);
     }
 
     return cells;
@@ -63,11 +61,9 @@ export default function CalendarMonthView({ year, month, days }: Props) {
 
   const today = new Date();
 
-  // При клике на ячейку: если есть события — показываем первое (в будущем можно сделать список)
-  const handleCellClick = (events: CalendarEvent[]) => {
-    if (events.length > 0) {
-      setSelectedEvent(events[0]);
-    }
+  // При клике на ячейку открываем DaySheet со всеми событиями дня
+  const handleCellClick = (date: Date) => {
+    setSelectedDate(date);
   };
 
   return (
@@ -81,10 +77,18 @@ export default function CalendarMonthView({ year, month, days }: Props) {
             events={cell.events}
             isCurrentMonth={cell.isCurrentMonth}
             isToday={isSameDay(cell.date, today)}
-            onClick={() => handleCellClick(cell.events)}
+            onClick={() => handleCellClick(cell.date)}
           />
         ))}
       </div>
+
+      {/* DaySheet — список событий дня */}
+      <DaySheet
+        date={selectedDate}
+        events={selectedDate ? days[formatDateKey(selectedDate)] ?? [] : []}
+        onClose={() => setSelectedDate(null)}
+        onEventClick={(e) => setSelectedEvent(e)}
+      />
 
       {/* Event detail modal */}
       <EventDetailModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />

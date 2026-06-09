@@ -32,11 +32,11 @@ function WeekEventItem({ event, onClick }: { event: CalendarEvent; onClick: () =
         borderLeft: `3px solid ${event.color}`,
       }}
     >
-      <p className="text-[11px] font-medium truncate" style={{ color: "#fff" }}>
+      <p className="text-[10px] sm:text-[11px] font-medium truncate" style={{ color: "#fff" }}>
         {event.title}
       </p>
       {event.time_str && (
-        <p className="text-[10px]" style={{ color: event.color }}>
+        <p className="text-[9px] sm:text-[10px]" style={{ color: event.color }}>
           {event.time_str}
         </p>
       )}
@@ -83,12 +83,12 @@ export default function CalendarWeekView({ currentDate, days }: Props) {
         {weekDays.map((d, i) => {
           const isToday = isSameDay(d.date, today);
           return (
-            <div key={i} className="text-center py-2">
-              <p className="text-[10px] font-medium" style={{ color: isToday ? "#B794F6" : "#64748B" }}>
+            <div key={i} className="text-center py-1.5 sm:py-2">
+              <p className="text-[9px] sm:text-[10px] font-medium" style={{ color: isToday ? "#B794F6" : "#64748B" }}>
                 {d.weekday}
               </p>
               <p
-                className="text-sm font-semibold mt-0.5"
+                className="text-xs sm:text-sm font-semibold mt-0.5"
                 style={{ color: isToday ? "#fff" : "#CBD5E1" }}
               >
                 {d.date.getDate()}
@@ -99,9 +99,9 @@ export default function CalendarWeekView({ currentDate, days }: Props) {
       </div>
 
       {/* Events grid */}
-      <div className="grid grid-cols-7 gap-1 min-h-[200px]">
+      <div className="grid grid-cols-7 gap-1 min-h-[160px] sm:min-h-[200px]">
         {weekDays.map((d, i) => (
-          <div key={i} className="rounded-xl p-1" style={{ background: "rgba(15, 23, 42, 0.4)" }}>
+          <div key={i} className="rounded-lg sm:rounded-xl p-0.5 sm:p-1" style={{ background: "rgba(15, 23, 42, 0.4)" }}>
             {d.events.map((e) => (
               <WeekEventItem
                 key={e.id}

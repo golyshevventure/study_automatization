@@ -1,6 +1,6 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import type { CalendarEvent, CalendarFilter, CalendarView } from "../types/calendar";
+import type { CalendarEvent, CalendarView } from "../types/calendar";
 import { getCalendarMonth, getCalendarWeek, type CalendarMonthResponse, type CalendarWeekResponse } from "../api/calendar";
 import { syncDeadlines } from "../api/deadlines";
 
@@ -16,19 +16,10 @@ interface UseCalendarResult {
   goToPrev: () => void;
   goToNext: () => void;
   goToToday: () => void;
-  filter: CalendarFilter;
-  setFilter: (f: CalendarFilter) => void;
   isSyncing: boolean;
   doSync: () => void;
   doSilentSync: () => Promise<void>;
 }
-
-const FILTER_LABELS: Record<CalendarFilter, string> = {
-  lessons: "Занятия",
-  works: "Работы",
-  control: "Контроль",
-  all: "Все",
-};
 
 const VIEW_LABELS: Record<CalendarView, string> = {
   month: "Месяц",
@@ -48,7 +39,6 @@ function getISOWeek(date: Date): { year: number; week: number } {
 export function useCalendar(): UseCalendarResult {
   const [view, setView] = useState<CalendarView>("month");
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
-  const [filter, setFilter] = useState<CalendarFilter>("all");
   const [error, setError] = useState<string | null>(null);
 
   const silentSyncLock = useRef(false);
@@ -59,14 +49,14 @@ export function useCalendar(): UseCalendarResult {
 
   const queryKey =
     view === "month"
-      ? ["calendar", "month", yearMonth, month, filter]
-      : ["calendar", "week", year, week, filter];
+      ? ["calendar", "month", yearMonth, month]
+      : ["calendar", "week", year, week];
 
   const queryFn = async (): Promise<CalendarMonthResponse | CalendarWeekResponse> => {
     if (view === "month") {
-      return getCalendarMonth(yearMonth, month, filter);
+      return getCalendarMonth(yearMonth, month, "all");
     }
-    return getCalendarWeek(year, week, filter);
+    return getCalendarWeek(year, week, "all");
   };
 
   const {
@@ -133,6 +123,27 @@ export function useCalendar(): UseCalendarResult {
     setCurrentDate(new Date());
   }, []);
 
+  // Фоновый sync каждые 30 мин — НЕ при монтировании, только периодический
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let cancelled = false;
+
+    const scheduleNext = (delay: number) => {
+      timeoutId = setTimeout(async () => {
+        if (cancelled) return;
+        await doSilentSync();
+        scheduleNext(30 * 60 * 1000);
+      }, delay);
+    };
+
+    scheduleNext(30 * 60 * 1000);
+
+    return () => {
+      cancelled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [doSilentSync]);
+
   // Дни и события
   const days = (data as CalendarMonthResponse | CalendarWeekResponse | undefined)?.days ?? {};
   const events = Object.values(days).flat() as CalendarEvent[];
@@ -150,12 +161,10 @@ export function useCalendar(): UseCalendarResult {
     goToPrev,
     goToNext,
     goToToday,
-    filter,
-    setFilter,
     isSyncing: syncMutation.isPending,
     doSync,
     doSilentSync,
   };
 }
 
-export { FILTER_LABELS, VIEW_LABELS, getISOWeek };
+export { VIEW_LABELS, getISOWeek };

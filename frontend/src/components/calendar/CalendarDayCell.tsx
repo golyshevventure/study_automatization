@@ -20,7 +20,7 @@ export default function CalendarDayCell({ date, events, isCurrentMonth, isToday,
   return (
     <button
       onClick={onClick}
-      className="relative flex flex-col items-center justify-start py-1.5 rounded-xl transition-all active:scale-95 min-h-[64px]"
+      className="relative flex flex-col items-center justify-start py-1 rounded-lg transition-all active:scale-95 min-h-[52px] sm:min-h-[64px]"
       style={{
         background: isToday ? "rgba(138, 43, 226, 0.2)" : "transparent",
         border: isToday ? "1px solid rgba(138, 43, 226, 0.4)" : "1px solid transparent",
@@ -28,7 +28,7 @@ export default function CalendarDayCell({ date, events, isCurrentMonth, isToday,
       }}
     >
       <span
-        className="text-xs font-medium w-6 h-6 flex items-center justify-center rounded-full"
+        className="text-[11px] sm:text-xs font-medium w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full"
         style={{
           color: isToday ? "#fff" : isWeekend ? "#EF4444" : "#CBD5E1",
           background: isToday ? "#8A2BE2" : "transparent",

@@ -1,24 +1,65 @@
-import { useEffect } from "react";
 import { useCalendar } from "../hooks/useCalendar";
 import CalendarHeader from "../components/calendar/CalendarHeader";
-import CalendarFilterBar from "../components/calendar/CalendarFilterBar";
 import CalendarMonthView from "../components/calendar/CalendarMonthView";
 import CalendarWeekView from "../components/calendar/CalendarWeekView";
-import { RefreshCw } from "lucide-react";
-
-const SYNC_INTERVAL_MS = 30 * 60 * 1000;
-const MIN_SYNC_INTERVAL_MS = 5 * 60 * 1000;
-
-function getLastSyncTime(): number | null {
-  const raw = localStorage.getItem("calendar_last_sync");
-  return raw ? parseInt(raw, 10) : null;
-}
-
-function setLastSyncTime(time: number) {
-  localStorage.setItem("calendar_last_sync", String(time));
-}
+import { BookOpen, CalendarDays, GraduationCap, FileText } from "lucide-react";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
+
+const LEGEND = [
+  { label: "Занятие", color: "#3B82F6", icon: BookOpen },
+  { label: "Тест", color: "#EAB308", icon: CalendarDays },
+  { label: "Зачёт / Экзамен", color: "#EF4444", icon: GraduationCap },
+  { label: "ДЗ", color: "#F97316", icon: FileText },
+];
+
+/** Skeleton сетка месяца — 7×6 серых ячеек. */
+function MonthSkeleton() {
+  return (
+    <div className="px-2 animate-pulse">
+      <div className="grid grid-cols-7 gap-1 mb-1">
+        {["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"].map((d) => (
+          <div key={d} className="text-center text-[10px] py-1" style={{ color: "#334155" }}>
+            {d}
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-7 gap-1">
+        {Array.from({ length: 42 }).map((_, i) => (
+          <div
+            key={i}
+            className="rounded-xl min-h-[64px]"
+            style={{ background: "rgba(30, 41, 59, 0.4)" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** Skeleton недели — 7 колонок. */
+function WeekSkeleton() {
+  return (
+    <div className="px-2 animate-pulse">
+      <div className="grid grid-cols-7 gap-1 mb-2">
+        {Array.from({ length: 7 }).map((_, i) => (
+          <div key={i} className="text-center py-2">
+            <div className="h-3 w-8 mx-auto rounded" style={{ background: "#334155" }} />
+            <div className="h-4 w-6 mx-auto rounded mt-1" style={{ background: "#334155" }} />
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-7 gap-1 min-h-[200px]">
+        {Array.from({ length: 7 }).map((_, i) => (
+          <div key={i} className="rounded-xl p-1" style={{ background: "rgba(30, 41, 59, 0.4)" }}>
+            <div className="h-8 rounded-lg mb-1" style={{ background: "#334155" }} />
+            <div className="h-8 rounded-lg" style={{ background: "#334155" }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Calendar() {
   const {
@@ -32,48 +73,9 @@ export default function Calendar() {
     goToPrev,
     goToNext,
     goToToday,
-    filter,
-    setFilter,
     isSyncing,
     doSync,
-    doSilentSync,
   } = useCalendar();
-
-  // Авто-синхронизация
-  useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    let cancelled = false;
-
-    const scheduleNext = (delay: number) => {
-      timeoutId = setTimeout(async () => {
-        if (cancelled) return;
-        await doSilentSync();
-        if (!cancelled) setLastSyncTime(Date.now());
-        scheduleNext(SYNC_INTERVAL_MS);
-      }, delay);
-    };
-
-    const runSilent = async () => {
-      const last = getLastSyncTime();
-      const now = Date.now();
-      if (!last || now - last > MIN_SYNC_INTERVAL_MS) {
-        await doSilentSync();
-        if (!cancelled) setLastSyncTime(now);
-      }
-      scheduleNext(SYNC_INTERVAL_MS);
-    };
-    runSilent();
-
-    return () => {
-      cancelled = true;
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, [doSilentSync]);
-
-  const handleManualSync = () => {
-    doSync();
-    setLastSyncTime(Date.now());
-  };
 
   return (
     <div
@@ -91,10 +93,23 @@ export default function Calendar() {
         onNext={goToNext}
         onToday={goToToday}
         isSyncing={isSyncing}
-        onSync={handleManualSync}
+        onSync={doSync}
       />
 
-      <CalendarFilterBar filter={filter} onChange={setFilter} />
+      {/* Legend */}
+      <div className="px-4 mb-3 flex gap-3 overflow-x-auto hide-scrollbar pb-1">
+        {LEGEND.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div key={item.label} className="flex items-center gap-1.5 shrink-0">
+              <Icon size={12} color={item.color} />
+              <span className="text-[11px]" style={{ color: "#94A3B8" }}>
+                {item.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
 
       {error && (
         <p className="px-4 text-xs mb-2" style={{ color: "#EF4444" }}>
@@ -103,12 +118,7 @@ export default function Calendar() {
       )}
 
       {isLoading ? (
-        <div className="text-center py-12">
-          <RefreshCw size={24} color="#B794F6" className="animate-spin mx-auto" />
-          <p className="text-xs mt-2" style={{ color: "#94A3B8" }}>
-            Загрузка календаря...
-          </p>
-        </div>
+        view === "month" ? <MonthSkeleton /> : <WeekSkeleton />
       ) : total === 0 ? (
         <div
           className="mx-4 rounded-2xl p-8 text-center flex flex-col items-center gap-3"
@@ -121,11 +131,11 @@ export default function Calendar() {
             Нет событий за этот период
           </p>
           <p className="text-xs" style={{ color: "#94A3B8" }}>
-            Попробуйте другой фильтр или период
+            Проверьте другой период или синхронизируйтесь
           </p>
         </div>
       ) : (
-        <>
+        <div className="animate-in fade-in duration-300">
           {view === "month" ? (
             <CalendarMonthView
               year={currentDate.getFullYear()}
@@ -135,7 +145,7 @@ export default function Calendar() {
           ) : (
             <CalendarWeekView currentDate={currentDate} days={days} />
           )}
-        </>
+        </div>
       )}
     </div>
   );

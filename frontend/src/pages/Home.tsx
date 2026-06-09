@@ -2,10 +2,9 @@ import { useState } from "react";
 import { FileText, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { notes } from "../data";
-import { useDeadlines } from "../hooks/useDeadlines";
 import { useAuth } from "../contexts/AuthContext";
 import { usePrograms, type Course } from "../hooks/usePrograms";
-import DeadlineCard from "../components/DeadlineCard";
+import MiniCalendar from "../components/calendar/MiniCalendar";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
 const neonShadowLight = "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)";
@@ -120,7 +119,6 @@ function CourseCard({ course }: { course: Course }) {
 export default function Home() {
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
-  const { events, total } = useDeadlines("all", 3);
   const { courses, loading, error } = usePrograms();
 
   if (loading) {
@@ -241,49 +239,21 @@ export default function Home() {
         )}
       </div>
 
-      {/* Upcoming Events */}
+      {/* Mini Calendar */}
       <div className="mt-6 px-4">
-        <h2 className="text-lg font-semibold mb-3" style={{ color: "#fff", textShadow: neonShadowLight }}>
-          Ближайшие события
-        </h2>
-        <div className="flex flex-col gap-3">
-          {events.length === 0 ? (
-            <div
-              className="rounded-2xl p-6 text-center"
-              style={{
-                background: "rgba(15, 23, 42, 0.6)",
-                boxShadow: neonShadow,
-              }}
-            >
-              <p className="text-sm font-medium" style={{ color: "#fff" }}>
-                Нет предстоящих событий
-              </p>
-              <p className="text-xs mt-1" style={{ color: "#94A3B8" }}>
-                Все задания выполнены или на проверке
-              </p>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-3">
-              {events.map((e) => (
-                <DeadlineCard key={e.id} event={e} />
-              ))}
-            </div>
-          )}
-        </div>
-        {events.length > 0 && total > events.length && (
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-lg font-semibold" style={{ color: "#fff", textShadow: neonShadowLight }}>
+            Календарь
+          </h2>
           <button
-            onClick={() => navigate("/deadlines")}
-            className="w-full mt-4 py-3 rounded-2xl text-sm font-medium transition-all active:scale-95"
-            style={{
-              background: "rgba(138, 43, 226, 0.15)",
-              color: "#B794F6",
-              border: "1px solid rgba(138, 43, 226, 0.3)",
-              boxShadow: "0 0 10px rgba(138, 43, 226, 0.2)",
-            }}
+            onClick={() => navigate("/calendar")}
+            className="flex items-center gap-1 text-sm"
+            style={{ color: "#B794F6" }}
           >
-            Показать все ({total})
+            Открыть <ChevronRight size={16} />
           </button>
-        )}
+        </div>
+        <MiniCalendar />
       </div>
 
       {/* Recent Notes */}

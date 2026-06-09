@@ -1,11 +1,11 @@
-import { Home, BookOpen, Clock, Bell } from "lucide-react";
+import { Home, BookOpen, Calendar as CalendarIcon, Bell } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { notifications } from "../data";
 
 const tabs = [
   { icon: Home, label: "Главная", path: "/" },
   { icon: BookOpen, label: "Конспекты", path: "/notes" },
-  { icon: Clock, label: "События", path: "/deadlines" },
+  { icon: CalendarIcon, label: "Календарь", path: "/calendar" },
   { icon: Bell, label: "Уведомления", path: "/notifications" },
 ];
 

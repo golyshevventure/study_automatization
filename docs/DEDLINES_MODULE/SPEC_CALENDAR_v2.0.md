@@ -222,11 +222,11 @@ src/
 - [x] `CalendarFilterBar` — фильтры (Все / Занятия / Работы / Контроль)
 - [x] `useCalendar` — хук загрузки с React Query, авто-sync
 
-### Этап C: Интеграция и навигация
-- [ ] Страница `Calendar.tsx` (замена `Deadlines.tsx`)
-- [ ] `BottomNav`: «Календарь» вместо «События»
-- [ ] `Home.tsx`: мини-календарь (`MiniCalendar`)
-- [ ] Роутинг: `/calendar` вместо `/deadlines`
+### Этап C: Интеграция и навигация ✅
+- [x] `BottomNav`: «Календарь» с иконкой Calendar, путь `/calendar`
+- [x] `Home.tsx`: мини-календарь (`MiniCalendar`) вместо списка событий
+- [x] `MiniCalendar`: горизонтальная полоса 7 дней с точками событий
+- [x] Роутинг: `/calendar` добавлен (legacy `/deadlines` оставлен)
 
 ### Этап D: Полировка
 - [ ] Адаптивность (mobile-first)

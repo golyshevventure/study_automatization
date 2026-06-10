@@ -15,6 +15,7 @@ from backend.api.auth_router import router as auth_router
 from backend.api.calendar_router import router as calendar_router
 from backend.api.deadlines_router import router as deadlines_router
 from backend.api.programs_router import router as programs_router
+from backend.api.summary_router import router as summary_router
 from backend.core.database import engine
 
 
@@ -56,6 +57,7 @@ app.include_router(auth_router, prefix="/api")
 app.include_router(programs_router, prefix="/api")
 app.include_router(deadlines_router, prefix="/api")
 app.include_router(calendar_router, prefix="/api")
+app.include_router(summary_router, prefix="/api")
 
 
 @app.get("/", tags=["health"])

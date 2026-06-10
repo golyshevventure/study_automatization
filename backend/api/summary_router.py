@@ -327,7 +327,7 @@ async def recent_conspects(
 
 
 # ---------------------------------------------------------------------------
-# Knowledge Graph (placeholder for Phase 4)
+# Knowledge Graph
 # ---------------------------------------------------------------------------
 
 @router.get(
@@ -339,5 +339,58 @@ async def knowledge_graph(
     session: UserSession = Depends(get_current_session),
     db: AsyncSession = Depends(get_db),
 ) -> KnowledgeGraphResponse:
-    # TODO: implement in Phase 4
-    return KnowledgeGraphResponse(nodes=[], edges=[])
+    """Построить граф знаний: программы → модули → конспекты."""
+    from backend.models.summary import NetologyProgram, NetologyModule
+
+    # Fetch all user's programs with modules and conspects
+    result = await db.execute(
+        select(NetologyProgram)
+        .where(NetologyProgram.user_id == session.user_id)
+        .options(
+            selectinload(NetologyProgram.modules).selectinload(NetologyModule.lessons)
+        )
+    )
+    programs = list(result.scalars().all())
+
+    # Fetch all conspects
+    conspect_result = await db.execute(
+        select(Conspect).where(Conspect.user_id == session.user_id)
+    )
+    conspects = list(conspect_result.scalars().all())
+
+    nodes: list[GraphNode] = []
+    edges: list[GraphEdge] = []
+
+    # Programs
+    for prog in programs:
+        nodes.append(GraphNode(
+            id=str(prog.id),
+            label=prog.title,
+            type="program",
+            color="#8a2be2",
+        ))
+
+        # Modules
+        for mod in prog.modules:
+            nodes.append(GraphNode(
+                id=str(mod.id),
+                label=mod.title,
+                type="module",
+                color="#B794F6",
+            ))
+            edges.append(GraphEdge(source=str(prog.id), target=str(mod.id)))
+
+    # Conspects
+    for c in conspects:
+        nodes.append(GraphNode(
+            id=str(c.id),
+            label=c.title,
+            type="conspect",
+            color="#00f0ff",
+        ))
+        if c.program_id:
+            edges.append(GraphEdge(source=str(c.program_id), target=str(c.id)))
+        if c.module_id:
+            edges.append(GraphEdge(source=str(c.module_id), target=str(c.id)))
+
+    return KnowledgeGraphResponse(nodes=nodes, edges=edges)

@@ -9,6 +9,7 @@ import {
   type ConspectJob,
 } from "../api/summary";
 import GenerateConspectModal from "../components/summary/GenerateConspectModal";
+import KnowledgeGraph from "../components/summary/KnowledgeGraph";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
 

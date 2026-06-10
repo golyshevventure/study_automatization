@@ -162,3 +162,29 @@ export async function getRecentConspects(): Promise<Conspect[]> {
   const res = await fetchWithAuth("/summary/conspects/recent");
   return res.json();
 }
+
+// ---------------------------------------------------------------------------
+// Knowledge Graph
+// ---------------------------------------------------------------------------
+
+export interface GraphNode {
+  id: string;
+  label: string;
+  type: string;
+  color: string | null;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+}
+
+export interface KnowledgeGraphData {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+}
+
+export async function getKnowledgeGraph(): Promise<KnowledgeGraphData> {
+  const res = await fetchWithAuth("/summary/knowledge-graph");
+  return res.json();
+}

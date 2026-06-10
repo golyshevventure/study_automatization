@@ -12,6 +12,7 @@ import CourseDetail from "./pages/CourseDetail";
 import Notes from "./pages/Notes";
 import NoteDetail from "./pages/NoteDetail";
 import Conspects from "./pages/Conspects";
+import ConspectDetail from "./pages/ConspectDetail";
 import Calendar from "./pages/Calendar";
 import Notifications from "./pages/Notifications";
 
@@ -64,6 +65,7 @@ export default function App() {
                     <Route path="/notes" element={<Notes />} />
                     <Route path="/notes/:id" element={<NoteDetail />} />
                     <Route path="/conspects" element={<Conspects />} />
+                    <Route path="/conspects/:id" element={<ConspectDetail />} />
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/notifications" element={<Notifications />} />
                   </Routes>

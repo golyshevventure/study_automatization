@@ -31,5 +31,11 @@ class Settings:
     NETOLOGY_EMAIL: str = os.getenv("NETOLOGY_EMAIL", "")
     NETOLOGY_PASSWORD: str = os.getenv("NETOLOGY_PASSWORD", "")
 
+    # OpenRouter
+    OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
+
+    # Redis
+    REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+
 
 settings = Settings()

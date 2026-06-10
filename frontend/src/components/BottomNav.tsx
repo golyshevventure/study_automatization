@@ -4,7 +4,7 @@ import { notifications } from "../data";
 
 const tabs = [
   { icon: Home, label: "Главная", path: "/" },
-  { icon: BookOpen, label: "Конспекты", path: "/notes" },
+  { icon: BookOpen, label: "Конспекты", path: "/conspects" },
   { icon: CalendarIcon, label: "Календарь", path: "/calendar" },
   { icon: Bell, label: "Уведомления", path: "/notifications" },
 ];

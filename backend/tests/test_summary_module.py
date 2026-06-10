@@ -63,9 +63,10 @@ Second line
         assert "NOTE" not in result
         assert "1" not in result  # standalone numbers removed
 
-    def test_extract_vtt_invalid_url(self):
+    @pytest.mark.asyncio
+    async def test_extract_vtt_invalid_url(self):
         # Should return empty string for bad URL
-        result = VTTExtractionService.extract_vtt("https://invalid-url-12345.example.com")
+        result = await VTTExtractionService.extract_vtt("https://invalid-url-12345.example.com")
         assert result == ""
 
 

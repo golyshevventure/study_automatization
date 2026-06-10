@@ -16,11 +16,14 @@ Endpoints:
 
 from uuid import UUID
 
+from arq import create_pool
+from arq.connections import RedisSettings
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import func, select
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from backend.core.config import settings
 from backend.core.database import get_db
 from backend.dependencies.session_dep import get_current_session
 from backend.models.session import UserSession
@@ -38,6 +41,7 @@ from backend.schemas.summary import (
     NetologyModuleResponse,
     NetologyProgramResponse,
 )
+from backend.services.conspect_job_service import ConspectJobService
 from backend.services.netology_program_service import NetologyProgramService
 from backend.services.vtt_extraction_service import VTTExtractionService
 
@@ -126,7 +130,7 @@ async def generate_conspect(
 
     # Quick VTT check
     if item.video_url and not item.has_vtt:
-        vtt_text = VTTExtractionService.extract_vtt(item.video_url)
+        vtt_text = await VTTExtractionService.extract_vtt(item.video_url)
         if vtt_text:
             item.has_vtt = True
             await db.commit()
@@ -137,16 +141,24 @@ async def generate_conspect(
             )
 
     # Create job
-    job = ConspectJob(
+    job_service = ConspectJobService()
+    job = await job_service.create_job(
         user_id=session.user_id,
         lesson_item_id=request.lesson_item_id,
-        status="queued",
+        db=db,
     )
-    db.add(job)
-    await db.commit()
-    await db.refresh(job)
 
-    # TODO: enqueue ARQ task here (Phase 2)
+    # Enqueue ARQ background task
+    redis_pool = await create_pool(
+        RedisSettings.from_dsn(settings.REDIS_URL)
+    )
+    await redis_pool.enqueue_job(
+        "generate_conspect_task",
+        str(job.id),
+        str(session.user_id),
+        str(request.lesson_item_id),
+    )
+    await redis_pool.close()
 
     return job
 

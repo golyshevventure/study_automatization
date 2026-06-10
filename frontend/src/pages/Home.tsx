@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FileText, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { notes } from "../data";
 import { useAuth } from "../contexts/AuthContext";
 import { usePrograms, type Course } from "../hooks/usePrograms";
 import MiniCalendar from "../components/calendar/MiniCalendar";
+import { getRecentConspects, type Conspect } from "../api/summary";
 
 const neonShadow = "0 0 15px rgba(0, 240, 255, 0.3), 0 0 5px rgba(138, 43, 226, 0.3)";
 const neonShadowLight = "0 0 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)";
@@ -263,58 +264,91 @@ export default function Home() {
             Недавние конспекты
           </h2>
           <button
-            onClick={() => navigate("/notes")}
+            onClick={() => navigate("/conspects")}
             className="flex items-center gap-1 text-sm"
             style={{ color: "#B794F6" }}
           >
             Все <ChevronRight size={16} />
           </button>
         </div>
-        <div className="flex flex-col gap-3">
-          {notes.slice(0, 3).map((note) => {
-            const statusMap: Record<string, { text: string; bg: string; color: string }> = {
-              done: { text: "Готово", bg: "rgba(16, 185, 129, 0.15)", color: "#10B981" },
-              in_progress: { text: "В процессе", bg: "rgba(138, 43, 226, 0.15)", color: "#B794F6" },
-              pending: { text: "Ожидает", bg: "rgba(148, 163, 184, 0.15)", color: "#94A3B8" },
-            };
-            const status = statusMap[note.status];
-            return (
-              <button
-                key={note.id}
-                onClick={() => navigate("/notes/1")}
-                className="rounded-2xl p-4 flex items-start gap-3 text-left w-full"
-                style={{ background: "rgba(15, 23, 42, 0.6)", boxShadow: neonShadow }}
-              >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: `${note.subjectColor}20` }}
-                >
-                  <FileText size={18} color={note.subjectColor} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium" style={{ color: "#fff" }}>
-                    {note.title}
-                  </p>
-                  <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-xs" style={{ color: "#94A3B8" }}>
-                      {note.subject}
-                    </span>
-                    <span className="text-xs" style={{ color: "#64748B" }}>
-                      {note.date}
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="text-xs font-medium px-2 py-1 rounded-full shrink-0"
-                  style={{ background: status.bg, color: status.color }}
-                >
-                  {status.text}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <RecentConspectsWidget />
       </div>
+    </div>
+  );
+}
+
+function RecentConspectsWidget() {
+  const navigate = useNavigate();
+  const [conspects, setConspects] = useState<Conspect[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getRecentConspects()
+      .then(setConspects)
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-4">
+        <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (conspects.length === 0) {
+    return (
+      <div className="text-center py-4">
+        <p className="text-xs" style={{ color: "#64748B" }}>
+          Пока нет конспектов
+        </p>
+        <button
+          onClick={() => navigate("/conspects")}
+          className="mt-2 text-xs font-medium"
+          style={{ color: "#B794F6" }}
+        >
+          Создать первый
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      {conspects.map((c) => (
+        <button
+          key={c.id}
+          onClick={() => navigate(`/conspects/${c.id}`)}
+          className="rounded-2xl p-4 flex items-start gap-3 text-left w-full transition-all active:scale-[0.98]"
+          style={{ background: "rgba(15, 23, 42, 0.6)", boxShadow: neonShadow }}
+        >
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+            style={{ background: "rgba(138,43,226,0.15)" }}
+          >
+            <FileText size={18} color="#B794F6" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium" style={{ color: "#fff" }}>
+              {c.title}
+            </p>
+            <div className="flex items-center gap-2 mt-1.5">
+              <span className="text-xs" style={{ color: "#64748B" }}>
+                {new Date(c.created_at).toLocaleDateString("ru-RU")}
+              </span>
+              {c.is_edited && (
+                <span
+                  className="text-xs px-1.5 py-0.5 rounded-full"
+                  style={{ background: "rgba(183,148,246,0.15)", color: "#B794F6" }}
+                >
+                  отредактирован
+                </span>
+              )}
+            </div>
+          </div>
+        </button>
+      ))}
     </div>
   );
 }

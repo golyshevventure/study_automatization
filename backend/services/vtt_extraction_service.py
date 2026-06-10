@@ -2,7 +2,7 @@
 
 import re
 
-import requests
+import httpx
 
 
 class VTTExtractionService:
@@ -20,29 +20,36 @@ class VTTExtractionService:
     }
 
     @staticmethod
-    def extract_vtt(video_url: str) -> str:
+    async def extract_vtt(video_url: str) -> str:
         """
         Извлекает VTT-субтитры из Kinescope-видео.
         Парсит HTML embed-страницу, ищет .vtt URL, скачивает и конвертирует в текст.
         Возвращает пустую строку, если субтитров нет.
         """
-        try:
-            resp = requests.get(video_url, headers=VTTExtractionService.HEADERS, timeout=15)
-            if resp.status_code != 200:
-                return ""
+        async with httpx.AsyncClient(
+            headers=VTTExtractionService.HEADERS,
+            timeout=httpx.Timeout(15.0),
+            follow_redirects=True,
+        ) as client:
+            try:
+                resp = await client.get(video_url)
+                if resp.status_code != 200:
+                    return ""
 
-            vtt_urls = re.findall(r'https?://[^"\'\s]+\.vtt[^"\'\s]*', resp.text)
-            if not vtt_urls:
-                return ""
+                vtt_urls = re.findall(
+                    r'https?://[^"\'\s]+\.vtt[^"\'\s]*', resp.text
+                )
+                if not vtt_urls:
+                    return ""
 
-            vtt_url = vtt_urls[0]
-            vtt_resp = requests.get(vtt_url, timeout=15)
-            if vtt_resp.status_code != 200:
-                return ""
+                vtt_url = vtt_urls[0]
+                vtt_resp = await client.get(vtt_url)
+                if vtt_resp.status_code != 200:
+                    return ""
 
-            return VTTExtractionService._parse_vtt(vtt_resp.text)
-        except Exception:
-            return ""
+                return VTTExtractionService._parse_vtt(vtt_resp.text)
+            except Exception:
+                return ""
 
     @staticmethod
     def _parse_vtt(vtt_text: str) -> str:

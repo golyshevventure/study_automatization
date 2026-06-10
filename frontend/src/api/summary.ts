@@ -92,6 +92,11 @@ export async function getPrograms(): Promise<NetologyProgram[]> {
   return res.json();
 }
 
+export async function syncPrograms(): Promise<NetologyProgram[]> {
+  const res = await fetchWithAuth("/summary/programs/sync", { method: "POST" });
+  return res.json();
+}
+
 export async function getProgramModules(programId: string): Promise<NetologyModule[]> {
   const res = await fetchWithAuth(`/summary/programs/${programId}/modules`);
   return res.json();

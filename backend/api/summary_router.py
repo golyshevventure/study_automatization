@@ -61,9 +61,26 @@ async def list_programs(
     session: UserSession = Depends(get_current_session),
     db: AsyncSession = Depends(get_db),
 ) -> list[NetologyProgramResponse]:
-    service = NetologyProgramService(db)
+    service = NetologyProgramService(db, user_id=session.user_id)
     try:
         programs = await service.get_user_programs()
+        return programs
+    finally:
+        await service.close()
+
+
+@router.post(
+    "/programs/sync",
+    response_model=list[NetologyProgramResponse],
+    summary="Синхронизировать программы с Netology",
+)
+async def sync_programs(
+    session: UserSession = Depends(get_current_session),
+    db: AsyncSession = Depends(get_db),
+) -> list[NetologyProgramResponse]:
+    service = NetologyProgramService(db, user_id=session.user_id)
+    try:
+        programs = await service.sync_user_programs()
         return programs
     finally:
         await service.close()
@@ -79,7 +96,7 @@ async def list_modules(
     session: UserSession = Depends(get_current_session),
     db: AsyncSession = Depends(get_db),
 ) -> list[NetologyModuleResponse]:
-    service = NetologyProgramService(db)
+    service = NetologyProgramService(db, user_id=session.user_id)
     try:
         modules = await service.get_program_modules(program_id)
         return modules
@@ -97,7 +114,7 @@ async def list_webinars(
     session: UserSession = Depends(get_current_session),
     db: AsyncSession = Depends(get_db),
 ) -> list[NetologyLessonItemResponse]:
-    service = NetologyProgramService(db)
+    service = NetologyProgramService(db, user_id=session.user_id)
     try:
         items = await service.get_module_webinars(module_id, only_with_vtt=True)
         return items

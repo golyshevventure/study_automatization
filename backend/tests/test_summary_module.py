@@ -7,6 +7,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.main import app
+from backend.models.session import UserSession
 from backend.models.summary import (
     NetologyLesson,
     NetologyLessonItem,
@@ -17,6 +18,18 @@ from backend.services.vtt_extraction_service import VTTExtractionService
 
 client = TestClient(app)
 TEST_USER_ID = uuid.UUID("019e788c-8dd1-7e02-8752-9812841d98bd")
+
+
+async def _create_test_user(db: AsyncSession) -> None:
+    """Создать тестового пользователя для FK-constraint."""
+    user = UserSession(
+        user_id=TEST_USER_ID,
+        email="test@example.com",
+        netology_session="test-session",
+        cookies_json={},
+    )
+    db.add(user)
+    await db.commit()
 
 
 # ---------------------------------------------------------------------------
@@ -79,6 +92,7 @@ class TestSummaryModels:
     """Тесты SQLAlchemy моделей."""
 
     async def test_create_program(self, db: AsyncSession):
+        await _create_test_user(db)
         program = NetologyProgram(
             user_id=TEST_USER_ID,
             netology_id="test-prog-123",
@@ -93,6 +107,7 @@ class TestSummaryModels:
         assert program.title == "Test Program"
 
     async def test_create_module(self, db: AsyncSession):
+        await _create_test_user(db)
         program = NetologyProgram(
             user_id=TEST_USER_ID,
             netology_id="test-prog-456",
@@ -116,6 +131,7 @@ class TestSummaryModels:
         assert module.title == "Test Module"
 
     async def test_create_lesson_item(self, db: AsyncSession):
+        await _create_test_user(db)
         program = NetologyProgram(
             user_id=TEST_USER_ID,
             netology_id="test-prog-789",

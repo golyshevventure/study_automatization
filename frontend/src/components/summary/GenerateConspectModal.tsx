@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { X, ChevronRight, Loader2, FileText } from "lucide-react";
 import {
   getPrograms,
+  syncPrograms,
   getProgramModules,
   getModuleWebinars,
   generateConspect,
@@ -27,6 +28,7 @@ export default function GenerateConspectModal({ onClose, onJobCreated }: Props) 
   const [selectedProgram, setSelectedProgram] = useState<NetologyProgram | null>(null);
   const [selectedModule, setSelectedModule] = useState<NetologyModule | null>(null);
   const [loading, setLoading] = useState(false);
+  const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -36,6 +38,19 @@ export default function GenerateConspectModal({ onClose, onJobCreated }: Props) 
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
+
+  const handleSync = async () => {
+    setSyncing(true);
+    setError(null);
+    try {
+      const synced = await syncPrograms();
+      setPrograms(synced);
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   const handleSelectProgram = async (program: NetologyProgram) => {
     setSelectedProgram(program);
@@ -100,9 +115,25 @@ export default function GenerateConspectModal({ onClose, onJobCreated }: Props) 
           <h2 className="text-lg font-semibold" style={{ color: "#fff", textShadow: neonShadow }}>
             {stepTitles[step]}
           </h2>
-          <button onClick={onClose} className="p-1">
-            <X size={20} color="#94A3B8" />
-          </button>
+          <div className="flex items-center gap-2">
+            {step === "program" && (
+              <button
+                onClick={handleSync}
+                disabled={syncing}
+                className="text-xs px-3 py-1.5 rounded-lg transition-all disabled:opacity-50"
+                style={{
+                  background: "rgba(138, 43, 226, 0.2)",
+                  color: "#B794F6",
+                  border: "1px solid rgba(138, 43, 226, 0.3)",
+                }}
+              >
+                {syncing ? "Синхронизация..." : "Обновить"}
+              </button>
+            )}
+            <button onClick={onClose} className="p-1">
+              <X size={20} color="#94A3B8" />
+            </button>
+          </div>
         </div>
 
         {/* Breadcrumbs */}

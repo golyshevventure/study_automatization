@@ -1,13 +1,12 @@
 """Сервис для работы со структурой программ Netology."""
 
-import json
-from pathlib import Path
 from uuid import UUID
 
 import httpx
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from backend.models.session import UserSession
 from backend.models.summary import (
     NetologyLesson,
     NetologyLessonItem,
@@ -17,15 +16,6 @@ from backend.models.summary import (
 
 NETOLOGY_BASE = "https://netology.ru"
 API_BASE = f"{NETOLOGY_BASE}/backend/api/user"
-COOKIES_FILE = Path("backend/netology_cookies/netology_cookies.json")
-
-
-def _load_cookies() -> dict:
-    if not COOKIES_FILE.exists():
-        return {}
-    with open(COOKIES_FILE, "r", encoding="utf-8") as f:
-        raw = json.load(f)
-    return {c["name"]: c["value"] for c in raw if "name" in c}
 
 
 def _extract_lessons(schedule: dict) -> list:
@@ -43,13 +33,31 @@ def _extract_lessons(schedule: dict) -> list:
 
 
 class NetologyProgramService:
-    """HTTP-first сервис для получения структуры программ Netology."""
+    """HTTP-first сервис для получения структуры программ Netology.
 
-    def __init__(self, db: AsyncSession):
+    Cookies загружает из UserSession в БД (а не из файла).
+    """
+
+    def __init__(self, db: AsyncSession, user_id: UUID | None = None):
         self.db = db
-        self.cookies = _load_cookies()
-        self.client = httpx.AsyncClient(
-            cookies=self.cookies,
+        self.user_id = user_id
+        self._client: httpx.AsyncClient | None = None
+
+    async def _get_client(self) -> httpx.AsyncClient:
+        """Ленивая инициализация HTTP-клиента с cookies пользователя."""
+        if self._client is not None and not self._client.is_closed:
+            return self._client
+
+        cookies: dict = {}
+        if self.user_id is not None:
+            stmt = select(UserSession).where(UserSession.user_id == self.user_id)
+            result = await self.db.execute(stmt)
+            session = result.scalar_one_or_none()
+            if session and session.cookies_json:
+                cookies = dict(session.cookies_json)
+
+        self._client = httpx.AsyncClient(
+            cookies=cookies,
             follow_redirects=True,
             timeout=httpx.Timeout(30.0),
             headers={
@@ -62,22 +70,31 @@ class NetologyProgramService:
                 "X-Requested-With": "XMLHttpRequest",
             },
         )
+        return self._client
 
     async def close(self):
-        await self.client.aclose()
+        if self._client and not self._client.is_closed:
+            await self._client.aclose()
+            self._client = None
 
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
 
     async def get_user_programs(self) -> list[NetologyProgram]:
-        """Возвращает список программ пользователя из БД (или sync из API)."""
-        result = await self.db.execute(select(NetologyProgram))
-        programs = result.scalars().all()
-        if programs:
-            return list(programs)
-        # Sync from API
-        return await self._sync_programs()
+        """Возвращает список программ пользователя из БД."""
+        if self.user_id is None:
+            return []
+        result = await self.db.execute(
+            select(NetologyProgram).where(NetologyProgram.user_id == self.user_id)
+        )
+        return list(result.scalars().all())
+
+    async def sync_user_programs(self) -> list[NetologyProgram]:
+        """Синхронизирует программы с Netology API и возвращает результат."""
+        if self.user_id is None:
+            return []
+        return await self._sync_programs(self.user_id)
 
     async def get_program_modules(self, program_id: UUID) -> list[NetologyModule]:
         """Возвращает модули программы."""
@@ -126,9 +143,10 @@ class NetologyProgramService:
     # Sync from Netology API
     # ------------------------------------------------------------------
 
-    async def _sync_programs(self) -> list[NetologyProgram]:
+    async def _sync_programs(self, user_id: UUID) -> list[NetologyProgram]:
         """Синхронизирует список программ из Netology API."""
-        resp = await self.client.get(f"{API_BASE}/programs/calendar/filters")
+        client = await self._get_client()
+        resp = await client.get(f"{API_BASE}/programs/calendar/filters")
         resp.raise_for_status()
         raw = resp.json()
         programs = raw.get("programs", []) if isinstance(raw, dict) else raw
@@ -138,16 +156,18 @@ class NetologyProgramService:
             netology_id = str(prog.get("id", ""))
             if not netology_id:
                 continue
-            # Check if exists
+            # Check if exists for this user
             existing = await self.db.execute(
                 select(NetologyProgram).where(
-                    NetologyProgram.netology_id == netology_id
+                    NetologyProgram.user_id == user_id,
+                    NetologyProgram.netology_id == netology_id,
                 )
             )
             if existing.scalar_one_or_none():
                 continue
 
             db_prog = NetologyProgram(
+                user_id=user_id,
                 netology_id=netology_id,
                 title=prog.get("title", prog.get("name", "Без названия")),
                 program_type="profession" if prog.get("is_profession") else "program",
@@ -164,12 +184,14 @@ class NetologyProgramService:
         if not program:
             return
 
+        client = await self._get_client()
+
         # Try professions/{id}/schedule first
-        resp = await self.client.get(
+        resp = await client.get(
             f"{API_BASE}/professions/{program.netology_id}/schedule"
         )
         if resp.status_code != 200:
-            resp = await self.client.get(
+            resp = await client.get(
                 f"{API_BASE}/programs/{program.netology_id}/schedule"
             )
         if resp.status_code != 200:
@@ -207,7 +229,9 @@ class NetologyProgramService:
         if not module:
             return
 
-        resp = await self.client.get(
+        client = await self._get_client()
+
+        resp = await client.get(
             f"{API_BASE}/programs/{module.netology_id}/schedule"
         )
         if resp.status_code != 200:
